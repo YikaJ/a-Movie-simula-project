@@ -33,6 +33,7 @@ public class ApplicationSupportAction extends ActionSupport {
         }catch (Exception e){
             e.printStackTrace();
             return  ERROR;
+
         }
     }
 
