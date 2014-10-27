@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="231baafb-f26a-412c-a94e-4bd6a2c472d7" name="Default" comment="" />
+    <list default="true" id="231baafb-f26a-412c-a94e-4bd6a2c472d7" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="Popcorn.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -76,7 +79,7 @@
       <file leaf-file-name="ApplicationSupportAction.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/mx/popcorn/controller/android/ApplicationSupportAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.11857293" vertical-offset="173" max-vertical-offset="1352">
+            <state vertical-scroll-proportion="0.30010495" vertical-offset="0" max-vertical-offset="1352">
               <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
               <folding />
             </state>
@@ -162,7 +165,7 @@
     <option name="width" value="1930" />
     <option name="height" value="1090" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -318,7 +321,7 @@
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
@@ -619,12 +622,12 @@
       <workItem from="1414067204391" duration="870000" />
       <workItem from="1414325610164" duration="5714000" />
       <workItem from="1414398180303" duration="75000" />
-      <workItem from="1414416166991" duration="509000" />
+      <workItem from="1414416166991" duration="666000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11787000" />
+    <option name="totallyTimeSpent" value="11944000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1595" y="-5" width="1930" height="1090" extended-state="6" />
@@ -677,6 +680,7 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1077,7 +1081,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mx/popcorn/controller/android/ApplicationSupportAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11857293" vertical-offset="173" max-vertical-offset="1352">
+        <state vertical-scroll-proportion="0.30010495" vertical-offset="0" max-vertical-offset="1352">
           <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
           <folding />
         </state>
