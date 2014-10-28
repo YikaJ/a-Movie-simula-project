@@ -1,0 +1,248 @@
+/*common*/
+.content{
+    width: 990px;
+    margin: 0 auto;
+    position: relative;
+}
+.fr{
+    float: right;
+}
+.fl{
+    float: left;
+}
+
+
+body,a,li{
+    color: #666;
+    font-family: 微软雅黑;
+    text-decoration: none;
+    list-style: none;
+    font-size: 16px;
+}
+a:link,a:hover,a:active,a:visited{
+    text-decoration: none;
+    color: #666;
+}
+/*账户信息*/
+
+.loginRegister{
+    font-size: 14px;
+    position: absolute;
+    right: 10%;
+    background: #FF3558;
+    color: #000;
+    border-radius: 0px 0px 10px 10px;
+    z-index: 9000;
+}
+.loginRegister a{
+    color: #FFF;
+    padding: 10px;
+    line-height: 30px;
+}
+
+.loginRegister a:hover{
+    color: #000;
+}
+
+
+/*header*/
+
+.header{
+    height: 100px;
+    width: 100%;
+    border-bottom: 3px solid #EB002A;
+    position: relative;
+}
+
+.logo{
+    text-indent: -999px;
+    display: block;
+}
+.logo a{
+    float: left;
+    height: 100px;
+    width: 305px;
+    background: url(../image/logo.png) no-repeat left center;
+    display: inline;
+}
+/*导航栏*/
+.nav {
+    float: left;
+    display: inline;
+    margin-left: 120px;
+    padding-top: 40px;
+}
+
+.nav li{
+    float: left;
+    margin-right: 45px;
+}
+
+.nav li:hover{
+    border-bottom: 3px solid #EB002A;
+}
+
+.currentLi{
+    border-bottom: 3px solid #EB002A;
+}
+
+.currentLi a{
+    color: #EB002A;
+}
+
+.nav a{
+    display: block;
+    font-size: 20px;
+    padding: 8px 20px;
+}
+
+.nav a:hover{
+    color: #EB002A;
+}
+
+/*过渡小玩意儿*/
+.hr{
+    padding: 20px 0px;
+    overflow: hidden;
+}
+
+.directory{
+    float: left;
+}
+.directory a{
+    font-size: 12px;
+}
+.directory a:hover{
+    color: #EB002A;
+}
+.smallTips{
+    float: right;
+    font-size: 12px;
+    color: #A2A2A2;
+}
+
+/*电影列表*/
+
+.movieContent{
+    overflow: hidden;
+    padding: 0px 9px;
+}
+
+.movieList span.buyTicket:hover{
+    box-shadow: 0px 0px 10px #FFF inset;
+}
+
+.details{
+    overflow: hidden;
+}
+
+.movieTab{
+    width: 630px;
+    margin: 20px auto;
+    height: 38px;
+    border-bottom: 1px solid #DFDFDF;
+    overflow: hidden;
+}
+
+.movieTab a{
+    line-height: 50px;
+    margin-right: 20px;
+    color: #999;
+}
+
+.movieTab a:hover{
+    color: #333;
+}
+
+.movieBox{
+    border: 1px solid #DFDFDF;
+    width: 670px;
+}
+
+a.currentTab{
+    border-bottom: 3px solid #EB002A;
+    color: #333;
+}
+/*电影图片模版*/
+.movieList li{
+    float: left;
+    padding: 0px 35px;
+    margin: 15px -20px 15px 0px;
+}
+
+.movieList a{
+    display: block;
+}
+
+.movieList img{
+    width: 160px;
+    height: 225px;
+}
+.movieList .buyTicket{
+    padding: 5px 0px;
+    font-size: 14px;
+    width: 160px;
+    display: block;
+    text-align: center;
+    color: #FFF;
+    background: #EB002A;
+    height: 30px;
+    line-height: 30px;
+}
+
+
+/*新闻栏目*/
+
+.movieNews{
+    width: 277px;
+    border-top: 1px solid #DFDFDF;
+    border-right: 1px solid #DFDFDF;
+    border-bottom: 1px solid #DFDFDF;
+    overflow: hidden;
+    padding: 0px 20px;
+}
+
+.movieNews h4{
+    color: #333;
+    margin: 16px auto;
+    padding: 10px 0px 8px;
+    border-bottom: 1px solid #DFDFDF;
+}
+
+a.moreNews{
+    color: #F2002A;
+    font-size: 14px;
+    float: right;
+    margin-right: 10px;
+    display: inline;
+    font-weight: normal;
+}
+
+a.moreNews:hover{
+    margin-right: 0px;
+}
+.movieNews li{
+    border-bottom: 1px dashed #DFDFDF;
+    padding: 10px 0px;
+}
+.movieNews ul a{
+    font-size: 14px;
+    color: #333;
+}
+
+.movieNews ul a:hover{
+    color: #EB002A;
+}
+
+.fixedNewsBar{
+    position: fixed;
+    left: 0px;
+}
+
+/*页脚footer*/
+.footer{
+    width: 100%;
+    height: 200px;
+    background: #2b2b2b;
+    border-top: 2px solid #d21438;
+}
