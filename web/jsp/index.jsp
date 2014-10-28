@@ -4,15 +4,15 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>电影院</title>
-    <link rel="stylesheet" type="text/css" href="../css/reset.css">
-    <link rel="stylesheet" type="text/css" href="../css/homepage.css">
-    <link rel="stylesheet" type="text/css" href="../css/autoplay.css">
-    <link rel="stylesheet" type="text/css" href="../css/window.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/homepage.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/autoplay.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/window.css">
 </head>
 <body>
     <div class="header">
         <div class="loginRegister">
-            <a href="javascript:" id="login">登陆</a> | <a href="javascript:" id="register">注册</a>
+                <a href="javascript:" id="login">登陆</a> | <a href="javascript:" id="register">注册</a>
         </div>
         <div class="content">
             <h1 class="logo">
@@ -28,9 +28,9 @@
     </div>
     <div id="banner">
         <ul>
-            <li><a href="index.jsp" title="banner1" style="background-image: url(../image/banner1.jpg)"></a></li>
-            <li><a href="index.jsp" title="banner2" style="background-image: url(../image/banner2.png)"></a></li>
-            <li><a href="index.jsp" title="banner3" style="background-image: url(../image/banner3.png)"></a></li>
+            <li><a href="index.jsp" title="banner1" style="background-image: url(${pageContext.request.contextPath}/image/banner1.jpg)"></a></li>
+            <li><a href="index.jsp" title="banner2" style="background-image: url(${pageContext.request.contextPath}/image/banner2.png)"></a></li>
+            <li><a href="index.jsp" title="banner3" style="background-image: url(${pageContext.request.contextPath}/image/banner3.png)"></a></li>
         </ul>
     </div>
 
@@ -41,11 +41,11 @@
             <a class="moreFirm" href="javascript:">查看全部 ></a>
         </div>
         <ul class="movieList">
-            <li><a href="#"><img src="../image/hotOn%20(1).jpg"><span class="buyTicket">立即购票</span></a></li>
-            <li><a href="#"><img src="../image/hotOn%20(2).jpg"><span class="buyTicket">立即购票</span></a></li>
-            <li><a href="#"><img src="../image/hotOn%20(3).jpg"><span class="buyTicket">立即购票</span></a></li>
-            <li><a href="#"><img src="../image/hotOn%20(4).jpg"><span class="buyTicket">立即购票</span></a></li>
-            <li><a href="#"><img src="../image/hotOn%20(5).jpg"><span class="buyTicket">立即购票</span></a></li>
+            <li><a href="movieInformation.jsp"><img src="${pageContext.request.contextPath}/image/hotOn (1).jpg"><span class="buyTicket">立即购票</span></a></li>
+            <li><a href="movieInformation.jsp"><img src="${pageContext.request.contextPath}/image/hotOn (2).jpg"><span class="buyTicket">立即购票</span></a></li>
+            <li><a href="movieInformation.jsp"><img src="${pageContext.request.contextPath}/image/hotOn (3).jpg"><span class="buyTicket">立即购票</span></a></li>
+            <li><a href="movieInformation.jsp"><img src="${pageContext.request.contextPath}/image/hotOn (4).jpg"><span class="buyTicket">立即购票</span></a></li>
+            <li><a href="movieInformation.jsp"><img src="${pageContext.request.contextPath}/image/hotOn (5).jpg"><span class="buyTicket">立即购票</span></a></li>
         </ul>
         <ul class="movieList" style="display: none"></ul>
     </div>
@@ -60,7 +60,7 @@
                 <ol class="firmList" id="firmRank">
                     <li class="activeList">
                         <i class="listType" style="background-position: 0px 0px"></i>
-                        <a href="index.jsp"><img src="../image/rank%20(1).jpg" alt="championFirm"></a>
+                        <a href="index.jsp"><img src="${pageContext.request.contextPath}/image/rank (1).jpg" alt="championFirm"></a>
                         <div class="information">
                             <h5 class="movieTitle">心花路放</h5>
                             <span class="rating">8.9</span>
@@ -69,7 +69,7 @@
                     </li>
                     <li>
                         <i class="listType" style="background-position: 0px -42px"></i>
-                        <a href="index.jsp"><img src="../image/rank%20(2).jpg" alt="championFirm"></a>
+                        <a href="index.jsp"><img src="${pageContext.request.contextPath}/image/rank (2).jpg" alt="championFirm"></a>
                         <div class="information">
                             <h5 class="movieTitle">心花路放</h5>
                             <span class="rating">8.9</span>
@@ -78,7 +78,7 @@
                     </li>
                      <li>
                         <i class="listType" style="background-position: 0px -81px"></i>
-                        <a href="index.jsp"><img src="../image/rank%20(3).jpg" alt="championFirm"></a>
+                        <a href="index.jsp"><img src="${pageContext.request.contextPath}/image/rank (3).jpg" alt="championFirm"></a>
                         <div class="information">
                             <h5 class="movieTitle">心花路放</h5>
                             <span class="rating">8.9</span>
@@ -87,7 +87,7 @@
                     </li>
                     <li>
                         <i class="listType" style="background-position: 0px -125px"></i>
-                        <a href="index.jsp"><img src="../image/rank%20(4).jpg" alt="championFirm"></a>
+                        <a href="index.jsp"><img src="${pageContext.request.contextPath}/image/rank (4).jpg" alt="championFirm"></a>
                         <div class="information">
                             <h5 class="movieTitle">心花路放</h5>
                             <span class="rating">8.9</span>
@@ -96,7 +96,7 @@
                     </li>
                     <li>
                         <i class="listType" style="background-position: 0px -168px"></i>
-                        <a href="index.jsp"><img src="../image/rank%20(5).jpg" alt="championFirm"></a>
+                        <a href="index.jsp"><img src="${pageContext.request.contextPath}/image/rank (5).jpg" alt="championFirm"></a>
                         <div class="information">
                             <h5 class="movieTitle">心花路放</h5>
                             <span class="rating">8.9</span>
@@ -199,6 +199,6 @@
     }
   
 </script>
-<script type="text/javascript" src="../js/require.js" data-main="../js/main.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/require.js" data-main="${pageContext.request.contextPath}/js/main.js"></script>
 </body>
 </html>
