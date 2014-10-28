@@ -10,6 +10,7 @@ import java.util.Properties;
 public class Configuration {
 
     /*=============================分页参数==============================*/
+    private static int pageNavigate;
 
     /*=============================类型参数定义=============================*/
 
@@ -41,5 +42,9 @@ public class Configuration {
 
     public static String getImageForm() {
         return imageForm;
+    }
+
+    public static int getPageNavigate() {
+        return pageNavigate;
     }
 }
