@@ -28,6 +28,20 @@
         <mapping class="com.mx.popcorn.domain.City"/>
         <mapping class="com.mx.popcorn.domain.District"/>
         <mapping class="com.mx.popcorn.domain.Province"/>
+        <mapping class="com.mx.popcorn.domain.Cinema"/>
+        <mapping class="com.mx.popcorn.domain.CinemaComment"/>
+        <mapping class="com.mx.popcorn.domain.CinemaGrade"/>
+        <mapping class="com.mx.popcorn.domain.Hall"/>
+        <mapping class="com.mx.popcorn.domain.Movie"/>
+        <mapping class="com.mx.popcorn.domain.MovieComment"/>
+        <mapping class="com.mx.popcorn.domain.MovieGrade"/>
+        <mapping class="com.mx.popcorn.domain.MovieNew"/>
+        <mapping class="com.mx.popcorn.domain.MovieType"/>
+        <mapping class="com.mx.popcorn.domain.MovieVersion"/>
         <mapping class="com.mx.popcorn.domain.Region"/>
+        <mapping class="com.mx.popcorn.domain.Schedule"/>
+        <mapping class="com.mx.popcorn.domain.Seat"/>
+        <mapping class="com.mx.popcorn.domain.TicketOrder"/>
+        <mapping class="com.mx.popcorn.domain.User"/>
     </session-factory>
 </hibernate-configuration>

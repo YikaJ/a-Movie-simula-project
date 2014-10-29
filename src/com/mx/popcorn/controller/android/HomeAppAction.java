@@ -1,7 +1,6 @@
-package com.mx.popcorn.controller.web;
+package com.mx.popcorn.controller.android;
 
-import com.mx.popcorn.base.ModelDrivenBaseAction;
-import com.mx.popcorn.domain.Hall;
+import com.mx.popcorn.base.BaseAction;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -10,5 +9,5 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 @Scope("prototype")
-public class HallAction  extends ModelDrivenBaseAction<Hall> {
+public class HomeAppAction extends BaseAction{
 }

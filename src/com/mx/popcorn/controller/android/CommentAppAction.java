@@ -1,4 +1,4 @@
-package com.mx.popcorn.controller.web;
+package com.mx.popcorn.controller.android;
 
 import com.mx.popcorn.base.ModelDrivenBaseAction;
 import com.mx.popcorn.domain.Comment;
@@ -10,5 +10,5 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 @Scope("prototype")
-public class CommentAction extends ModelDrivenBaseAction<Comment> {
+public class CommentAppAction extends ModelDrivenBaseAction<Comment> {
 }
