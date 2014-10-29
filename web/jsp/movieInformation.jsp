@@ -54,7 +54,7 @@
         </div>
     </div>
 
-    <div class="content">
+    <div class="content clearfix">
 		<div class="tabWrap">
 			<div class="movieTab">
 				<ul class="clearfix">
@@ -153,53 +153,65 @@
 			</div>
 			<ul class="rightBarMovieList">
 				<li class="clearfix">
-					<img src="${pageContext.request.contextPath}/image/hotOn (2).jpg" class="fl" alt="movie">
-					<div class="rightBarInformation fl">
-						<h3>超体</h3>
-						<p><span>2014-10-24</span>首映</p>
-						<p>导演：卢克•贝松</p>
-					</div>
+                    <a href="movieInformation.jsp">
+                        <img src="${pageContext.request.contextPath}/image/hotOn (2).jpg" class="fl" alt="movie">
+                        <div class="rightBarInformation fl">
+                            <h3>超体</h3>
+                            <p><span>2014-10-24</span>首映</p>
+                            <p>导演：卢克•贝松</p>
+                        </div>
+                    </a>
 				</li>
 				<li class="clearfix">
+                    <a href="movieInformation.jsp">
 					<img src="${pageContext.request.contextPath}/image/hotOn (3).jpg" class="fl" alt="movie">
 					<div class="rightBarInformation fl">
 						<h3>超体</h3>
 						<p><span>2014-10-24</span>首映</p>
 						<p>导演：卢克•贝松</p>
 					</div>
+                    </a>
 				</li>
 				<li class="clearfix">
+                    <a href="movieInformation.jsp">
 					<img src="${pageContext.request.contextPath}/image/hotOn (4).jpg" class="fl" alt="movie">
 					<div class="rightBarInformation fl">
 						<h3>超体</h3>
 						<p><span>2014-10-24</span>首映</p>
 						<p>导演：卢克•贝松</p>
 					</div>
+                    </a>
 				</li>
 				
 				<li class="clearfix">
+                    <a href="movieInformation.jsp">
 					<img src="${pageContext.request.contextPath}/image/hotOn (2).jpg" class="fl" alt="movie">
 					<div class="rightBarInformation fl">
 						<h3>超体</h3>
 						<p><span>2014-10-24</span>首映</p>
 						<p>导演：卢克•贝松</p>
 					</div>
+                    </a>
 				</li>
 				<li class="clearfix">
+                    <a href="movieInformation.jsp">
 					<img src="${pageContext.request.contextPath}/image/hotOn (1).jpg" class="fl" alt="movie">
 					<div class="rightBarInformation fl">
 						<h3>超体</h3>
 						<p><span>2014-10-24</span>首映</p>
 						<p>导演：卢克•贝松</p>
 					</div>
+                    </a>
 				</li>
 				<li class="clearfix">
+                    <a href="movieInformation.jsp">
 					<img src="${pageContext.request.contextPath}/image/hotOn (4).jpg" class="fl" alt="movie">
 					<div class="rightBarInformation fl">
 						<h3>超体</h3>
 						<p><span>2014-10-24</span>首映</p>
 						<p>导演：卢克•贝松</p>
 					</div>
+                    </a>
 				</li>
 			</ul>
 		</div>
