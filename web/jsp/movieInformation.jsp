@@ -18,10 +18,10 @@
         </div>
         <div class="content">
             <h1 class="logo">
-                <a href="index.jsp">想映电影院</a>
+                <a href="../WEB-INF/jsp/home/index.jsp">想映电影院</a>
             </h1>
             <ul class="nav">
-                <li><a href="index.jsp">首页</a></li>
+                <li><a href="../WEB-INF/jsp/home/index.jsp">首页</a></li>
                 <li class="currentLi"><a href="movieList.jsp">电影</a></li>
                 <li><a href="#">影院</a></li>
                 <li><a href="#">我的</a></li>

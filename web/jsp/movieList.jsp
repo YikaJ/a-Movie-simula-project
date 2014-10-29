@@ -18,10 +18,10 @@
         </div>
         <div class="content">
             <h1 class="logo">
-                <a href="index.jsp">想映电影院</a>
+                <a href="../WEB-INF/jsp/home/index.jsp">想映电影院</a>
             </h1>
             <ul class="nav">
-                <li><a href="index.jsp">首页</a></li>
+                <li><a href="../WEB-INF/jsp/home/index.jsp">首页</a></li>
                 <li class="currentLi"><a href="#">电影</a></li>
                 <li><a href="#">影院</a></li>
                 <li><a href="#">我的</a></li>
@@ -29,7 +29,7 @@
         </div>
     </div>
     <div class="content hr">
-    	<span class="directory"><a href="index.jsp">首页</a> > <a href="movieList">电影</a></span>
+    	<span class="directory"><a href="../WEB-INF/jsp/home/index.jsp">首页</a> > <a href="movieList">电影</a></span>
         <span class="smallTips">3步轻松购票: 1.选座购票/买券 -> 2.收电子码 -> 3.影院取票</span>
     </div>
     <div class="details content">
@@ -110,19 +110,19 @@
             </h4>
             <ul>
                 <li>
-                    <a href="index.jsp">《黄飞鸿》发英雄之战终极预告 颜值战斗值爆表</a>
+                    <a href="../WEB-INF/jsp/home/index.jsp">《黄飞鸿》发英雄之战终极预告 颜值战斗值爆表</a>
                 </li>
                 <li>
-                    <a href="index.jsp">导演价值排行榜姜文拔头筹 徐静蕾唯一上榜女性</a>
+                    <a href="../WEB-INF/jsp/home/index.jsp">导演价值排行榜姜文拔头筹 徐静蕾唯一上榜女性</a>
                 </li>
                 <li>
-                    <a href="index.jsp">《大话西游》曝爱情版预告 经典影片重回大银幕</a>
+                    <a href="../WEB-INF/jsp/home/index.jsp">《大话西游》曝爱情版预告 经典影片重回大银幕</a>
                 </li>
                 <li>
-                    <a href="index.jsp">高圆圆新片暴打古天乐 谈婚姻：要选对的人</a>
+                    <a href="../WEB-INF/jsp/home/index.jsp">高圆圆新片暴打古天乐 谈婚姻：要选对的人</a>
                 </li>
                 <li>
-                    <a href="index.jsp">广电总局：吸毒嫖娼者损害行业形象 绝不容忍</a>
+                    <a href="../WEB-INF/jsp/home/index.jsp">广电总局：吸毒嫖娼者损害行业形象 绝不容忍</a>
                 </li>
             </ul>
         </div>
