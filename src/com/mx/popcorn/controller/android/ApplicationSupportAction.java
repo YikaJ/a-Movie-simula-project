@@ -25,7 +25,7 @@ public class ApplicationSupportAction extends ActionSupport {
             System.out.println(head+" : "+ ServletActionContext.getRequest().getHeader(head));
         }
         try {
-            if (name.trim().equals("韩都") && password.trim().equals("123"))
+            if (name.trim().equals("abc") && password.trim().equals("123"))
                 return SUCCESS;
             else{
                 return "login_error";

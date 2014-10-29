@@ -25,5 +25,9 @@
         <property name="cache.use_query_cache">true</property>
 
 
+        <mapping class="com.mx.popcorn.domain.City"/>
+        <mapping class="com.mx.popcorn.domain.District"/>
+        <mapping class="com.mx.popcorn.domain.Province"/>
+        <mapping class="com.mx.popcorn.domain.Region"/>
     </session-factory>
 </hibernate-configuration>

@@ -1,7 +1,10 @@
 package com.mx.popcorn.domain;
 
+import javax.persistence.Entity;
+
 /**
  * Created by Administrator on 2014-10-28.
  */
-public class MovieComment {
+@Entity
+public class MovieComment extends Comment{
 }

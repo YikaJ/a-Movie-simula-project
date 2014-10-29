@@ -53,12 +53,14 @@
                 <param name="root">false</param>
             </result>
         </action>
+
+        <action name="index" class="com.mx.popcorn.controller.web.HomeAction" method="index">
+            <result name="success">/WEB-INF/jsp/home/index.jsp</result>
+        </action>
     </package>
 
-    <package name="support" namespace="/support" extends="default">
-
-    </package>
-
+    <include file="struts-web.xml"/>
+    <include file="struts-application.xml"/>
 
 
 </struts>

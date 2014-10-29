@@ -1,4 +1,4 @@
-package com.mx.popcorn.controller.web;
+package com.mx.popcorn.controller.android;
 
 import com.mx.popcorn.base.BaseAction;
 
@@ -6,10 +6,4 @@ import com.mx.popcorn.base.BaseAction;
  * Created by Administrator on 2014-10-28.
  */
 public class HomeAction extends BaseAction{
-
-
-    public String index(){
-        return SUCCESS;
-    }
-
 }

@@ -1,4 +1,4 @@
-package com.mx.popcorn.controller.web;
+package com.mx.popcorn.controller.android;
 
 import com.mx.popcorn.base.ModelDrivenBaseAction;
 import com.mx.popcorn.domain.Movie;
