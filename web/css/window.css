@@ -1,9 +1,9 @@
 /*登陆总体*/
 	.window_boundingBox{
-		background: #F0F0F0;
+		background: #FFF;
 		position: absolute;
-		top: 15%;
-		left: 30%;
+		top: 30%;
+		left: 35%;
 		box-shadow: 0 0 12px rgba(0,0,0.5);
 		z-index: 9999;
 	}
@@ -51,15 +51,23 @@
 		padding: 10px;
 	}
 /*登陆文本框*/
-	.window_loginInput{
+.window_user,.window_password{
 		border: 1px solid #D8D8D8;
 		display: block;
 		height: 40px;
+        line-height: 40px;
 		font-size: 16px;
 		margin: 20px auto;
-		padding-left: 40px;
+		padding-left: 50px;
 		width: 80%;
+        border-radius:  5px;
 	}
+    .window_user{
+        background: url("../image/user.png") no-repeat 7px 5px;
+    }
+    .window_password{
+        background: url("../image/password.png") no-repeat 7px 5px;
+    }
 	input.window_loginInputFocus{
 		border: 1px solid #FF4A6A;
 	}
@@ -82,7 +90,7 @@
 	.window_footer{
 		position: absolute;
 		bottom: 0;
-		padding-bottom: 10px;
+		padding-bottom: 15px;
 		text-align: center;
 		width: 100%;
 	}
@@ -90,7 +98,7 @@
 	.window_loginBtn{
 		border: 1px solid #EB002A;
 		background: #EB002A;
-		height: 50px;
+		height: 45px;
 		padding: 10px 20px;
 		width: 80%;
 		color: #FFF;

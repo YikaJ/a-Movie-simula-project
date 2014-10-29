@@ -36,8 +36,8 @@ define(["jquery", "widget"], function ($, w){
 
 				case "login":
 				this.cfg.content = "<form action='#' method='post' id='window_login'><input type='text' placeholder=" +
-				this.cfg.text4loginUserPlaceholder + " class='window_loginInput'><input type='text' placeholder=" +
-				this.cfg.text4loginPwdPlaceholder + " class='window_loginInput'></form><p class='window_loginOthers'><a href='#' class='window_toRegister fl'>还没注册？</a><a href='#' class='window_forgotPwd fr'>忘记密码</a></p>";
+				this.cfg.text4loginUserPlaceholder + " class='window_user'><input type='password' placeholder=" +
+				this.cfg.text4loginPwdPlaceholder + " class='window_password'></form><p class='window_loginOthers'><a href='#' class='window_toRegister fl'>还没注册？</a><a href='#' class='window_forgotPwd fr'>忘记密码</a></p>";
 				footerContent = "<input type='button' class='window_loginBtn' value='登陆'>";
 				break;
 
@@ -69,7 +69,7 @@ define(["jquery", "widget"], function ($, w){
 				self.destroy();
 			});
 			if(this.cfg.winType == "login"){
-				this.loginInput = $('.window_loginInput');
+				this.loginInput = $("#window_login input");
 				var userLogin = this.loginInput.eq(0),
 					pwdLogin = this.loginInput.eq(1);
 				this.loginInput.focusin(function(){
@@ -79,40 +79,22 @@ define(["jquery", "widget"], function ($, w){
 				});
 			}
 			/*判断是否拥有placeHolder属性*/
-			if("placeholder" in document.createElement("input")){
-				if(this.cfg.winType == "login"){
-					pwdLogin.attr('type', 'password');
-				}
-			}else{
-				if(this.cfg.winType == "login"){
-					/*用户窗口*/
-					userLogin.val(this.cfg.text4loginUserPlaceholder)
-					.focusin(function(){
-						if($(this).val() === self.cfg.text4loginUserPlaceholder){
-							$(this).val("");
-						}
-					})
-					.focusout(function(){
-						if($(this).val() === ""){
-							$(this).val(self.cfg.text4loginUserPlaceholder);
-						}
-					});
-					/*密码窗口*/
-					pwdLogin.val(this.cfg.text4loginPwdPlaceholder)
-					.focusin(function(){
-						if($(this).val() === self.cfg.text4loginPwdPlaceholder){
-							$(this).val("");
-						}
-						$(this).attr('Type', 'password');
-					})
-					.focusout(function(){
-						if($(this).val() === ""){
-							$(this).attr('type', 'text')
-							.val(self.cfg.text4loginPwdPlaceholder);
-						}
-					});
-				}
-			}
+			if(!("placeholder" in document.createElement("input"))) {
+                if (this.cfg.winType == "login") {
+                    /*用户窗口*/
+                    userLogin.val(this.cfg.text4loginUserPlaceholder)
+                        .focusin(function () {
+                            if ($(this).val() === self.cfg.text4loginUserPlaceholder) {
+                                $(this).val("");
+                            }
+                        })
+                        .focusout(function () {
+                            if ($(this).val() === "") {
+                                $(this).val(self.cfg.text4loginUserPlaceholder);
+                            }
+                        });
+                }
+            }
 		},
 		synsUI: function(){
 			this.boundingBox.css({
