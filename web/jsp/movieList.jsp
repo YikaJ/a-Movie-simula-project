@@ -12,22 +12,7 @@
 <link href="../css/window.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div class="header">
-        <div class="loginRegister">
-            <a href="javascript:" id="login">登陆</a> | <a href="javascript:" id="register">注册</a>
-        </div>
-        <div class="content">
-            <h1 class="logo">
-                <a href="../WEB-INF/jsp/home/index.jsp">想映电影院</a>
-            </h1>
-            <ul class="nav">
-                <li><a href="../WEB-INF/jsp/home/index.jsp">首页</a></li>
-                <li class="currentLi"><a href="#">电影</a></li>
-                <li><a href="#">影院</a></li>
-                <li><a href="#">我的</a></li>
-            </ul>
-        </div>
-    </div>
+    <%@include file="/WEB-INF/jsp/public/head.jsp"%>
     <div class="content hr">
     	<span class="directory"><a href="../WEB-INF/jsp/home/index.jsp">首页</a> > <a href="movieList">电影</a></span>
         <span class="smallTips">3步轻松购票: 1.选座购票/买券 -> 2.收电子码 -> 3.影院取票</span>

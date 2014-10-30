@@ -10,22 +10,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/window.css">
 </head>
 <body>
-    <div class="header">
-        <div class="loginRegister">
-                <a href="javascript:" id="login">登陆</a> | <a href="javascript:" id="register">注册</a>
-        </div>
-        <div class="content">
-            <h1 class="logo">
-                <a href="index.jsp">想映电影院</a>
-            </h1>
-            <ul class="nav">
-                <li class="currentLi"><a href="#">首页</a></li>
-                <li><a href="../../../jsp/movieList.jsp">电影</a></li>
-                <li><a href="#">影院</a></li>
-                <li><a href="#">我的</a></li>
-            </ul>
-        </div>
-    </div>
+   <%@include file="/WEB-INF/jsp/public/head.jsp"%>
     <div id="banner">
         <ul>
             <li><a href="index.jsp" title="banner1" style="background-image: url(${pageContext.request.contextPath}/image/banner1.jpg)"></a></li>
