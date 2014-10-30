@@ -5,6 +5,7 @@ import com.mx.popcorn.utils.Security;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.convention.annotation.Namespace;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -27,6 +28,7 @@ import java.util.UUID;
  */
 @Controller
 @Scope("prototype")
+@Namespace("/support")
 public class SupportAction extends ActionSupport {
 
     private String ueditorConfig;

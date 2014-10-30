@@ -2,6 +2,7 @@ package com.mx.popcorn.controller.web;
 
 import com.mx.popcorn.base.ModelDrivenBaseAction;
 import com.mx.popcorn.domain.Type;
+import org.apache.struts2.convention.annotation.Namespace;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -10,5 +11,6 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 @Scope("prototype")
+@Namespace("/type")
 public class TypeAction  extends ModelDrivenBaseAction<Type> {
 }
