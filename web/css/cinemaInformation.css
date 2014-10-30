@@ -168,25 +168,34 @@ a:link,a:hover,a:active,a:visited{
 
 /*购买电影票部分*/
 
-.buyTicketContent .chooseMovieTab li{
-    padding-top: 10px;
-}
+
 .chooseMovieTab{
-    padding: 10px 0;
+    margin: 20px 0 0;
+    background: #FFF6F5;
+}
+.chooseTitle{
+    float: left;
+    text-align: center;
+    background: #FFDDDC;
+    padding: 18px 20px;
+    font-size: 12px;
+    color: #666;
 }
 .chooseMovieTab .activeChoose{
-    background: #FF356C;
-    padding: 0 3px;
+    background: #EB002A;
     color: #FFF;
 }
 
 .chooseMovieTab a{
-    font-size: 14px;
-    margin-right: 20px;
+    float: left;
+    font-size: 12px;
+    margin: 13px 15px;
+    padding: 5px 8px;
 }
 
 .chooseMovieTab a:hover{
-    color: #0066FF;
+    background: #EB002A;
+    color: #FFF;
 }
 /*AJAX-电影票部分*/
 
@@ -205,10 +214,14 @@ a:link,a:hover,a:active,a:visited{
     margin-left: 30px;
     width: 800px;
 }
-.movieInformation h3{
-    color: #EB002A;
+.movieTitle{
     border-bottom: 1px solid #CCC;
     padding: 5px 0;
+}
+.movieTitle .movieName{
+    color: #EB002A;
+    font-size: 18px;
+    font-weight: bold;
 }
 .movieInformation .rating{
     font-size: 14px;
