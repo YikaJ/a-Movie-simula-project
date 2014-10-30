@@ -95,12 +95,93 @@
                                 <td class="thead-time">放映时间</td>
                                 <td class="thead-language">语言版本</td>
                                 <td class="thead-type">电影类型</td>
-                                <td class="thead-time">放映厅</td>
+                                <td class="thead-hall">放映厅</td>
                                 <td class="thead-price">现价/影院价</td>
-                                <td class="thead-buy">立即购票</td>
+                                <td class="thead-buy">选定购票</td>
                             </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody>
+                                <tr>
+                                    <td class="thead-time">
+                                        <em>20:40</em>
+                                        <p>预计22：33离场</p>
+                                    </td>
+                                    <td class="thead-language">英语</td>
+                                    <td class="thead-type">2D</td>
+                                    <td class="thead-hall">6号厅</td>
+                                    <td class="thead-price">
+                                        ￥27.00
+                                        <span class="originPrice">￥35.00</span>
+                                    </td>
+                                    <td class="thead-buy">
+                                        <a href="#" class="buyTicketBtn">立即购票</a>
+                                    </td>
+                                </tr>
+                                <tr class="tdBgColor">
+                                    <td class="thead-time">
+                                        <em>20:40</em>
+                                        <p>预计22：33离场</p>
+                                    </td>
+                                    <td class="thead-language">英语</td>
+                                    <td class="thead-type">2D</td>
+                                    <td class="thead-hall">6号厅</td>
+                                    <td class="thead-price">
+                                        ￥27.00
+                                        <span class="originPrice">￥35.00</span>
+                                    </td>
+                                    <td class="thead-buy">
+                                        <a href="#" class="buyTicketBtn">立即购票</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="thead-time">
+                                        <em>20:40</em>
+                                        <p>预计22：33离场</p>
+                                    </td>
+                                    <td class="thead-language">英语</td>
+                                    <td class="thead-type">2D</td>
+                                    <td class="thead-hall">6号厅</td>
+                                    <td class="thead-price">
+                                        ￥27.00
+                                        <span class="originPrice">￥35.00</span>
+                                    </td>
+                                    <td class="thead-buy">
+                                        <a href="#" class="buyTicketBtn">立即购票</a>
+                                    </td>
+                                </tr>
+                                <tr class="tdBgColor">
+                                    <td class="thead-time">
+                                        <em>20:40</em>
+                                        <p>预计22：33离场</p>
+                                    </td>
+                                    <td class="thead-language">英语</td>
+                                    <td class="thead-type">2D</td>
+                                    <td class="thead-hall">6号厅</td>
+                                    <td class="thead-price">
+                                        ￥27.00
+                                        <span class="originPrice">￥35.00</span>
+                                    </td>
+                                    <td class="thead-buy">
+                                        <a href="#" class="buyTicketBtn">立即购票</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="thead-time">
+                                        <em>20:40</em>
+                                        <p>预计22：33离场</p>
+                                    </td>
+                                    <td class="thead-language">英语</td>
+                                    <td class="thead-type">2D</td>
+                                    <td class="thead-hall">6号厅</td>
+                                    <td class="thead-price">
+                                        ￥27.00
+                                        <span class="originPrice">￥35.00</span>
+                                    </td>
+                                    <td class="thead-buy">
+                                        <a href="#" class="buyTicketBtn">立即购票</a>
+                                    </td>
+                                </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>

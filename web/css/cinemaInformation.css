@@ -168,16 +168,10 @@ a:link,a:hover,a:active,a:visited{
 
 /*购买电影票部分*/
 
-/*.buyTicketContent{
-    border-bottom: 1px solid #BBB;
-    padding: 10px 0px;
-}*/
-
 .buyTicketContent .chooseMovieTab li{
     padding-top: 10px;
 }
 .chooseMovieTab{
-    border-bottom: 1px solid #BBB;
     padding: 10px 0;
 }
 .chooseMovieTab .activeChoose{
@@ -197,8 +191,8 @@ a:link,a:hover,a:active,a:visited{
 /*AJAX-电影票部分*/
 
 .movieContent{
-    border-top: 1px solid #CCC;
-    padding: 20px   ;
+    border: 1px solid #EEE;
+    padding: 18px   ;
 }
 
 .movieContent img{
@@ -213,7 +207,7 @@ a:link,a:hover,a:active,a:visited{
 }
 .movieInformation h3{
     color: #EB002A;
-    border-bottom: 1px solid #DDD;
+    border-bottom: 1px solid #CCC;
     padding: 5px 0;
 }
 .movieInformation .rating{
@@ -233,6 +227,7 @@ a.moreDetail:hover{
     margin-right: -10px;
 }
 /*购票区域*/
+/*购票头部*/
 .ticketTable{
     width: 100%;
 }
@@ -240,6 +235,56 @@ a.moreDetail:hover{
     background: #EAEAEA;
     text-align: center;
     padding: 10px 0;
+    color: #333;
+}
+.thead-price{
+    width: 300px;
+}
+.thead-buy{
+    width: 180px;
+}
+/*购票tbody*/
+tbody td{
+    text-align: center;
+    color: #888;
+    padding: 8px 0;
+}
+tbody .thead-time{
+    font-size: 18px;
+    font-weight: bold;
+}
+tbody .thead-time p{
+    color: #666;
+    font-size: 12px;
+    font-weight: normal;
+}
+tbody .thead-price{
+    color: #EB002A;
+    font-size: 18px;
+    font-weight: bold;
+}
+.originPrice{
+    font-size: 14px;
+    color: #777;
+    text-decoration: line-through;
+}
+
+a.buyTicketBtn{
+    background: #F42429;
+    display: block;
+    margin: 0 auto;
+    width: 130px;
+    height: 30px;
+    line-height: 30px;
+    color: #FFF;
+    font-weight: bold;
+}
+a.buyTicketBtn:hover{
+    box-shadow: 0 0 10px #EB002A;
+}
+
+.tdBgColor{
+    background: #F6F6F6;
 }
 
 /*脚部区域*/
