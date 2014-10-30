@@ -7,14 +7,14 @@
 <title>电影院</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
-<link rel="stylesheet" type="text/css" href="../css/reset.css">
-<link href="../css/movieList.css" rel="stylesheet" type="text/css">
-<link href="../css/window.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../../../css/reset.css">
+<link href="../../../css/movieList.css" rel="stylesheet" type="text/css">
+<link href="../../../css/window.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <%@include file="/WEB-INF/jsp/public/head.jsp"%>
     <div class="content hr">
-    	<span class="directory"><a href="../WEB-INF/jsp/home/index.jsp">首页</a> > <a href="movieList">电影</a></span>
+    	<span class="directory"><a href="../home/index.jsp">首页</a> > <a href="movieList">电影</a></span>
         <span class="smallTips">3步轻松购票: 1.选座购票/买券 -> 2.收电子码 -> 3.影院取票</span>
     </div>
     <div class="details content">
@@ -27,61 +27,61 @@
                 <ul class="movieList fl">
                     <li>
                         <a href="movieInformation.jsp">
-                            <img src="../image/hotOn%20(1).jpg">
+                            <img src="../../../image/hotOn%20(1).jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
                         <a href="movieInformation.jsp">
-                            <img src="../image/hotOn%20(2).jpg">
+                            <img src="../../../image/hotOn%20(2).jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
                         <a href="movieInformation.jsp">
-                            <img src="../image/hotOn%20(3).jpg">
+                            <img src="../../../image/hotOn%20(3).jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
                         <a href="movieInformation.jsp">
-                            <img src="../image/hotOn%20(4).jpg">
+                            <img src="../../../image/hotOn%20(4).jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
                         <a href="movieInformation.jsp">
-                            <img src="../image/hotOn%20(5).jpg">
+                            <img src="../../../image/hotOn%20(5).jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
                         <a href="movieInformation.jsp">
-                            <img src="../image/hotOn%20(1).jpg">
+                            <img src="../../../image/hotOn%20(1).jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
                         <a href="movieInformation.jsp">
-                            <img src="../image/hotOn%20(2).jpg">
+                            <img src="../../../image/hotOn%20(2).jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
                         <a href="movieInformation.jsp">
-                            <img src="../image/hotOn%20(3).jpg">
+                            <img src="../../../image/hotOn%20(3).jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
                         <a href="movieInformation.jsp">
-                            <img src="../image/hotOn%20(4).jpg">
+                            <img src="../../../image/hotOn%20(4).jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
                         <a href="movieInformation.jsp">
-                            <img src="../image/hotOn%20(5).jpg">
+                            <img src="../../../image/hotOn%20(5).jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
@@ -95,19 +95,19 @@
             </h4>
             <ul>
                 <li>
-                    <a href="../WEB-INF/jsp/home/index.jsp">《黄飞鸿》发英雄之战终极预告 颜值战斗值爆表</a>
+                    <a href="../home/index.jsp">《黄飞鸿》发英雄之战终极预告 颜值战斗值爆表</a>
                 </li>
                 <li>
-                    <a href="../WEB-INF/jsp/home/index.jsp">导演价值排行榜姜文拔头筹 徐静蕾唯一上榜女性</a>
+                    <a href="../home/index.jsp">导演价值排行榜姜文拔头筹 徐静蕾唯一上榜女性</a>
                 </li>
                 <li>
-                    <a href="../WEB-INF/jsp/home/index.jsp">《大话西游》曝爱情版预告 经典影片重回大银幕</a>
+                    <a href="../home/index.jsp">《大话西游》曝爱情版预告 经典影片重回大银幕</a>
                 </li>
                 <li>
-                    <a href="../WEB-INF/jsp/home/index.jsp">高圆圆新片暴打古天乐 谈婚姻：要选对的人</a>
+                    <a href="../home/index.jsp">高圆圆新片暴打古天乐 谈婚姻：要选对的人</a>
                 </li>
                 <li>
-                    <a href="../WEB-INF/jsp/home/index.jsp">广电总局：吸毒嫖娼者损害行业形象 绝不容忍</a>
+                    <a href="../home/index.jsp">广电总局：吸毒嫖娼者损害行业形象 绝不容忍</a>
                 </li>
             </ul>
         </div>
@@ -132,6 +132,6 @@
             }
         }
     </script>
-    <script src="../js/require.js" data-main="../js/main.js"></script>
+    <script src="../../../js/require.js" data-main="../js/main.js"></script>
 </body>
 </html>

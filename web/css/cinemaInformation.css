@@ -1,0 +1,252 @@
+/*common*/
+.content{
+    width: 990px;
+    margin: 0 auto;
+    position: relative;
+}
+
+body,a,li{
+    font-family: "微软雅黑";
+    text-decoration: none;
+    list-style: none;
+    font-size: 16px;
+}
+a:link,a:hover,a:active,a:visited{
+    text-decoration: none;
+    color: #666;
+}
+/*账户信息*/
+
+.loginRegister{
+    font-size: 14px;
+    position: absolute;
+    right: 10%;
+    background: #FF3558;
+    color: #000;
+    border-radius: 0px 0px 10px 10px;
+    z-index: 9000;
+}
+.loginRegister a{
+    color: #FFF;
+    padding: 10px;
+    line-height: 30px;
+}
+
+
+.loginRegister a:hover{
+    color: #000;
+}
+
+
+/*header*/
+
+.header{
+    height: 100px;
+    width: 100%;
+    border-bottom: 3px solid #EB002A;
+    position: relative;
+}
+
+.logo{
+    text-indent: -999px;
+    display: block;
+}
+.logo a{
+    float: left;
+    height: 100px;
+    width: 305px;
+    background: url(../image/logo.png) no-repeat left center;
+    display: inline;
+}
+/*导航栏*/
+.nav {
+    float: left;
+    display: inline;
+    margin-left: 120px;
+    padding-top: 40px;
+}
+
+.nav li{
+    float: left;
+    margin-right: 45px;
+}
+
+.nav li:hover{
+    border-bottom: 3px solid #EB002A;
+}
+
+.currentLi{
+    border-bottom: 3px solid #EB002A;
+}
+
+.currentLi a{
+    color: #EB002A;
+}
+
+.nav a{
+    display: block;
+    font-size: 20px;
+    padding: 8px 20px;
+}
+
+.nav a:hover{
+    color: #EB002A;
+}
+
+/*内容区域*/
+.cinemaInformation{
+    background: url(../image/backgroundImg.jpg) no-repeat;
+    margin-bottom: 20px;
+    padding: 20px 0;
+}
+
+.cinemaTitle{
+    color: #FFF;
+    font-size: 20px;
+    padding: 0 0 10px;
+    border-bottom: 1px solid #DFDFDF;
+    margin-bottom: 20px;
+}
+
+
+.rating{
+    margin-left: 20px;
+    color: #EB002A;
+}
+
+.poster{
+    float: left;
+    width: 300px;
+}
+.cinemaDetail{
+    float: left;
+    width: 400px;
+    margin-left: 50px;
+}
+.cinemaDetail li{
+    color: #F5F5F5;
+    font-size: 16px;
+    padding: 0 10px 20px;
+}
+.cinemaDetail li a{
+    font-size: 14px;
+    color: #EB002A;
+}
+
+
+/*TAB标签栏*/
+.tabWrap{
+    width: 100%;
+}
+
+.cinemaTab{
+    background: #F9F9F9;
+}
+
+.cinemaTab ul{
+    border-bottom: 1px solid #FF5B78;
+}
+
+.cinemaTab li{
+    float: left;
+    font-weight: 600;
+}
+
+.cinemaTab a{
+    display: block;
+    padding: 12px 30px;
+}
+
+.cinemaTab .currentTab{
+    background: #EB002A;
+    border: 1px solid #EB002A;
+}
+
+.cinemaTab .currentTab a{
+    color: #FFF;
+}
+
+/*购买电影票部分*/
+
+/*.buyTicketContent{
+    border-bottom: 1px solid #BBB;
+    padding: 10px 0px;
+}*/
+
+.buyTicketContent .chooseMovieTab li{
+    padding-top: 10px;
+}
+.chooseMovieTab{
+    border-bottom: 1px solid #BBB;
+    padding: 10px 0;
+}
+.chooseMovieTab .activeChoose{
+    background: #FF356C;
+    padding: 0 3px;
+    color: #FFF;
+}
+
+.chooseMovieTab a{
+    font-size: 14px;
+    margin-right: 20px;
+}
+
+.chooseMovieTab a:hover{
+    color: #0066FF;
+}
+/*AJAX-电影票部分*/
+
+.movieContent{
+    border-top: 1px solid #CCC;
+    padding: 20px   ;
+}
+
+.movieContent img{
+    width: 120px;
+    float: left;
+}
+
+.movieInformation{
+    float: left;
+    margin-left: 30px;
+    width: 800px;
+}
+.movieInformation h3{
+    color: #EB002A;
+    border-bottom: 1px solid #DDD;
+    padding: 5px 0;
+}
+.movieInformation .rating{
+    font-size: 14px;
+}
+.movieInformation li{
+    font-size: 13px;
+    margin: 4px 0;
+    color: #333;
+}
+a.moreDetail{
+    color: #EB002A;
+    font-size: 12px;
+    font-weight: normal;
+}
+a.moreDetail:hover{
+    margin-right: -10px;
+}
+/*购票区域*/
+.ticketTable{
+    width: 100%;
+}
+.ticketTable thead td{
+    background: #EAEAEA;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/*脚部区域*/
+.footer{
+    width: 100%;
+    height: 200px;
+    background: #2b2b2b;
+    border-top: 2px solid #d21438;
+}
+

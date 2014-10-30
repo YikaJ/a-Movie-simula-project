@@ -26,11 +26,11 @@
             <a class="moreFirm" href="javascript:">查看全部 ></a>
         </div>
         <ul class="movieList">
-            <li><a href="../../../jsp/movieInformation.jsp"><img src="${pageContext.request.contextPath}/image/hotOn%20(1).jpg"><span class="buyTicket">立即购票</span></a></li>
-            <li><a href="../../../jsp/movieInformation.jsp"><img src="${pageContext.request.contextPath}/image/hotOn%20(2).jpg"><span class="buyTicket">立即购票</span></a></li>
-            <li><a href="../../../jsp/movieInformation.jsp"><img src="${pageContext.request.contextPath}/image/hotOn%20(3).jpg"><span class="buyTicket">立即购票</span></a></li>
-            <li><a href="../../../jsp/movieInformation.jsp"><img src="${pageContext.request.contextPath}/image/hotOn%20(4).jpg"><span class="buyTicket">立即购票</span></a></li>
-            <li><a href="../../../jsp/movieInformation.jsp"><img src="${pageContext.request.contextPath}/image/hotOn%20(5).jpg"><span class="buyTicket">立即购票</span></a></li>
+            <li><a href="../movie/movieInformation.jsp"><img src="${pageContext.request.contextPath}/image/hotOn%20(1).jpg"><span class="buyTicket">立即购票</span></a></li>
+            <li><a href="../movie/movieInformation.jsp"><img src="${pageContext.request.contextPath}/image/hotOn%20(2).jpg"><span class="buyTicket">立即购票</span></a></li>
+            <li><a href="../movie/movieInformation.jsp"><img src="${pageContext.request.contextPath}/image/hotOn%20(3).jpg"><span class="buyTicket">立即购票</span></a></li>
+            <li><a href="../movie/movieInformation.jsp"><img src="${pageContext.request.contextPath}/image/hotOn%20(4).jpg"><span class="buyTicket">立即购票</span></a></li>
+            <li><a href="../movie/movieInformation.jsp"><img src="${pageContext.request.contextPath}/image/hotOn%20(5).jpg"><span class="buyTicket">立即购票</span></a></li>
         </ul>
         <ul class="movieList" style="display: none"></ul>
     </div>
