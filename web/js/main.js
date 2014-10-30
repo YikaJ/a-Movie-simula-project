@@ -10,33 +10,53 @@
  */
 require.config({
 	paths: {
-		jquery: "jquery-1.11.1.min"
+		jquery: "jquery-1.11.1.min",
+        validate: "jquery.validate.min"
 	}
 });
 
 require(["jquery", "autoplay","window"], function ($, a, w) {
-	new a.Autoplay().autoplay({
-		box: $("#banner"),
-		hasArrow: true,
-		hasButton: true,
-		changeSpeed: 600,
-		time4Interval: 4000,
-		arrowTrigger: "click",
-		buttonTrigger: "mouseover"
-	})
+    new a.Autoplay().autoplay({
+        box: $("#banner"),
+        hasArrow: true,
+        hasButton: true,
+        changeSpeed: 600,
+        time4Interval: 4000,
+        arrowTrigger: "click",
+        buttonTrigger: "mouseover"
+    });
 
-	$("#login").click(function(){
-		new w.Window().login({
-			box: $(window),
-			title: "立即登录",
-			hasMask: true,
-			fixed: false,
-			fadeIn: false,
-			height: 300,
-			width: 400,
-			autoRemoved: false,
-			time4Removed: 0
-		})
-	});
+    $("#login").click(function () {
+        new w.Window().login({
+            box: $(window),
+            title: "立即登录",
+            hasMask: true,
+            fixed: false,
+            fadeIn: false,
+            height: 285,
+            width: 400,
+            time4Removed: 0
+        })
+    });
 
-})
+    $("#register").click(function () {
+        new w.Window().register({
+            box: $(window),
+            title: "立即注册",
+            hasMask: true,
+            fixed: false,
+            fadeIn: false,
+            height: 420,
+            width: 380,
+            time4Removed: 0,
+            rules4RegisterUser: "输入内容的长度限制在3-15个字符哦",
+            rules4RegisterPwd: "请输入至少6位的密码哟",
+            rules4RegisterEmail: "请输入正确格式的电子邮箱",
+            rules4RegisterPwdAgain: "两次输入的密码不一致",
+            serviceURL: "#",
+            text4Service: "《爆米花用户协议》"
+        })
+    });
+});
+
+

@@ -20,7 +20,7 @@
 }
 body,a,li{
     color: #666;
-    font-family: 微软雅黑;
+    font-family:"微软雅黑";
     text-decoration: none;
     list-style: none;
     font-size: 16px;
@@ -37,7 +37,7 @@ a:link,a:hover,a:active,a:visited{
     right: 10%;
     background: #FF3558;
     color: #000;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 0 0 10px 10px;
     z-index: 9000;
 }
 .loginRegister a{
@@ -122,7 +122,7 @@ a:link,a:hover,a:active,a:visited{
 
 #banner ul{
     position: absolute;
-    left: 0px;
+    left: 0;
 }
 
 
@@ -132,7 +132,6 @@ a:link,a:hover,a:active,a:visited{
     background-repeat: no-repeat;
     background-position: center;
     height: 360px;
-    float: left;
 }
 
 /*电影列表部分*/
@@ -167,7 +166,7 @@ a.moreFirm,a.moreCinema,a.moreNews{
 }
 a.moreFirm:hover,a.moreCinema:hover,a.moreNews:hover{
     color: #F2002A;
-    margin-right: 0px;
+    margin-right: 0;
 }
 
 .movieList{
@@ -191,7 +190,7 @@ a.moreFirm:hover,a.moreCinema:hover,a.moreNews:hover{
     height: 225px;
 }
 .movieList .buyTicket{
-    padding: 5px 0px;
+    padding: 5px 0;
     font-size: 14px;
     width: 160px;
     display: block;
@@ -202,7 +201,7 @@ a.moreFirm:hover,a.moreCinema:hover,a.moreNews:hover{
     line-height: 30px;
 }
 .movieList span.buyTicket:hover{
-    box-shadow: 0px 0px 10px #FFF inset;
+    box-shadow: 0 0 10px #FFF inset;
 }
 
 
@@ -224,7 +223,7 @@ a.moreFirm:hover,a.moreCinema:hover,a.moreNews:hover{
 
 .rank h4{
     border-bottom: 1px solid #999;
-    padding: 8px 0px;
+    padding: 8px 0;
     color: #262721;
 }
 
@@ -244,7 +243,7 @@ a.moreFirm:hover,a.moreCinema:hover,a.moreNews:hover{
 
 /*票房冠军排行*/
 .firmList li{
-    padding: 20px 0px;
+    padding: 20px 0;
 }
 
 
@@ -280,7 +279,7 @@ a.moreFirm:hover,a.moreCinema:hover,a.moreNews:hover{
 }
 
 .activeList a.buyTicket:hover{
-    box-shadow: 0px 0px 10px #FF2F53;
+    box-shadow: 0 0 10px #FF2F53;
 }
 
 .rank .activeList  img{
@@ -307,7 +306,7 @@ a.moreFirm:hover,a.moreCinema:hover,a.moreNews:hover{
 }
 
 .activeList .movieTitle,.activeList .rating,.activeList .buyTicket{
-    margin: 5px 0px;
+    margin: 5px 0;
 }
 
 /*影院排行*/
@@ -339,7 +338,7 @@ a.moreFirm:hover,a.moreCinema:hover,a.moreNews:hover{
 }
 
 .cinemaList li{
-    padding: 10px 0px;
+    padding: 10px 0;
 }
 
 /*影院hover的时候*/
@@ -358,14 +357,14 @@ a.moreFirm:hover,a.moreCinema:hover,a.moreNews:hover{
 }
 
 .activeList a.goCinema:hover{
-    box-shadow: 0px 0px 10px #FF1740;
+    box-shadow: 0 0 10px #FF1740;
 }
 
 
 /*周边新闻*/
 
 .movieNewsList li{
-    padding: 10px 0px;
+    padding: 10px 0;
 }
 
 .movieNewsList a{
