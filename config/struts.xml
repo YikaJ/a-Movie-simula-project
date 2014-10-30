@@ -13,7 +13,6 @@
     <constant name="struts.configuration.xml.reload" value="true"/>
     <constant name="struts.ui.theme" value="simple"/>
     <constant name="struts.ognl.allowStaticMethodAccess" value="true"/>
-    <constant name="struts.convention.result.path" value="/WEB-INF/jsp"/>
     <constant name="struts.convention.package.locators" value="controller"/>
     <constant name="struts.multipart.maxSize" value="10485760"/>
 

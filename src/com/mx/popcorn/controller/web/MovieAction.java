@@ -17,7 +17,7 @@ import org.springframework.stereotype.Controller;
 @Namespace("/movie")
 public class MovieAction  extends ModelDrivenBaseAction<Movie> {
 
-    @Action(value = "index", results = @Result(location = "/movie/movieInformation.jsp"))
+    @Action(value = "index", results = @Result(location = "/WEB-INF/jsp/movie/movieList.jsp"))
     public String index(){
         try {
             return SUCCESS;

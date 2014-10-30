@@ -1,9 +1,14 @@
 package com.mx.popcorn.base;
 
 
+import com.mx.popcorn.domain.Schedule;
 import com.mx.popcorn.domain.User;
+import com.mx.popcorn.service.*;
+import com.mx.popcorn.service.imp.GradeServiceImp;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.ServletActionContext;
+
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -15,11 +20,35 @@ public class BaseAction extends ActionSupport {
 
     /*=========================注入service==============================*/
 
+    @Resource
+    protected CinemaService cinemaService;
+    @Resource
+    protected CommentService commentService;
+    @Resource
+    protected GradeService gradeService;
+    @Resource
+    protected HallService hallService;
+    @Resource
+    protected MovieService movieService;
+    @Resource
+    protected MovieNewService movieNewService;
+    @Resource
+    protected OrderService orderService;
+    @Resource
+    protected ScheduleService scheduleService;
+    @Resource
+    protected SpaceService spaceService;
+    @Resource
+    protected UserService userService;
+
+     /*===============================常量===============================*/
+    public static final String USER_SESSION = "user";
+    public static final String REFERER = "referer";
 
     /*=============================返回值=================================*/
     public static final String NOTHING = "nothing";
-    public static final String NOT_FIND = "not_find";
     public static final String FORBID = "forbid";
+    public static final String HOME = "home";
 
     /*=========================分页支持==============================*/
     protected int pageNum = 1;

@@ -17,7 +17,7 @@
         </h1>
         <ul class="nav">
             <li class="currentLi"><a href="${pageContext.request.contextPath}/index.do">首页</a></li>
-            <li><a href="../../../jsp/movieList.jsp">电影</a></li>
+            <li><a href="${pageContext.request.contextPath}/movie/index.do">电影</a></li>
             <li><a href="#">影院</a></li>
             <li><a href="#">我的</a></li>
         </ul>
