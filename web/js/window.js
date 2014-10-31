@@ -50,20 +50,20 @@ define(["jquery", "widget", "validate"], function ($, w){
                         passwordLabel = "请输入密码";
                     }
                     /*登陆主体*/
-                    this.cfg.content = "<form action='#' method='post' id='window_login'><input type='text' placeholder=" +
-                    this.cfg.text4loginUserPlaceholder + " class='window_userInput window_formInput' name='window_loginUser' required><label class='window_inputError'>"+
+                    this.cfg.content = "<form action='/user/login.do' method='POST' id='window_login'><input type='text' placeholder=" +
+                    this.cfg.text4loginUserPlaceholder + " class='window_userInput window_formInput' name='nick' required><label class='window_inputError'>"+
                     userLabel +"</label><input type='password' placeholder=" +
-                    this.cfg.text4loginPwdPlaceholder + " class='window_passwordInput window_formInput' name='window_loginPwd' required><label class='window_inputError'>"+
-                    passwordLabel +"</label><div class='window_loginOthers'><a href='javascript:' class='window_toRegister fl'>还没注册？</a><a href='#' class='window_forgotPwd fr'>忘记密码</a></div><input type='submit' class='window_submitBtn' value='登陆'></form>";
+                    this.cfg.text4loginPwdPlaceholder + " class='window_passwordInput window_formInput' name='L_originPwd' required id='L_originPwd'><label class='window_inputError' for='L_originPwd'>"+
+                    passwordLabel +"</label><div class='window_loginOthers'><a href='javascript:' class='window_toRegister fl'>还没注册？</a><a href='#' class='window_forgotPwd fr'>忘记密码</a></div><input type='submit' class='window_submitBtn' value='登陆'><input type='hidden' id='L_pwd' name='password'></form>";
 				break;
 
                 case "register":
-                    this.cfg.content = "<form action='#' method='post' id='window_register'><input type='text' class='window_userInput window_formInput' name='window_registerUser' required><label class='window_inputError' for='window_registerUser'>" +
-                    this.cfg.text4RegisterUser +"</label><input type='password' class='window_passwordInput window_formInput' id='password' name='window_registerPwd' required><label class='window_inputError' for='window_registerPwd'>" +
-                    this.cfg.rules4RegisterPwd +"</label><input type='password' class='window_passwordInput window_formInput' name='window_registerPwdAgain' required><label class='window_inputError' for='window_registerPwdAgain'>请再一次输入密码</label><input type='email' required name='window_registerEmail' class='window_emailInput window_formInput'><label class='window_inputError' for='window_registerEmail'>" +
-                    this.cfg.rules4RegisterEmail +"</label><div class='window_registerOthers'><input type='checkbox' name='registerService' checked='checked'>我已阅读并同意<a href=" +
+                    this.cfg.content = "<form action='/user/register.do' method='post' id='window_register'><input type='text' class='window_userInput window_formInput' name='nick' required><label class='window_inputError' for='window_registerUser'>" +
+                    this.cfg.text4RegisterUser +"</label><input type='password' class='window_passwordInput window_formInput' id='R_originPwd'  name='originPwd' required='required'><label class='window_inputError' for='R_originPwd'>" +
+                    this.cfg.rules4RegisterPwd +"</label><input type='password' class='window_passwordInput window_formInput'  required='required' id='R_originPwd1' name='originPwd1'><label class='window_inputError' for='R_originPwd1'>请再一次输入密码</label><input type='email' required name='email' class='window_emailInput window_formInput'><label class='window_inputError' for='R_email'>" +
+                    this.cfg.rules4RegisterEmail +"</label><div class='window_registerOthers'><input type='checkbox' name='R_service' checked='checked'>我已阅读并同意<a href=" +
                     this.cfg.serviceURL +" class='window_registerService'>" +
-                    this.cfg.text4Service +"</a></div><input type='submit' class='window_submitBtn' value='注册'></form>";
+                    this.cfg.text4Service +"</a></div><input type='hidden' name='password' id='R_pwd'><input type='submit' class='window_submitBtn' value='注册'></form>";
                     break;
 			}
 			//弹窗的总体结构，包括头部、内容和底部按钮
@@ -109,34 +109,24 @@ define(["jquery", "widget", "validate"], function ($, w){
                     $("#register").click();
                 })
 			}
-			/*if(!("placeholder" in document.createElement("input"))) {
-                if (this.cfg.winType == "login") {
-                    *//*用户窗口*//*
-                    userLogin.val(this.cfg.text4loginUserPlaceholder)
-                    .focus(function () {
-                        if ($(this).val() === self.cfg.text4loginUserPlaceholder) {
-                            $(this).val("");
-                        }
-                    })
-                }
-            }*/
+
             /*Validate验证信息*/
             switch (this.cfg.winType) {
                 case "login":
                     $("#window_login").validate({
                         rules: {
-                            window_loginUser: {
+                            nick: {
                                 required: true
                             },
-                            window_loginPwd: {
+                            L_loginPwd: {
                                 required: true
                             }
                         },
                         messages: {
-                            window_loginUser: {
+                            nick: {
                                 required: "忘记填写账号啦！"
                             },
-                            window_loginPwd: {
+                            L_loginPwd: {
                                 required: "记得填写密码哟！"
                             }
                         },
@@ -149,20 +139,20 @@ define(["jquery", "widget", "validate"], function ($, w){
                 case "register":
                     $("#window_register").validate({
                         rules: {
-                            window_registerUser: {
+                            nick: {
                                 required: true,
                                 rangelength: [3,15]
                             },
-                            window_registerPwd: {
+                            originPwd: {
                                 required: true,
                                 minlength: 6
                             },
-                            window_registerPwdAgain:{
+                            originPwd1:{
                                 required: true,
                                 minlength: 6,
-                                equalTo: "#password"
+                                equalTo: "#R_originPwd"
                             },
-                            window_registerEmail: {
+                            email: {
                                 email: true,
                                 required: true
                             },
@@ -171,20 +161,20 @@ define(["jquery", "widget", "validate"], function ($, w){
                             }
                         },
                         messages: {
-                            window_registerUser: {
+                            nick: {
                                 required:  this.cfg.rules4RegisterUser,
                                 rangelength: this.cfg.rules4RegisterUser
                             },
-                            window_registerPwd: {
+                            originPwd: {
                                 required:  this.cfg.rules4RegisterPwd,
                                 minlength: this.cfg.rules4RegisterPwd
                             },
-                            window_registerPwdAgain: {
+                            originPwd1: {
                                 required:  this.cfg.rules4RegisterPwd,
                                 minlength: this.cfg.rules4RegisterPwd,
                                 equalTo: this.cfg.rules4RegisterPwdAgain
                             },
-                            window_registerEmail: {
+                            email: {
                                 required: this.cfg.rules4RegisterEmail
                             },
                             registerService: {

@@ -33,7 +33,7 @@ require(["jquery", "autoplay","window"], function ($, a, w) {
             hasMask: true,
             fixed: false,
             fadeIn: false,
-            height: 285,
+            height: 315,
             width: 400,
             time4Removed: 0
         })
@@ -46,8 +46,8 @@ require(["jquery", "autoplay","window"], function ($, a, w) {
             hasMask: true,
             fixed: false,
             fadeIn: false,
-            height: 420,
-            width: 380,
+            height: 460,//不可改变
+            width: 500,
             time4Removed: 0,
             rules4RegisterUser: "输入内容的长度限制在3-15个字符哦",
             rules4RegisterPwd: "请输入至少6位的密码哟",
