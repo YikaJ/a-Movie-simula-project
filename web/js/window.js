@@ -133,6 +133,13 @@ define(["jquery", "widget", "validate"], function ($, w){
                         /*修改错误出现的地方*/
                         errorPlacement: function (error, element) {
                             element.next().html(error);
+                        },
+                        /*MD5加密*/
+                        submitHandler:function(form){
+                            var $password = $("#L_originPwd");
+                            $("#L_pwd").val($.md5($password.val()));
+                            $password.attr("disabled", "disabled");
+                            form.submit();
                         }
                     });
                     break;
@@ -141,13 +148,13 @@ define(["jquery", "widget", "validate"], function ($, w){
                         rules: {
                             nick: {
                                 required: true,
-                                rangelength: [3,15]
+                                rangelength: [3, 15]
                             },
                             originPwd: {
                                 required: true,
                                 minlength: 6
                             },
-                            originPwd1:{
+                            originPwd1: {
                                 required: true,
                                 minlength: 6,
                                 equalTo: "#R_originPwd"
@@ -162,15 +169,15 @@ define(["jquery", "widget", "validate"], function ($, w){
                         },
                         messages: {
                             nick: {
-                                required:  this.cfg.rules4RegisterUser,
+                                required: this.cfg.rules4RegisterUser,
                                 rangelength: this.cfg.rules4RegisterUser
                             },
                             originPwd: {
-                                required:  this.cfg.rules4RegisterPwd,
+                                required: this.cfg.rules4RegisterPwd,
                                 minlength: this.cfg.rules4RegisterPwd
                             },
                             originPwd1: {
-                                required:  this.cfg.rules4RegisterPwd,
+                                required: this.cfg.rules4RegisterPwd,
                                 minlength: this.cfg.rules4RegisterPwd,
                                 equalTo: this.cfg.rules4RegisterPwdAgain
                             },
@@ -183,13 +190,22 @@ define(["jquery", "widget", "validate"], function ($, w){
                         },
                         /*修改错误出现的地方*/
                         errorPlacement: function (error, element) {
-                           if(element.attr("name") == "registerService"){
+                            if (element.attr("name") == "registerService") {
                                 element.parent().append(error);
-                            }else {
-                               element.next().html(error);
-                           }
+                            } else {
+                                element.next().html(error);
+                            }
+                        },
+                        /*MD5加密*/
+                        submitHandler: function (form) {
+                            var $password = $("#R_originPwd");
+                            var $password1 = $("#R_originPwd1");
+                            $("#R_pwd").val($.md5($password.val()));
+                            $password.attr("disabled", "disabled");
+                            $password1.attr("disabled", "disabled");
+                            form.submit();
                         }
-                    });
+                    })
                 break;
             }
 		},
