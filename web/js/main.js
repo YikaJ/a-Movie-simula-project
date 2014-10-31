@@ -35,7 +35,9 @@ require(["jquery", "autoplay","window"], function ($, a, w) {
             fadeIn: false,
             height: 315,
             width: 400,
-            time4Removed: 0
+            text4loginUserPlaceholder: "请输入您的注册邮箱",
+            text4loginPwdPlaceholder: "请输入您的密码",
+            text4autoLogin: "七天内自动登陆"
         })
     });
 

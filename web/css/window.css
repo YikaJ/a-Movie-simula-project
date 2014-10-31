@@ -62,7 +62,7 @@
 
     .window_userInput{
         background-position: 7px -55px;
-        margin-top: 30px;
+        margin-top: 20px;
     }
     .window_passwordInput{
         background-position: 7px -121px;
@@ -126,10 +126,17 @@
 
 /*有关登陆方面*/
 /*立即注册和忘记密码*/
+.window_loginAuto{
+    font-size: 12px;
+    text-align: right;
+    margin-top: -10px;
+}
 .window_loginOthers{
     margin-top: 5px;
+    margin-bottom: -5px;
     overflow: hidden;
-    padding: 0 20px;
+    padding: 0 00px;
+    font-size: 12px;
 }
 
 a.window_toRegister, a.window_forgotPwd{
@@ -150,6 +157,9 @@ a.window_toRegister:hover, a.window_forgotPwd:hover{
 .window_registerOthers .window_registerService{
     color: #39B94E;
     font-size: 12px;
+}
+.window_registerOthers .window_registerService:hover{
+    text-decoration: underline;
 }
 
 

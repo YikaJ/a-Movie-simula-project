@@ -25,7 +25,8 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
             rules4RegisterPwd: "请输入用户密码",
             rules4RegisterEmail: "请输入正确格式的电子邮箱",
             rules4RegisterPwdAgain: "两次输入的结果不一致",
-            text4RegisterUser:"请输入你的昵称，长度为3-15"
+            text4RegisterUser:"请输入你的昵称，长度为3-15",
+            text4autoLogin: "允许自动登录"
 		}
 	}
 
@@ -46,23 +47,24 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
                         userLabel = "";
                         passwordLabel = "";
                     }else{
-                        userLabel = "请输入账号";
-                        passwordLabel = "请输入密码";
+                        userLabel = this.cfg.text4loginUserPlaceholder;
+                        passwordLabel = this.cfg.text4loginPwdPlaceholder;
                     }
                     /*登陆主体*/
-                    this.cfg.content = "<form action='/user/login.do' method='POST' id='window_login'><input type='text' placeholder=" +
-                    this.cfg.text4loginUserPlaceholder + " class='window_userInput window_formInput' name='nick' required><label class='window_inputError'>"+
+                    this.cfg.content = "<form action='/user/login.do' method='POST' id='window_login'><input type='email' placeholder=" +
+                    this.cfg.text4loginUserPlaceholder + " class='window_emailInput window_formInput' name='email' required><label class='window_inputError'>"+
                     userLabel +"</label><input type='password' placeholder=" +
                     this.cfg.text4loginPwdPlaceholder + " class='window_passwordInput window_formInput' name='L_originPwd' required id='L_originPwd'><label class='window_inputError' for='L_originPwd'>"+
-                    passwordLabel +"</label><div class='window_loginOthers'><a href='javascript:' class='window_toRegister fl'>还没注册？</a><a href='#' class='window_forgotPwd fr'>忘记密码</a></div><input type='hidden' id='L_pwd' name='password'><input type='submit' class='window_submitBtn' value='登陆'></form>";
+                    passwordLabel +"</label><div class='window_loginAuto'><input type='checkbox' id='loginAuto' name='loginAuto' style='vertical-align:middle;'><label style='vertical-align:middle;' for='loginAuto'>" +
+                    this.cfg.text4autoLogin + "</label></div><div class='window_loginOthers'><a href='javascript:' class='window_toRegister fl'>还没注册？</a><a href='#' class='window_forgotPwd fr'>忘记密码</a></div><input type='hidden' id='L_pwd' name='password'><input type='submit' class='window_submitBtn' value='登陆'></form>";
 				break;
 
                 case "register":
                     this.cfg.content = "<form action='/user/register.do' method='post' id='window_register'><input type='text' class='window_userInput window_formInput' name='nick' required><label class='window_inputError' for='window_registerUser'>" +
                     this.cfg.text4RegisterUser +"</label><input type='password' class='window_passwordInput window_formInput' id='R_originPwd'  name='originPwd' required='required'><label class='window_inputError' for='R_originPwd'>" +
                     this.cfg.rules4RegisterPwd +"</label><input type='password' class='window_passwordInput window_formInput'  required='required' id='R_originPwd1' name='originPwd1'><label class='window_inputError' for='R_originPwd1'>请再一次输入密码</label><input type='email' required name='email' class='window_emailInput window_formInput'><label class='window_inputError' for='R_email'>" +
-                    this.cfg.rules4RegisterEmail +"</label><div class='window_registerOthers'><input type='checkbox' name='R_service' checked='checked'>我已阅读并同意<a href=" +
-                    this.cfg.serviceURL +" class='window_registerService'>" +
+                    this.cfg.rules4RegisterEmail +"</label><div class='window_registerOthers'><input type='checkbox' name='R_service' checked='checked' style='vertical-align:middle;'><span  style='vertical-align:middle;'>我已阅读并同意</span><a href=" +
+                    this.cfg.serviceURL +" class='window_registerService' style='vertical-align:middle;'>" +
                     this.cfg.text4Service +"</a></div><input type='hidden' name='password' id='R_pwd'><input type='submit' class='window_submitBtn' value='注册'></form>";
                     break;
 			}
