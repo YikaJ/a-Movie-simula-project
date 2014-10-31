@@ -3,7 +3,7 @@ package com.mx.popcorn.exception;
 /**
  * Created by Administrator on 2014-10-28.
  */
-public class ActionException extends Exception {
+public class ActionException extends RuntimeException {
 
     public ActionException() {
         super();

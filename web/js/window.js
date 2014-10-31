@@ -24,7 +24,8 @@ define(["jquery", "widget", "validate"], function ($, w){
             rules4RegisterUser: "请输入用户账号",
             rules4RegisterPwd: "请输入用户密码",
             rules4RegisterEmail: "请输入正确格式的电子邮箱",
-            rules4RegisterPwdAgain: "两次输入的结果不一致"
+            rules4RegisterPwdAgain: "两次输入的结果不一致",
+            text4RegisterUser:"请输入你的昵称，长度为3-15"
 		}
 	}
 
@@ -58,7 +59,7 @@ define(["jquery", "widget", "validate"], function ($, w){
 
                 case "register":
                     this.cfg.content = "<form action='#' method='post' id='window_register'><input type='text' class='window_userInput window_formInput' name='window_registerUser' required><label class='window_inputError' for='window_registerUser'>" +
-                    this.cfg.rules4RegisterUser +"</label><input type='password' class='window_passwordInput window_formInput' id='password' name='window_registerPwd' required><label class='window_inputError' for='window_registerPwd'>" +
+                    this.cfg.text4RegisterUser +"</label><input type='password' class='window_passwordInput window_formInput' id='password' name='window_registerPwd' required><label class='window_inputError' for='window_registerPwd'>" +
                     this.cfg.rules4RegisterPwd +"</label><input type='password' class='window_passwordInput window_formInput' name='window_registerPwdAgain' required><label class='window_inputError' for='window_registerPwdAgain'>请再一次输入密码</label><input type='email' required name='window_registerEmail' class='window_emailInput window_formInput'><label class='window_inputError' for='window_registerEmail'>" +
                     this.cfg.rules4RegisterEmail +"</label><div class='window_registerOthers'><input type='checkbox' name='registerService' checked='checked'>我已阅读并同意<a href=" +
                     this.cfg.serviceURL +" class='window_registerService'>" +

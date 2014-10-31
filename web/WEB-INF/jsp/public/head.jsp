@@ -9,7 +9,12 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
 <div class="header">
     <div class="loginRegister">
-        <a href="javascript:" id="login">登陆</a> | <a href="javascript:" id="register">注册</a>
+        <s:if test="#session.user==null">
+            <a href="javascript:" id="login">登陆</a> | <a href="javascript:" id="register">注册</a>
+        </s:if>
+        <s:else>
+
+        </s:else>
     </div>
     <div class="content">
         <h1 class="logo">

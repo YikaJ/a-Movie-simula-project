@@ -3,7 +3,7 @@ package com.mx.popcorn.exception;
 /**
  * Created by Administrator on 2014-10-28.
  */
-public class DaoException extends Exception {
+public class DaoException extends RuntimeException {
 
     public DaoException() {
         super();

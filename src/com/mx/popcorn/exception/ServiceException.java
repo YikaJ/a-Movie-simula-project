@@ -3,7 +3,7 @@ package com.mx.popcorn.exception;
 /**
  * Created by Administrator on 2014-10-28.
  */
-public class ServiceException extends Exception {
+public class ServiceException extends RuntimeException {
 
     public ServiceException() {
         super();

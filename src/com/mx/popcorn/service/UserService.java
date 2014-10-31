@@ -10,4 +10,12 @@ public interface UserService extends BaseService {
 
 
     void register(User model) throws Exception;
+
+    boolean isEmptyOfNick(String nick);
+
+    boolean isEmptyOfEmail(String email);
+
+    User login(String email, String password);
+
+    User findByEmail(String email);
 }

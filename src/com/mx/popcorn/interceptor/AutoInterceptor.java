@@ -1,5 +1,7 @@
 package com.mx.popcorn.interceptor;
 
+import com.mx.popcorn.domain.User;
+import com.mx.popcorn.service.UserService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
@@ -16,12 +18,12 @@ import javax.servlet.http.Cookie;
 
 public class AutoInterceptor extends AbstractInterceptor {
 
-  /*  @Resource
-    private UserService userService;*/
+    @Resource
+    private UserService userService;
 
     @Override
     public String intercept(ActionInvocation actionInvocation) throws Exception {
-        /*if (ServletActionContext.getRequest().getSession().getAttribute("user")!=null)
+        if (ServletActionContext.getRequest().getSession().getAttribute("user")!=null)
             return actionInvocation.invoke();
         System.out.println("=============================Interceptor===================================");
         Cookie[] cookies = ServletActionContext.getRequest().getCookies();
@@ -31,17 +33,17 @@ public class AutoInterceptor extends AbstractInterceptor {
                     String email = cookie.getValue().split("_")[0];
                     String password = cookie.getValue().split("_")[1];
                     email = new String(new BASE64Decoder().decodeBuffer(email));
-                    User user = userService.findUserByEmail(email);
+                    password = new String(new BASE64Decoder().decodeBuffer(password));
+                    User user = userService.findByEmail(email);
                     if (user!=null){
                         if (password.equals(user.getPassword())){
-                            ServletActionContext.getRequest().getSession().setAttribute("user", user);
                             ActionContext.getContext().getSession().put("user", user);
                             break;
                         }
                     }
                 }
             }
-        }*/
+        }
         return actionInvocation.invoke();
     }
 }

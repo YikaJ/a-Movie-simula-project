@@ -18,18 +18,43 @@ public class UserServiceImp extends BaseServiceImp implements UserService {
 
 
     @Override
-    public void register(User model) throws Exception {
-        QueryHelper helper = new QueryHelper(User.class, "u")
-                .addWhereClause("email", model.getEmail())
-                .addWhereClause("password", model.getPassword());
-        User user = (User) userDao.findUnique(helper, true);
-        if (user != null){
-            QueryHelper helper2 = new QueryHelper(User.class, QueryHelper.UPDATE,"u")
-                    .addWhereClause("id", user.getId());
-            throw new UserExitException("用户已存在！！");
-        }
-
+    public void register(User model) throws RuntimeException {
         model.setCreateDate(new Date());
         userDao.save(model);
+    }
+
+    @Override
+    public boolean isEmptyOfNick(String nick) {
+        QueryHelper helper = new QueryHelper(User.class, "u")
+                .addWhereClause("nick", nick);
+        int result = userDao.getCount(helper);
+        if (result == 0)
+            return true;
+        return false;
+    }
+
+    @Override
+    public boolean isEmptyOfEmail(String email) {
+        QueryHelper helper = new QueryHelper(User.class, "u")
+                .addWhereClause("email", email);
+        int result = userDao.getCount(helper);
+        if (result == 0)
+            return true;
+        return false;
+    }
+
+    @Override
+    public User login(String email, String password) {
+        QueryHelper helper = new QueryHelper(User.class, "u")
+                .addWhereClause("email", email)
+                .addWhereClause("password", password);
+        return (User) userDao.findUnique(helper, true);
+    }
+
+    @Override
+    public User findByEmail(String email) {
+        QueryHelper helper = new QueryHelper(User.class, "u")
+                .addWhereClause("email", email);
+        return (User) userDao.findUnique(helper, true);
     }
 }

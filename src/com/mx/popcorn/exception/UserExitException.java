@@ -3,7 +3,7 @@ package com.mx.popcorn.exception;
 /**
  * Created by Administrator on 2014-10-30.
  */
-public class UserExitException extends Exception {
+public class UserExitException extends RuntimeException {
 
     public UserExitException() {
         super();

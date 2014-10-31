@@ -21,7 +21,11 @@ public class Test {
             user.setEmail("821322652@qq.com");
             user.setPassword("123");
             service.register(user);
-        } catch (Exception e) {
+        } catch (UserExitException e) {
+            System.out.println("hehe");
+            e.printStackTrace();
+        }catch (Exception e){
+            System.out.println("--------------------滴滴滴--------------");
             e.printStackTrace();
         }
     }
