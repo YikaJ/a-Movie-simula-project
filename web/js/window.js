@@ -5,7 +5,7 @@
  * @version $Id$
  */
 
-define(["jquery", "widget", "validate"], function ($, w){
+define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
 	function Window(){
 		this.cfg = {
 			box: $(window),
@@ -54,7 +54,7 @@ define(["jquery", "widget", "validate"], function ($, w){
                     this.cfg.text4loginUserPlaceholder + " class='window_userInput window_formInput' name='nick' required><label class='window_inputError'>"+
                     userLabel +"</label><input type='password' placeholder=" +
                     this.cfg.text4loginPwdPlaceholder + " class='window_passwordInput window_formInput' name='L_originPwd' required id='L_originPwd'><label class='window_inputError' for='L_originPwd'>"+
-                    passwordLabel +"</label><div class='window_loginOthers'><a href='javascript:' class='window_toRegister fl'>还没注册？</a><a href='#' class='window_forgotPwd fr'>忘记密码</a></div><input type='submit' class='window_submitBtn' value='登陆'><input type='hidden' id='L_pwd' name='password'></form>";
+                    passwordLabel +"</label><div class='window_loginOthers'><a href='javascript:' class='window_toRegister fl'>还没注册？</a><a href='#' class='window_forgotPwd fr'>忘记密码</a></div><input type='hidden' id='L_pwd' name='password'><input type='submit' class='window_submitBtn' value='登陆'></form>";
 				break;
 
                 case "register":
