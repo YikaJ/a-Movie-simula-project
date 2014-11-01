@@ -60,7 +60,7 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
 				break;
 
                 case "register":
-                    this.cfg.content = "<form action='/user/register.do' method='post' id='window_register'><input type='text' class='window_userInput window_formInput' name='nick' required><label class='window_inputError' for='window_registerUser'>" +
+                    this.cfg.content = "<form action='/user/register.do' method='post' id='window_register'><input type='text' class='window_userInput window_formInput' name='nick' required id='nick'><label class='window_inputError' for='window_registerUser'>" +
                     this.cfg.text4RegisterUser +"</label><input type='email' required name='email' class='window_emailInput window_formInput'><label class='window_inputError' for='R_email'>" +
                     this.cfg.rules4RegisterEmail +"</label><input type='password' class='window_passwordInput window_formInput' id='R_originPwd'  name='originPwd' required='required'><label class='window_inputError' for='R_originPwd'>" +
                     this.cfg.rules4RegisterPwd +"</label><input type='password' class='window_passwordInput window_formInput'  required='required' id='R_originPwd1' name='originPwd1'><label class='window_inputError' for='R_originPwd1'>请再一次输入密码</label><div class='window_registerOthers'><input type='checkbox' name='R_service' checked='checked' style='vertical-align:middle;'><span  style='vertical-align:middle;'>我已阅读并同意</span><a href=" +
@@ -102,10 +102,16 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
 			this.closeBtn.click(function(){
 				self.destroy();
 			});
+            /*窗口改变*/
+            $(window).resize(function(){
+                self.boundingBox.css({
+                    left : ( self.cfg.x|| (window.innerWidth - self.cfg.width) / 2 ) + "px", //若未定义x，y坐标
+                    top : ( self.cfg.y||(window.innerHeight - self.cfg.height) / 2 ) + "px"//默认居中
+                });
+            })
             /*判断不同的弹框，不同的行为*/
 			if(this.cfg.winType == "login"){
                 var toRegister = $(".window_toRegister");
-				var userLogin = this.formInput.eq(0);
                 toRegister.click(function(){
                     self.destroy();
                     $("#register").click();
@@ -141,17 +147,28 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
                             var $password = $("#L_originPwd");
                             $("#L_pwd").val($.md5($password.val()));
                             $password.attr("disabled", "disabled");
-                            form.submit();
+                            form.ajaxSubmit();
                         }
                     });
                     break;
                 /*注册验证*/
                 case "register":
                     $("#window_register").validate({
+                        onkeyup: "false",
                         rules: {
                             nick: {
                                 required: true,
-                                rangelength: [3, 15]
+                                rangelength: [3, 15],
+                                remote: {
+                                    url: "/appSupport.do",
+                                    type: "post",
+                                    dataType: "json",
+                                    data: {
+                                        nick: function() {
+                                            return $("#nick").val();
+                                        }
+                                    }
+                                }
                             },
                             originPwd: {
                                 required: true,
@@ -173,7 +190,8 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
                         messages: {
                             nick: {
                                 required: this.cfg.rules4RegisterUser,
-                                rangelength: this.cfg.rules4RegisterUser
+                                rangelength: this.cfg.rules4RegisterUser,
+                                remote: "已经注册过"
                             },
                             originPwd: {
                                 required: this.cfg.rules4RegisterPwd,
@@ -206,7 +224,7 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
                             $("#R_pwd").val($.md5($password.val()));
                             $password.attr("disabled", "disabled");
                             $password1.attr("disabled", "disabled");
-                            form.submit();
+                            form.ajaxSubmit();
                         }
                     })
                 break;
