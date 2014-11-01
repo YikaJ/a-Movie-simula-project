@@ -5,7 +5,7 @@
  * @version $Id$
  */
 
-define(["jquery", "widget", "validate", "jquery.md5", "jquery.cookie"], function ($, w){
+define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
 	function Window(){
 		this.cfg = {
 			box: $(window),
@@ -55,7 +55,7 @@ define(["jquery", "widget", "validate", "jquery.md5", "jquery.cookie"], function
                     this.cfg.text4loginUserPlaceholder + " class='window_emailInput window_formInput' name='email' required='required' id='L_email'><label class='window_inputError'>"+
                     userLabel +"</label><input type='password' placeholder=" +
                     this.cfg.text4loginPwdPlaceholder + " class='window_passwordInput window_formInput' name='L_originPwd' required id='L_originPwd'><label class='window_inputError' for='L_originPwd'>"+
-                    passwordLabel +"</label><div class='window_loginOthers'><input type='checkbox' id='loginAuto' name='loginAuto' style='vertical-align:middle;'><label style='vertical-align:middle;' for='loginAuto'>" +
+                    passwordLabel +"</label><div class='window_loginOthers'><input type='checkbox' id='loginAuto' name='autoLoginTo' style='vertical-align:middle;' value='true'><label style='vertical-align:middle;' for='loginAuto'>" +
                         this.cfg.text4autoLogin + "</label><a href='#' class='window_forgotPwd fr'>忘记密码</a></div><input type='hidden' id='L_pwd' name='password'><input type='submit' class='window_submitBtn' value='登陆'><div class='window_loginOthers'><a href='javascript:' class='window_toRegister fr'>立即注册</a></div></form>";
 				break;
 
@@ -148,13 +148,6 @@ define(["jquery", "widget", "validate", "jquery.md5", "jquery.cookie"], function
                             var pwd = $("#L_pwd")
                             pwd.val($.md5($password.val()));
                             $password.attr("disabled", "disabled");
-
-                            if($("#loginAuto").is(":checked")){
-                                var email = $("L_mail").val();
-                                var password = pwd.val();
-                                 $.cookie("email", email, {expires: 7});
-                                 $.cookie("email", password, {expires: 7});
-                            }
                             form.submit();
                         }
                     });
