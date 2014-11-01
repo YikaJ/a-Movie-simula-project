@@ -68,6 +68,11 @@ public class BaseAction extends ActionSupport {
 
     /*=========================状态==============================*/
     protected boolean status = true;
+    protected String previous;
+
+    public String getPrevious() {
+        return previous;
+    }
 
     public boolean getStatus() {
         return status;

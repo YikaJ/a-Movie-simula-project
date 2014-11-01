@@ -18,13 +18,13 @@
                 <li><a href="#">个人资料</a></li>
                 <li><a href="#">我的订单</a></li>
                 <li><a href="#">消息中心</a></li>
-                <li><a href="#">退出</a></li>
+                <li><a href="${pageContext.request.contextPath}/user/loginOff.do">退出</a></li>
             </ul>
         </s:else>
     </div>
     <div class="content">
         <h1 class="logo">
-            <a href="index.jsp">想映电影院</a>
+            <a href="${pageContext.request.contextPath}/">想映电影院</a>
         </h1>
         <ul class="nav">
             <li class="<s:property value="actionNameSpace=='HomeIndex'?'currentPage':''"/>">

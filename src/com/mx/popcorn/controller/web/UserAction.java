@@ -1,11 +1,9 @@
 package com.mx.popcorn.controller.web;
 
 import com.mx.popcorn.base.ModelDrivenBaseAction;
-import com.mx.popcorn.controller.abstractAc.UserAbstractAction;
 import com.mx.popcorn.domain.User;
-import com.mx.popcorn.exception.UserExitException;
 import com.mx.popcorn.utils.TextTools;
-import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.convention.annotation.*;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -24,7 +22,7 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
 
 
 
-    private boolean autoLogin = true;
+    private boolean autoLoginTo = false;
     private String window_registerPwdAgain;
 
     /**
@@ -72,7 +70,7 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
                 return FAILURE;
             }
             getSession().setAttribute(USER_SESSION, user);
-            if (autoLogin){
+            if (autoLoginTo){
                 Cookie cookie = new Cookie("autoLoginTo", new BASE64Encoder().encode(model.getEmail().getBytes())+"_"+
                         new BASE64Encoder().encode(model.getPassword().getBytes()));
                 cookie.setMaxAge(7*24*60*60);
@@ -103,16 +101,31 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
             e.printStackTrace();
             return FAILURE;
         }
+    }
 
+    @Action(value = "loginOff", results = {@Result(name = SUCCESS, type = "redirect", location = "${previous}")})
+    public String loginOff(){
+        Cookie cookies[] = ServletActionContext.getRequest().getCookies();
+        for (Cookie cookie : cookies){
+            if (cookie.getName().equals("autoLoginTo")){
+                cookie.setMaxAge(0);
+                cookie.setPath("/");
+                getResponse().addCookie(cookie);
+            }
+        }
+        getSession().removeAttribute(USER_SESSION);
+        getRequest().removeAttribute(USER_SESSION);
+        previous = getRequest().getHeader(REFERER_SESSION);
+        return SUCCESS;
     }
 
 
-    public boolean isAutoLogin() {
-        return autoLogin;
+    public boolean isAutoLoginTo() {
+        return autoLoginTo;
     }
 
-    public void setAutoLogin(boolean autoLogin) {
-        this.autoLogin = autoLogin;
+    public void setAutoLoginTo(boolean autoLoginTo) {
+        this.autoLoginTo = autoLoginTo;
     }
 
     public String getWindow_registerPwdAgain() {
