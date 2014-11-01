@@ -15,7 +15,7 @@ require.config({
 	}
 });
 
-require(["jquery", "autoplay","window"], function ($, a, w) {
+require(["jquery", "autoplay","window", "common"], function ($, a, w) {
     new a.Autoplay().autoplay({
         box: $("#banner"),
         hasArrow: true,

@@ -109,11 +109,10 @@
 	.window_submitBtn{
 		border: 1px solid #39B94E;
 		background:#39B94E;
-		height: 45px;
 		padding: 10px 0;
         display: block;
-        margin: 10px auto -10px;
-		width: 85%;
+        margin: 10px auto 10px;
+		width: 90%;
 		color: #FFF;
 		font-weight: bold;
 		border-radius: 5px;
@@ -125,24 +124,16 @@
 	}
 
 /*有关登陆方面*/
-/*立即注册和忘记密码*/
-.window_loginAuto{
-    font-size: 12px;
-    text-align: right;
-    margin-top: -10px;
-}
+/*自动登录、立即注册和忘记密码*/
 .window_loginOthers{
-    margin-top: 5px;
-    margin-bottom: -5px;
     overflow: hidden;
-    padding: 0 00px;
     font-size: 12px;
 }
 
 a.window_toRegister, a.window_forgotPwd{
     color: #65AEDE;
-    font-size: 14px;
     text-decoration: none;
+    font-size: 12px;
 }
 a.window_toRegister:hover, a.window_forgotPwd:hover{
     text-decoration: underline;

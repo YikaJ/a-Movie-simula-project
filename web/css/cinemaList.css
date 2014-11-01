@@ -1,123 +1,199 @@
-/*common*/
-.content{
-    width: 990px;
-    margin: 0 auto;
-    position: relative;
+
+/*过渡*/
+.hr{
+    padding: 20px 0px;
+    overflow: hidden;
 }
 
-body,a,li{
-    font-family: "微软雅黑";
-    text-decoration: none;
-    list-style: none;
-    font-size: 16px;
+.directory{
+    float: left;
 }
-a:link,a:hover,a:active,a:visited{
-    text-decoration: none;
-    color: #666;
+.directory a{
+    font-size: 12px;
 }
-/*账户信息*/
-/*未登录*/
-.loginRegister{
-    font-size: 14px;
-    position: absolute;
-    right: 10%;
-    background: #FF6666;
-    color: #000;
-    border-radius: 0 0 10px 10px;
-    z-index: 9000;
+.directory a:hover{
+    color: #EB002A;
 }
-.loginRegister a{
-    color: #FFF;
-    padding: 10px;
-    line-height: 30px;
+.smallTips{
+    float: right;
+    font-size: 12px;
+    color: #A2A2A2;
+}
+/*内容区域*/
+/*TAB标签栏*/
+.tabWrap{
+    width: 715px;
+    float: left;
 }
 
-
-.loginRegister a:hover{
-    color: #000;
+.movieTab{
+    background: #F9F9F9;
 }
-/*登陆后*/
-.userList{
-    background: #F8F8F8;
+
+.movieTab ul{
     border: 1px solid #CCC;
-    border-top: 0;
-    border-radius: 0 0 10px 10px;
-    text-align: center;
-    padding: 0 18px ;
-    display: ;
+    border-bottom: 1px solid #FF5B78;
 }
-.userList a{
-    font-size: 14px;
-    color: #666;
+
+.movieTab li{
+    float: left;
+    font-weight: 600;
+}
+
+.movieTab a{
     display: block;
-    padding: 3px 0;
+    padding: 12px 30px;
+}
+
+.movieTab .currentTab{
+    background: #EB002A;
+    border: 1px solid #EB002A;
+}
+
+.movieTab .currentTab a{
+    color: #FFF;
+}
+
+/*上映院线*/
+
+.cinemaTab{
+    background: #FFF6F5;
+    border: 1px solid #DDD;
+    border-bottom: 0;
+}
+.chooseTitle{
+    float: left;
+    text-align: center;
+    background: #FFDDDC;
+    padding: 18px 20px;
+    font-size: 12px;
+    color: #666;
+}
+
+.cinemaTab .activeChoose{
+    background: #EB002A;
+    color: #FFF;
+}
+
+.cinemaTab a{
+    float: left;
+    font-size: 12px;
+    margin: 13px 15px;
+    padding: 5px 8px;
+}
+
+.cinemaTab a:hover{
+    background: #EB002A;
+    color: #FFF;
+}
+/*院线详情*/
+.cinemaList{
+    border: 1px solid #DDD;
+    border-top: 2px solid #D21438;
+}
+.cinemaList li{
+    padding: 30px 20px;
+    overflow: hidden;
+    color: #333;
+    border-bottom: 1px dashed #DDD;
+}
+.cinemaList li:hover{
+    background: #F3F3F3;
+}
+.cinemaImg {
+    float: left;
+    border: 1px solid #EEE;
+}
+.cinemaInformation{
+    float: left;
+    margin-left: 30px;
+}
+.cinemaInformation{
+    font-size: 12px;
+    color: #666;
+}
+.cinemaInformation p{
+    margin: 5px 0;
+}
+.cinemaInformation h4 a{
+    font-weight: normal;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #000;
+}
+.cinemaInformation span{
+    color: #999;
+}
+.cinemaInformation a{
+    font-size: 12px;
+    color: #3180DE;
+}
+.cinemaInformation p a:hover{
+    text-decoration: underline;
+}
+a.goCinema{
+    float: right;
+    text-align:center;
+    display:block;
+    background: #EB002A;
+    padding:10px;
+    margin-top: 25px;
+    color:#FFF;
+}
+/*右边栏*/
+.rightBar{
+    float: right;
+    color: #333;
+}
+
+
+.rightBarTab a{
+    float: left;
+    text-align: center;
+    padding:10px 30px;;
+    background: #F9F9F9;
+    border: 1px solid #FFF;
     border-bottom: 1px solid #CCC;
 }
-.icon{
-    background: url("../image/icon_sprite.png") no-repeat top right;
-    height: 15px;
-    width: 15px;
-    float: right;
-    margin: 12px 5px 0px -5px;
+
+.rightBarTab .activeRightBarTab{
+    background: #FFF;
+    border: 1px solid #CCC;
+    border-bottom: 1px solid #FFF;
+}
+.rightBarMovieList{
+    margin-top: 15px;
 }
 
-/*header*/
-
-.header{
-    height: 100px;
-    width: 100%;
-    border-bottom: 3px solid #EB002A;
-    position: relative;
+.rightBarMovieList li{
+    border-bottom: 1px solid #CCC;
+    padding: 5px 0;
 }
 
-.logo{
-    text-indent: -999px;
+.rightBarMovieList h3{
+    font-weight: normal;
+}
+
+.rightBarMovieList img{
+    width: 80px;
+    margin-right: 15px;
+}
+
+.rightBarInformation p{
+    margin-top: 5px;
+    font-size: 14px;
+}
+.rightBarInformation span{
+    color: #FF3300;
+}
+.rightBarMovieList a{
+    padding: 5px 3px;
+    overflow: hidden;
     display: block;
 }
-.logo a{
-    float: left;
-    height: 100px;
-    width: 305px;
-    background: url(../image/logo.png) no-repeat left center;
-    display: inline;
+.rightBarMovieList a:hover{
+    background: #DFDFDF;
 }
-/*导航栏*/
-.nav {
-    float: left;
-    display: inline;
-    margin-left: 120px;
-    padding-top: 40px;
-}
-
-.nav li{
-    float: left;
-    margin-right: 45px;
-}
-
-.nav li:hover{
-    border-bottom: 3px solid #EB002A;
-}
-
-.currentLi{
-    border-bottom: 3px solid #EB002A;
-}
-
-.currentLi a{
-    color: #EB002A;
-}
-
-.nav a{
-    display: block;
-    font-size: 20px;
-    padding: 8px 20px;
-}
-
-.nav a:hover{
-    color: #EB002A;
-}
-
-/*内容区域*/
-
 
 /*脚部区域*/
 .footer{

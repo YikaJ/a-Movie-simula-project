@@ -13,7 +13,13 @@
             <a href="javascript:" id="login">登陆</a> | <a href="javascript:" id="register">注册</a>
         </s:if>
         <s:else>
-
+            <a href="#">YikaJ</a> | <a href="javascript:" id="myStuf">我的<i class="icon"></i></a>
+            <ul class="userList" id="myList">
+                <li><a href="#">个人资料</a></li>
+                <li><a href="#">我的订单</a></li>
+                <li><a href="#">消息中心</a></li>
+                <li><a href="#">退出</a></li>
+            </ul>
         </s:else>
     </div>
     <div class="content">

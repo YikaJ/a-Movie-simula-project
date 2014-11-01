@@ -57,6 +57,7 @@
 							<a href="javascript:" class="activeChoose">全部</a>
 							<a href="javascript:">今天(10.28)</a>
 							<a href="javascript:">明天(10.29)</a>
+                        </li>
 						<li class="clearfix">
                             <div class="chooseTitle">选择区域</div>
 							<a href="javascript:" class="activeChoose">全部</a>
@@ -127,7 +128,7 @@
 								<a href="#" class="buyTicket">立即购票</a>
 							</div>
 						</li>
-					</ul>	
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -167,7 +168,7 @@
 					</div>
                     </a>
 				</li>
-				
+
 				<li class="clearfix">
                     <a href="movieInformation.jsp">
 					<img src="${pageContext.request.contextPath}/image/hotOn%20(2).jpg" class="fl" alt="movie">
