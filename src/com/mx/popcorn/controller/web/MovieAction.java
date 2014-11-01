@@ -15,6 +15,8 @@ import org.springframework.stereotype.Controller;
 @Namespace("/movie")
 public class MovieAction  extends ModelDrivenBaseAction<Movie> {
 
+    private static final String ACTION_NAME_SPACE = "MovieIndex";
+
     @Action(value = "index", results = @Result(location = "/WEB-INF/jsp/movie/movieList.jsp"))
     public String index(){
         try {
@@ -24,4 +26,7 @@ public class MovieAction  extends ModelDrivenBaseAction<Movie> {
         }
     }
 
+    public static String getActionNameSpace() {
+        return ACTION_NAME_SPACE;
+    }
 }

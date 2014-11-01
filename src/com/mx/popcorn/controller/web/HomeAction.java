@@ -15,7 +15,7 @@ import org.springframework.stereotype.Controller;
 @Namespace("/home")
 public class HomeAction extends BaseAction{
 
-    private static final String ACTION_NAME_SPACE = "HomeAction";
+    private static final String ACTION_NAME_SPACE = "HomeIndex";
 
     public String index(){
         return SUCCESS;
