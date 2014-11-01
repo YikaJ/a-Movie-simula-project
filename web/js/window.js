@@ -5,7 +5,7 @@
  * @version $Id$
  */
 
-define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
+define(["jquery", "widget", "validate", "jquery.md5", "jquery.cookie"], function ($, w){
 	function Window(){
 		this.cfg = {
 			box: $(window),
@@ -52,7 +52,7 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
                     }
                     /*登陆主体*/
                     this.cfg.content = "<form action='/user/login.do' method='POST' id='window_login'><input type='email' placeholder=" +
-                    this.cfg.text4loginUserPlaceholder + " class='window_emailInput window_formInput' name='email' required><label class='window_inputError'>"+
+                    this.cfg.text4loginUserPlaceholder + " class='window_emailInput window_formInput' name='email' required='required' id='L_email'><label class='window_inputError'>"+
                     userLabel +"</label><input type='password' placeholder=" +
                     this.cfg.text4loginPwdPlaceholder + " class='window_passwordInput window_formInput' name='L_originPwd' required id='L_originPwd'><label class='window_inputError' for='L_originPwd'>"+
                     passwordLabel +"</label><div class='window_loginOthers'><input type='checkbox' id='loginAuto' name='loginAuto' style='vertical-align:middle;'><label style='vertical-align:middle;' for='loginAuto'>" +
@@ -142,12 +142,20 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
                         errorPlacement: function (error, element) {
                             element.next().html(error);
                         },
-                        /*MD5加密*/
+                        /*MD5加密,保存cookie*/
                         submitHandler:function(form){
                             var $password = $("#L_originPwd");
-                            $("#L_pwd").val($.md5($password.val()));
+                            var pwd = $("#L_pwd")
+                            pwd.val($.md5($password.val()));
                             $password.attr("disabled", "disabled");
-                            form.ajaxSubmit();
+
+                            if($("#loginAuto").is(":checked")){
+                                var email = $("L_mail").val();
+                                var password = pwd.val();
+                                 $.cookie("email", email, {expires: 7});
+                                 $.cookie("email", password, {expires: 7});
+                            }
+                            form.submit();
                         }
                     });
                     break;
@@ -160,7 +168,7 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
                                 required: true,
                                 rangelength: [3, 15],
                                 remote: {
-                                    url: "/appSupport.do",
+                                    url: "/user/asyncValidate.do",
                                     type: "post",
                                     dataType: "json",
                                     data: {
@@ -181,7 +189,17 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
                             },
                             email: {
                                 email: true,
-                                required: true
+                                required: true,
+                                remote: {
+                                    url: "/user/asyncValidate.do",
+                                    type: "post",
+                                    dataType: "json",
+                                    data: {
+                                        nick: function() {
+                                            return $("#nick").val();
+                                        }
+                                    }
+                                }
                             },
                             registerService: {
                                 required: true
@@ -191,7 +209,7 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
                             nick: {
                                 required: this.cfg.rules4RegisterUser,
                                 rangelength: this.cfg.rules4RegisterUser,
-                                remote: "已经注册过"
+                                remote: "该用户已经注册过"
                             },
                             originPwd: {
                                 required: this.cfg.rules4RegisterPwd,
@@ -203,7 +221,8 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
                                 equalTo: this.cfg.rules4RegisterPwdAgain
                             },
                             email: {
-                                required: this.cfg.rules4RegisterEmail
+                                required: this.cfg.rules4RegisterEmail,
+                                remote: "该邮箱已经注册过"
                             },
                             registerService: {
                                 required: "请同意协议"
@@ -224,7 +243,7 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
                             $("#R_pwd").val($.md5($password.val()));
                             $password.attr("disabled", "disabled");
                             $password1.attr("disabled", "disabled");
-                            form.ajaxSubmit();
+                            form.submit();
                         }
                     })
                 break;
