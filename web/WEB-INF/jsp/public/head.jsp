@@ -13,7 +13,7 @@
             <a href="javascript:" id="login">登陆</a> | <a href="javascript:" id="register">注册</a>
         </s:if>
         <s:else>
-            <a href="#"><s:property value="#session.user.nick"/></a> | <a href="javascript:" id="myStuf">我的<i class="icon"></i></a>
+            <a href="#"><s:property value="#session.user.nick"/></a> | <a href="javascript:" id="myStuff">我的<i class="icon"></i></a>
             <ul class="userList" id="myList">
                 <li><a href="#">个人资料</a></li>
                 <li><a href="#">我的订单</a></li>
@@ -27,8 +27,12 @@
             <a href="index.jsp">想映电影院</a>
         </h1>
         <ul class="nav">
-            <li class="currentLi"><a href="${pageContext.request.contextPath}/index.do">首页</a></li>
-            <li><a href="${pageContext.request.contextPath}/movie/index.do">电影</a></li>
+            <li class="<s:property value="actionNameSpace=='HomeIndex'?'currentPage':''"/>">
+                <a href="${pageContext.request.contextPath}/index.do">首页</a>
+            </li>
+            <li class="<s:property value="actionNameSpace=='MovieIndex'?'currentPage':''"/>">
+                <a href="${pageContext.request.contextPath}/movie/index.do">电影</a>
+            </li>
             <li><a href="#">影院</a></li>
             <li><a href="#">我的</a></li>
         </ul>

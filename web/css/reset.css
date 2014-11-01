@@ -91,7 +91,7 @@ a:link,a:hover,a:active,a:visited{
 .header{
     height: 100px;
     width: 100%;
-    border-bottom: 3px solid #EB002A;
+    border-bottom: 3px solid #999;
     position: relative;
 }
 
@@ -123,11 +123,11 @@ a:link,a:hover,a:active,a:visited{
     border-bottom: 3px solid #EB002A;
 }
 
-.currentLi{
+.currentPage{
     border-bottom: 3px solid #EB002A;
 }
 
-.currentLi a{
+.currentPage a{
     color: #EB002A;
 }
 
