@@ -24,7 +24,7 @@ public class UserServiceImp extends BaseServiceImp implements UserService {
     }
 
     @Override
-    public boolean isEmptyOfNick(String nick) {
+    public boolean isEmptyOfNick(String nick) throws RuntimeException  {
         QueryHelper helper = new QueryHelper(User.class, "u")
                 .addWhereClause("nick", nick);
         int result = userDao.getCount(helper);
@@ -34,7 +34,7 @@ public class UserServiceImp extends BaseServiceImp implements UserService {
     }
 
     @Override
-    public boolean isEmptyOfEmail(String email) {
+    public boolean isEmptyOfEmail(String email) throws RuntimeException  {
         QueryHelper helper = new QueryHelper(User.class, "u")
                 .addWhereClause("email", email);
         int result = userDao.getCount(helper);
@@ -44,7 +44,7 @@ public class UserServiceImp extends BaseServiceImp implements UserService {
     }
 
     @Override
-    public User login(String email, String password) {
+    public User login(String email, String password) throws RuntimeException  {
         QueryHelper helper = new QueryHelper(User.class, "u")
                 .addWhereClause("email", email)
                 .addWhereClause("password", password);
@@ -52,7 +52,7 @@ public class UserServiceImp extends BaseServiceImp implements UserService {
     }
 
     @Override
-    public User findByEmail(String email) {
+    public User findByEmail(String email)  throws RuntimeException {
         QueryHelper helper = new QueryHelper(User.class, "u")
                 .addWhereClause("email", email);
         return (User) userDao.findUnique(helper, true);

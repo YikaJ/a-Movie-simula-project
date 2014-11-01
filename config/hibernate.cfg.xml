@@ -43,5 +43,24 @@
         <mapping class="com.mx.popcorn.domain.Seat"/>
         <mapping class="com.mx.popcorn.domain.TicketOrder"/>
         <mapping class="com.mx.popcorn.domain.User"/>
+
+        <class-cache class="com.mx.popcorn.domain.City" usage="read-write"/>
+        <class-cache class="com.mx.popcorn.domain.District" usage="read-write"/>
+        <class-cache class="com.mx.popcorn.domain.Province" usage="read-write"/>
+        <class-cache class="com.mx.popcorn.domain.Cinema" usage="read-write"/>
+        <class-cache class="com.mx.popcorn.domain.CinemaComment" usage="read-write"/>
+        <class-cache class="com.mx.popcorn.domain.CinemaGrade" usage="read-write"/>
+        <class-cache class="com.mx.popcorn.domain.Hall" usage="read-write"/>
+        <class-cache class="com.mx.popcorn.domain.Movie" usage="read-write"/>
+        <class-cache class="com.mx.popcorn.domain.MovieComment" usage="read-write"/>
+        <class-cache class="com.mx.popcorn.domain.MovieGrade" usage="read-write"/>
+        <class-cache class="com.mx.popcorn.domain.MovieNew" usage="read-write"/>
+        <class-cache class="com.mx.popcorn.domain.MovieType" usage="read-write"/>
+        <class-cache class="com.mx.popcorn.domain.MovieVersion" usage="read-write"/>
+        <class-cache class="com.mx.popcorn.domain.Region" usage="read-write"/>
+        <class-cache class="com.mx.popcorn.domain.Schedule" usage="read-write"/>
+        <class-cache class="com.mx.popcorn.domain.Seat" usage="read-write"/>
+        <class-cache class="com.mx.popcorn.domain.TicketOrder" usage="read-write"/>
+        <class-cache class="com.mx.popcorn.domain.User" usage="read-write"/>
     </session-factory>
 </hibernate-configuration>

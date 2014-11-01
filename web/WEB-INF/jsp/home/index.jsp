@@ -162,7 +162,6 @@
     <div class="footer">
         <div class="content"></div>
     </div>
-
 <script type="text/javascript">
     var aLi =  document.getElementById("firmRank").getElementsByTagName("li"),
         aLi2 = document.getElementById("cinemaRank").getElementsByTagName("li");

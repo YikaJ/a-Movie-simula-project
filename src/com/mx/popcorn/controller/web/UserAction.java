@@ -22,6 +22,7 @@ import javax.servlet.http.Cookie;
 public class UserAction  extends ModelDrivenBaseAction<User> {
 
 
+
     private boolean autoLogin = true;
     private String window_registerPwdAgain;
 
@@ -71,7 +72,7 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
             }
             getSession().setAttribute(USER_SESSION, user);
             if (autoLogin){
-                Cookie cookie = new Cookie("autoLogin", new BASE64Encoder().encode(model.getEmail().getBytes())+"_"+
+                Cookie cookie = new Cookie("autoLoginTo", new BASE64Encoder().encode(model.getEmail().getBytes())+"_"+
                         new BASE64Encoder().encode(model.getPassword().getBytes()));
                 cookie.setMaxAge(7*24*60*60);
                 cookie.setPath("/");
