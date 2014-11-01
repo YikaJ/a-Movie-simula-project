@@ -4,6 +4,7 @@ import com.mx.popcorn.base.ModelDrivenBaseAction;
 import com.mx.popcorn.controller.abstractAc.UserAbstractAction;
 import com.mx.popcorn.domain.User;
 import com.mx.popcorn.exception.UserExitException;
+import com.mx.popcorn.utils.TextTools;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.struts2.convention.annotation.*;
 import org.springframework.context.annotation.Scope;
@@ -85,6 +86,24 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
             jsonMap.put(JSON_STATUS_HEADER, ERROR);
             return ERROR;
         }
+    }
+
+    @Action(value = "asyncValidate",
+            results={@Result(name = SUCCESS, type = JSON, params = {"root", "true"}),
+                    @Result(name = FAILURE, type = JSON, params = {"root", "false"})})
+    public String asyncVal(){
+        try{
+            System.out.println("----------email--" + model.getEmail() + "----------password--" + model.getNick() + "--------------------------");
+            return !TextTools.isEmpty(model.getEmail())
+                            ? userService.isEmptyOfEmail(model.getEmail()) ? SUCCESS : FAILURE
+                            :  !TextTools.isEmpty(model.getNick())
+                                ?  userService.isEmptyOfNick(model.getNick()) ? SUCCESS : FAILURE
+                                :   FAILURE;
+        }catch (Exception e){
+            e.printStackTrace();
+            return FAILURE;
+        }
+
     }
 
 
