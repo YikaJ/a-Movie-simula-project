@@ -26,6 +26,17 @@ public class MovieAction  extends ModelDrivenBaseAction<Movie> {
         }
     }
 
+    @Action(value = "addMovieUI",
+            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/manager/movie/addMovieUI.jsp")})
+    public String addMovieUI(){
+        try{
+            return SUCCESS;
+        }catch (Exception e){
+            e.printStackTrace();
+            return ERROR;
+        }
+    }
+
     public static String getActionNameSpace() {
         return ACTION_NAME_SPACE;
     }
