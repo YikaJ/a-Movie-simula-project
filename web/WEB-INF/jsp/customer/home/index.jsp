@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/window.css">
 </head>
 <body>
-   <%@include file="/WEB-INF/jsp/public/head.jsp"%>
+   <%@include file="/WEB-INF/jsp/customer/public/head.jsp"%>
     <div id="banner">
         <ul>
             <li><a href="index.jsp" title="banner1" style="background-image: url(${pageContext.request.contextPath}/image/banner1.jpg)"></a></li>

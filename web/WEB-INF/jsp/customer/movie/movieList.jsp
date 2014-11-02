@@ -12,7 +12,7 @@
 <link href="../../../css/window.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <%@include file="/WEB-INF/jsp/public/head.jsp"%>
+    <%@include file="/WEB-INF/jsp/customer/public/head.jsp"%>
     <div class="content hr">
     	<span class="directory"><a href="../home/index.jsp">首页</a> > <a href="movieList">电影</a></span>
         <span class="smallTips">3步轻松购票: 1.选座购票/买券 -> 2.收电子码 -> 3.影院取票</span>

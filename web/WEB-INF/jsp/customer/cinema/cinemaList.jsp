@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/window.css">
 </head>
 <body>
-<%@include file="/WEB-INF/jsp/public/head.jsp"%>
+<%@include file="/WEB-INF/jsp/customer/public/head.jsp"%>
 <div class="content hr">
     <span class="directory"><a href="../home/index.jsp">首页</a> > <a href="movieList">影院</a></span>
     <span class="smallTips">3步轻松购票: 1.选座购票/买券 -> 2.收电子码 -> 3.影院取票</span>
@@ -34,58 +34,58 @@
                 <%--列表--%>
                 <ul class="cinemaList">
                     <li>
-                        <a href="cinemaInformation.jsp"><img class="cinemaImg" src="../image/cinemaSmallImg.jpg"></a>
+                        <a href="../../../../jsp/cinemaInformation.jsp"><img class="cinemaImg" src="../../../../image/cinemaSmallImg.jpg"></a>
                         <div class="cinemaInformation">
-                            <h4><a href="cinemaInformation.jsp">金逸湛江赤坎店</a></h4>
+                            <h4><a href="../../../../jsp/cinemaInformation.jsp">金逸湛江赤坎店</a></h4>
                             <p><span>地址：</span>湛江市赤坎区跃进路36号爱华广场五楼</p>
                             <p><span>更多：</span><a href="#">影院简介</a></p>
                         </div>
-                        <a class="goCinema" href="../jsp/cinemaInformation.jsp">影院购票</a>
+                        <a class="goCinema" href="../../../../jsp/cinemaInformation.jsp">影院购票</a>
                     </li>
                     <li>
-                        <a href="cinemaInformation.jsp"><img class="cinemaImg" src="../image/cinemaSmallImg.jpg"></a>
+                        <a href="../../../../jsp/cinemaInformation.jsp"><img class="cinemaImg" src="../../../../image/cinemaSmallImg.jpg"></a>
                         <div class="cinemaInformation">
-                            <h4><a href="cinemaInformation.jsp">金逸湛江赤坎店</a></h4>
+                            <h4><a href="../../../../jsp/cinemaInformation.jsp">金逸湛江赤坎店</a></h4>
                             <p><span>地址：</span>湛江市赤坎区跃进路36号爱华广场五楼</p>
                             <p><span>更多：</span><a href="#">影院简介</a></p>
                         </div>
-                        <a class="goCinema" href="../jsp/cinemaInformation.jsp">影院购票</a>
+                        <a class="goCinema" href="../../../../jsp/cinemaInformation.jsp">影院购票</a>
                     </li>
                     <li>
-                        <a href="cinemaInformation.jsp"><img class="cinemaImg" src="../image/cinemaSmallImg.jpg"></a>
+                        <a href="../../../../jsp/cinemaInformation.jsp"><img class="cinemaImg" src="../../../../image/cinemaSmallImg.jpg"></a>
                         <div class="cinemaInformation">
-                            <h4><a href="cinemaInformation.jsp">金逸湛江赤坎店</a></h4>
+                            <h4><a href="../../../../jsp/cinemaInformation.jsp">金逸湛江赤坎店</a></h4>
                             <p><span>地址：</span>湛江市赤坎区跃进路36号爱华广场五楼</p>
                             <p><span>更多：</span><a href="#">影院简介</a></p>
                         </div>
-                        <a class="goCinema" href="../jsp/cinemaInformation.jsp">影院购票</a>
+                        <a class="goCinema" href="../../../../jsp/cinemaInformation.jsp">影院购票</a>
                     </li>
                     <li>
-                        <a href="cinemaInformation.jsp"><img class="cinemaImg" src="../image/cinemaSmallImg.jpg"></a>
+                        <a href="../../../../jsp/cinemaInformation.jsp"><img class="cinemaImg" src="../../../../image/cinemaSmallImg.jpg"></a>
                         <div class="cinemaInformation">
-                            <h4><a href="cinemaInformation.jsp">金逸湛江赤坎店</a></h4>
+                            <h4><a href="../../../../jsp/cinemaInformation.jsp">金逸湛江赤坎店</a></h4>
                             <p><span>地址：</span>湛江市赤坎区跃进路36号爱华广场五楼</p>
                             <p><span>更多：</span><a href="#">影院简介</a></p>
                         </div>
-                        <a class="goCinema" href="../jsp/cinemaInformation.jsp">影院购票</a>
+                        <a class="goCinema" href="../../../../jsp/cinemaInformation.jsp">影院购票</a>
                     </li>
                     <li>
-                        <a href="cinemaInformation.jsp"><img class="cinemaImg" src="../image/cinemaSmallImg.jpg"></a>
+                        <a href="../../../../jsp/cinemaInformation.jsp"><img class="cinemaImg" src="../../../../image/cinemaSmallImg.jpg"></a>
                         <div class="cinemaInformation">
-                            <h4><a href="cinemaInformation.jsp">金逸湛江赤坎店</a></h4>
+                            <h4><a href="../../../../jsp/cinemaInformation.jsp">金逸湛江赤坎店</a></h4>
                             <p><span>地址：</span>湛江市赤坎区跃进路36号爱华广场五楼</p>
                             <p><span>更多：</span><a href="#">影院简介</a></p>
                         </div>
-                        <a class="goCinema" href="../jsp/cinemaInformation.jsp">影院购票</a>
+                        <a class="goCinema" href="../../../../jsp/cinemaInformation.jsp">影院购票</a>
                     </li>
                     <li>
-                        <a href="cinemaInformation.jsp"><img class="cinemaImg" src="../image/cinemaSmallImg.jpg"></a>
+                        <a href="../../../../jsp/cinemaInformation.jsp"><img class="cinemaImg" src="../../../../image/cinemaSmallImg.jpg"></a>
                         <div class="cinemaInformation">
-                            <h4><a href="cinemaInformation.jsp">金逸湛江赤坎店</a></h4>
+                            <h4><a href="../../../../jsp/cinemaInformation.jsp">金逸湛江赤坎店</a></h4>
                             <p><span>地址：</span>湛江市赤坎区跃进路36号爱华广场五楼</p>
                             <p><span>更多：</span><a href="#">影院简介</a></p>
                         </div>
-                        <a class="goCinema" href="../jsp/cinemaInformation.jsp">影院购票</a>
+                        <a class="goCinema" href="../../../../jsp/cinemaInformation.jsp">影院购票</a>
                     </li>
                 </ul>
             </div>
@@ -97,7 +97,7 @@
         </div>
         <ul class="rightBarMovieList">
             <li class="clearfix">
-                <a href="movieInformation.jsp">
+                <a href="../../../../jsp/movieInformation.jsp">
                     <img src="${pageContext.request.contextPath}/image/hotOn%20(2).jpg" class="fl" alt="movie">
                     <div class="rightBarInformation fl">
                         <h3>超体</h3>
@@ -107,7 +107,7 @@
                 </a>
             </li>
             <li class="clearfix">
-                <a href="movieInformation.jsp">
+                <a href="../../../../jsp/movieInformation.jsp">
                     <img src="${pageContext.request.contextPath}/image/hotOn%20(3).jpg" class="fl" alt="movie">
                     <div class="rightBarInformation fl">
                         <h3>超体</h3>
@@ -117,7 +117,7 @@
                 </a>
             </li>
             <li class="clearfix">
-                <a href="movieInformation.jsp">
+                <a href="../../../../jsp/movieInformation.jsp">
                     <img src="${pageContext.request.contextPath}/image/hotOn%20(4).jpg" class="fl" alt="movie">
                     <div class="rightBarInformation fl">
                         <h3>超体</h3>
@@ -128,7 +128,7 @@
             </li>
 
             <li class="clearfix">
-                <a href="movieInformation.jsp">
+                <a href="../../../../jsp/movieInformation.jsp">
                     <img src="${pageContext.request.contextPath}/image/hotOn%20(2).jpg" class="fl" alt="movie">
                     <div class="rightBarInformation fl">
                         <h3>超体</h3>
@@ -138,7 +138,7 @@
                 </a>
             </li>
             <li class="clearfix">
-                <a href="movieInformation.jsp">
+                <a href="../../../../jsp/movieInformation.jsp">
                     <img src="${pageContext.request.contextPath}/image/hotOn%20(1).jpg" class="fl" alt="movie">
                     <div class="rightBarInformation fl">
                         <h3>超体</h3>
@@ -148,7 +148,7 @@
                 </a>
             </li>
             <li class="clearfix">
-                <a href="movieInformation.jsp">
+                <a href="../../../../jsp/movieInformation.jsp">
                     <img src="${pageContext.request.contextPath}/image/hotOn%20(4).jpg" class="fl" alt="movie">
                     <div class="rightBarInformation fl">
                         <h3>超体</h3>

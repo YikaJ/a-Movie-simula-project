@@ -33,7 +33,7 @@
             <li class="<s:property value="actionNameSpace=='MovieIndex'?'currentPage':''"/>">
                 <a href="${pageContext.request.contextPath}/movie/index.do">电影</a>
             </li>
-            <li class="<s:property value="actionNameSpace=='MovieIndex'?'currentPage':''"/>">
+            <li class="<s:property value="actionNameSpace=='CinemaIndex'?'currentPage':''"/>">
                 <a href="${pageContext.request.contextPath}/cinema/index.do">影院</a>
             </li>
             <li><a href="#">发现</a></li>
