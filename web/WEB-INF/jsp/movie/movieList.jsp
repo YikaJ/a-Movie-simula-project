@@ -26,61 +26,61 @@
             <div class="movieContent fl">
                 <ul class="movieList fl">
                     <li>
-                        <a href="movieInformation.jsp">
+                        <a href="../../../jsp/movieInformation.jsp">
                             <img src="../../../image/hotOn%20(1).jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
-                        <a href="movieInformation.jsp">
+                        <a href="../../../jsp/movieInformation.jsp">
                             <img src="../../../image/hotOn%20(2).jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
-                        <a href="movieInformation.jsp">
+                        <a href="../../../jsp/movieInformation.jsp">
                             <img src="../../../image/hotOn%20(3).jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
-                        <a href="movieInformation.jsp">
+                        <a href="../../../jsp/movieInformation.jsp">
                             <img src="../../../image/hotOn%20(4).jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
-                        <a href="movieInformation.jsp">
+                        <a href="../../../jsp/movieInformation.jsp">
                             <img src="../../../image/hotOn%20(5).jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
-                        <a href="movieInformation.jsp">
+                        <a href="../../../jsp/movieInformation.jsp">
                             <img src="../../../image/hotOn%20(1).jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
-                        <a href="movieInformation.jsp">
+                        <a href="../../../jsp/movieInformation.jsp">
                             <img src="../../../image/hotOn%20(2).jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
-                        <a href="movieInformation.jsp">
+                        <a href="../../../jsp/movieInformation.jsp">
                             <img src="../../../image/hotOn%20(3).jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
-                        <a href="movieInformation.jsp">
+                        <a href="../../../jsp/movieInformation.jsp">
                             <img src="../../../image/hotOn%20(4).jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
-                        <a href="movieInformation.jsp">
+                        <a href="../../../jsp/movieInformation.jsp">
                             <img src="../../../image/hotOn%20(5).jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>

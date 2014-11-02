@@ -130,6 +130,10 @@
     font-size: 12px;
 }
 
+#loginResponse{
+    color: #EB002A;
+}
+
 a.window_toRegister, a.window_forgotPwd{
     color: #65AEDE;
     text-decoration: none;

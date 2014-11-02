@@ -38,49 +38,74 @@ a:link,a:hover,a:active,a:visited{
     color: #666;
 }
 /*账户信息*/
-/*未登录*/
 .loginRegister{
     font-size: 14px;
     position: absolute;
     right: 10%;
-    background: #FF6666;
-    color: #000;
-    border-radius: 0 0 10px 10px;
     z-index: 9000;
-}
-.loginRegister a{
-    color: #FFF;
-    padding: 10px;
+    height: 30px;
     line-height: 30px;
 }
-
+span.little{
+    background: #FF6666;
+}
+a.topBarLeft, a.topBarRight{
+    background: #FF6666;
+    line-height: 30px;
+    color: #FFF;
+    text-align: center;
+}
+a.topBarLeft{
+    float: left;
+    border-bottom-left-radius: 10px;
+    padding: 0 20px;
+}
+a.topBarRight{
+    float: right;
+    border-bottom-right-radius: 10px;
+    width: 70px;
+}
+/*未登录*/
 
 .loginRegister a:hover{
     color: #333;
 }
 /*登陆后*/
+a.loginLeft{
+    padding: 0 30px;
+}
+a.loginRight{
+    padding: 0 10px;
+}
 .userList{
     background: #F8F8F8;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    width: 70px;
     border: 1px solid #CCC;
     border-top: 0;
     border-radius: 0 0 10px 10px;
     text-align: center;
-    padding: 0 18px ;
     display: none;
+    padding: 0 10px;
 }
 .userList a{
-    font-size: 14px;
+    font-size: 12px;
     color: #999;
     display: block;
-    padding: 3px 0;
+    padding: 3px 10px;
     border-bottom: 1px solid #CCC;
+}
+a.activeRightBar{
+    border-bottom-right-radius: 0;
 }
 .icon{
     background: url("../image/icon_sprite.png") no-repeat top left;
     height: 15px;
     width: 15px;
     float: right;
-    margin: 12px 5px 0 -5px;
+    margin: 12px 0 0 0;
 }
 .iconActive{
     background-position: top right;

@@ -51,7 +51,7 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
                         passwordLabel = this.cfg.text4loginPwdPlaceholder;
                     }
                     /*登陆主体*/
-                    this.cfg.content = "<form action='/user/login.do' method='POST' id='window_login'><input type='email' placeholder=" +
+                    this.cfg.content = "<form action='/user/login.do' method='POST' id='window_login'><label id='loginResponse' class='window_inputError'></label><input type='email' placeholder=" +
                     this.cfg.text4loginUserPlaceholder + " class='window_emailInput window_formInput' name='email' required='required' id='L_email'><label class='window_inputError'>"+
                     userLabel +"</label><input type='password' placeholder=" +
                     this.cfg.text4loginPwdPlaceholder + " class='window_passwordInput window_formInput' name='L_originPwd' required id='L_originPwd'><label class='window_inputError' for='L_originPwd'>"+
@@ -148,7 +148,14 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
                             var pwd = $("#L_pwd")
                             pwd.val($.md5($password.val()));
                             $password.attr("disabled", "disabled");
-                            form.submit();
+                            $.post("/user/login.do", $(form).serialize(), function(data){
+                                if(data.response){
+                                    window.location.reload();
+                                }else{
+                                    $("#loginResponse").text(data.msg.text);
+                                    $password.removeAttr("disabled");
+                                }
+                            });
                         }
                     });
                     break;
@@ -236,7 +243,13 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
                             $("#R_pwd").val($.md5($password.val()));
                             $password.attr("disabled", "disabled");
                             $password1.attr("disabled", "disabled");
-                            form.submit();
+                            $.post("/user/register.do", $(form).serialize(), function(data){
+                                if(data.response){
+                                    window.location.reload();
+                                }else{
+                                    alert("系统错误，请重新输入");
+                                }
+                            })
                         }
                     })
                 break;

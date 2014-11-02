@@ -10,14 +10,18 @@ define(["jquery"], function($){
     $(document).click(function(event){
         if($myList.css("display") !== "none"){
             if(event.target.id !== "myList"){
-                $myList.stop().slideUp("3000");
+                $myList.stop().slideUp("3000", function(){
+                    $("#myStuff").removeClass("activeRightBar");
+                });
                 $(" .icon").removeClass("iconActive");
             }
         }
     });
     $("#myStuff").click(function(event){
         event.stopPropagation();
+        $(this).toggleClass("activeRightBar");
         $myList.stop().slideToggle("3000");
         $(" .icon").eq(0).toggleClass("iconActive");
+
     });
 });

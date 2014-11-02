@@ -33,7 +33,7 @@ require(["jquery", "autoplay","window", "common"], function ($, a, w) {
             hasMask: true,
             fixed: false,
             fadeIn: false,
-            height: 315,
+            height: 325,
             width: 400,
             text4loginUserPlaceholder: "请输入您的注册邮箱",
             text4loginPwdPlaceholder: "请输入您的密码",
