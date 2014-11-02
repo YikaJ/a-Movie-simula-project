@@ -9,7 +9,7 @@ import com.mx.popcorn.exception.UserExitException;
 public interface UserService extends BaseService {
 
 
-    void register(User model) throws Exception;
+    User register(User model) throws Exception;
 
     boolean isEmptyOfNick(String nick);
 

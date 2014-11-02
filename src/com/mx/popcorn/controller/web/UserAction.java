@@ -45,7 +45,8 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
                 jsonMap.put("msg", errorMap);
                 return FAILURE;
             }
-            userService.register(model);
+            User user = userService.register(model);
+            getSession().setAttribute(USER_SESSION, user);
             jsonMap.put(JSON_STATUS_HEADER, true);
             return SUCCESS;
         }catch (Exception e){

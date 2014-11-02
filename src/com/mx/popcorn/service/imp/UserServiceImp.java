@@ -1,7 +1,6 @@
 package com.mx.popcorn.service.imp;
 
 import com.mx.popcorn.domain.User;
-import com.mx.popcorn.exception.UserExitException;
 import com.mx.popcorn.service.UserService;
 import com.mx.popcorn.utils.QueryHelper;
 import org.springframework.stereotype.Service;
@@ -18,9 +17,11 @@ public class UserServiceImp extends BaseServiceImp implements UserService {
 
 
     @Override
-    public void register(User model) throws RuntimeException {
+    public User register(User model) throws RuntimeException {
         model.setCreateDate(new Date());
         userDao.save(model);
+        User user = userDao.getById(model.getId());
+        return user;
     }
 
     @Override
