@@ -10,10 +10,10 @@
 <div class="header">
     <div class="loginRegister clearfix">
         <s:if test="#session.user==null">
-                <a href="javascript:" id="login" class="topBarLeft">登陆</a><span class="fl little">|</span><a href="javascript:" id="register" class="topBarRight">注册</a>
+                <a href="javascript:" id="login" class="topBarLeft">登陆</a><span class="little">|</span><a href="javascript:" id="register" class="topBarRight">注册</a>
         </s:if>
         <s:else>
-            <a href="#" class="topBarLeft loginLeft"><s:property value="#session.user.nick"/></a><span class="fl little">|</span><a href="javascript:" id="myStuff" class="topBarRight loginRight">我的<i class="icon"></i></a>
+            <a href="#" class="topBarLeft loginLeft"><s:property value="#session.user.nick"/></a><span class="little">|</span><a href="javascript:" id="myStuff" class="topBarRight loginRight">我的<i class="icon"></i></a>
             <ul class="userList" id="myList">
                 <li><a href="#">个人资料</a></li>
                 <li><a href="#">我的订单</a></li>

@@ -1,7 +1,7 @@
 /*总弹出框*/
 	.window_boundingBox{
 		background: #FFF;
-		position: absolute;
+		position: fixed;
 		top: 20%;
 		left: 35%;
 		box-shadow: 0 0 15px #FFF;

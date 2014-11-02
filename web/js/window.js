@@ -55,8 +55,8 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
                     this.cfg.text4loginUserPlaceholder + " class='window_emailInput window_formInput' name='email' required='required' id='L_email'><label class='window_inputError'>"+
                     userLabel +"</label><input type='password' placeholder=" +
                     this.cfg.text4loginPwdPlaceholder + " class='window_passwordInput window_formInput' name='L_originPwd' required id='L_originPwd'><label class='window_inputError' for='L_originPwd'>"+
-                    passwordLabel +"</label><div class='window_loginOthers'><input type='checkbox' id='loginAuto' name='autoLoginTo' style='vertical-align:middle;' value='true'><label style='vertical-align:middle;' for='loginAuto'>" +
-                        this.cfg.text4autoLogin + "</label><a href='#' class='window_forgotPwd fr'>忘记密码</a></div><input type='hidden' id='L_pwd' name='password'><input type='submit' class='window_submitBtn' value='登陆'><div class='window_loginOthers'><a href='javascript:' class='window_toRegister fr'>立即注册</a></div></form>";
+                    passwordLabel +"</label><div class='window_loginOthers'><a href='#' class='window_forgotPwd fr'>忘记密码</a><input type='checkbox' id='loginAuto' name='autoLoginTo' style='vertical-align:middle;' value='true'><label style='vertical-align:middle;' for='loginAuto'>" +
+                        this.cfg.text4autoLogin + "</label></div><input type='hidden' id='L_pwd' name='password'><input type='submit' class='window_submitBtn' value='登陆'><div class='window_loginOthers'><a href='javascript:' class='window_toRegister fr'>立即注册</a></div></form>";
 				break;
 
                 case "register":
@@ -124,7 +124,8 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
                     $("#window_login").validate({
                         rules: {
                             email: {
-                                required: true
+                                required: true,
+                                email: true
                             },
                             L_originPwd: {
                                 required: true

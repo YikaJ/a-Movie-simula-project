@@ -48,6 +48,7 @@ a:link,a:hover,a:active,a:visited{
 }
 span.little{
     background: #FF6666;
+    float: left;
 }
 a.topBarLeft, a.topBarRight{
     background: #FF6666;
@@ -61,7 +62,7 @@ a.topBarLeft{
     padding: 0 20px;
 }
 a.topBarRight{
-    float: right;
+    float: left;
     border-bottom-right-radius: 10px;
     width: 70px;
 }
