@@ -56,7 +56,7 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
                     userLabel +"</label><input type='password' placeholder=" +
                     this.cfg.text4loginPwdPlaceholder + " class='window_passwordInput window_formInput' name='L_originPwd' required id='L_originPwd'><label class='window_inputError' for='L_originPwd'>"+
                     passwordLabel +"</label><div class='window_loginOthers'><a href='#' class='window_forgotPwd fr'>忘记密码</a><input type='checkbox' id='loginAuto' name='autoLoginTo' style='vertical-align:middle;' value='true'><label style='vertical-align:middle;' for='loginAuto'>" +
-                        this.cfg.text4autoLogin + "</label></div><input type='hidden' id='L_pwd' name='password'><input type='submit' class='window_submitBtn' value='登陆'><div class='window_loginOthers'><a href='javascript:' class='window_toRegister fr'>立即注册</a></div></form>";
+                        this.cfg.text4autoLogin + "</label></div><input type='hidden' id='L_pwd' name='password'><input type='submit' class='window_submitBtn' value='登陆' id='loginSubmit'><div class='window_loginOthers'><a href='javascript:' class='window_toRegister fr'>立即注册</a></div></form>";
 				break;
 
                 case "register":
@@ -143,18 +143,21 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
                         errorPlacement: function (error, element) {
                             element.next().html(error);
                         },
-                        /*MD5加密,保存cookie*/
+                        /*MD5加密,提交表单前的验证*/
                         submitHandler:function(form){
                             var $password = $("#L_originPwd");
-                            var pwd = $("#L_pwd")
+                            var pwd = $("#L_pwd");
+                            $("#loginSubmit").val("登陆中...");
                             pwd.val($.md5($password.val()));
                             $password.attr("disabled", "disabled");
+                            $("#loginResponse").text("");
                             $.post("/user/login.do", $(form).serialize(), function(data){
                                 if(data.response){
                                     window.location.reload();
                                 }else{
+                                    $password.removeAttr("disabled").val("").addClass("error");
                                     $("#loginResponse").text(data.msg.text);
-                                    $password.removeAttr("disabled");
+                                    $("#loginSubmit").val("登陆")
                                 }
                             });
                         }
@@ -237,13 +240,14 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
                                 element.next().html(error);
                             }
                         },
-                        /*MD5加密*/
+                        /*表单提交前的操作，MD5加密，ajax验证*/
                         submitHandler: function (form) {
                             var $password = $("#R_originPwd");
                             var $password1 = $("#R_originPwd1");
                             $("#R_pwd").val($.md5($password.val()));
                             $password.attr("disabled", "disabled");
                             $password1.attr("disabled", "disabled");
+
                             $.post("/user/register.do", $(form).serialize(), function(data){
                                 if(data.response){
                                     window.location.reload();
