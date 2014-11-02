@@ -28,12 +28,14 @@
         </h1>
         <ul class="nav">
             <li class="<s:property value="actionNameSpace=='HomeIndex'?'currentPage':''"/>">
-                <a href="${pageContext.request.contextPath}/index.do">首页</a>
+                <a href="${pageContext.request.contextPath}/">首页</a>
             </li>
             <li class="<s:property value="actionNameSpace=='MovieIndex'?'currentPage':''"/>">
                 <a href="${pageContext.request.contextPath}/movie/index.do">电影</a>
             </li>
-            <li><a href="#">影院</a></li>
+            <li class="<s:property value="actionNameSpace=='MovieIndex'?'currentPage':''"/>">
+                <a href="${pageContext.request.contextPath}/cinema/index.do">影院</a>
+            </li>
             <li><a href="#">发现</a></li>
         </ul>
     </div>
