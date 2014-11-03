@@ -30,4 +30,9 @@ public class Test {
         }
     }
 
+    @org.junit.Test
+    public void test2(){
+        System.out.println("移动".compareTo("啊"));
+    }
+
 }

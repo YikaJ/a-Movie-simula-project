@@ -44,10 +44,10 @@ public class SupportAction extends BaseAction {
     private String _imgContentType;
     private String imgPath;
     private String message;
-    private int x;
-    private int y;
-    private int width;
-    private int height;
+    private int x = -1;
+    private int y = -1;
+    private int width = -1;
+    private int height = -1;
 
     /*==========================验证码支持=============================*/
 
@@ -92,14 +92,33 @@ public class SupportAction extends BaseAction {
         return SUCCESS;
     }
     /*==============================截图支持=====================================*/
+    @Action(value = "imageShot",
+            results = {@Result(name = SUCCESS, type = JSON, params = {"root", "jsonMap"}),
+                    @Result(name = FAILURE, type = JSON, params = {"root", "jsonMap"}),
+                    @Result(name = ERROR, type = JSON, params = {"root", "jsonMap"})})
     public String imageShot(){
         ImageInputStream imageInput = null;
         try {
-            String imageForm = _imgFileName.substring(_imgFileName.lastIndexOf(".")+1);
-            if (!Arrays.asList(Configuration.getImageForm().split(",")).contains(imageForm))
-                return "imageFormError";
+            if (imgPath==null){
+                jsonMap.put("msg", "路径不正确");
+                jsonMap.put(JSON_STATUS_HEADER, false);
+                return FAILURE;
+            }
+            String imageForm = imgPath.substring(imgPath.lastIndexOf(".")+1);
+            if (!Arrays.asList(Configuration.getImageForm().split(",")).contains(imageForm)){
+                jsonMap.put("msg", "上传格式错误");
+                jsonMap.put(JSON_STATUS_HEADER, false);
+                return FAILURE;
+            }
+            String imagePath = ServletActionContext.getServletContext().getRealPath(imgPath);
+            File imageFile = new File(imagePath);
+            if (x==-1 || y==-1 || width==-1 || height==-1 ||!imageFile.exists()){
+                jsonMap.put("msg", "上传数据失误");
+                jsonMap.put(JSON_STATUS_HEADER, false);
+                return FAILURE;
+            }
             ImageReader reader = ImageIO.getImageReadersByFormatName(imageForm).next();
-            imageInput = ImageIO.createImageInputStream(_img);
+            imageInput = ImageIO.createImageInputStream(imageFile);
             reader.setInput(imageInput, true);
             ImageReadParam param = reader.getDefaultReadParam();
             Rectangle rect = new Rectangle(x, y, width, height);
@@ -114,11 +133,14 @@ public class SupportAction extends BaseAction {
                 try {
                     imageInput.close();
                 } catch (IOException e) {
-                    throw new RuntimeException(e);
+                    e.printStackTrace();
+                    jsonMap.put(JSON_STATUS_HEADER, ERROR);
+                    return ERROR;
                 }
         }
-        System.out.println("------------------------end-------------------------");
-        return null;
+        jsonMap.put("msg", imgPath);
+        jsonMap.put(JSON_STATUS_HEADER, true);
+        return SUCCESS;
     }
 
     /*==============================获取保存图片的路径=====================================*/
