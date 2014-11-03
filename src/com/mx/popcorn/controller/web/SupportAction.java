@@ -1,12 +1,17 @@
 package com.mx.popcorn.controller.web;
 
+import com.mx.popcorn.base.BaseAction;
 import com.mx.popcorn.configuration.Configuration;
 import com.mx.popcorn.utils.Security;
 import com.opensymphony.xwork2.ActionSupport;
+import net.sf.json.JSON;
+import net.sf.json.JSONObject;
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -31,7 +36,7 @@ import java.util.UUID;
 @Scope("prototype")
 @ParentPackage("default")
 @Namespace("/support")
-public class SupportAction extends ActionSupport {
+public class SupportAction extends BaseAction {
 
     private String ueditorConfig;
     private File _img;
@@ -61,20 +66,29 @@ public class SupportAction extends ActionSupport {
      * 存储上传的图片，每个月换一次文件夹，返回url
      * @return
      */
+    @Action(value = "uploadImage",
+            results = {@Result(name = SUCCESS, type = JSON, params = {"root", "jsonMap"}),
+                                @Result(name = FORM_ERROR, type = JSON, params = {"root", "jsonMap"}),
+                                @Result(name = ERROR, type = JSON, params = {"root", "jsonMap"})})
     public String uploadImage(){
-        System.out.println("======================_img");
         String imageForm = _imgFileName.substring(_imgFileName.lastIndexOf(".")+1);
-        if (!Arrays.asList(Configuration.getImageForm().split(",")).contains(imageForm))
-            return "imageFormError";
+        if (!Arrays.asList(Configuration.getImageForm().split(",")).contains(imageForm)){
+            jsonMap.put("msg", "上传格式错误");
+            jsonMap.put(JSON_STATUS_HEADER, false);
+            return FORM_ERROR;
+        }
         String path = getImagePath();
         if (path==null)
             return null;
         try {
             FileUtils.copyFile(_img, new File(path));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+            jsonMap.put(JSON_STATUS_HEADER, ERROR);
+            return ERROR;
         }
-        System.out.println("==========================imgPath");
+        jsonMap.put("msg", imgPath);
+        jsonMap.put(JSON_STATUS_HEADER, true);
         return SUCCESS;
     }
     /*==============================截图支持=====================================*/
@@ -120,17 +134,7 @@ public class SupportAction extends ActionSupport {
         }
         String name = UUID.randomUUID().toString() + _imgFileName.substring(_imgFileName.lastIndexOf("."));
         imgPath = "/images/upload/"+datePath +"/"+ name;
-        System.out.println("======imgPath========="+imgPath);
         return basePath +"/"+ datePath +"/"+ name;
-    }
-    /*==============================测试=====================================*/
-    public String textUI(){
-        return SUCCESS;
-    }
-
-    public String text(){
-        System.out.println("=====================text running");
-        return SUCCESS;
     }
 
     /*==============================get/set=====================================*/
