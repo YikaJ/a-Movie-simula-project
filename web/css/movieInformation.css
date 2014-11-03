@@ -23,6 +23,8 @@
 
 .poster{
     float: left;
+    width: 215px;
+    height: 330px;
 }
 .movieDetail{
     float: right;

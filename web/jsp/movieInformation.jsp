@@ -12,7 +12,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/window.css">
 </head>
 <body>
-<%@include file="/WEB-INF/jsp/public/head.jsp"%>
+<%--<%@include file="/WEB-INF/jsp/public/head.jsp"%>--%>
 
     <div class="movieInformation clearfix">
         <div class="content">
@@ -26,7 +26,7 @@
                 </li>
                 <li>导演：吕克·贝松</li>
                 <li>主演：斯嘉丽·约翰逊,摩根·弗里曼,安娜丽·提普顿,阿马尔·维克德,崔岷植 ,乔汗·菲利普·阿斯巴克,李淳</li>
-                <li>类型：3D,IMAX,普通</li>
+                <li>类型：3D,IMAX</li>
                 <li>地区：中国大陆,法国</li>
                 <li>语言：英语|法语</li>
                 <li>片长：90分钟</li>
