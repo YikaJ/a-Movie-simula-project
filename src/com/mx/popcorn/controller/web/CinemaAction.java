@@ -21,7 +21,7 @@ public class CinemaAction extends ModelDrivenBaseAction<Cinema>{
     private static final String ACTION_NAME_SPACE = "CinemaIndex";
 
     @Action(value = "index",
-            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/cinemaList.jsp")})
+            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/customer/cinema/cinemaList.jsp")})
     public String index(){
         try {
             return SUCCESS;

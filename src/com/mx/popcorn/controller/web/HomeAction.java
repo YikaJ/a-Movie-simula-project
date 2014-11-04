@@ -24,7 +24,7 @@ public class HomeAction extends BaseAction{
     }
 
     @Action(value = "/manage/index",
-            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/customer/index.jsp")})
+            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/manage/index.jsp")})
     public String managerIndex(){
         return SUCCESS;
     }

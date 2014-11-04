@@ -18,7 +18,7 @@ public class MovieAction  extends ModelDrivenBaseAction<Movie> {
 
     private static final String ACTION_NAME_SPACE = "MovieIndex";
 
-    @Action(value = "index", results = @Result(location = "/WEB-INF/jsp/movie/movieList.jsp"))
+    @Action(value = "index", results = @Result(location = "/WEB-INF/jsp/customer/movie/movieList.jsp"))
     public String index(){
         try {
             return SUCCESS;
@@ -28,8 +28,8 @@ public class MovieAction  extends ModelDrivenBaseAction<Movie> {
         }
     }
 
-    @Action(value = "addMovieUI",
-            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/manager/movie/addMovieUI.jsp")})
+    @Action(value = "/manage/movie/addMovieUI",
+            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/manage/movie/addMovieUI.jsp")})
     public String addMovieUI(){
         try{
             getActionContext().put("movieType", typeService.getAllMovieType());
