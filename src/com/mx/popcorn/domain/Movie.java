@@ -17,6 +17,9 @@ public class Movie {
     private Long id;
 
     @Column(length = 50)
+    private String name;
+
+    @Column(length = 50)
     private String director;
 
     @Column(length = 100)
@@ -49,9 +52,8 @@ public class Movie {
     @JoinTable(name = "Movie_MovieVersion", joinColumns = {@JoinColumn(name = "movieId")}, inverseJoinColumns = {@JoinColumn(name = "movieVersionId")})
     private Set<MovieVersion> movieVersions;
 
-    @ManyToOne
-    @JoinColumn(name = "regionId")
-    private Region region;
+    @Column(length = 100)
+    private String region;
 
     @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.LAZY, mappedBy = "movie")
     private Set<Schedule> schedules;
@@ -70,6 +72,30 @@ public class Movie {
 
     private Date createDate;
 
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "id=" + id +
+                ", director='" + director + '\'' +
+                ", scriptwriter='" + scriptwriter + '\'' +
+                ", alias='" + alias + '\'' +
+                ", showTime=" + showTime +
+                ", mainRole='" + mainRole + '\'' +
+                ", poster='" + poster + '\'' +
+                ", introduce='" + introduce + '\'' +
+                ", filmTime=" + filmTime +
+                ", language='" + language + '\'' +
+                ", region='" + region + '\'' +
+                '}';
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String getIntroduce() {
         return introduce;
@@ -205,11 +231,11 @@ public class Movie {
         this.movieVersions = movieVersions;
     }
 
-    public Region getRegion() {
+    public String getRegion() {
         return region;
     }
 
-    public void setRegion(Region region) {
+    public void setRegion(String region) {
         this.region = region;
     }
 
