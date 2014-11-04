@@ -233,7 +233,7 @@
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label" for="date01">上映时间</label>
                                     <div class="col-lg-10">
-                                        <input type="text" name="showTime" class="form-control datepicker" id="date01" value="11/4/2014">
+                                        <input type="text" name="showTime" class="form-control datepicker" id="date01" value="11-4-2014">
                                         <p class="help-block text-danger">可以选择，可以手写</p>
                                     </div>
                                 </div>
