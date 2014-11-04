@@ -23,8 +23,4 @@ define(["jquery"], function($){
         $myList.stop().slideToggle("3000");
         $(" .icon").eq(0).toggleClass("iconActive");
     });
-
-
-    /*movieInformation*/
-    console.log($(".summary").eq(0).text());
 });

@@ -31,7 +31,7 @@
                 <li>语言：<span>英语|法语</span></li>
                 <li>片长：<span>90分钟</span></li>
                 <li class="summary">剧情介绍：<span>是一部以台北为背景的科幻动作电影。一个年轻女人被迫变成毒贩然后这种毒品倾入她自己身体系统的故事。但这种毒品却并不会让人萎靡丧命，反而给了她超于常人的力量，包括心灵感应，疼痛和不适的化解消失及瞬间吸收知识等技能，相当于一部吕克·贝松的超级英雄片。</span>
-                    <a href="javascript:" class="summaryOpen">
+                    <a href="javascript:" class="summaryToggle">
                             展开>>
                     </a>
                 </li>
