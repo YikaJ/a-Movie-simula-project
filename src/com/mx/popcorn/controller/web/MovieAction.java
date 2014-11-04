@@ -9,6 +9,9 @@ import org.apache.struts2.convention.annotation.*;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created by Administrator on 2014-10-28.
  */
@@ -22,6 +25,11 @@ public class MovieAction  extends ModelDrivenBaseAction<Movie> {
     private String[] type;
     private String[] version;
 
+
+    /**
+     * 电影列表主页
+     * @return
+     */
     @Action(value = "index", results = @Result(location = "/WEB-INF/jsp/customer/movie/movieList.jsp"))
     public String index(){
         try {
@@ -32,6 +40,10 @@ public class MovieAction  extends ModelDrivenBaseAction<Movie> {
         }
     }
 
+    /**
+     * 上传电影的UI界面
+     * @return
+     */
     @Action(value = "/manage/movie/addMovieUI",
             results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/manage/movie/addMovieUI.jsp")})
     public String addMovieUI(){
@@ -45,26 +57,50 @@ public class MovieAction  extends ModelDrivenBaseAction<Movie> {
         }
     }
 
-    @Action(value = "publishMovie", results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/manage/index.jsp")})
+    /**
+     * 上传电影
+     * @return
+     */
+    @Action(value = "/manage/movie/publishMovie",
+            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/manage/index.jsp"),
+                                @Result(name = INPUT, location = "/WEB-INF/jsp/manage/movie/addMovieUI.jsp")})
     public String publishMovie(){
+        try{
+            Set<MovieType> types = new HashSet<MovieType>();
+           for(String typeId : type){
+               MovieType typeItem = typeService.getMovieType(Long.valueOf(typeId));
+               if (typeItem != null)
+                    types.add(typeItem);
+           }
+            model.setMovieTypes(types);
 
-        System.out.println(model.toString());
-        System.out.println(type);
-        System.out.println(version);
-        /*try{
-            if (movieTypeId == null || movieVersionId == null)
-                return ERROR;
-            MovieType movieType = typeService.getMovieType(movieTypeId);
-            MovieVersion movieVersion = typeService.getMovieVersion(movieVersionId);
-            if (movieType == null || movieVersion == null)
-                return  ERROR;
+            Set<MovieVersion> versions = new HashSet<MovieVersion>();
+            for (String versionId : version){
+                MovieVersion versionItem = typeService.getMovieVersion(Long.valueOf(versionId));
+                if (versionItem != null)
+                    versions.add(versionItem);
+            }
+            model.setMovieVersions(versions);
+
+            movieService.publishMovie(model);
             return SUCCESS;
         }catch (Exception e){
             e.printStackTrace();
             return ERROR;
-        }*/
-        return null;
+        }
     }
+
+    /**
+     * 发布影片的数据初步效验
+     */
+    public void publishMovieValidate(){
+        if (type.length <= 0)
+            addFieldError("movieType", "至少一个有一个选择");
+        if (version.length <= 0)
+            addFieldError("movieVersion", "至少一个有一个选择");
+    }
+
+
 
     public static String getActionNameSpace() {
         return ACTION_NAME_SPACE;

@@ -57,6 +57,10 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
     }
 
 
+    /**
+     * 用户登陆
+     * @return
+     */
     @Action(value = "login",
             results={@Result(name = SUCCESS, type = JSON, params = {"root", "jsonMap"}),
                     @Result(name = FAILURE, type = JSON, params = {"root", "jsonMap"}),
@@ -87,6 +91,10 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
         }
     }
 
+    /**
+     * 用于注册时异步效验邮箱和昵称是否已经被注册过
+     * @return
+     */
     @Action(value = "asyncValidate",
             results={@Result(name = SUCCESS, type = JSON, params = {"root", "true"}),
                     @Result(name = FAILURE, type = JSON, params = {"root", "false"})})
@@ -104,6 +112,10 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
         }
     }
 
+    /**
+     * 注销
+     * @return
+     */
     @Action(value = "loginOff", results = {@Result(name = SUCCESS, type = "redirect", location = "${previous}")})
     public String loginOff(){
         Cookie cookies[] = ServletActionContext.getRequest().getCookies();

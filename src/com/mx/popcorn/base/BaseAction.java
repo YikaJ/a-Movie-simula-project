@@ -54,7 +54,7 @@ public class BaseAction extends ActionSupport {
     /*=============================返回值=================================*/
     public static final String JSON = "json";
     public static final String FAILURE = "failure";
-    public static final String NOTHING = "nothing";
+    public static final String FIND_FAILURE = "find_failure";
     public static final String FORBID = "forbid";
     public static final String HOME = "home";
     public static final String FORM_ERROR = "form_error";
