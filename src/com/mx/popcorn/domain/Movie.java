@@ -27,6 +27,15 @@ public class Movie {
 
     private Date showTime;
 
+    @Column(length = 100)
+    private String mainRole;
+
+    @Column(length = 200)
+    private String poster;
+
+    @Column(length = 2000)
+    private String introduce;
+
     private int filmTime;
 
     @Column(length = 20)
@@ -57,10 +66,34 @@ public class Movie {
     @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.LAZY, mappedBy = "movie")
     private Set<MovieGrade> movieGrades;
 
-    private int status;
+    private int status = 0;
 
     private Date createDate;
 
+
+    public String getIntroduce() {
+        return introduce;
+    }
+
+    public void setIntroduce(String introduce) {
+        this.introduce = introduce;
+    }
+
+    public String getMainRole() {
+        return mainRole;
+    }
+
+    public void setMainRole(String mainRole) {
+        this.mainRole = mainRole;
+    }
+
+    public String getPoster() {
+        return poster;
+    }
+
+    public void setPoster(String poster) {
+        this.poster = poster;
+    }
 
     @JSON(serialize = false)
     public Set<Schedule> getSchedules() {

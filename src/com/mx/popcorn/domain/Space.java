@@ -2,10 +2,7 @@ package com.mx.popcorn.domain;
 
 import com.sun.istack.internal.Nullable;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -13,6 +10,7 @@ import java.util.Date;
  */
 @MappedSuperclass
 public class Space {
+
 
     @Id
     @GeneratedValue

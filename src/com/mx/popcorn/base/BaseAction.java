@@ -5,6 +5,7 @@ import com.mx.popcorn.domain.Schedule;
 import com.mx.popcorn.domain.User;
 import com.mx.popcorn.service.*;
 import com.mx.popcorn.service.imp.GradeServiceImp;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.ServletActionContext;
 
@@ -42,6 +43,8 @@ public class BaseAction extends ActionSupport {
     protected SpaceService spaceService;
     @Resource
     protected UserService userService;
+    @Resource
+    protected TypeService typeService;
 
      /*===============================常量===============================*/
     public static final String USER_SESSION = "user";
@@ -136,6 +139,12 @@ public class BaseAction extends ActionSupport {
         return ServletActionContext.getResponse();
     }
 
+    /**
+     * 获得Context对象
+     */
+    public ActionContext getActionContext(){
+        return ActionContext.getContext();
+    }
 
     /*=======================================================*/
 

@@ -67,9 +67,9 @@ public class SupportAction extends BaseAction {
      * @return
      */
     @Action(value = "uploadImage",
-            results = {@Result(name = SUCCESS, type = JSON, params = {"root", "jsonMap"}),
-                                @Result(name = FORM_ERROR, type = JSON, params = {"root", "jsonMap"}),
-                                @Result(name = ERROR, type = JSON, params = {"root", "jsonMap"})})
+            results = {@Result(name = SUCCESS, type = JSON, params = {"contentType", "text/html", "root", "jsonMap"}),
+                                @Result(name = FORM_ERROR, type = JSON, params = {"contentType", "text/html", "root", "jsonMap"}),
+                                @Result(name = ERROR, type = JSON, params = {"contentType", "text/html", "root", "jsonMap"})})
     public String uploadImage(){
         String imageForm = _imgFileName.substring(_imgFileName.lastIndexOf(".")+1);
         if (!Arrays.asList(Configuration.getImageForm().split(",")).contains(imageForm)){
@@ -93,9 +93,9 @@ public class SupportAction extends BaseAction {
     }
     /*==============================截图支持=====================================*/
     @Action(value = "imageShot",
-            results = {@Result(name = SUCCESS, type = JSON, params = {"root", "jsonMap"}),
-                    @Result(name = FAILURE, type = JSON, params = {"root", "jsonMap"}),
-                    @Result(name = ERROR, type = JSON, params = {"root", "jsonMap"})})
+            results = {@Result(name = SUCCESS, type = JSON, params = {"contentType", "text/html", "root", "jsonMap"}),
+                    @Result(name = FAILURE, type = JSON, params = {"contentType", "text/html", "root", "jsonMap"}),
+                    @Result(name = ERROR, type = JSON, params = {"contentType", "text/html", "root", "jsonMap"})})
     public String imageShot(){
         ImageInputStream imageInput = null;
         try {

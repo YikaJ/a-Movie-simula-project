@@ -2,6 +2,7 @@ package com.mx.popcorn.controller.web;
 
 import com.mx.popcorn.base.ModelDrivenBaseAction;
 import com.mx.popcorn.domain.Movie;
+import com.opensymphony.xwork2.ActionContext;
 import org.apache.struts2.convention.annotation.*;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -22,6 +23,7 @@ public class MovieAction  extends ModelDrivenBaseAction<Movie> {
         try {
             return SUCCESS;
         }catch (Exception e){
+            e.printStackTrace();
             return ERROR;
         }
     }
@@ -30,6 +32,20 @@ public class MovieAction  extends ModelDrivenBaseAction<Movie> {
             results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/manager/movie/addMovieUI.jsp")})
     public String addMovieUI(){
         try{
+            getActionContext().put("movieType", typeService.getAllMovieType());
+            getActionContext().put("movieVersion", typeService.getAllMovieVersion());
+            getActionContext().put("region", spaceService.getAllRegion());
+            return SUCCESS;
+        }catch (Exception e){
+            e.printStackTrace();
+            return ERROR;
+        }
+    }
+
+
+    public String publishMovie(){
+        try{
+
             return SUCCESS;
         }catch (Exception e){
             e.printStackTrace();
