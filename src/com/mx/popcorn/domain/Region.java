@@ -13,16 +13,4 @@ import java.util.Set;
  */
 @Entity
 public class Region extends Space {
-
-    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY, mappedBy = "region")
-    private Set<Movie> movies;
-
-    @JSON(serialize = false)
-    public Set<Movie> getMovies() {
-        return movies;
-    }
-
-    public void setMovies(Set<Movie> movies) {
-        this.movies = movies;
-    }
 }
