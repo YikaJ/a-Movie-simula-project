@@ -172,25 +172,41 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-lg-2 control-label" for="movieTypeId">类型</label>
+                                    <label class="col-lg-2 control-label">类型</label>
                                     <div class="col-lg-10">
-                                        <select id="movieTypeId" name="movieTypeId" class="chzn-select" style="width: 150px">
-                                            <option>爱情动作片</option>
-                                            <option>爱情动作片</option>
-                                            <option>爱情动作片</option>
-                                        </select>
+                                        <label class="uniform">
+                                            <input class="uniform_on" type="checkbox" name="love"  value="爱情片">
+                                            爱情片
+                                            <input class="uniform_on" type="checkbox" name="love"  value="动作片">
+                                            爱情片
+                                            <input class="uniform_on" type="checkbox" name="love"  value="恐怖片">
+                                            爱情片
+                                            <input class="uniform_on" type="checkbox" name="love"  value="武侠片">
+                                            爱情片
+                                            <input class="uniform_on" type="checkbox" name="love"  value="爱情片">
+                                            爱情片
+                                            <input class="uniform_on" type="checkbox" name="love"  value="动作片">
+                                            爱情片
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-lg-2 control-label" for="versionId">版本</label>
+                                    <label class="col-lg-2 control-label">版本</label>
                                     <div class="col-lg-10">
-                                        <select id="versionId" name="versionId" class="chzn-select" style="width: 150px">
-                                            <option>2D</option>
-                                            <option>3D</option>
-                                            <option>IMAX</option>
-                                            <option>4D</option>
-                                            <option>5D</option>
-                                        </select>
+                                        <label class="uniform">
+                                            <input class="uniform_on" type="checkbox" name="love"  value="爱情片">
+                                            爱情片
+                                            <input class="uniform_on" type="checkbox" name="love"  value="动作片">
+                                            爱情片
+                                            <input class="uniform_on" type="checkbox" name="love"  value="恐怖片">
+                                            爱情片
+                                            <input class="uniform_on" type="checkbox" name="love"  value="武侠片">
+                                            爱情片
+                                            <input class="uniform_on" type="checkbox" name="love"  value="爱情片">
+                                            爱情片
+                                            <input class="uniform_on" type="checkbox" name="love"  value="动作片">
+                                            爱情片
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="form-group">
