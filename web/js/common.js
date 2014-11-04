@@ -17,10 +17,18 @@ define(["jquery"], function($){
             }
         }
     });
+    //登录后的下拉列表
     $("#myStuff").click(function(event){
         event.stopPropagation();
         $(this).toggleClass("activeRightBar");
         $myList.stop().slideToggle("3000");
         $(" .icon").eq(0).toggleClass("iconActive");
     });
+
+    var rightBarTab = $(".rightBarTab a");
+    rightBarTab.click(function(){
+        var index = $(this).index();
+        rightBarTab.eq(index).addClass("activeRightBarTab").siblings().removeClass();
+        $(".rightBarMovieList").eq(index).show().siblings("ul").hide();
+    })
 });

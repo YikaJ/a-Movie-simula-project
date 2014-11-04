@@ -172,7 +172,8 @@ a.moreFirm:hover,a.moreCinema:hover,a.moreNews:hover{
 }
 
 .activeList a.buyTicket:hover{
-    box-shadow: 0 0 10px #FF2F53;
+    background: #FF0134;
+    box-shadow: 0 0 10px #333;
 }
 
 .rank .activeList  img{

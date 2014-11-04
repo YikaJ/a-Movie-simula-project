@@ -20,8 +20,8 @@
     <div class="details content">
         <div class="movieBox fl">
             <div class="movieTab">
-                <a href="javascript:" class="currentTab">正在热映</a>
-                <a href="javascript:">即将上映</a>
+                <a href="javascript:" class="currentTab" id="hotTab">正在热映</a>
+                <a href="javascript:" id="soonTab">即将上映</a>
             </div>
             <div class="movieContent fl">
                 <ul class="movieList fl">

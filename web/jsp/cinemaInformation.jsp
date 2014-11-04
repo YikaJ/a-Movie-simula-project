@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/window.css">
 </head>
 <body>
-<%@include file="/WEB-INF/jsp/public/head.jsp"%>
+<%--<%@include file="/WEB-INF/jsp/public/head.jsp"%>--%>
 
 <div class="cinemaInformation clearfix">
     <div class="content">

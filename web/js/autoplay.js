@@ -54,7 +54,7 @@ define(["jquery", "widget"], function ($, w){
 			var timer = setInterval(this.autoMove, this.cfg.time4Interval);
 			this.cfg.box.mouseenter(function() {
 				clearInterval(timer);
-				self.arrows.show();
+				self.arrows.stop().fadeIn("fast");
 			});
 			this.cfg.box.mouseleave(function() {
 				clearInterval(timer);

@@ -12,7 +12,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/window.css">
 </head>
 <body>
-<%--<%@include file="/WEB-INF/jsp/public/head.jsp"%>--%>
+<%--<%@include file="/WEB-INF/jsp/customer/public/head.jsp"%>--%>
 
     <div class="movieInformation clearfix">
         <div class="content">
@@ -137,10 +137,10 @@
 				<a href="javascript:" class="activeRightBarTab">正在热映</a>
 				<a href="javascript:">即将上映</a>
 			</div>
-			<ul class="rightBarMovieList">
+			<ul  class="rightBarMovieList">
 				<li class="clearfix">
                     <a href="movieInformation.jsp">
-                        <img src="${pageContext.request.contextPath}/image/hotOn%20(2).jpg" class="fl" alt="movie">
+                        <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" class="fl" alt="movie">
                         <div class="rightBarInformation fl">
                             <h3>超体</h3>
                             <p><span>2014-10-24</span>首映</p>
@@ -150,7 +150,7 @@
 				</li>
 				<li class="clearfix">
                     <a href="movieInformation.jsp">
-					<img src="${pageContext.request.contextPath}/image/hotOn%20(3).jpg" class="fl" alt="movie">
+					<img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" class="fl" alt="movie">
 					<div class="rightBarInformation fl">
 						<h3>超体</h3>
 						<p><span>2014-10-24</span>首映</p>
@@ -160,7 +160,7 @@
 				</li>
 				<li class="clearfix">
                     <a href="movieInformation.jsp">
-					<img src="${pageContext.request.contextPath}/image/hotOn%20(4).jpg" class="fl" alt="movie">
+					<img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" class="fl" alt="movie">
 					<div class="rightBarInformation fl">
 						<h3>超体</h3>
 						<p><span>2014-10-24</span>首映</p>
@@ -171,7 +171,7 @@
 
 				<li class="clearfix">
                     <a href="movieInformation.jsp">
-					<img src="${pageContext.request.contextPath}/image/hotOn%20(2).jpg" class="fl" alt="movie">
+					<img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" class="fl" alt="movie">
 					<div class="rightBarInformation fl">
 						<h3>超体</h3>
 						<p><span>2014-10-24</span>首映</p>
@@ -181,7 +181,7 @@
 				</li>
 				<li class="clearfix">
                     <a href="movieInformation.jsp">
-					<img src="${pageContext.request.contextPath}/image/hotOn%20(1).jpg" class="fl" alt="movie">
+					<img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" class="fl" alt="movie">
 					<div class="rightBarInformation fl">
 						<h3>超体</h3>
 						<p><span>2014-10-24</span>首映</p>
@@ -191,7 +191,7 @@
 				</li>
 				<li class="clearfix">
                     <a href="movieInformation.jsp">
-					<img src="${pageContext.request.contextPath}/image/hotOn%20(4).jpg" class="fl" alt="movie">
+					<img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" class="fl" alt="movie">
 					<div class="rightBarInformation fl">
 						<h3>超体</h3>
 						<p><span>2014-10-24</span>首映</p>
@@ -200,6 +200,69 @@
                     </a>
 				</li>
 			</ul>
+            <ul  class="rightBarMovieList" style="display: none">
+                <li class="clearfix">
+                    <a href="movieInformation.jsp">
+                        <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" class="fl" alt="movie">
+                        <div class="rightBarInformation fl">
+                            <h3>超体</h3>
+                            <p><span>2014-10-24</span>首映</p>
+                            <p>导演：卢克•贝松</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="clearfix">
+                    <a href="movieInformation.jsp">
+                        <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" class="fl" alt="movie">
+                        <div class="rightBarInformation fl">
+                            <h3>超体</h3>
+                            <p><span>2014-10-24</span>首映</p>
+                            <p>导演：卢克•贝松</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="clearfix">
+                    <a href="movieInformation.jsp">
+                        <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" class="fl" alt="movie">
+                        <div class="rightBarInformation fl">
+                            <h3>超体</h3>
+                            <p><span>2014-10-24</span>首映</p>
+                            <p>导演：卢克•贝松</p>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="clearfix">
+                    <a href="movieInformation.jsp">
+                        <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" class="fl" alt="movie">
+                        <div class="rightBarInformation fl">
+                            <h3>超体</h3>
+                            <p><span>2014-10-24</span>首映</p>
+                            <p>导演：卢克•贝松</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="clearfix">
+                    <a href="movieInformation.jsp">
+                        <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" class="fl" alt="movie">
+                        <div class="rightBarInformation fl">
+                            <h3>超体</h3>
+                            <p><span>2014-10-24</span>首映</p>
+                            <p>导演：卢克•贝松</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="clearfix">
+                    <a href="movieInformation.jsp">
+                        <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" class="fl" alt="movie">
+                        <div class="rightBarInformation fl">
+                            <h3>超体</h3>
+                            <p><span>2014-10-24</span>首映</p>
+                            <p>导演：卢克•贝松</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
 		</div>
     </div>
 
