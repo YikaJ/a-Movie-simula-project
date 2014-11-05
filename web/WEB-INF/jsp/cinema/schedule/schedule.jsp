@@ -19,6 +19,7 @@
         div.confirmMovieTime{
             background: #F5F5F5;
         }
+
         .confirmMovieTime  .btn-hidden{
             display: none;
         }
@@ -152,7 +153,7 @@
                                         <tbody class="row">
                                         <tr id="cloneTr">
                                             <td class="col-lg-4">
-                                                <input type="text" class="form-control"/>
+                                                <input type="text" class="form-control" required="true"/>
                                             </td>
                                             <td class="col-lg-4">
                                                 <select name="name" class="selectize-select form-control">
@@ -170,7 +171,7 @@
                                         </tbody>
                                     </table>
                                     <button class="btn btn-danger pull-right removeMovieBtn" type="button">删除排期</button>
-                                    <button class="btn btn-success pull-right confirmMovieTimeBtn" type="button">确认排期</button>
+                                    <button class="btn btn-success pull-right confirmMovieTimeBtn" type="submit">确认排期</button>
                                 </div>
                             </form>
                         </div>
@@ -228,7 +229,7 @@
             var appendTbody = $(this).parents(".div-margin").find("tbody");
             appendTbody.append($("#cloneTr").clone().hide().fadeIn());
         })
-        $(".removeMovieTimeBtn").on("click", function(){
+        $(document).on("click", ".removeMovieTimeBtn",function(){
             var appendTbody = $(this).parents(".div-margin").find("tbody");
             appendTbody.children("tr").length !== 1 && appendTbody.children("tr:last").remove();
         })
@@ -247,6 +248,10 @@
         $(document).on("click",".confirmMovieTimeBtn", function(){
             var form = $(this).parents(".div-margin");
             if(confirm("是否确认发布排期？")){
+                if($(this).parents(".div-margin").find("input").val() == ""){
+                    alert("表单不能为空！请确认");
+                    return false;
+                }
                 form.addClass("confirmMovieTime").find("button").remove();
                 form.find("select").attr("disabled", true);
                 form.find("input").attr("disabled", true);
