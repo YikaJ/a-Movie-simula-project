@@ -57,7 +57,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <footer role="contentinfo">
-                    <p class="left">爆米花网站</p>
+                    <p class="left text-success">爆米花网站</p>
                 </footer>
             </div>
         </div>
