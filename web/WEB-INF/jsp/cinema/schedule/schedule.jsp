@@ -140,13 +140,13 @@
                                         <thead class="row">
                                         <tr>
                                             <th class="col-lg-4">
-                                                放映时间
+                                                放映时间<small class="text-danger">（格式为: 16:40）</small>
                                             </th>
                                             <th class="col-lg-4">
-                                                放映厅
+                                                放映厅 <small class="text-danger">(请选择)</small>
                                             </th>
                                             <th class="col-lg-4">
-                                                票价
+                                                票价 <small class="text-danger">(格式为: 27.00)</small>
                                             </th>
                                         </tr>
                                         </thead>
