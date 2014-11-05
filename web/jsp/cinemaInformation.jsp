@@ -60,8 +60,8 @@
                         <img src="../image/movieInformation1.jpg">
                         <div class="movieInformation">
                             <h3 class="movieTitle">
-                                <a class="moreDetail fr" href="movieInformation.jsp">查看影片详情 ></a>
-                                <a href="movieInformation.jsp" class="movieName">超体</a>
+                                <a class="moreDetail fr" href="../WEB-INF/jsp/customer/movie/movieInformation.jsp">查看影片详情 ></a>
+                                <a href="../WEB-INF/jsp/customer/movie/movieInformation.jsp" class="movieName">超体</a>
                                 <span class="rating">7.8</span>
 
                             </h3>

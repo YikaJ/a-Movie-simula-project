@@ -21,6 +21,12 @@ public class Cinema {
     private String name;
 
     @Column(length = 50)
+    private String email;
+
+    @Column(length = 30)
+    private String password;
+
+    @Column(length = 50)
     private String workTime;
 
     @Column(length = 40)
@@ -31,6 +37,12 @@ public class Cinema {
 
     @Column(length = 50)
     private String company;
+
+    @Column(length = 50)
+    private String x;
+
+    @Column(length = 50)
+    private String y;
 
     @ManyToOne
     @JoinColumn(name = "districtId")
@@ -51,6 +63,38 @@ public class Cinema {
 
     private Date createDate;
 
+
+    public String getX() {
+        return x;
+    }
+
+    public void setX(String x) {
+        this.x = x;
+    }
+
+    public String getY() {
+        return y;
+    }
+
+    public void setY(String y) {
+        this.y = y;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     @JSON(serialize = false)
     public Set<User> getUsers() {

@@ -11,6 +11,7 @@ public class Configuration {
 
     /*=============================分页参数==============================*/
     private static int pageNavigate;
+    private static int hotShowingMovieNumOfIndex;
 
     /*=============================类型参数定义=============================*/
 
@@ -25,6 +26,7 @@ public class Configuration {
             prop.load(input);
 
             imageForm =prop.getProperty("imageForm");
+            hotShowingMovieNumOfIndex = Integer.parseInt(prop.getProperty("hotShowingMovieNumOfIndex"));
 
         }catch (Exception e){
             throw new RuntimeException(e);
@@ -38,6 +40,10 @@ public class Configuration {
             }
         }
 
+    }
+
+    public static int getHotShowingMovieNumOfIndex() {
+        return hotShowingMovieNumOfIndex;
     }
 
     public static String getImageForm() {

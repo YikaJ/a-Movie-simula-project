@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -16,21 +17,21 @@
 
     <div class="movieInformation clearfix">
         <div class="content">
-            <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" class="poster">
+            <img src="${pageContext.request.contextPath}<s:property value="#movie.poster"/> " class="poster">
             <ul class="movieDetail">
                 <li>
                     <h3 class="movieTitle">
-                    超体
+                    <s:property value="#movie.name"/>
                         <span class="rating">7.6</span>
                     </h3>
                 </li>
-                <li>导演：<span>吕克·贝松</span></li>
-                <li>主演：<span>斯嘉丽·约翰逊,摩根·弗里曼,安娜丽·提普顿,阿马尔·维克德,崔岷植 ,乔汗·菲利普·阿斯巴克,李淳</span></li>
-                <li>类型：<span>3D,IMAX</span></li>
-                <li>地区：<span>中国大陆,法国</span></li>
-                <li>语言：<span>英语|法语</span></li>
-                <li>片长：<span>90分钟</span></li>
-                <li class="summary">剧情介绍：<span>是一部以台北为背景的科幻动作电影。一个年轻女人被迫变成毒贩然后这种毒品倾入她自己身体系统的故事。但这种毒品却并不会让人萎靡丧命，反而给了她超于常人的力量，包括心灵感应，疼痛和不适的化解消失及瞬间吸收知识等技能，相当于一部吕克·贝松的超级英雄片。</span>
+                <li>导演：<span><s:property value="#movie.director"/> </span></li>
+                <li>主演：<span><s:property value="#movie.mainRole"/> </span></li>
+                <li>类型：<span><s:iterator value="#movie.movieType"><s:property value="name"/>  </s:iterator></span></li>
+                <li>地区：<span><s:property value="#movie.region"/> </span></li>
+                <li>语言：<span><s:property value="#movie.language"/> </span></li>
+                <li>片长：<span><s:property value="#movie.filmTime"/> 分钟</span></li>
+                <li class="summary">剧情介绍：<span><s:property value="#movie.introduce"/> </span>
                     <a href="javascript:" class="summaryToggle">
                             展开>>
                     </a>

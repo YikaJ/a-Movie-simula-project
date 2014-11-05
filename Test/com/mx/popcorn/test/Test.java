@@ -72,4 +72,12 @@ public class Test {
         typeService.addMovieVersion(type2);
     }
 
+    @org.junit.Test
+    public void test5(){
+        TypeService typeService = (TypeService) context.getBean("typeServiceImp");
+        MovieVersion type = new MovieVersion();
+        type.setName("2D");
+        typeService.addMovieVersion(type);
+    }
+
 }

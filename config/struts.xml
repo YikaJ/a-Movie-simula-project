@@ -38,8 +38,8 @@
         <default-interceptor-ref name="popcornDefaultStack"></default-interceptor-ref>
 
         <global-results>
-            <result name="who">/WEB-INF/jsp/home/home.jsp</result>
              <result name="error" type="redirect">/jsp/error.jsp</result>
+             <result name="find_failure" type="redirect">/jsp/error.jsp</result>
         </global-results>
 
         <action name="appSupport" class="com.mx.popcorn.controller.android.ApplicationSupportAction" method="appLogin">

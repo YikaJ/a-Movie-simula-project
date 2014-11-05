@@ -20,6 +20,12 @@ public class HomeAction extends BaseAction{
     private static final String ACTION_NAME_SPACE = "HomeIndex";
 
     public String index(){
+        try{
+            getActionContext().put("hotShowingMovies", movieService.getHotShowingMoviesOfIndex(pageNum));
+        }catch (Exception e){
+            e.printStackTrace();
+            return ERROR;
+        }
         return SUCCESS;
     }
 

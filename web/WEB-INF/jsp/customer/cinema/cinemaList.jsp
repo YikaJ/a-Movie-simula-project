@@ -97,7 +97,7 @@
         </div>
         <ul class="rightBarMovieList">
             <li class="clearfix">
-                <a href="../../../../jsp/movieInformation.jsp">
+                <a href="../movie/movieInformation.jsp">
                     <img src="${pageContext.request.contextPath}/image/hotOn%20(2).jpg" class="fl" alt="movie">
                     <div class="rightBarInformation fl">
                         <h3>超体</h3>
@@ -107,7 +107,7 @@
                 </a>
             </li>
             <li class="clearfix">
-                <a href="../../../../jsp/movieInformation.jsp">
+                <a href="../movie/movieInformation.jsp">
                     <img src="${pageContext.request.contextPath}/image/hotOn%20(3).jpg" class="fl" alt="movie">
                     <div class="rightBarInformation fl">
                         <h3>超体</h3>
@@ -117,7 +117,7 @@
                 </a>
             </li>
             <li class="clearfix">
-                <a href="../../../../jsp/movieInformation.jsp">
+                <a href="../movie/movieInformation.jsp">
                     <img src="${pageContext.request.contextPath}/image/hotOn%20(4).jpg" class="fl" alt="movie">
                     <div class="rightBarInformation fl">
                         <h3>超体</h3>
@@ -128,7 +128,7 @@
             </li>
 
             <li class="clearfix">
-                <a href="../../../../jsp/movieInformation.jsp">
+                <a href="../movie/movieInformation.jsp">
                     <img src="${pageContext.request.contextPath}/image/hotOn%20(2).jpg" class="fl" alt="movie">
                     <div class="rightBarInformation fl">
                         <h3>超体</h3>
@@ -138,7 +138,7 @@
                 </a>
             </li>
             <li class="clearfix">
-                <a href="../../../../jsp/movieInformation.jsp">
+                <a href="../movie/movieInformation.jsp">
                     <img src="${pageContext.request.contextPath}/image/hotOn%20(1).jpg" class="fl" alt="movie">
                     <div class="rightBarInformation fl">
                         <h3>超体</h3>
@@ -148,7 +148,7 @@
                 </a>
             </li>
             <li class="clearfix">
-                <a href="../../../../jsp/movieInformation.jsp">
+                <a href="../movie/movieInformation.jsp">
                     <img src="${pageContext.request.contextPath}/image/hotOn%20(4).jpg" class="fl" alt="movie">
                     <div class="rightBarInformation fl">
                         <h3>超体</h3>

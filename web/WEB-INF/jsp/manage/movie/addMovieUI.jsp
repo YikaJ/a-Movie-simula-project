@@ -133,10 +133,12 @@
                             <div class="text-muted bootstrap-admin-box-title">电影详情</div>
                         </div>
                         <div class="bootstrap-admin-no-table-panel-content bootstrap-admin-panel-content collapse in">
-                            <s:form cssClass="form-horizontal" action="publishMovie" namespace="/movie">
+                            <s:form cssClass="form-horizontal" action="publishMovie" namespace="/manage/movie">
                                 <fieldset>
                                     <legend>上传电影</legend>
-
+                                    <div class="col-lg-12 col-lg-offset-2">
+                                        <img  data-src="holder.js/100%x180" alt="缩略图" class="thumbnail" id="posterPreview" style="width: 215px; height: 330px;">
+                                    </div>
                                     <div class="form-group">
                                         <label class="col-lg-2 control-label" for="posterInput">电影海报</label>
                                         <div class="col-lg-5">
@@ -145,9 +147,7 @@
                                             <p class="help-block text-danger">图片大小为：215px330px</p>
                                             <button type="button" class="btn btn-success" id="posterSubmit" >提交</button>
                                         </div>
-                                        <div class="col-lg-5">
-                                            <img src="#" data-src="holder.js/100%x180" alt="缩略图" class="thumbnail" id="posterPreview" style="width: 215px; height: 330px;">
-                                        </div>
+
                                     </div>
 
                                     <div class="form-group">
@@ -212,7 +212,7 @@
                                     <div class="form-group">
                                         <label class="col-lg-2 control-label" for="date01">上映时间</label>
                                         <div class="col-lg-10">
-                                            <input type="text" name="showTime" class="form-control datepicker" id="date01" value="11-4-2014">
+                                            <input type="text" name="showTime" class="form-control datepicker" id="date01" readonly>
                                             <p class="help-block text-danger">可以选择，可以手写</p>
                                         </div>
                                     </div>

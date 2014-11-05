@@ -21,16 +21,22 @@
 
     <div class="movieContent content">
         <div class="tabList content">
-            <a class="hotOnTab activeTab" href="javascript:">正在热映(13)</a>
+            <a class="hotOnTab activeTab" href="javascript:">正在热映(<s:property value="#hotShowingMovies.recordList.length"/> )</a>
             <a class="hotReadyTab" href="javascript:">即将上映(47)</a>
             <a class="moreFirm" href="javascript:">查看全部 ></a>
         </div>
         <ul class="movieList">
-            <li><a href="../../../jsp/movieInformation.jsp"><img src="${pageContext.request.contextPath}/image/movieInformation1.jpg"><span class="buyTicket">立即购票</span></a></li>
-            <li><a href="../../../jsp/movieInformation.jsp"><img src="${pageContext.request.contextPath}/image/movieInformation1.jpg"><span class="buyTicket">立即购票</span></a></li>
-            <li><a href="../../../jsp/movieInformation.jsp"><img src="${pageContext.request.contextPath}/image/movieInformation1.jpg"><span class="buyTicket">立即购票</span></a></li>
-            <li><a href="../../../jsp/movieInformation.jsp"><img src="${pageContext.request.contextPath}/image/movieInformation1.jpg"><span class="buyTicket">立即购票</span></a></li>
-            <li><a href="../../../jsp/movieInformation.jsp"><img src="${pageContext.request.contextPath}/image/movieInformation1.jpg"><span class="buyTicket">立即购票</span></a></li>
+            <s:iterator value="#hotShowingMovies.recordList">
+                <s:url action="showMovieInfo" namespace="/movie" var="showMovieURL">
+                    <s:param value="id" name="movieId"/>
+                </s:url>
+                <li>
+                    <a href="<s:property value="#showMovieURL"/> ">
+                        <img src="${pageContext.request.contextPath}<s:property value="poster"/> ">
+                        <span class="buyTicket">立即购票</span>
+                    </a>
+                </li>
+            </s:iterator>
         </ul>
         <ul class="movieList" style="display: none"></ul>
     </div>

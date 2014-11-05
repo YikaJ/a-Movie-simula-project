@@ -20,6 +20,10 @@ public class CinemaAction extends ModelDrivenBaseAction<Cinema>{
 
     private static final String ACTION_NAME_SPACE = "CinemaIndex";
 
+    /**
+     * 影院主页，影院列表
+     * @return
+     */
     @Action(value = "index",
             results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/customer/cinema/cinemaList.jsp")})
     public String index(){
@@ -31,7 +35,73 @@ public class CinemaAction extends ModelDrivenBaseAction<Cinema>{
         }
     }
 
+    /**
+     * 影院注册页面
+     * @return
+     */
+    @Action(value = "/cinema/manage/registerUI",
+            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/cinema/home/register.jsp")})
+    public String registerUI(){
+        try {
+            return SUCCESS;
+        }catch (Exception e){
+            e.printStackTrace();
+            return ERROR;
+        }
+    }
+
+
+    @Action(value = "/cinema/manage/register",
+            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/cinema/home/login.jsp"),
+                                @Result(name = INPUT, location = "/WEB-INF/jsp/cinema/home/register.jsp")})
+    public String register(){
+        try {
+            if (cinemaService.isEmailExist(model.getEmail())){
+                addFieldError("account", "该邮箱已经注册过了");
+                return INPUT;
+            }
+            cinemaService.register(model);
+            return SUCCESS;
+        }catch (Exception e){
+            e.printStackTrace();
+            return ERROR;
+        }
+    }
+
+    @Action(value = "/cinema/manage/loginUI",
+            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/cinema/home/login.jsp")})
+    public String loginUI(){
+        try{
+            return SUCCESS;
+        }catch (Exception e){
+            e.printStackTrace();
+            return ERROR;
+        }
+    }
+
+    @Action(value = "/cinema/manage/login",
+            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/cinema/home/index.jsp"),
+                                @Result(name = INPUT, location = "/WEB-INF/jsp/cinema/home/login.jsp")})
+    public String login(){
+        try{
+            Cinema cinema = cinemaService.login(model.getEmail(), model.getPassword());
+            if (cinema == null){
+                addFieldError("account", "账号或者密码错误!");
+                return INPUT;
+            }
+            getSession().setAttribute(CINEMA_SESSION, cinema);
+            return SUCCESS;
+        }catch (Exception e){
+            e.printStackTrace();
+            return ERROR;
+        }
+    }
+
+
+
+
     public static String getActionNameSpace() {
         return ACTION_NAME_SPACE;
     }
+
 }

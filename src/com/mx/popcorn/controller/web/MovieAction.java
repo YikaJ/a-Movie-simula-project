@@ -24,6 +24,7 @@ public class MovieAction  extends ModelDrivenBaseAction<Movie> {
     private static final String ACTION_NAME_SPACE = "MovieIndex";
     private String[] type;
     private String[] version;
+    private Long movieId;
 
 
     /**
@@ -90,6 +91,23 @@ public class MovieAction  extends ModelDrivenBaseAction<Movie> {
         }
     }
 
+
+    @Action(value = "showMovieInfo", results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/customer/movie/movieInformation.jsp")})
+    public String showMovieInfo(){
+        try {
+            if (movieId == null)
+                return FIND_FAILURE;
+            Movie movie = movieService.getMovie(movieId);
+            if (movie == null)
+                return FIND_FAILURE;
+            getActionContext().put("movie", movie);
+            return SUCCESS;
+        }catch (Exception e){
+            e.printStackTrace();
+            return ERROR;
+        }
+    }
+
     /**
      * 发布影片的数据初步效验
      */
@@ -101,6 +119,9 @@ public class MovieAction  extends ModelDrivenBaseAction<Movie> {
     }
 
 
+    public void setMovieId(Long movieId) {
+        this.movieId = movieId;
+    }
 
     public static String getActionNameSpace() {
         return ACTION_NAME_SPACE;
