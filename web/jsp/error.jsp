@@ -14,19 +14,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" media="screen" href="css/bootstrap.min.css">
-    <link rel="stylesheet" media="screen" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/bootstrap-theme.min.css">
 
     <!-- Bootstrap Admin Theme -->
 
 
     <!-- Bootstrap Error Page -->
-    <link rel="stylesheet" media="screen" href="css/bootstrap-error-page.css">
+    <link rel="stylesheet" media="screen" href="../css/bootstrap-error-page.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script type="text/javascript" src="js/html5shiv.js"></script>
-    <script type="text/javascript" src="js/respond.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/html5shiv.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/respond.min.js"></script>
     <![endif]-->
 </head>
 <body>
