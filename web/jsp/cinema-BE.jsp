@@ -6,7 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,26 +19,26 @@
     </style>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" media="screen" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen" href="../css/bootstrap-theme.min.css">
 
     <!-- Bootstrap Admin Theme -->
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/bootstrap-admin-theme.css">
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/bootstrap-admin-theme-change-size.css">
+    <link rel="stylesheet" media="screen" href="../css/bootstrap-admin-theme.css">
+    <link rel="stylesheet" media="screen" href="../css/bootstrap-admin-theme-change-size.css">
 
     <!-- Vendors -->
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/vendors/bootstrap-datepicker/css/datepicker.css">
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/datepicker.fixes.css">
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/vendors/uniform/themes/default/css/uniform.default.min.css">
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/uniform.default.fixes.css">
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/vendors/chosen.min.css">
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/vendors/selectize/dist/css/selectize.bootstrap3.css">
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/vendors/bootstrap-wysihtml5-rails-b3/vendor/assets/stylesheets/bootstrap-wysihtml5/core-b3.css">
+    <link rel="stylesheet" media="screen" href="../vendors/bootstrap-datepicker/css/datepicker.css">
+    <link rel="stylesheet" media="screen" href="../css/datepicker.fixes.css">
+    <link rel="stylesheet" media="screen" href="../vendors/uniform/themes/default/css/uniform.default.min.css">
+    <link rel="stylesheet" media="screen" href="../css/uniform.default.fixes.css">
+    <link rel="stylesheet" media="screen" href="../vendors/chosen.min.css">
+    <link rel="stylesheet" media="screen" href="../vendors/selectize/dist/css/selectize.bootstrap3.css">
+    <link rel="stylesheet" media="screen" href="../vendors/bootstrap-wysihtml5-rails-b3/vendor/assets/stylesheets/bootstrap-wysihtml5/core-b3.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/html5shiv.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/respond.min.js"></script>
+    <script type="text/javascript" src="../js/html5shiv.js"></script>
+    <script type="text/javascript" src="../js/respond.min.js"></script>
     <![endif]-->
 </head>
 <body class="bootstrap-admin-with-small-navbar">
@@ -95,7 +94,25 @@
     <!-- left, vertical navbar & content -->
     <div class="row">
         <!-- left, vertical navbar -->
-        <%@include file="/WEB-INF/jsp/cinema/public/menu.jsp"%>
+        <div class="col-md-2 bootstrap-admin-col-left">
+            <ul class="nav navbar-collapse collapse bootstrap-admin-navbar-side">
+                <li class="active">
+                    <a href="forms.html"><i class="glyphicon glyphicon-chevron-right"></i> 上映电影</a>
+                </li>
+                <li>
+                    <a href="tables.html"><i class="glyphicon glyphicon-chevron-right"></i> 排期管理</a>
+                </li>
+                <li>
+                    <a href="wysiwyg-editors.html"><i class="glyphicon glyphicon-chevron-right"></i> 影厅管理</a>
+                </li>
+                <li>
+                    <a href="BE-movie.jsp"><i class="glyphicon glyphicon-chevron-right"></i> 订单管理</a>
+                </li>
+                <li>
+                    <a href="wysiwyg-editors.html"><i class="glyphicon glyphicon-chevron-right"></i> 信息管理</a>
+                </li>
+            </ul>
+        </div>
 
         <!-- content -->
         <div class="col-md-10">
@@ -117,7 +134,7 @@
 
                             <div class="row div-margin">
                                 <div class="col-lg-3">
-                                    <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" data-src="holder.js/100%x180" alt="缩略图" class="thumbnail" style="width: 215px; height: 330px;">
+                                    <img src="../image/movieInformation1.jpg" data-src="holder.js/100%x180" alt="缩略图" class="thumbnail" style="width: 215px; height: 330px;">
                                 </div>
                                 <div class="col-lg-9">
                                     <ul class="list-group list-unstyled list-margin">
@@ -136,7 +153,7 @@
                             </div>
                             <div class="row div-margin">
                                 <div class="col-lg-3">
-                                    <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" data-src="holder.js/100%x180" alt="缩略图" class="thumbnail" style="width: 215px; height: 330px;">
+                                    <img src="../image/movieInformation1.jpg" data-src="holder.js/100%x180" alt="缩略图" class="thumbnail" style="width: 215px; height: 330px;">
                                 </div>
                                 <div class="col-lg-9">
                                     <ul class="list-group list-unstyled list-margin">
@@ -155,7 +172,7 @@
                             </div>
                             <div class="row div-margin">
                                 <div class="col-lg-3">
-                                    <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" data-src="holder.js/100%x180" alt="缩略图" class="thumbnail" style="width: 215px; height: 330px;">
+                                    <img src="../image/movieInformation1.jpg" data-src="holder.js/100%x180" alt="缩略图" class="thumbnail" style="width: 215px; height: 330px;">
                                 </div>
                                 <div class="col-lg-9">
                                     <ul class="list-group list-unstyled list-margin">
@@ -174,7 +191,7 @@
                             </div>
                             <div class="row div-margin">
                                 <div class="col-lg-3">
-                                    <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" data-src="holder.js/100%x180" alt="缩略图" class="thumbnail" style="width: 215px; height: 330px;">
+                                    <img src="../image/movieInformation1.jpg" data-src="holder.js/100%x180" alt="缩略图" class="thumbnail" style="width: 215px; height: 330px;">
                                 </div>
                                 <div class="col-lg-9">
                                     <ul class="list-group list-unstyled list-margin">
@@ -193,7 +210,7 @@
                             </div>
                             <div class="row div-margin">
                                 <div class="col-lg-3">
-                                    <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" data-src="holder.js/100%x180" alt="缩略图" class="thumbnail" style="width: 215px; height: 330px;">
+                                    <img src="../image/movieInformation1.jpg" data-src="holder.js/100%x180" alt="缩略图" class="thumbnail" style="width: 215px; height: 330px;">
                                 </div>
                                 <div class="col-lg-9">
                                     <ul class="list-group list-unstyled list-margin">
@@ -212,7 +229,7 @@
                             </div>
                             <div class="row div-margin">
                                 <div class="col-lg-3">
-                                    <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" data-src="holder.js/100%x180" alt="缩略图" class="thumbnail" style="width: 215px; height: 330px;">
+                                    <img src="../image/movieInformation1.jpg" data-src="holder.js/100%x180" alt="缩略图" class="thumbnail" style="width: 215px; height: 330px;">
                                 </div>
                                 <div class="col-lg-9">
                                     <ul class="list-group list-unstyled list-margin">
@@ -252,9 +269,18 @@
     </div>
 </div>
 
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/twitter-bootstrap-hover-dropdown.min.js"></script>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/twitter-bootstrap-hover-dropdown.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap-admin-theme-change-size.js"></script>
+<script type="text/javascript" src="../vendors/uniform/jquery.uniform.min.js"></script>
+<script type="text/javascript" src="../vendors/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="../vendors/selectize/dist/js/standalone/selectize.min.js"></script>
+<script type="text/javascript" src="../vendors/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="../vendors/bootstrap-wysihtml5-rails-b3/vendor/assets/javascripts/bootstrap-wysihtml5/wysihtml5.js"></script>
+<script type="text/javascript" src="../vendors/bootstrap-wysihtml5-rails-b3/vendor/assets/javascripts/bootstrap-wysihtml5/core-b3.js"></script>
+<script type="text/javascript" src="../vendors/twitter-bootstrap-wizard/jquery.bootstrap.wizard-for.bootstrap3.js"></script>
+<script type="text/javascript" src="../vendors/boostrap3-typeahead/bootstrap3-typeahead.min.js"></script>
 </body>
 </html>
 

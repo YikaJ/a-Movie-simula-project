@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE struts PUBLIC
-        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
@@ -11,12 +11,37 @@
     <constant name="struts.action.extension" value="do"/>
     <constant name="struts.i18n.encoding" value="UTF-8"/>
     <constant name="struts.configuration.xml.reload" value="true"/>
-    <constant name="struts.xslt.nocache" value="true"/>
     <constant name="struts.ui.theme" value="simple"/>
     <constant name="struts.ognl.allowStaticMethodAccess" value="true"/>
+    <constant name="struts.convention.package.locators" value="controller"/>
     <constant name="struts.multipart.maxSize" value="10485760"/>
 
     <package name="default" namespace="/" extends="json-default">
+        <!--声明拦截器-->
+        <interceptors>
+            <!--拦截cookie，自动登陆-->
+            <interceptor name="autoLoginInterceptor" class="com.mx.popcorn.interceptor.AutoInterceptor"></interceptor>
+            <!--后台权限拦截-->
+            <!--会员权限拦截-->
+            <interceptor name="userPrivilegeInterceptor" class="com.mx.popcorn.interceptor.UserPrivilegeInterceptor"></interceptor>
+            <!--配置拦截器栈-->
+            <interceptor-stack name="popcornDefaultStack">
+                <interceptor-ref name="autoLoginInterceptor"></interceptor-ref>
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+            <interceptor-stack name="userPrivilegeInterceptorStack">
+                <interceptor-ref name="popcornDefaultStack"></interceptor-ref>
+                <interceptor-ref name="userPrivilegeInterceptor"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <!--默认拦截器-->
+        <default-interceptor-ref name="popcornDefaultStack"></default-interceptor-ref>
+
+        <global-results>
+             <result name="error" type="redirect">/jsp/error.jsp</result>
+             <result name="find_failure" type="redirect">/jsp/error.jsp</result>
+        </global-results>
+
         <action name="appSupport" class="com.mx.popcorn.controller.android.ApplicationSupportAction" method="appLogin">
             <result type="json" name="success">
                 <param name="root">true</param>
@@ -28,8 +53,14 @@
                 <param name="root">false</param>
             </result>
         </action>
+
+        <action name="index" class="com.mx.popcorn.controller.web.HomeAction" method="index">
+            <result name="success">/WEB-INF/jsp/customer/home/index.jsp</result>
+        </action>
     </package>
 
+    <include file="struts-web.xml"/>
+    <include file="struts-application.xml"/>
 
 
 </struts>

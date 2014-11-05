@@ -35,6 +35,17 @@ public class CinemaAction extends ModelDrivenBaseAction<Cinema>{
         }
     }
 
+    @Action(value = "/cinema/manage/movieStorage",
+            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/cinema/home/index.jsp")})
+    public String movieStorage(){
+        try {
+            return SUCCESS;
+        }catch (Exception e){
+            e.printStackTrace();
+            return ERROR;
+        }
+    }
+
     /**
      * 影院注册页面
      * @return
@@ -52,7 +63,7 @@ public class CinemaAction extends ModelDrivenBaseAction<Cinema>{
 
 
     @Action(value = "/cinema/manage/register",
-            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/cinema/home/login.jsp"),
+            results = {@Result(name = SUCCESS, type = "redirectAction", params={"actionName", "loginUI"}),
                                 @Result(name = INPUT, location = "/WEB-INF/jsp/cinema/home/register.jsp")})
     public String register(){
         try {
@@ -80,7 +91,7 @@ public class CinemaAction extends ModelDrivenBaseAction<Cinema>{
     }
 
     @Action(value = "/cinema/manage/login",
-            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/cinema/home/index.jsp"),
+            results = {@Result(name = SUCCESS, type = "redirectAction", params = {"actionName", "movieStorage"}),
                                 @Result(name = INPUT, location = "/WEB-INF/jsp/cinema/home/login.jsp")})
     public String login(){
         try{
@@ -90,6 +101,17 @@ public class CinemaAction extends ModelDrivenBaseAction<Cinema>{
                 return INPUT;
             }
             getSession().setAttribute(CINEMA_SESSION, cinema);
+            return SUCCESS;
+        }catch (Exception e){
+            e.printStackTrace();
+            return ERROR;
+        }
+    }
+
+    @Action(value = "/cinema/manage/scheduleManage",
+            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/cinema/schedule/schedule.jsp")})
+    public String scheduleManage(){
+        try{
             return SUCCESS;
         }catch (Exception e){
             e.printStackTrace();

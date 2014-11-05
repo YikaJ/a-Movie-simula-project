@@ -1,5 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html class="bootstrap-admin-vertical-centered">
 <head>
@@ -8,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" media="screen" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen" href="../css/bootstrap-theme.min.css">
 
     <!-- Bootstrap Admin Theme -->
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/bootstrap-admin-theme.css">
+    <link rel="stylesheet" media="screen" href="../css/bootstrap-admin-theme.css">
 
     <!-- Custom styles -->
     <style type="text/css">
@@ -23,43 +22,42 @@
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/html5shiv.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/respond.min.js"></script>
+    <script type="text/javascript" src="../js/html5shiv.js"></script>
+    <script type="text/javascript" src="../js/respond.min.js"></script>
     <![endif]-->
 </head>
 <body class="bootstrap-admin-without-padding">
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <s:form method="post" action="register" namespace="/cinema/manage" cssClass="bootstrap-admin-login-form">
+            <form method="post" action="BE-homepage.jsp" class="bootstrap-admin-login-form">
                 <h3>商家后台注册<small class="text-danger"> (下列都为必填)</small></h3>
-                <s:fielderror cssClass="list-unstyled text-danger"/>
                 <div class="form-group">
-                    <input class="form-control input-group col-lg-10" type="text" name="name"  placeholder="影院名称" required>
+                    <input class="form-control input-group col-lg-10" type="text"  placeholder="影院名称" required>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="password" name="password"  placeholder="登录密码" required>
+                    <input class="form-control" type="password"  placeholder="登录密码" required>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="email" name="email" placeholder="电子邮箱" required>
+                    <input class="form-control" type="email"  placeholder="电子邮箱" required>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="address"  placeholder="影院地址" required>
+                    <input class="form-control" type="text"  placeholder="影院地址" required>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="tel" name="telephone"  placeholder="联系方式" required>
+                    <input class="form-control" type="tel"  placeholder="联系方式" required>
                 </div>
                 <div class="form-group">
-                <input class="form-control" type="text" name="workTime" placeholder="营业时间" required>
-            </div>
+                    <input class="form-control" type="text"  placeholder="QQ" required>
+                </div>
                 <button class="btn btn-xs btn-primary" type="submit">注册</button>
-            </s:form>
+            </form>
         </div>
     </div>
 </div>
 
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 <script type="text/javascript">
     $(function() {
         // Setting focus
