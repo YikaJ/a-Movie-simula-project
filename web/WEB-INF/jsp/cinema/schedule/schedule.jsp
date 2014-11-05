@@ -111,7 +111,7 @@
                 <li role="presentation"><a href="#tomorrow" role="tab" data-toggle="tab">11-6星期四</a></li>
                 <li role="presentation"><a href="#theDayAfterTorrow" role="tab" data-toggle="tab">11-7星期五</a></li>
                 <li class="pull-right">
-                    <button class="btn btn-info" type="button">增加电影排期</button>
+                    <button class="btn btn-info" type="button" id="addMovieBtn">增加电影排期</button>
                 </li>
             </ul>
 
@@ -119,8 +119,8 @@
             <div class="tab-content">
                 <%--今天--%>
                 <div role="tabpanel" class="tab-pane active" id="today">
-                    <div class="container-fluid">
-                        <div class="row-fluid list-group-item div-margin">
+                    <div class="container-fluid scheduleContent">
+                        <div class="row-fluid list-group-item div-margin movieTimeDiv"><%--这里是一个电影的排期--%>
                             <form class="form-group"  method="POST" action="#">
                                 <div class="span12 clearfix">
                                     <div class="div-margin">
@@ -132,13 +132,14 @@
                                             <option value="超体">超体</option>
                                             <option value="超体">超体</option>
                                         </select>
-                                        <button class="btn btn-default pull-right  btn-group addMovieTimeBtn" type="button">添加放映时间</button>
+                                        <button class="btn btn-default pull-right  btn-group removeMovieTimeBtn"  type="button">撤销放映时间</button>
+                                        <button class="btn btn-default pull-right  btn-group addMovieTimeBtn"  type="button">添加放映时间</button>
                                     </div>
                                     <table class="table table-striped" id="table1-1">
                                         <thead class="row">
                                         <tr>
                                             <th class="col-lg-4">
-                                                上映时间
+                                                放映时间
                                             </th>
                                             <th class="col-lg-4">
                                                 放映厅
@@ -149,7 +150,7 @@
                                         </tr>
                                         </thead>
                                         <tbody class="row">
-                                        <tr>
+                                        <tr id="cloneTr">
                                             <td class="col-lg-4">
                                                 <input type="text" class="form-control"/>
                                             </td>
@@ -168,69 +169,12 @@
                                         </tr>
                                         </tbody>
                                     </table>
-                                    <div class="col-lg-offset-9">
-                                        <button class="btn btn-success btn-group confirmBtn" type="button">确认排期</button>
-                                        <button class="btn btn-danger btn-group" type="button">删除排期</button>
-                                    </div>
+                                    <button class="btn btn-danger pull-right removeMovieBtn" type="button">删除排期</button>
+                                    <button class="btn btn-success pull-right confirmMovieTimeBtn" type="button">确认排期</button>
                                 </div>
                             </form>
                         </div>
                         <%--新电影--%>
-                        <div class="row-fluid list-group-item div-margin confirmMovieTime">
-                            <form class="form-group"  method="POST" action="#">
-                                <div class="span12 clearfix">
-                                    <div class="div-margin">
-                                        <strong>电影名:</strong>
-                                        <select name="name" class="selectize-select" style="width: 100px" disabled="disabled">
-                                            <option value="超体">超体</option>
-                                            <option value="超体">超体</option>
-                                            <option value="超体">超体</option>
-                                            <option value="超体">超体</option>
-                                            <option value="超体">超体</option>
-                                        </select>
-                                        <button class="btn btn-default pull-right  btn-group btn-hidden" type="button">添加放映时间</button>
-                                    </div>
-                                    <table class="table  table-striped" id="table1-2">
-                                        <thead class="row">
-                                        <tr>
-                                            <th class="col-lg-4">
-                                                放映时间
-                                            </th>
-                                            <th class="col-lg-4">
-                                                放映厅
-                                            </th>
-                                            <th class="col-lg-4">
-                                                票价
-                                            </th>
-                                        </tr>
-                                        </thead>
-                                        <tbody class="row">
-                                        <tr>
-                                            <td class="col-lg-4">
-                                                <input type="text" class="form-control" value="12:30" disabled="disabled">
-                                            </td>
-                                            <td class="col-lg-4">
-                                                <select name="name" class="selectize-select form-control" disabled>
-                                                    <option value="1">1号厅</option>
-                                                    <option value="2">2号厅</option>
-                                                    <option value="3">3号厅</option>
-                                                    <option value="4">4号厅</option>
-                                                    <option value="5">5号厅</option>
-                                                </select>
-                                            </td>
-                                            <td class="col-lg-4">
-                                                <input type="text" class="form-control" value="27.00" disabled="disabled">
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                    <div class="col-lg-offset-9">
-                                        <button class="btn btn-success btn-group btn-hidden" type="button">确认排期</button>
-                                        <button class="btn btn-danger btn-group btn-hidden" type="button">删除排期</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -273,26 +217,44 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/numeric-input-example.js"></script>
 <script>
     $(function () {
-        var addMovieTimeBtn  = $(".addMovieTimeBtn");
+        //初始化div模版
+        var movieTimeDiv = $(".movieTimeDiv").eq(0).parent().html();
+
         //标签页切换
         $('#myTab a:first').tab('show');
+
+        //添加删除放映时间
+        $(document).on("click", ".addMovieTimeBtn", function(){
+            var appendTbody = $(this).parents(".div-margin").find("tbody");
+            appendTbody.append($("#cloneTr").clone().hide().fadeIn());
+        })
+        $(".removeMovieTimeBtn").on("click", function(){
+            var appendTbody = $(this).parents(".div-margin").find("tbody");
+            appendTbody.children("tr").length !== 1 && appendTbody.children("tr:last").remove();
+        })
+
+        //添加电影排期
+        $("#addMovieBtn").bind("click",function(){
+            //保存一个电影排期模版
+            $(".scheduleContent").prepend(movieTimeDiv);
+        });
+        //删除电影排期
+        $(document).on("click", ".removeMovieBtn",function(){
+            var movieDiv = $(this).parents(".div-margin");
+            $(".scheduleContent").children(".div-margin").length !== 1 && movieDiv.remove();
+        });
         //发布排期
-        $(".confirmBtn").click(function(){
+        $(document).on("click",".confirmMovieTimeBtn", function(){
             var form = $(this).parents(".div-margin");
             if(confirm("是否确认发布排期？")){
                 form.addClass("confirmMovieTime").find("button").remove();
-                form.find("select").removeAttr("disabled");
-                form.find("input").removeAttr("disabled");
+                form.find("select").attr("disabled", true);
+                form.find("input").attr("disabled", true);
             }else{
                 return false;
             }
         })
-        //添加新的放映时间
-        addMovieTimeBtn.click(function(){
-            var appendTbody = $(this).parents(".div-margin").find("tbody");
-            var newMovieTime =
-            newMovieTime.appendTo(appendTbody);
-        })
+
     })
 </script>
 </body>
