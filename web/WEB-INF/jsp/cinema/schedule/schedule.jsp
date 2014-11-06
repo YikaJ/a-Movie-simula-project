@@ -16,12 +16,8 @@
         .div-margin, .list-margin li{
             margin: 18px 0;
         }
-        div.confirmMovieTime{
+        div.pushWebsite {
             background: #F5F5F5;
-        }
-
-        .confirmMovieTime  .btn-hidden{
-            display: none;
         }
     </style>
 
@@ -32,21 +28,6 @@
     <!-- Bootstrap Admin Theme -->
     <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/bootstrap-admin-theme.css">
     <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/bootstrap-admin-theme-change-size.css">
-
-    <!-- Vendors -->
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/vendors/bootstrap-datepicker/css/datepicker.css">
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/datepicker.fixes.css">
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/vendors/uniform/themes/default/css/uniform.default.min.css">
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/uniform.default.fixes.css">
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/vendors/chosen.min.css">
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/vendors/selectize/dist/css/selectize.bootstrap3.css">
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/vendors/bootstrap-wysihtml5-rails-b3/vendor/assets/stylesheets/bootstrap-wysihtml5/core-b3.css">
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/html5shiv.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body class="bootstrap-admin-with-small-navbar">
 <!-- small navbar -->
@@ -120,8 +101,10 @@
             <div class="tab-content">
                 <%--今天--%>
                 <div role="tabpanel" class="tab-pane active" id="today">
+                    <%--在此排期--%>
                     <div class="container-fluid scheduleContent">
-                        <div class="row-fluid list-group-item div-margin movieTimeDiv"><%--这里是一个电影的排期--%>
+                        <%--这里是一个电影的排期--%>
+                        <div class="row-fluid list-group-item div-margin movieTimeDiv">
                             <form class="form-group"  method="POST" action="#">
                                 <div class="span12 clearfix">
                                     <div class="div-margin">
@@ -175,8 +158,59 @@
                                 </div>
                             </form>
                         </div>
-                        <%--新电影--%>
+
+
                     </div>
+                    <%--已经发布的排期--%>
+                        <div class="container-fluid">
+                            <%--这里是一个电影的排期--%>
+                            <div class="row-fluid list-group-item div-margin pushWebsite">
+                                <form class="form-group"  method="POST" action="#">
+                                    <div class="span12 clearfix">
+                                            <h3 class="h3"><strong>超体</strong></h3>
+                                        <table class="table table-bordered">
+                                            <thead class="row">
+                                                <tr>
+                                                <th class="col-lg-4">
+                                                    放映时间
+                                                </th>
+                                                <th class="col-lg-4">
+                                                    放映厅
+                                                </th>
+                                                <th class="col-lg-4">
+                                                    票价
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody class="row">
+                                                <tr>
+                                                <td class="col-lg-4">
+                                                    20:40
+                                                </td>
+                                                <td class="col-lg-4">
+                                                    6号厅
+                                                </td>
+                                                <td class="col-lg-4">
+                                                    27.00
+                                                </td>
+                                            </tr>
+                                                <tr>
+                                                    <td class="col-lg-4">
+                                                        20:40
+                                                    </td>
+                                                    <td class="col-lg-4">
+                                                        6号厅
+                                                    </td>
+                                                    <td class="col-lg-4">
+                                                        27.00
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                 </div>
             </div>
 
@@ -205,17 +239,6 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/twitter-bootstrap-hover-dropdown.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap-admin-theme-change-size.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/vendors/uniform/jquery.uniform.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/vendors/chosen.jquery.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/vendors/selectize/dist/js/standalone/selectize.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/vendors/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/vendors/bootstrap-wysihtml5-rails-b3/vendor/assets/javascripts/bootstrap-wysihtml5/wysihtml5.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/vendors/bootstrap-wysihtml5-rails-b3/vendor/assets/javascripts/bootstrap-wysihtml5/core-b3.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/vendors/twitter-bootstrap-wizard/jquery.bootstrap.wizard-for.bootstrap3.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/vendors/boostrap3-typeahead/bootstrap3-typeahead.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/mindmup-editabletable.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/numeric-input-example.js"></script>
 <script>
     $(function () {
         //初始化div模版
@@ -237,24 +260,23 @@
         //添加电影排期
         $("#addMovieBtn").bind("click",function(){
             //保存一个电影排期模版
-            $(".scheduleContent").prepend(movieTimeDiv);
+            $(".scheduleContent").prepend(movieTimeDiv);//增加到最前面
         });
         //删除电影排期
         $(document).on("click", ".removeMovieBtn",function(){
-            var movieDiv = $(this).parents(".div-margin");
-            movieDiv.remove();
+            var movieDiv = $(this).parents(".movieTimeDiv");
+            movieDiv.length >= 1 && movieDiv.remove();
         });
         //发布排期
-        $(document).on("click",".confirmMovieTimeBtn", function(){
+        $(document).on("click",".confirmMovieTimeBtn", function(event){
+            event.preventDefault();
             var form = $(this).parents(".div-margin");
             if(confirm("是否确认发布排期？")){
                 if($(this).parents(".div-margin").find("input").val() == ""){
                     alert("表单不能为空！请确认");
                     return false;
                 }
-                form.addClass("confirmMovieTime").find("button").remove();
-                form.find("select").attr("disabled", true);
-                form.find("input").attr("disabled", true);
+                form.remove();
             }else{
                 return false;
             }
