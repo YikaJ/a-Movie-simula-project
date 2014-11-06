@@ -13,8 +13,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/window.css">
 </head>
 <body>
-<%--<%@include file="/WEB-INF/jsp/customer/public/head.jsp"%>--%>
-
+   <%@include file="/WEB-INF/jsp/customer/public/head.jsp"%>
     <div class="movieInformation clearfix">
         <div class="content">
             <img src="${pageContext.request.contextPath}<s:property value="#movie.poster"/> " class="poster">

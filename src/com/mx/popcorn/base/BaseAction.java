@@ -147,6 +147,14 @@ public class BaseAction extends ActionSupport {
         return ActionContext.getContext();
     }
 
+    /**
+     * 获得ActionName
+     * @return
+     */
+    public String getActionName(){
+        return ActionContext.getContext().getName();
+    }
+
     /*=======================================================*/
 
 }
