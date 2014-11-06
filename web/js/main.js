@@ -15,7 +15,7 @@ require.config({
 	}
 });
 
-require(["jquery", "autoplay","window", "common"], function ($, a, w) {
+require(["jquery", "autoplay","window", "common","scrollUp"], function ($, a, w, c, s ) {
     new a.Autoplay().autoplay({
         box: $("#banner"),
         hasArrow: true,
@@ -59,6 +59,8 @@ require(["jquery", "autoplay","window", "common"], function ($, a, w) {
             text4Service: "《爆米花用户协议》"
         })
     });
+
+    new s.ScrollUp().up();
 });
 
 

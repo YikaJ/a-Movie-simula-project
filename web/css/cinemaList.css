@@ -65,8 +65,9 @@
     float: left;
     text-align: center;
     background: #FFDDDC;
-    padding: 18px 20px;
-    font-size: 12px;
+    padding: 17px 20px;
+    font-size: 14px;
+    font-weight: bold;
     color: #666;
 }
 
@@ -89,7 +90,7 @@
 /*院线详情*/
 .cinemaList{
     border: 1px solid #DDD;
-    border-top: 2px solid #D21438;
+    border-top: 1px solid #D21438;
 }
 .cinemaList li{
     padding: 30px 20px;
@@ -139,6 +140,10 @@ a.goCinema{
     padding:10px;
     margin-top: 25px;
     color:#FFF;
+}
+a.goCinema:hover{
+    background: #FF0134;
+    box-shadow: 0 0 10px #333;
 }
 /*右边栏*/
 .rightBar{

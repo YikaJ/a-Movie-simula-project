@@ -242,7 +242,7 @@
         //删除电影排期
         $(document).on("click", ".removeMovieBtn",function(){
             var movieDiv = $(this).parents(".div-margin");
-            $(".scheduleContent").children(".div-margin").length !== 1 && movieDiv.remove();
+            movieDiv.remove();
         });
         //发布排期
         $(document).on("click",".confirmMovieTimeBtn", function(){

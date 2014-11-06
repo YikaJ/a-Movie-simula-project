@@ -167,3 +167,15 @@ a.activeRightBar{
 .nav a:hover{
     color: #EB002A;
 }
+
+/*回到顶部*/
+.scrollUp_button{
+    width: 64px;
+    height: 64px;
+    position: fixed;
+    right: 2%;
+    bottom: 2%;
+    text-indent: -9999px;
+    background: url("../image/top.png") no-repeat 0 0;
+    display: none;
+}
