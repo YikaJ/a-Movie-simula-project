@@ -17,7 +17,7 @@
             margin: 18px 0;
         }
         div.pushWebsite {
-            background: #F5F5F5;
+            background: #F6F6F6;
         }
     </style>
 
@@ -168,19 +168,19 @@
                                 <form class="form-group"  method="POST" action="#">
                                     <div class="span12 clearfix">
                                             <h3 class="h3"><strong>超体</strong></h3>
-                                        <table class="table table-bordered">
+                                        <table class="table">
                                             <thead class="row">
                                                 <tr>
-                                                <th class="col-lg-4">
-                                                    放映时间
-                                                </th>
-                                                <th class="col-lg-4">
-                                                    放映厅
-                                                </th>
-                                                <th class="col-lg-4">
-                                                    票价
-                                                </th>
-                                            </tr>
+                                                    <th class="col-lg-4">
+                                                        放映时间
+                                                    </th>
+                                                    <th class="col-lg-4">
+                                                        放映厅
+                                                    </th>
+                                                    <th class="col-lg-4">
+                                                        票价
+                                                    </th>
+                                                </tr>
                                             </thead>
                                             <tbody class="row">
                                                 <tr>
