@@ -59,6 +59,7 @@ public class BaseAction extends ActionSupport {
     public static final String FORBID = "forbid";
     public static final String HOME = "home";
     public static final String FORM_ERROR = "form_error";
+    public static final String CINEMA_LOGIN = "cinema_login";
 
     /*=========================分页支持==============================*/
     protected int pageNum = 1;

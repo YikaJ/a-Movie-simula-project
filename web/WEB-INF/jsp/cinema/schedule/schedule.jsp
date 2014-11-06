@@ -31,39 +31,7 @@
 </head>
 <body class="bootstrap-admin-with-small-navbar">
 <!-- small navbar -->
-<nav class="navbar navbar-default navbar-fixed-top bootstrap-admin-navbar-sm" role="navigation">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">链接</a></li>
-                        <li><a href="#">链接</a></li>
-                        <li>
-                            <a href="#">提醒 <i class="glyphicon glyphicon-bell"></i></a>
-                        </li>
-                        <li>
-                            <a href="#">设置 <i class="glyphicon glyphicon-cog"></i></a>
-                        </li>
-                        <li>
-                            <a href="#">前往前端 <i class="glyphicon glyphicon-share-alt"></i></a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-user"></i> 用户名 <i class="caret"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">行为</a></li>
-                                <li><a href="#">另一个行为</a></li>
-                                <li><a href="#">其它东西</a></li>
-                                <li role="presentation" class="divider"></li>
-                                <li><a href="BE-index.jsp">注销用户</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
+<%@include file="/WEB-INF/jsp/cinema/public/head.jsp"%>
 
 <!-- main / large navbar -->
 <nav class="navbar navbar-default navbar-fixed-top bootstrap-admin-navbar bootstrap-admin-navbar-under-small" role="navigation">
@@ -165,7 +133,6 @@
                         <div class="container-fluid">
                             <%--这里是一个电影的排期--%>
                             <div class="row-fluid list-group-item div-margin pushWebsite">
-                                <form class="form-group"  method="POST" action="#">
                                     <div class="span12 clearfix">
                                             <h3 class="h3"><strong>超体</strong></h3>
                                         <table class="table">
@@ -208,7 +175,6 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                </form>
                             </div>
                         </div>
                 </div>

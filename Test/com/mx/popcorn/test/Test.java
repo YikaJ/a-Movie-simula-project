@@ -1,13 +1,17 @@
 package com.mx.popcorn.test;
 
-import com.mx.popcorn.domain.MovieType;
-import com.mx.popcorn.domain.MovieVersion;
-import com.mx.popcorn.domain.User;
+import com.mx.popcorn.domain.*;
 import com.mx.popcorn.exception.UserExitException;
+import com.mx.popcorn.service.CinemaService;
+import com.mx.popcorn.service.HallService;
 import com.mx.popcorn.service.TypeService;
 import com.mx.popcorn.service.UserService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by Administrator on 2014-10-30.
@@ -78,6 +82,35 @@ public class Test {
         MovieVersion type = new MovieVersion();
         type.setName("2D");
         typeService.addMovieVersion(type);
+    }
+
+    @org.junit.Test
+    public void test6(){
+        CinemaService cinemaService = (CinemaService) context.getBean("cinemaServiceImp");
+        HallService hallService = (HallService) context.getBean("hallServiceImp");
+        Cinema cinema  = cinemaService.getCinemaById(1L);
+        Set<Hall> halls = new HashSet<Hall>();
+        Hall hall1 = new Hall();
+        hall1.setNumber(1);
+        hall1.setCinema(cinema);
+        Hall hall2 = new Hall();
+        hall2.setNumber(2);
+        hall2.setCinema(cinema);
+        Hall hall3 = new Hall();
+        hall3.setNumber(3);
+        hall3.setCinema(cinema);
+        Hall hall4 = new Hall();
+        hall4.setNumber(4);
+        hall4.setCinema(cinema);
+        Hall hall5 = new Hall();
+        hall5.setNumber(5);
+        hall5.setCinema(cinema);
+        halls.add(hall1);
+        halls.add(hall2);
+        halls.add(hall3);
+        halls.add(hall4);
+        halls.add(hall5);
+        hallService.addHalls(halls);
     }
 
 }

@@ -2,10 +2,7 @@ package com.mx.popcorn.controller.web;
 
 import com.mx.popcorn.base.ModelDrivenBaseAction;
 import com.mx.popcorn.domain.Cinema;
-import org.apache.struts2.convention.annotation.Action;
-import org.apache.struts2.convention.annotation.Namespace;
-import org.apache.struts2.convention.annotation.ParentPackage;
-import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.*;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -36,9 +33,11 @@ public class CinemaAction extends ModelDrivenBaseAction<Cinema>{
     }
 
     @Action(value = "/cinema/manage/movieStorage",
-            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/cinema/home/index.jsp")})
+            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/cinema/home/index.jsp")},
+            interceptorRefs = {@InterceptorRef("cinemaPrivilegeInterceptorStack")})
     public String movieStorage(){
         try {
+            getActionContext().put("newMovie", movieService.getNewMovieOnCinemaMovieStorage(pageNum));
             return SUCCESS;
         }catch (Exception e){
             e.printStackTrace();
@@ -109,7 +108,8 @@ public class CinemaAction extends ModelDrivenBaseAction<Cinema>{
     }
 
     @Action(value = "/cinema/manage/scheduleManage",
-            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/cinema/schedule/schedule.jsp")})
+            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/cinema/schedule/schedule.jsp")},
+            interceptorRefs = {@InterceptorRef("cinemaPrivilegeInterceptorStack")})
     public String scheduleManage(){
         try{
             return SUCCESS;
