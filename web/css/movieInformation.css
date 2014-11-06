@@ -4,8 +4,8 @@
 .movieInformation{
     background: url(../image/backgroundImg.jpg) no-repeat;
     background-size: 1000%;
-    margin-bottom: 20px;
     padding: 20px 0px;
+    transition:width 2s;
 }
 
 .movieTitle{
@@ -31,7 +31,7 @@
     width: 720px;
 }
 .movieDetail li{
-    color: #F5F5F5;
+    color: #DFDFDF;
     font-size: 14px;
     padding: 0 10px 20px;
 }
@@ -42,7 +42,7 @@
     border-top: 1px solid #DFDFDF;
 }
 
-.movieDetail a.summaryToggle{
+#summaryToggle{
     float: right;
     font-size: 14px;
     color: #EB002A;

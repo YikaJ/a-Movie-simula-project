@@ -13,7 +13,7 @@
 </head>
 <body>
 <%--<%@include file="/WEB-INF/jsp/public/head.jsp"%>--%>
-
+<%--banner--%>
 <div class="cinemaInformation clearfix">
     <div class="content">
         <h3 class="cinemaTitle">
@@ -28,7 +28,12 @@
         </ul>
     </div>
 </div>
-
+<%--过渡--%>
+<div class="content hr">
+    <span class="directory"><a href="../home/index.jsp">首页</a> > <a href="movieInformation.jsp">影院</a> > <a>湛江金影电影城</a> </span>
+    <span class="smallTips">3步轻松购票: 1.购票/买券 -> 2.收电子码 -> 3.影院取票</span>
+</div>
+<%--买票框--%>
 <div class="content clearfix">
     <div class="tabWrap">
         <div class="cinemaTab">
@@ -180,6 +185,6 @@
 <div class="footer">
     <div class="content"></div>
 </div>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/require.js" data-main="${pageContext.request.contextPath}/js/main.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/customer/require.js" data-main="${pageContext.request.contextPath}/js/customer/cinemaInformationMain.js"></script>
 </body>
 </html>

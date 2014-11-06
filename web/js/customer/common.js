@@ -24,11 +24,18 @@ define(["jquery"], function($){
         $myList.stop().slideToggle("3000");
         $(" .icon").eq(0).toggleClass("iconActive");
     });
-
-    var rightBarTab = $(".rightBarTab a");
-    rightBarTab.click(function(){
-        var index = $(this).index();
-        rightBarTab.eq(index).addClass("activeRightBarTab").siblings().removeClass();
-        $(".rightBarMovieList").eq(index).show().siblings("ul").hide();
-    })
+    /*
+    *  回到顶部
+    */
+     var scrollUp = $("<a class='scrollUp_button' title='回到顶部' href='javascript:'>回到顶部</a>");
+     scrollUp.appendTo("body");
+     $(window).scroll(function(){
+         var scrollTop = $(document.documentElement).scrollTop() + $(document.body).scrollTop();
+         scrollTop > 300?   scrollUp.fadeIn(): scrollUp.fadeOut();
+     });
+    $(window).trigger("scroll");//模拟触发一下滚动
+     scrollUp.click(function(){
+            $(document.documentElement).animate({scrollTop: 0}, "normal");
+            $(document.body).animate({scrollTop: 0}, "normal");
+      })
 });

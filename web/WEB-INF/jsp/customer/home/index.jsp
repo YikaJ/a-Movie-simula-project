@@ -168,27 +168,7 @@
     <div class="footer">
         <div class="content"></div>
     </div>
-<script type="text/javascript">
-    var aLi =  document.getElementById("firmRank").getElementsByTagName("li"),
-        aLi2 = document.getElementById("cinemaRank").getElementsByTagName("li");
-    for(var i = 0, len = aLi.length; i <len; i++){
-        aLi[i].onmouseover = function(){
-            for(i = 0; i < len; i++){
-                aLi[i].className = "";
-            }
-            this.className = "activeList";
-        }
-    }
-    for(var i = 0, len = aLi2.length; i <len; i++){
-        aLi2[i].onmouseover = function(){
-            for(i = 0; i < len; i++){
-                aLi2[i].className = "";
-            }
-            this.className = "activeList";
-        }
-    }
-  
-</script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/require.js" data-main="${pageContext.request.contextPath}/js/main.js"></script>
+
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/customer/require.js" data-main="${pageContext.request.contextPath}/js/customer/homepageMain.js"></script>
 </body>
 </html>

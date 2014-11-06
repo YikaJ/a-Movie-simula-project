@@ -24,21 +24,26 @@
                         <span class="rating">7.6</span>
                     </h3>
                 </li>
-                <li>导演：<span><s:property value="#movie.director"/> </span></li>
-                <li>主演：<span><s:property value="#movie.mainRole"/> </span></li>
-                <li>类型：<span><s:iterator value="#movie.movieType"><s:property value="name"/>  </s:iterator></span></li>
-                <li>地区：<span><s:property value="#movie.region"/> </span></li>
-                <li>语言：<span><s:property value="#movie.language"/> </span></li>
-                <li>片长：<span><s:property value="#movie.filmTime"/> 分钟</span></li>
-                <li class="summary">剧情介绍：<span><s:property value="#movie.introduce"/> </span>
-                    <a href="javascript:" class="summaryToggle">
+                <li>导演：<s:property value="#movie.director"/></li>
+                <li>主演：<s:property value="#movie.mainRole"/></li>
+                <li>类型：<s:iterator value="#movie.movieType"><s:property value="name"/></s:iterator></li>
+                <li>地区：<s:property value="#movie.region"/></li>
+                <li>语言：<s:property value="#movie.language"/></li>
+                <li>片长：<s:property value="#movie.filmTime"/> 分钟</li>
+                <li class="summary">剧情介绍：<s:property value="#movie.introduce"/> <span id="moreOn" style="display: none">你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好</span>......
+                    <a href="javascript:" id="summaryToggle">
                             展开>>
                     </a>
                 </li>
             </ul>
         </div>
     </div>
-
+   <%--过渡框--%>
+   <div class="content hr">
+       <span class="directory"><a href="../home/index.jsp">首页</a> > <a href="movieInformation.jsp">电影</a> > <a>超体</a> </span>
+       <span class="smallTips">3步轻松购票: 1.购票/买券 -> 2.收电子码 -> 3.影院取票</span>
+   </div>
+   <%--电影票购买--%>
     <div class="content clearfix">
 		<div class="tabWrap">
 			<div class="movieTab">
@@ -51,7 +56,7 @@
 			</div>
 			<div class="TabContent">
 				<div class="cinemaContent">
-					<ul class="cinemaTab clearfix">
+					<ul class="cinemaTab ">
 						<li class="clearfix">
                             <div class="chooseTitle">选择时间</div>
 							<a href="javascript:" class="activeChoose">全部</a>
@@ -132,11 +137,13 @@
 				</div>
 			</div>
 		</div>
+        <%--侧边栏--%>
 		<div class="rightBar">
 			<div class="rightBarTab clearfix">
 				<a href="javascript:" class="activeRightBarTab">正在热映</a>
 				<a href="javascript:">即将上映</a>
 			</div>
+            <%--正在热映--%>
 			<ul  class="rightBarMovieList">
 				<li class="clearfix">
                     <a href="movieInformation.jsp">
@@ -200,6 +207,7 @@
                     </a>
 				</li>
 			</ul>
+            <%--即将上映--%>
             <ul  class="rightBarMovieList" style="display: none">
                 <li class="clearfix">
                     <a href="movieInformation.jsp">
@@ -265,12 +273,9 @@
             </ul>
 		</div>
     </div>
-
-
-
     <div class="footer">
         <div class="content"></div>
     </div>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/require.js" data-main="${pageContext.request.contextPath}/js/main.js"></script>
-</body>
+   <script type="text/javascript" src="${pageContext.request.contextPath}/js/customer/require.js" data-main="${pageContext.request.contextPath}/js/customer/movieInformationMain.js"></script>
+ </body>
 </html>

@@ -269,9 +269,9 @@
     </div>
 </div>
 
-<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../js/twitter-bootstrap-hover-dropdown.min.js"></script>
+<script type="text/javascript" src="../js/cinema/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../js/cinema/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/cinema/twitter-bootstrap-hover-dropdown.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap-admin-theme-change-size.js"></script>
 <script type="text/javascript" src="../vendors/uniform/jquery.uniform.min.js"></script>
 <script type="text/javascript" src="../vendors/chosen.jquery.min.js"></script>

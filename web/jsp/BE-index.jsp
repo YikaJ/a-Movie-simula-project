@@ -50,8 +50,8 @@
             </div>
         </div>
 
-        <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
-        <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../js/cinema/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="../js/cinema/bootstrap.min.js"></script>
         <script type="text/javascript">
             $(function() {
                 // Setting focus

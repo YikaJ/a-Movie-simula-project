@@ -93,7 +93,7 @@ a.currentTab{
 
 /*新闻栏目*/
 
-.movieNews{
+.rightFixedBar{
     width: 277px;
     border-top: 1px solid #DFDFDF;
     border-right: 1px solid #DFDFDF;
@@ -102,14 +102,14 @@ a.currentTab{
     padding: 0px 20px;
 }
 
-.movieNews h4{
+.rightFixedBar h4{
     color: #333;
     margin: 16px auto;
     padding: 10px 0px 8px;
     border-bottom: 1px solid #DFDFDF;
 }
 
-a.moreNews{
+a.more{
     color: #F2002A;
     font-size: 14px;
     float: right;
@@ -118,26 +118,22 @@ a.moreNews{
     font-weight: normal;
 }
 
-a.moreNews:hover{
+a.more:hover{
     margin-right: 0px;
 }
-.movieNews li{
+.rightFixedBar li{
     border-bottom: 1px dashed #DFDFDF;
     padding: 10px 0px;
 }
-.movieNews ul a{
+.rightFixedBar ul a{
     font-size: 14px;
     color: #333;
 }
 
-.movieNews ul a:hover{
+.rightFixedBar ul a:hover{
     color: #EB002A;
 }
 
-.fixedNewsBar{
-    position: fixed;
-    left: 0px;
-}
 
 /*页脚footer*/
 .footer{

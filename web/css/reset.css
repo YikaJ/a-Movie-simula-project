@@ -167,7 +167,30 @@ a.activeRightBar{
 .nav a:hover{
     color: #EB002A;
 }
+/*
+*过渡条
+*/
+/*过渡*/
+.hr{
+    padding: 20px 0px;
+    overflow: hidden;
+}
 
+.directory{
+    float: left;
+}
+.directory a{
+    font-size: 14px;
+    cursor: pointer;
+}
+.directory a:hover{
+    color: #EB002A;
+}
+.smallTips{
+    float: right;
+    font-size: 12px;
+    color: #A2A2A2;
+}
 /*回到顶部*/
 .scrollUp_button{
     width: 64px;

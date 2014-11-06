@@ -88,9 +88,9 @@
                 </ul>
             </div>
         </div>
-        <div class="movieNews fr"  id="newsBar">
+        <div class="rightFixedBar fr"  id="rightFixedBar">
             <h4>
-                <a class="moreNews fr" href="javascript:">更多新闻 ></a>
+                <a class="more fr" href="javascript:">更多新闻 ></a>
                 热门新闻
             </h4>
             <ul>
@@ -116,22 +116,6 @@
         <div class="content"></div>
     </div>
 
-
-    <script type="text/javascript">
-        var newsBar = document.getElementById('newsBar');
-        var startHeight = newsBar.parentNode.offsetTop;
-        var fixedLeft = newsBar.offsetLeft + newsBar.parentNode.offsetLeft;
-        window.onscroll = function(){
-            var currentScrollTop = document.documentElement.scrollTop + document.body.scrollTop;
-            if(currentScrollTop > startHeight){
-                newsBar.style.position = "fixed";
-                newsBar.style.left = fixedLeft + "px";
-                newsBar.style.top = "0px";
-            }else{
-                newsBar.style.cssText = "";
-            }
-        }
-    </script>
-    <script src="../../../js/require.js" data-main="../js/main.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/customer/require.js" data-main="${pageContext.request.contextPath}/js/customer/movieListMain.js"></script>
 </body>
 </html>

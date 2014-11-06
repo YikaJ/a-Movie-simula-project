@@ -28,14 +28,9 @@
     <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/vendors/uniform/themes/default/css/uniform.default.min.css">
     <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/uniform.default.fixes.css">
     <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/vendors/chosen.min.css">
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/vendors/selectize/dist/css/selectize.bootstrap3.css">
     <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/vendors/bootstrap-wysihtml5-rails-b3/vendor/assets/stylesheets/bootstrap-wysihtml5/core-b3.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/html5shiv.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body class="bootstrap-admin-with-small-navbar">
 <!-- small navbar -->
@@ -212,8 +207,8 @@
                                     <div class="form-group">
                                         <label class="col-lg-2 control-label" for="date01">上映时间</label>
                                         <div class="col-lg-10">
-                                            <input type="text" name="showTime" class="form-control datepicker" id="date01" readonly>
-                                            <p class="help-block text-danger">可以选择，可以手写</p>
+                                            <input type="text" name="showTime" class="form-control datepicker" id="date01" readonly value="2014-11-05">
+                                            <p class="help-block text-danger">请选择</p>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -249,19 +244,14 @@
     </div>
 </div>
 
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/twitter-bootstrap-hover-dropdown.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap-admin-theme-change-size.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/cinema/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/cinema/bootstrap.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/cinema/twitter-bootstrap-hover-dropdown.min.js"></script>
+
 <script type="text/javascript" src="${pageContext.request.contextPath}/vendors/uniform/jquery.uniform.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/vendors/chosen.jquery.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/vendors/selectize/dist/js/standalone/selectize.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/vendors/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/vendors/bootstrap-wysihtml5-rails-b3/vendor/assets/javascripts/bootstrap-wysihtml5/wysihtml5.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/vendors/bootstrap-wysihtml5-rails-b3/vendor/assets/javascripts/bootstrap-wysihtml5/core-b3.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/vendors/twitter-bootstrap-wizard/jquery.bootstrap.wizard-for.bootstrap3.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/vendors/boostrap3-typeahead/bootstrap3-typeahead.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/ajaxfileupload.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/cinema/ajaxfileupload.js"></script>
 <script type="text/javascript">
     $(function() {
         $('.datepicker').datepicker();
@@ -269,7 +259,6 @@
         $('.chzn-select').chosen();
         $('.selectize-select').selectize();
         $("#posterSubmit").click(function(){
-            var ajaxFileUpload = function() {
                 $.ajaxFileUpload ( {
                     url: '/support/uploadImage.do', //用于文件上传的服务器端请求地址
                     secureuri : false, //是否需要安全协议，一般设置为false
@@ -293,7 +282,6 @@
                     }
                 })
                 return false;
-            }();
         });
 
     });

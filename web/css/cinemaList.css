@@ -1,25 +1,4 @@
 
-/*过渡*/
-.hr{
-    padding: 20px 0px;
-    overflow: hidden;
-}
-
-.directory{
-    float: left;
-}
-.directory a{
-    font-size: 12px;
-}
-.directory a:hover{
-    color: #EB002A;
-}
-.smallTips{
-    float: right;
-    font-size: 12px;
-    color: #A2A2A2;
-}
-/*内容区域*/
 /*TAB标签栏*/
 .tabWrap{
     width: 715px;

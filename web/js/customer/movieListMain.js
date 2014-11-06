@@ -1,30 +1,21 @@
 /**
  * 全屏轮播图
-	bigBox: 指定banner容器，必填
-	hasArrow： 指定是否有箭头，选填，默认为true
-	hasButton： 指定是否有小按钮，选填，默认为true
-	changeSpeed：指定切换图片的速度，选填，单位为ms
-	time4Interval: 指定切换图片的时间间隔，选填，单位为ms
-	arrowTrigger: 指定触发箭头的方法，二选一选填，默认为点击
-	buttonTrigger: 指定触发按钮的方法，二选一选填，默认为鼠标移入
+ bigBox: 指定banner容器，必填
+ hasArrow： 指定是否有箭头，选填，默认为true
+ hasButton： 指定是否有小按钮，选填，默认为true
+ changeSpeed：指定切换图片的速度，选填，单位为ms
+ time4Interval: 指定切换图片的时间间隔，选填，单位为ms
+ arrowTrigger: 指定触发箭头的方法，二选一选填，默认为点击
+ buttonTrigger: 指定触发按钮的方法，二选一选填，默认为鼠标移入
  */
 require.config({
-	paths: {
-		jquery: "jquery-1.11.1.min",
+    paths: {
+        jquery: "jquery-1.11.1.min",
         validate: "jquery.validate.min"
-	}
+    }
 });
 
-require(["jquery", "autoplay","window", "common","scrollUp"], function ($, a, w, c, s ) {
-    new a.Autoplay().autoplay({
-        box: $("#banner"),
-        hasArrow: true,
-        hasButton: true,
-        changeSpeed: 600,
-        time4Interval: 4000,
-        arrowTrigger: "click",
-        buttonTrigger: "mouseover"
-    });
+require(["jquery", "window", "common", "movieList"], function ($, w) {
 
     $("#login").click(function () {
         new w.Window().login({
@@ -59,8 +50,6 @@ require(["jquery", "autoplay","window", "common","scrollUp"], function ($, a, w,
             text4Service: "《爆米花用户协议》"
         })
     });
-
-    new s.ScrollUp().up();
 });
 
 
