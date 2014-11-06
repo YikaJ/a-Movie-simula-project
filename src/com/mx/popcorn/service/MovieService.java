@@ -12,4 +12,6 @@ public interface MovieService  extends BaseService{
     Page getHotShowingMoviesOfIndex(int pageNum);
 
     Movie getMovie(Long movieId);
+
+    Page getNewMovieOnCinemaMovieStorage(int pageNum);
 }

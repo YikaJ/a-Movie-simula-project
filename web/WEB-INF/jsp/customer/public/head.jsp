@@ -15,7 +15,7 @@
         <s:else>
             <a href="#" class="topBarLeft loginLeft"><s:property value="#session.user.nick"/></a><span class="little">|</span><a href="javascript:" id="myStuff" class="topBarRight loginRight">我的<i class="icon"></i></a>
             <ul class="userList" id="myList">
-                <li><a href="#">个人资料</a></li>
+                <li><a href="${pageContext.request.contextPath}/user/userInfo.do?userId=<s:property value="#session.user.id"/> ">个人资料</a></li>
                 <li><a href="#">我的订单</a></li>
                 <li><a href="#">消息中心</a></li>
                 <li><a href="${pageContext.request.contextPath}/user/loginOff.do">退出</a></li>

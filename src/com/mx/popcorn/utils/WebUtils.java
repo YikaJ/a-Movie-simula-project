@@ -12,9 +12,15 @@ public class WebUtils {
         Pattern pattern = Pattern.compile("<[^>]+>|&nbsp");
         Matcher matcher = pattern.matcher(content);
         content = matcher.replaceAll("");
-        if(content.length()<size)
-            return content;
-        return content.substring(0, size)+"···";
+        return content.length()<size
+                ? content
+                : content.substring(0, size)+"···";
+    }
+
+    public static String simpleSubstring(String content, int begin, int end){
+        return content.length()<=(end - begin)
+                ?content.substring(begin, content.length()-begin)
+                : content.substring(begin, end - begin);
     }
 
 }

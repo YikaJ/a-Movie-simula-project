@@ -44,39 +44,7 @@
 </head>
 <body class="bootstrap-admin-with-small-navbar">
 <!-- small navbar -->
-<nav class="navbar navbar-default navbar-fixed-top bootstrap-admin-navbar-sm" role="navigation">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">链接</a></li>
-                        <li><a href="#">链接</a></li>
-                        <li>
-                            <a href="#">提醒 <i class="glyphicon glyphicon-bell"></i></a>
-                        </li>
-                        <li>
-                            <a href="#">设置 <i class="glyphicon glyphicon-cog"></i></a>
-                        </li>
-                        <li>
-                            <a href="#">前往前端 <i class="glyphicon glyphicon-share-alt"></i></a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-user"></i> 用户名 <i class="caret"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">行为</a></li>
-                                <li><a href="#">另一个行为</a></li>
-                                <li><a href="#">其它东西</a></li>
-                                <li role="presentation" class="divider"></li>
-                                <li><a href="BE-index.jsp">注销用户</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
+<%@include file="/WEB-INF/jsp/cinema/public/head.jsp"%>
 
 <!-- main / large navbar -->
 <nav class="navbar navbar-default navbar-fixed-top bootstrap-admin-navbar bootstrap-admin-navbar-under-small" role="navigation">
@@ -114,121 +82,28 @@
                             <div class="text-muted bootstrap-admin-box-title">电影详情</div>
                         </div>
                         <div class="bootstrap-admin-no-table-panel-content bootstrap-admin-panel-content collapse in">
-
-                            <div class="row div-margin">
-                                <div class="col-lg-3">
-                                    <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" data-src="holder.js/100%x180" alt="缩略图" class="thumbnail" style="width: 215px; height: 330px;">
+                            <s:iterator value="#newMovie.recordList">
+                                <div class="row div-margin">
+                                    <div class="col-lg-3">
+                                        <img src="${pageContext.request.contextPath}<s:property value="poster"/> " data-src="holder.js/100%x180" alt="缩略图" class="thumbnail" style="width: 215px; height: 330px;">
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <ul class="list-group list-unstyled list-margin">
+                                            <li>
+                                                <h3 class="h3"><s:property value="name"/> </h3>
+                                            </li>
+                                            <li>导演：<span><s:property value="director"/> </span></li>
+                                            <li>主演：<span><s:property value="mainRole"/> </span></li>
+                                            <li>类型：<span><s:iterator value="movieTypes"><s:property value="name"/>&nbsp;</s:iterator></span></li>
+                                            <li>地区：<span><s:property value="region"/></span></li>
+                                            <li>语言：<span><s:property value="language"/></span></li>
+                                            <li>片长：<span><s:property value="filmTime"/>分钟</span></li>
+                                            <li>上映时间：<span><s:date name="showTime" format="yyyy-MM-dd"/>  </span></li>
+                                            <li><button type="button" class="btn btn-success">进入排期</button></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="col-lg-9">
-                                    <ul class="list-group list-unstyled list-margin">
-                                        <li>
-                                            <h3 class="h3">超体</h3>
-                                        </li>
-                                        <li>导演：<span>吕克·贝松</span></li>
-                                        <li>主演：<span>斯嘉丽·约翰逊,摩根·弗里曼,安娜丽·提普顿,阿马尔·维克德,崔岷植 ,乔汗·菲利普·阿斯巴克,李淳</span></li>
-                                        <li>类型：<span>3D,IMAX</span></li>
-                                        <li>地区：<span>中国大陆,法国</span></li>
-                                        <li>语言：<span>英语|法语</span></li>
-                                        <li>片长：<span>90分钟</span></li>
-                                        <li><button type="button" class="btn btn-success">进入排期</button></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="row div-margin">
-                                <div class="col-lg-3">
-                                    <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" data-src="holder.js/100%x180" alt="缩略图" class="thumbnail" style="width: 215px; height: 330px;">
-                                </div>
-                                <div class="col-lg-9">
-                                    <ul class="list-group list-unstyled list-margin">
-                                        <li>
-                                            <h3 class="h3">超体</h3>
-                                        </li>
-                                        <li>导演：<span>吕克·贝松</span></li>
-                                        <li>主演：<span>斯嘉丽·约翰逊,摩根·弗里曼,安娜丽·提普顿,阿马尔·维克德,崔岷植 ,乔汗·菲利普·阿斯巴克,李淳</span></li>
-                                        <li>类型：<span>3D,IMAX</span></li>
-                                        <li>地区：<span>中国大陆,法国</span></li>
-                                        <li>语言：<span>英语|法语</span></li>
-                                        <li>片长：<span>90分钟</span></li>
-                                        <li><button type="button" class="btn btn-success">进入排期</button></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="row div-margin">
-                                <div class="col-lg-3">
-                                    <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" data-src="holder.js/100%x180" alt="缩略图" class="thumbnail" style="width: 215px; height: 330px;">
-                                </div>
-                                <div class="col-lg-9">
-                                    <ul class="list-group list-unstyled list-margin">
-                                        <li>
-                                            <h3 class="h3">超体</h3>
-                                        </li>
-                                        <li>导演：<span>吕克·贝松</span></li>
-                                        <li>主演：<span>斯嘉丽·约翰逊,摩根·弗里曼,安娜丽·提普顿,阿马尔·维克德,崔岷植 ,乔汗·菲利普·阿斯巴克,李淳</span></li>
-                                        <li>类型：<span>3D,IMAX</span></li>
-                                        <li>地区：<span>中国大陆,法国</span></li>
-                                        <li>语言：<span>英语|法语</span></li>
-                                        <li>片长：<span>90分钟</span></li>
-                                        <li><button type="button" class="btn btn-success">进入排期</button></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="row div-margin">
-                                <div class="col-lg-3">
-                                    <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" data-src="holder.js/100%x180" alt="缩略图" class="thumbnail" style="width: 215px; height: 330px;">
-                                </div>
-                                <div class="col-lg-9">
-                                    <ul class="list-group list-unstyled list-margin">
-                                        <li>
-                                            <h3 class="h3">超体</h3>
-                                        </li>
-                                        <li>导演：<span>吕克·贝松</span></li>
-                                        <li>主演：<span>斯嘉丽·约翰逊,摩根·弗里曼,安娜丽·提普顿,阿马尔·维克德,崔岷植 ,乔汗·菲利普·阿斯巴克,李淳</span></li>
-                                        <li>类型：<span>3D,IMAX</span></li>
-                                        <li>地区：<span>中国大陆,法国</span></li>
-                                        <li>语言：<span>英语|法语</span></li>
-                                        <li>片长：<span>90分钟</span></li>
-                                        <li><button type="button" class="btn btn-success">进入排期</button></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="row div-margin">
-                                <div class="col-lg-3">
-                                    <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" data-src="holder.js/100%x180" alt="缩略图" class="thumbnail" style="width: 215px; height: 330px;">
-                                </div>
-                                <div class="col-lg-9">
-                                    <ul class="list-group list-unstyled list-margin">
-                                        <li>
-                                            <h3 class="h3">超体</h3>
-                                        </li>
-                                        <li>导演：<span>吕克·贝松</span></li>
-                                        <li>主演：<span>斯嘉丽·约翰逊,摩根·弗里曼,安娜丽·提普顿,阿马尔·维克德,崔岷植 ,乔汗·菲利普·阿斯巴克,李淳</span></li>
-                                        <li>类型：<span>3D,IMAX</span></li>
-                                        <li>地区：<span>中国大陆,法国</span></li>
-                                        <li>语言：<span>英语|法语</span></li>
-                                        <li>片长：<span>90分钟</span></li>
-                                        <li><button type="button" class="btn btn-success">进入排期</button></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="row div-margin">
-                                <div class="col-lg-3">
-                                    <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" data-src="holder.js/100%x180" alt="缩略图" class="thumbnail" style="width: 215px; height: 330px;">
-                                </div>
-                                <div class="col-lg-9">
-                                    <ul class="list-group list-unstyled list-margin">
-                                        <li>
-                                            <h3 class="h3">超体</h3>
-                                        </li>
-                                        <li>导演：<span>吕克·贝松</span></li>
-                                        <li>主演：<span>斯嘉丽·约翰逊,摩根·弗里曼,安娜丽·提普顿,阿马尔·维克德,崔岷植 ,乔汗·菲利普·阿斯巴克,李淳</span></li>
-                                        <li>类型：<span>3D,IMAX</span></li>
-                                        <li>地区：<span>中国大陆,法国</span></li>
-                                        <li>语言：<span>英语|法语</span></li>
-                                        <li>片长：<span>90分钟</span></li>
-                                        <li><button type="button" class="btn btn-success">进入排期</button></li>
-                                    </ul>
-                                </div>
-                            </div>
+                            </s:iterator>
                         </div>
                     </div>
                 </div>

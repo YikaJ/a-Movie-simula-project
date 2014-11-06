@@ -132,6 +132,18 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
         return SUCCESS;
     }
 
+    @Action(value = "userInfo",
+            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/customer/user/info/userInfo.jsp")},
+            interceptorRefs = {@InterceptorRef("userPrivilegeInterceptorStack")})
+    public String userInfo(){
+        try{
+            return SUCCESS;
+        }catch (Exception e){
+            e.printStackTrace();
+            return ERROR;
+        }
+    }
+
 
     public boolean isAutoLoginTo() {
         return autoLoginTo;
