@@ -7,9 +7,9 @@
 <title>电影院</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
-<link rel="stylesheet" type="text/css" href="../../../css/reset.css">
-<link href="../../../css/movieList.css" rel="stylesheet" type="text/css">
-<link href="../../../css/window.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css">
+<link href="${pageContext.request.contextPath}/css/movieList.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/css/window.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <%@include file="/WEB-INF/jsp/customer/public/head.jsp"%>
@@ -26,62 +26,62 @@
             <div class="movieContent fl">
                 <ul class="movieList fl">
                     <li>
-                        <a href="../../../jsp/movieInformation.jsp">
-                            <img src="../../../image/hotOn%20(1).jpg">
+                        <a href="../../../jsp/movieInformation.jsp" title="超体">
+                            <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" alt="超体">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
                         <a href="../../../jsp/movieInformation.jsp">
-                            <img src="../../../image/hotOn%20(2).jpg">
+                            <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
                         <a href="../../../jsp/movieInformation.jsp">
-                            <img src="../../../image/hotOn%20(3).jpg">
+                            <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
                         <a href="../../../jsp/movieInformation.jsp">
-                            <img src="../../../image/hotOn%20(4).jpg">
+                            <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
                         <a href="../../../jsp/movieInformation.jsp">
-                            <img src="../../../image/hotOn%20(5).jpg">
+                            <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
                         <a href="../../../jsp/movieInformation.jsp">
-                            <img src="../../../image/hotOn%20(1).jpg">
+                            <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
                         <a href="../../../jsp/movieInformation.jsp">
-                            <img src="../../../image/hotOn%20(2).jpg">
+                            <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
                         <a href="../../../jsp/movieInformation.jsp">
-                            <img src="../../../image/hotOn%20(3).jpg">
+                            <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
                         <a href="../../../jsp/movieInformation.jsp">
-                            <img src="../../../image/hotOn%20(4).jpg">
+                            <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
                     <li>
                         <a href="../../../jsp/movieInformation.jsp">
-                            <img src="../../../image/hotOn%20(5).jpg">
+                            <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg">
                             <span class="buyTicket">立即购票</span>
                         </a>
                     </li>
@@ -112,7 +112,7 @@
             </ul>
         </div>
     </div>
-    <div class="footer">
+    <div class="footer" id="footer">
         <div class="content"></div>
     </div>
 

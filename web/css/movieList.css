@@ -1,35 +1,16 @@
 
 
-/*过渡小玩意儿*/
-.hr{
-    padding: 20px 0px;
-    overflow: hidden;
-}
 
-.directory{
-    float: left;
-}
-.directory a{
-    font-size: 12px;
-}
-.directory a:hover{
-    color: #EB002A;
-}
-.smallTips{
-    float: right;
-    font-size: 12px;
-    color: #A2A2A2;
-}
 
 /*电影列表*/
 
 .movieContent{
     overflow: hidden;
-    padding: 0px 9px;
+        padding: 0 9px;
 }
 
 .movieList span.buyTicket:hover{
-    box-shadow: 0px 0px 10px #FFF inset;
+    box-shadow: 0 0 10px #FFF inset;
 }
 
 .details{
@@ -66,8 +47,8 @@ a.currentTab{
 /*电影图片模版*/
 .movieList li{
     float: left;
-    padding: 0px 35px;
-    margin: 15px -20px 15px 0px;
+    margin: 15px 15px 15px 35px;
+    box-shadow: 0 3px 3px -1px #333;
 }
 
 .movieList a{
@@ -79,7 +60,7 @@ a.currentTab{
     height: 225px;
 }
 .movieList .buyTicket{
-    padding: 5px 0px;
+    padding: 5px 0;
     font-size: 14px;
     width: 160px;
     display: block;
@@ -135,10 +116,3 @@ a.more:hover{
 }
 
 
-/*页脚footer*/
-.footer{
-    width: 100%;
-    height: 200px;
-    background: #2b2b2b;
-    border-top: 2px solid #d21438;
-}

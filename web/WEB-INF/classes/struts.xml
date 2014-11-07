@@ -24,10 +24,16 @@
             <!--后台权限拦截-->
             <!--会员权限拦截-->
             <interceptor name="userPrivilegeInterceptor" class="com.mx.popcorn.interceptor.UserPrivilegeInterceptor"></interceptor>
+            <!--影院权限拦截-->
+            <interceptor name="cinemaPrivilegeInterceptor" class="com.mx.popcorn.interceptor.CinemaPrivilegeInterceptor"></interceptor>
             <!--配置拦截器栈-->
             <interceptor-stack name="popcornDefaultStack">
                 <interceptor-ref name="autoLoginInterceptor"></interceptor-ref>
                 <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+            <interceptor-stack name="cinemaPrivilegeInterceptorStack">
+                <interceptor-ref name="popcornDefaultStack"></interceptor-ref>
+                <interceptor-ref name="cinemaPrivilegeInterceptor"></interceptor-ref>
             </interceptor-stack>
             <interceptor-stack name="userPrivilegeInterceptorStack">
                 <interceptor-ref name="popcornDefaultStack"></interceptor-ref>
@@ -39,7 +45,15 @@
 
         <global-results>
              <result name="error" type="redirect">/jsp/error.jsp</result>
-             <result name="find_failure" type="redirect">/jsp/error.jsp</result>
+
+             <result name="find_failure" type="redirect">/jsp/findFailure.jsp</result>
+
+             <result name="cinema_login" type="redirectAction">
+                 <param name="actionName">loginUI</param>
+                 <param name="namespace">/cinema/manage</param>
+             </result>
+
+            <result name="home" type="redirect">/</result>
         </global-results>
 
         <action name="appSupport" class="com.mx.popcorn.controller.android.ApplicationSupportAction" method="appLogin">
