@@ -7,23 +7,27 @@
 define(["jquery"], function($){
     /*登陆后的设置框*/
     var $myList = $("#myList");
-    $(document).click(function(event){
+    var $login =  $(".loginLeft");
+    var $loginRegister = $("#loginRegister");
+    var width = $login.innerWidth();
+    $myList.css("width", width);
+    $loginRegister.mousemove(function(event){
+        event.stopPropagation();
+        $login.addClass("activeLeftBar");
+        $myList.show();
+        $(" .icon").eq(0).addClass("iconActive");
+    });
+
+    $(document).mousemove(function(event){
         if($myList.css("display") !== "none"){
             if(event.target.id !== "myList"){
-                $myList.stop().slideUp("3000", function(){
-                    $("#myStuff").removeClass("activeRightBar");
-                });
+                $myList.hide();
+                $login.removeClass("activeLeftBar");
                 $(" .icon").removeClass("iconActive");
             }
         }
     });
-    //登录后的下拉列表
-    $("#myStuff").click(function(event){
-        event.stopPropagation();
-        $(this).toggleClass("activeRightBar");
-        $myList.stop().slideToggle("3000");
-        $(" .icon").eq(0).toggleClass("iconActive");
-    });
+
     /*
     *  回到顶部
     */

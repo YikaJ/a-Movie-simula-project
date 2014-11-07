@@ -42,7 +42,7 @@ a:link,a:hover,a:active,a:visited{
 .loginRegister{
     font-size: 14px;
     position: absolute;
-    right: 10%;
+    right: 8%;
     z-index: 9000;
     height: 30px;
     line-height: 30px;
@@ -67,47 +67,50 @@ a.topBarRight{
     border-bottom-right-radius: 10px;
     width: 70px;
 }
-/*未登录*/
 
 .loginRegister a:hover{
     color: #333;
 }
 /*登陆后*/
 a.loginLeft{
-    padding: 0 30px;
+    display: block;
+    border: 1px solid #FF6666;
+    padding: 0 15px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background: #FF6666;
+    line-height: 30px;
+    color: #FFF;
 }
-a.loginRight{
-    padding: 0 10px;
-}
+
 .userList{
     background: #F8F8F8;
     position: absolute;
     right: 0;
     top: 30px;
-    width: 70px;
     border: 1px solid #CCC;
     border-top: 0;
     border-radius: 0 0 10px 10px;
     text-align: center;
     display: none;
-    padding: 0 10px;
 }
 .userList a{
     font-size: 12px;
     color: #999;
     display: block;
-    padding: 3px 10px;
+    padding: 3px 0;
     border-bottom: 1px solid #CCC;
 }
-a.activeRightBar{
+a.activeLeftBar{
     border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
 }
 .icon{
     background: url("../image/icon_sprite.png") no-repeat top left;
     height: 15px;
     width: 15px;
     float: right;
-    margin: 12px 0 0 0;
+    margin: 12px 0 0 8px;
 }
 .iconActive{
     background-position: top right;
