@@ -22,7 +22,7 @@ body,html{
     color: #000;
     text-indent: 50px;
     padding: 20px 0;
-    border-bottom: 1px solid #EEE;
+    border-bottom: 1px solid #CCC;
 }
 
 .leftContent a:hover{
@@ -30,7 +30,7 @@ body,html{
 }
 
 .leftContent .activeLi{
-    border-left: 2px solid #CC6666 ;
+    border-left: 2px solid #C9394A ;
 }
 
 /*右部内容框*/
