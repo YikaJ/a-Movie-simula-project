@@ -1,5 +1,9 @@
 package com.mx.popcorn.utils;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,6 +25,19 @@ public class WebUtils {
         return content.length()<=(end - begin)
                 ?content.substring(begin, content.length()-begin)
                 : content.substring(begin, end - begin);
+    }
+
+    public static Date getSpecialTime(Date date, int scope){
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.set(Calendar.DAY_OF_YEAR, calendar.get(Calendar.DAY_OF_YEAR) + scope);
+        return calendar.getTime();
+    }
+
+    public static String getSpecialDate(Date date, String formatString) throws ParseException {
+        //EEEE格式化为星期数
+        SimpleDateFormat format  = new SimpleDateFormat(formatString);
+        return format.format(date);
     }
 
 }

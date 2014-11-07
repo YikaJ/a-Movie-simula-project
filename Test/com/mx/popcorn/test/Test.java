@@ -9,6 +9,7 @@ import com.mx.popcorn.service.UserService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -111,6 +112,12 @@ public class Test {
         halls.add(hall4);
         halls.add(hall5);
         hallService.addHalls(halls);
+    }
+
+    @org.junit.Test
+    public void test7(){
+        SimpleDateFormat format = new SimpleDateFormat("EEEE");
+        System.out.println(format.format(new Date()));
     }
 
 }

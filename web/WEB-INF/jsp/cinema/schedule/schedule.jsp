@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,9 +58,9 @@
         <div class="col-md-10">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist" id="myTab">
-                <li role="presentation" class="active"><a href="#today" role="tab" data-toggle="tab">11-5星期三</a></li>
-                <li role="presentation"><a href="#tomorrow" role="tab" data-toggle="tab">11-6星期四</a></li>
-                <li role="presentation"><a href="#theDayAfterTorrow" role="tab" data-toggle="tab">11-7星期五</a></li>
+                <li role="presentation" class="<s:property value="dayType==0?'active':''"/> "><a href="?"><s:property value="#today"/> </a></li>
+                <li role="presentation" class="<s:property value="dayType==1?'active':''"/> "><a href="?dayType=1"><s:property value="#tom"/></a></li>
+                <li role="presentation" class="<s:property value="dayType==2?'active':''"/> "><a href="?dayType=2"><s:property value="#after_tom"/></a></li>
                 <li class="pull-right">
                     <button class="btn btn-info" type="button" id="addMovieBtn">增加电影排期</button>
                 </li>
@@ -73,16 +74,15 @@
                     <div class="container-fluid scheduleContent">
                         <%--这里是一个电影的排期--%>
                         <div class="row-fluid list-group-item div-margin movieTimeDiv">
-                            <form class="form-group"  method="POST" action="#">
+                            <s:form cssClass="form-group"  method="POST" action="publishSchedule" namespace="/cinema/manage/schedule">
                                 <div class="span12 clearfix">
                                     <div class="div-margin">
                                         <strong>电影名:</strong>
-                                        <select name="name" class="selectize-select" style="width: 100px">
-                                            <option value="超体">超体</option>
-                                            <option value="超体">超体</option>
-                                            <option value="超体">超体</option>
-                                            <option value="超体">超体</option>
-                                            <option value="超体">超体</option>
+                                        <input type="hidden" name="showTime" value="<s:property value="#baseDate"/> ">
+                                        <select name="movieId" class="selectize-select" style="width: 100px">
+                                            <s:iterator value="movies">
+                                                <option value="<s:property value="id"/>"><s:property value="name"/></option>
+                                            </s:iterator>
                                         </select>
                                         <button class="btn btn-default pull-right  btn-group removeMovieTimeBtn"  type="button">撤销放映时间</button>
                                         <button class="btn btn-default pull-right  btn-group addMovieTimeBtn"  type="button">添加放映时间</button>
@@ -104,27 +104,26 @@
                                         <tbody class="row">
                                         <tr id="cloneTr">
                                             <td class="col-lg-4">
-                                                <input type="text" class="form-control" required="true"/>
+                                                <input type="text" name="times" class="form-control" required="true"/>
                                             </td>
                                             <td class="col-lg-4">
-                                                <select name="name" class="selectize-select form-control">
-                                                    <option value="1">1号厅</option>
-                                                    <option value="2">2号厅</option>
-                                                    <option value="3">3号厅</option>
-                                                    <option value="4">4号厅</option>
-                                                    <option value="5">5号厅</option>
+                                                <select name="hallIds" class="selectize-select form-control">
+                                                    <s:iterator value="halls">
+                                                        <option value="<s:property value="id"/>"><s:property value="number"/>号厅</option>
+                                                    </s:iterator>
                                                 </select>
                                             </td>
                                             <td class="col-lg-4">
-                                                <input type="text" class="form-control"/>
+                                                <input type="text" name="prices" class="form-control"/>
                                             </td>
                                         </tr>
                                         </tbody>
                                     </table>
                                     <button class="btn btn-danger pull-right removeMovieBtn" type="button">删除排期</button>
-                                    <button class="btn btn-success pull-right confirmMovieTimeBtn" type="submit">确认排期</button>
+                                    <%--<button class="btn btn-success pull-right confirmMovieTimeBtn" type="submit">确认排期</button>--%>
+                                    <button class="btn btn-success" type="submit">确认排期</button>
                                 </div>
-                            </form>
+                            </s:form>
                         </div>
 
 
@@ -132,25 +131,25 @@
                     <%--已经发布的排期--%>
                         <div class="container-fluid">
                             <%--这里是一个电影的排期--%>
-                            <div class="row-fluid list-group-item div-margin pushWebsite">
+                                <div class="row-fluid list-group-item div-margin pushWebsite">
                                     <div class="span12 clearfix">
-                                            <h3 class="h3"><strong>超体</strong></h3>
+                                        <h3 class="h3"><strong>超体</strong></h3>
                                         <table class="table">
                                             <thead class="row">
-                                                <tr>
-                                                    <th class="col-lg-4">
-                                                        放映时间
-                                                    </th>
-                                                    <th class="col-lg-4">
-                                                        放映厅
-                                                    </th>
-                                                    <th class="col-lg-4">
-                                                        票价
-                                                    </th>
-                                                </tr>
+                                            <tr>
+                                                <th class="col-lg-4">
+                                                    放映时间
+                                                </th>
+                                                <th class="col-lg-4">
+                                                    放映厅
+                                                </th>
+                                                <th class="col-lg-4">
+                                                    票价
+                                                </th>
+                                            </tr>
                                             </thead>
                                             <tbody class="row">
-                                                <tr>
+                                            <tr>
                                                 <td class="col-lg-4">
                                                     20:40
                                                 </td>
@@ -161,21 +160,22 @@
                                                     27.00
                                                 </td>
                                             </tr>
-                                                <tr>
-                                                    <td class="col-lg-4">
-                                                        20:40
-                                                    </td>
-                                                    <td class="col-lg-4">
-                                                        6号厅
-                                                    </td>
-                                                    <td class="col-lg-4">
-                                                        27.00
-                                                    </td>
-                                                </tr>
+                                            <tr>
+                                                <td class="col-lg-4">
+                                                    20:40
+                                                </td>
+                                                <td class="col-lg-4">
+                                                    6号厅
+                                                </td>
+                                                <td class="col-lg-4">
+                                                    27.00
+                                                </td>
+                                            </tr>
                                             </tbody>
                                         </table>
                                     </div>
-                            </div>
+                                </div>
+
                         </div>
                 </div>
             </div>

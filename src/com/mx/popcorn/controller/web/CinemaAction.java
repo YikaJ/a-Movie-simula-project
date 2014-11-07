@@ -2,9 +2,14 @@ package com.mx.popcorn.controller.web;
 
 import com.mx.popcorn.base.ModelDrivenBaseAction;
 import com.mx.popcorn.domain.Cinema;
+import com.mx.popcorn.utils.TextTools;
+import com.mx.popcorn.utils.WebUtils;
 import org.apache.struts2.convention.annotation.*;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by Administrator on 2014-10-28.
@@ -16,6 +21,10 @@ import org.springframework.stereotype.Controller;
 public class CinemaAction extends ModelDrivenBaseAction<Cinema>{
 
     private static final String ACTION_NAME_SPACE = "CinemaIndex";
+    private static final int TODAY = 0;
+    private static final int TOMORROW = 1;
+    private static final int AFTER_TOMORROW = 2;
+    private int dayType = TODAY;
 
     /**
      * 影院主页，影院列表
@@ -112,6 +121,30 @@ public class CinemaAction extends ModelDrivenBaseAction<Cinema>{
             interceptorRefs = {@InterceptorRef("cinemaPrivilegeInterceptorStack")})
     public String scheduleManage(){
         try{
+            Cinema cinema = (Cinema) getSession().getAttribute(CINEMA_SESSION);
+            Date date = new Date();
+            Date tom = WebUtils.getSpecialTime(date, 1);
+            Date after_tom = WebUtils.getSpecialTime(date, 2);
+            getActionContext().put("today", WebUtils.getSpecialDate(date, "MM-dd")+WebUtils.getSpecialDate(date, "EEEE"));
+            getActionContext().put("tom", WebUtils.getSpecialDate(tom, "MM-dd")+WebUtils.getSpecialDate(tom, "EEEE"));
+            getActionContext().put("after_tom", WebUtils.getSpecialDate(after_tom, "MM-dd")+WebUtils.getSpecialDate(after_tom, "EEEE"));
+            getActionContext().put("halls", hallService.getHallForCinema(cinema));
+                switch (dayType){
+                    case TOMORROW:
+                        getActionContext().put("baseDate", WebUtils.getSpecialDate(tom, "yyyy-MM-dd"));
+//                        getActionContext().put("schedules", scheduleService.getSchedulesForSpecialDate(pageNum, cinema, tom));
+                        getActionContext().put("movies", movieService.getMoviesForSchedule(tom));
+                        break;
+                    case AFTER_TOMORROW:
+                        getActionContext().put("baseDate", WebUtils.getSpecialDate(after_tom, "yyyy-MM-dd"));
+//                        getActionContext().put("schedules", scheduleService.getSchedulesForSpecialDate(pageNum, cinema, after_tom));
+                        getActionContext().put("movies", movieService.getMoviesForSchedule(after_tom));
+                        break;
+                    default:
+                        getActionContext().put("baseDate", WebUtils.getSpecialDate(date, "yyyy-MM-dd"));
+//                        getActionContext().put("schedules", scheduleService.getSchedulesForSpecialDate(pageNum, cinema, date));
+                        getActionContext().put("movies", movieService.getMoviesForSchedule(date));
+                }
             return SUCCESS;
         }catch (Exception e){
             e.printStackTrace();
@@ -119,8 +152,13 @@ public class CinemaAction extends ModelDrivenBaseAction<Cinema>{
         }
     }
 
+    public int getDayType() {
+        return dayType;
+    }
 
-
+    public void setDayType(int dayType) {
+        this.dayType = dayType;
+    }
 
     public static String getActionNameSpace() {
         return ACTION_NAME_SPACE;

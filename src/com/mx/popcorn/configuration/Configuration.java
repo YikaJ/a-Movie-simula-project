@@ -13,6 +13,8 @@ public class Configuration {
     private static int pageNavigate;
     private static int hotShowingMovieNumOfIndex;
     private static int newMovieNumOnCinema;
+    private static int isScheduleableNum;
+    private static int scheduleNum;
 
     /*=============================类型参数定义=============================*/
 
@@ -29,6 +31,8 @@ public class Configuration {
             imageForm =prop.getProperty("imageForm");
             hotShowingMovieNumOfIndex = Integer.parseInt(prop.getProperty("hotShowingMovieNumOfIndex"));
             newMovieNumOnCinema = Integer.parseInt(prop.getProperty("newMovieNumOnCinema"));
+            isScheduleableNum = Integer.parseInt(prop.getProperty("isScheduleableNum"));
+            scheduleNum = Integer.parseInt(prop.getProperty("scheduleNum"));
 
         }catch (Exception e){
             throw new RuntimeException(e);
@@ -42,6 +46,14 @@ public class Configuration {
             }
         }
 
+    }
+
+    public static int getIsScheduleableNum() {
+        return isScheduleableNum;
+    }
+
+    public static int getScheduleNum() {
+        return scheduleNum;
     }
 
     public static int getNewMovieNumOnCinema() {

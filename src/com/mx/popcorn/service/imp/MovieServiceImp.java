@@ -5,11 +5,13 @@ import com.mx.popcorn.domain.Movie;
 import com.mx.popcorn.domain.Page;
 import com.mx.popcorn.service.MovieService;
 import com.mx.popcorn.utils.QueryHelper;
+import com.mx.popcorn.utils.WebUtils;
 import org.hibernate.Query;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Administrator on 2014-10-28.
@@ -40,5 +42,12 @@ public class MovieServiceImp extends BaseServiceImp implements MovieService {
         QueryHelper helper = new QueryHelper(Movie.class, "m")
                 .addOrderByClause("showTime", false);
         return movieDao.getPage(pageNum, helper, Configuration.getNewMovieNumOnCinema());
+    }
+
+    @Override
+    public List getMoviesForSchedule(Date date) {
+        QueryHelper helper = new QueryHelper(Movie.class, "m")
+                .addWhereClause("showTime", WebUtils.getSpecialTime(date, -Configuration.getIsScheduleableNum()), date);
+        return movieDao.find(helper, true);
     }
 }

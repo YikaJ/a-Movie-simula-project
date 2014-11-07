@@ -1,5 +1,6 @@
 package com.mx.popcorn.domain;
 
+import com.mx.popcorn.utils.WebUtils;
 import org.apache.struts2.json.annotations.JSON;
 
 import javax.persistence.*;
@@ -33,9 +34,34 @@ public class Schedule {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY, mappedBy = "schedule")
     private Set<TicketOrder> ticketOrders;
 
+    @Temporal(TemporalType.DATE)
     private Date showTime;
 
+    @Column(length = 20)
+    private String time;
+
     private Date createDate;
+
+    @Override
+    public String toString() {
+        return "Schedule{" +
+                "id=" + id +
+                ", week='" + week + '\'' +
+                ", price=" + price +
+                ", hall=" + hall.getNumber() +
+                ", movie=" + movie.getName() +
+                ", showTime=" + showTime.toString() +
+                ", time='" + time + '\'' +
+                '}';
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
 
     public Long getId() {
         return id;

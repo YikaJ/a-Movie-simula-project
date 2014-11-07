@@ -2,6 +2,7 @@ package com.mx.popcorn.utils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * 辅助拼接HQL语句的工具类
@@ -54,6 +55,28 @@ public class QueryHelper {
         }
         if (param != null){
             params.add(param);
+        }
+        return this;
+    }
+
+    /**
+     * 拼接between子句
+     * @param propertyName
+     * @param param1
+     * @param param2
+     * @return
+     */
+    public QueryHelper addWhereClause(String propertyName, Object param1, Object param2){
+        if (whereClause.equals("")){
+            whereClause = " WHERE " + propertyName + " BETWEEN ? AND ? ";
+        }else {
+            whereClause += " AND " + propertyName + " BETWEEN ? AND ? ";
+        }
+        if (param1 != null){
+            params.add(param1);
+        }
+        if (param2 != null){
+            params.add(param2);
         }
         return this;
     }
