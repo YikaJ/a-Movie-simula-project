@@ -27,4 +27,11 @@ public class ScheduleServiceImp extends BaseServiceImp implements ScheduleServic
                 .addWhereClause("showTime", date);
         return scheduleDao.getPage(pageNum, helper, Configuration.getScheduleNum());
     }
+
+    @Override
+    public void addSchedules(List<Schedule> schedules) {
+        for (Schedule schedule : schedules){
+            scheduleDao.save(schedule);
+        }
+    }
 }

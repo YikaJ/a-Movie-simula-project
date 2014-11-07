@@ -57,12 +57,12 @@
 
         <div class="col-md-10">
             <!-- Nav tabs -->
-            <ul class="nav nav-tabs"  id="myTab">
+            <ul class="nav nav-tabs" role="tablist" id="myTab">
                 <li role="presentation" class="<s:property value="dayType==0?'active':''"/> "><a href="?"><s:property value="#today"/> </a></li>
                 <li role="presentation" class="<s:property value="dayType==1?'active':''"/> "><a href="?dayType=1"><s:property value="#tom"/></a></li>
                 <li role="presentation" class="<s:property value="dayType==2?'active':''"/> "><a href="?dayType=2"><s:property value="#after_tom"/></a></li>
                 <li class="pull-right">
-                    <button class="btn btn-info addMovieBtn" type="button" >增加电影排期</button>
+                    <button class="btn btn-info" type="button" id="addMovieBtn">增加电影排期</button>
                 </li>
             </ul>
 
@@ -78,7 +78,8 @@
                                 <div class="span12 clearfix">
                                     <div class="div-margin">
                                         <strong>电影名:</strong>
-                                        <input type="hidden" name="showTime" value="<s:property value="#baseDate"/> ">
+                                        <input type="hidden" name="showTime" value="<s:property value="#baseDate"/>">
+                                        <input type="hidden" name="dayType" value="<s:property value="dayType"/>">
                                         <select name="movieId" class="selectize-select" style="width: 100px">
                                             <s:iterator value="movies">
                                                 <option value="<s:property value="id"/>"><s:property value="name"/></option>

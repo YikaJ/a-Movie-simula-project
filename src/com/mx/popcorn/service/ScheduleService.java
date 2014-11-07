@@ -2,6 +2,7 @@ package com.mx.popcorn.service;
 
 import com.mx.popcorn.domain.Cinema;
 import com.mx.popcorn.domain.Page;
+import com.mx.popcorn.domain.Schedule;
 
 import java.util.Date;
 import java.util.List;
@@ -12,4 +13,6 @@ import java.util.List;
 public interface ScheduleService extends BaseService {
 
     Page getSchedulesForSpecialDate(int pageNum, Cinema cinema, Date date);
+
+    void addSchedules(List<Schedule> schedules);
 }

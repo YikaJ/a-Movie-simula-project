@@ -27,10 +27,11 @@ public class ScheduleAction  extends ModelDrivenBaseAction<Schedule> {
     private String[] hallIds;
     private String[] prices;
     private String[] times;
+    private int dayType;
 
 
     @Action(value = "/cinema/manage/schedule/publishSchedule",
-            results = {@Result(name = SUCCESS, type = "redirectAction", params = {"actionName", "scheduleManage", "namespace", "/cinema/manage"})},
+            results = {@Result(name = SUCCESS, type = "redirectAction", params = {"actionName", "scheduleManage", "namespace", "/cinema/manage", "dayType", "${dayType}"})},
             interceptorRefs = {@InterceptorRef("cinemaPrivilegeInterceptorStack")})
     public String publishSchedule(){
         try{
@@ -53,16 +54,21 @@ public class ScheduleAction  extends ModelDrivenBaseAction<Schedule> {
                 schedule.setWeek(WebUtils.getSpecialDate(model.getShowTime(), "EEEE"));
                 schedules.add(schedule);
             }
-            for (Schedule schedule : schedules){
-                System.out.println(schedule);
-            }
-            return null;
+            scheduleService.addSchedules(schedules);
+            return SUCCESS;
         }catch (Exception e){
             e.printStackTrace();
             return ERROR;
         }
     }
 
+    public int getDayType() {
+        return dayType;
+    }
+
+    public void setDayType(int dayType) {
+        this.dayType = dayType;
+    }
 
     public Long getMovieId() {
         return movieId;

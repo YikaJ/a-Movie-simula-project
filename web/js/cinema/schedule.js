@@ -12,7 +12,7 @@ $(function () {
     })
 
     //添加电影排期
-    $(document).on("click", ".addMovieBtn", function(){
+    $(document).on("click", "#addMovieBtn", function(){
 
         $(".scheduleContent").prepend(movieTimeDiv);//增加到最前面
     });
