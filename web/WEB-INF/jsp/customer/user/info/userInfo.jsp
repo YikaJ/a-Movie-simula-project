@@ -11,6 +11,7 @@
     <title>个人设置</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/userInfo.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/jquery.Jcrop.min.css">
 </head>
 <body>
 <%@include file="/WEB-INF/jsp/customer/public/head.jsp"%>
@@ -21,9 +22,21 @@
         <li><a href="javascript:">修改密码</a></li>
         <li><a href="javascript:">我的订单</a></li>
     </ul>
-    <div class="rightContent fr">
-
+    <div class="rightContent fr clearfix">
+        <h2>请选择头像并上传</h2>
+        <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" id="target" alt="[Jcrop Example]" />
+        <div id="preview-pane">
+            <div class="preview-container">
+                <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" class="jcrop-preview" alt="Preview" />
+            </div>
+        </div>
     </div>
+        <form>
+            <a href="javascript:0" class="selectImg">选择图片</a>
+            <input id="file" class="selectInput" type="file" name="img" title="请选择图片">
+        </form>
+            <a href="#" class="uploadImg">保存头像</a>
+
 </div>
 
 <div class="footer">
