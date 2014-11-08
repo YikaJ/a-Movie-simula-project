@@ -33,8 +33,8 @@
     </div>
             <a href="javascript:0" class="selectImg">选择图片</a>
             <input id="imgFile" class="selectInput" type="file" name="_img" title="请选择图片">
-    <form id="imageShot" method="post" action="/support/imageShot.do">
-            <input type="hidden" name="imgPath">
+        <form id="imageShot" method="post" action="/support/imageShot.do">
+            <input type="hidden" name="imgPath" id="imgPath">
             <input type="hidden" name="x" id="x">
             <input type="hidden" name="y" id="y">
             <input type="hidden" name="width" id="picWidth">

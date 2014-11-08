@@ -51,7 +51,7 @@ require(["jquery",  "common", "userInfo", "jquery.Jcrop", "ajaxfileupload"], fun
                         $target.css("height", "auto");
                     });
                     $pimg.attr("src", data.msg);
-
+                    $("#imgPath").val(data.msg);
                 } else {
                     alert(data.msg);
                 }
