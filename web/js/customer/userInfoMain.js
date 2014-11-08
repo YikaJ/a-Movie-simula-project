@@ -74,10 +74,8 @@ require(["jquery",  "common", "userInfo", "jquery.Jcrop", "ajaxfileupload"], fun
                     marginTop: '-' + Math.round(ry * c.y) + 'px'
                 });
             }
-            $("#x1").val(c.x);
-            $("#y1").val(c.y);
-            $("#x2").val(c.x2);
-            $("#y2").val(c.y2);
+            $("#x").val(c.x);
+            $("#y").val(c.y);
             $("#picWidth").val(c.w);
             $("#picHeight").val(c.h);
         }

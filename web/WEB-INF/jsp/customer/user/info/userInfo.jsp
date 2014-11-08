@@ -31,14 +31,12 @@
             </div>
         </div>
     </div>
-        <form id="imageShot" method="post" action="/support/imageShot.do">
             <a href="javascript:0" class="selectImg">选择图片</a>
             <input id="imgFile" class="selectInput" type="file" name="_img" title="请选择图片">
+    <form id="imageShot" method="post" action="/support/imageShot.do">
             <input type="hidden" name="imgPath">
-            <input type="hidden" name="x1" id="x1">
-            <input type="hidden" name="y1" id="y1">
-            <input type="hidden" name="x2" id="x2">
-            <input type="hidden" name="y2" id="y2">
+            <input type="hidden" name="x" id="x">
+            <input type="hidden" name="y" id="y">
             <input type="hidden" name="width" id="picWidth">
             <input type="hidden" name="height" id="picHeight">
         </form>
