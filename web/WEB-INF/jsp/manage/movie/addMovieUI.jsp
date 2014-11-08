@@ -280,7 +280,7 @@
                     error: function (data, status, e){//服务器响应失败处理函数
                         alert(e);
                     }
-                })
+                });
                 return false;
         });
 

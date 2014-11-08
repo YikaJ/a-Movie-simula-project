@@ -6,16 +6,14 @@ require.config({
     }
 });
 
-require(["jquery",  "common", "userInfo", "jquery.Jcrop"], function ($) {
-    var img_top_margin,img_left_margin,img_width,img_height;//最后使用的2个变量
-
-    jQuery(function($){
-
-        // Create variables (in this scope) to hold the API and image size
+require(["jquery",  "common", "userInfo", "jquery.Jcrop", "ajaxfileupload"], function ($) {
+    $("#imgFile").change(function(){
+        var img_top_margin,img_left_margin,img_width,img_height;//最后使用的2个变量
         var jcrop_api,
             boundx,
             boundy,
-        // Grab some information about the preview pane
+
+            $target = $("#target"),
             $preview = $('#preview-pane'),
             $pcnt = $('#preview-pane .preview-container'),
             $pimg = $('#preview-pane .preview-container img'),
@@ -23,44 +21,59 @@ require(["jquery",  "common", "userInfo", "jquery.Jcrop"], function ($) {
             xsize = $pcnt.width(),
             ysize = $pcnt.height();
 
+        /*
+        *
+        * 此处ajax上传图片
+        *
+        * */
 
-        $('#target').Jcrop({
+        $.ajaxFileUpload({
+            url: "",
+            secureuri: false,
+            fileElementId: "imgFile",
+            dataType: "json",
+            success: function(data){
+                if(data.response){
+                    $target.attr("src", data.msg);
+                    $pimg.attr("src", data.msg);
+                }else{
+                    alert(data.msg);
+                }
+            }
+        });
+
+        /*
+        *
+        * 此处剪裁图片
+        *
+        * */
+        $target.Jcrop({
             onChange: updatePreview,
             onSelect: updatePreview,
             aspectRatio: xsize / ysize,
-            setSelect: [0,0,150,150],
-
+            setSelect: [0,0,150,150]
         },function(){
-            // Use the API to get the real image size
+
             var bounds = this.getBounds();
             boundx = bounds[0];
-            boundy = bounds[1];
-            // Store the API in the jcrop_api variable
             jcrop_api = this;
-
-            // Move the preview into the jcrop container for css positioning
             $preview.appendTo(jcrop_api.ui.holder);
+            $preview.css({
+                top: 0,
+                right: -220
+            });
+            $target.css("height", "auto");
         });
 
-        function updatePreview(c)
-        {
-            if (parseInt(c.w) > 0)
-            {
+        function updatePreview(c){
+            if (parseInt(c.w) > 0){
                 var rx = xsize / c.w;
                 var ry = ysize / c.h;
-                console.log("new width:"+Math.round(rx * boundx) );
-                console.log("new height:"+Math.round(ry * boundy) );
-
-                console.log("marginTop:"+Math.round(ry * c.y));
-                console.log("marginLeft:"+Math.round(rx * c.x));
-
 
                 img_top_margin=c.y;
                 img_left_margin=c.x;
                 img_width=c.w;
                 img_height=c.h;
-
-
 
                 $pimg.css({
                     width: Math.round(rx * boundx) + 'px',
@@ -69,9 +82,14 @@ require(["jquery",  "common", "userInfo", "jquery.Jcrop"], function ($) {
                     marginTop: '-' + Math.round(ry * c.y) + 'px'
                 });
             }
-        };
-
-    });
+            $("#x1").val(c.x);
+            $("#y1").val(c.y);
+            $("#x2").val(c.x2);
+            $("#y2").val(c.y2);
+            $("#picWidth").val(c.w);
+            $("#picHeight").val(c.h);
+        }
+    })
 });
 
 

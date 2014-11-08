@@ -24,16 +24,22 @@
     </ul>
     <div class="rightContent fr clearfix">
         <h2>请选择头像并上传</h2>
-        <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" id="target" alt="[Jcrop Example]" />
+        <img  id="target" alt="请选择你的头像！" />
         <div id="preview-pane">
             <div class="preview-container">
-                <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" class="jcrop-preview" alt="Preview" />
+                <img  class="jcrop-preview" alt="预览头像" />
             </div>
         </div>
     </div>
         <form>
             <a href="javascript:0" class="selectImg">选择图片</a>
-            <input id="file" class="selectInput" type="file" name="img" title="请选择图片">
+            <input id="imgFile" class="selectInput" type="file" name="img" title="请选择图片">
+            <input type="hidden" name="x1" id="x1">
+            <input type="hidden" name="y1" id="y1">
+            <input type="hidden" name="x2" id="x2">
+            <input type="hidden" name="y2" id="y2">
+            <input type="hidden" name="width" id="picWidth">
+            <input type="hidden" name="height" id="picHeight">
         </form>
             <a href="#" class="uploadImg">保存头像</a>
 
