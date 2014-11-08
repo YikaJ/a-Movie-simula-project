@@ -9,6 +9,7 @@ require.config({
 require(["jquery",  "common", "userInfo", "jquery.Jcrop", "ajaxfileupload"], function ($) {
     $(document).on("change", "#imgFile", function () {
         var img_top_margin, img_left_margin, img_width, img_height;//最后使用的2个变量
+        var originImg = "";
         var jcrop_api,
             boundx,
             boundy,
@@ -20,6 +21,8 @@ require(["jquery",  "common", "userInfo", "jquery.Jcrop", "ajaxfileupload"], fun
 
             xsize = $pcnt.width(),
             ysize = $pcnt.height();
+
+        /*初始化*/
 
         /*
          *
@@ -43,15 +46,14 @@ require(["jquery",  "common", "userInfo", "jquery.Jcrop", "ajaxfileupload"], fun
                         var bounds = this.getBounds();
                         boundx = bounds[0];
                         jcrop_api = this;
-                        $preview.appendTo(jcrop_api.ui.holder);
-                        $preview.css({
+                        $preview.appendTo(jcrop_api.ui.holder).css({
                             top: 0,
                             right: -220
                         });
-                        $target.css("height", "auto");
                     });
                     $pimg.attr("src", data.msg);
                     $("#imgPath").val(data.msg);
+                    $target.css("height", "auto");
                 } else {
                     alert(data.msg);
                 }
@@ -78,6 +80,7 @@ require(["jquery",  "common", "userInfo", "jquery.Jcrop", "ajaxfileupload"], fun
             $("#y").val(c.y);
             $("#picWidth").val(c.w);
             $("#picHeight").val(c.h);
+
         }
 
     });

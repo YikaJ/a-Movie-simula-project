@@ -68,6 +68,7 @@ a.selectImg{
 #target{
     width: 400px;
     height: 550px;
+    margin-bottom: 200px;
 }
  #preview-pane {
     display: block;

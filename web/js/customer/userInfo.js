@@ -11,6 +11,6 @@ define(["jquery"], function($){
             }else{
                 alert(data.msg);
             }
-        })
+        });
     })
 });
