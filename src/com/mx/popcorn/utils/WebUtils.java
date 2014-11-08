@@ -40,4 +40,9 @@ public class WebUtils {
         return format.format(date);
     }
 
+    public static Date getSpecialFormToDate(Date date) throws ParseException {
+        SimpleDateFormat format  = new SimpleDateFormat("yyyy-MM-dd");
+        return format.parse(format.format(date));
+    }
+
 }

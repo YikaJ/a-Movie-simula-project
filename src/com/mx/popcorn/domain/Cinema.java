@@ -61,8 +61,20 @@ public class Cinema {
     @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.LAZY, mappedBy = "cinema")
     private Set<Hall> halls;
 
+    @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.LAZY, mappedBy = "cinema")
+    private Set<Schedule> schedules;
+
     private Date createDate;
 
+
+    @JSON(serialize = false)
+    public Set<Schedule> getSchedules() {
+        return schedules;
+    }
+
+    public void setSchedules(Set<Schedule> schedules) {
+        this.schedules = schedules;
+    }
 
     public String getX() {
         return x;

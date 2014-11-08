@@ -47,6 +47,7 @@ public class ScheduleAction  extends ModelDrivenBaseAction<Schedule> {
                 if (hall == null)
                     return FIND_FAILURE;
                 schedule.setHall(hall);
+                schedule.setCinema(cinema);
                 schedule.setMovie(movie);
                 schedule.setPrice(Float.parseFloat(prices[i].trim()));
                 schedule.setShowTime(model.getShowTime());

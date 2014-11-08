@@ -71,16 +71,16 @@ public class SupportAction extends BaseAction {
                                 @Result(name = FORM_ERROR, type = JSON, params = {"contentType", "text/html", "root", "jsonMap"}),
                                 @Result(name = ERROR, type = JSON, params = {"contentType", "text/html", "root", "jsonMap"})})
     public String uploadImage(){
+        try {
         String imageForm = _imgFileName.substring(_imgFileName.lastIndexOf(".")+1);
         if (!Arrays.asList(Configuration.getImageForm().split(",")).contains(imageForm)){
             jsonMap.put("msg", "上传格式错误");
             jsonMap.put(JSON_STATUS_HEADER, false);
             return FORM_ERROR;
         }
-        String path = getImagePath();
+        String path = getImagePath(_imgFileName);
         if (path==null)
             return null;
-        try {
             FileUtils.copyFile(_img, new File(path));
         } catch (IOException e) {
             e.printStackTrace();
@@ -110,7 +110,9 @@ public class SupportAction extends BaseAction {
                 jsonMap.put(JSON_STATUS_HEADER, false);
                 return FAILURE;
             }
+            System.out.println(imgPath);
             String imagePath = ServletActionContext.getServletContext().getRealPath(imgPath);
+            System.out.println(imagePath);
             File imageFile = new File(imagePath);
             if (x==-1 || y==-1 || width==-1 || height==-1 ||!imageFile.exists()){
                 jsonMap.put("msg", "上传数据失误");
@@ -124,10 +126,12 @@ public class SupportAction extends BaseAction {
             Rectangle rect = new Rectangle(x, y, width, height);
             param.setSourceRegion(rect);
             BufferedImage buffer = reader.read(0, param);
-            String path = getImagePath();
+            String path = getImagePath(imgPath);
             ImageIO.write(buffer, imageForm, new File(path));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+            jsonMap.put(JSON_STATUS_HEADER, ERROR);
+            return ERROR;
         }finally {
             if (imageInput!=null)
                 try {
@@ -144,9 +148,7 @@ public class SupportAction extends BaseAction {
     }
 
     /*==============================获取保存图片的路径=====================================*/
-    public String getImagePath(){
-        if (_img==null)
-            return null;
+    public String getImagePath(String imageFileName){
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM");
         String basePath = ServletActionContext.getServletContext().getRealPath("/images/upload");
         String datePath = format.format(new Date());
@@ -154,7 +156,7 @@ public class SupportAction extends BaseAction {
         if (!direction.exists()){
             direction.mkdirs();
         }
-        String name = UUID.randomUUID().toString() + _imgFileName.substring(_imgFileName.lastIndexOf("."));
+        String name = UUID.randomUUID().toString() + imageFileName.substring(imageFileName.lastIndexOf("."));
         imgPath = "/images/upload/"+datePath +"/"+ name;
         return basePath +"/"+ datePath +"/"+ name;
     }

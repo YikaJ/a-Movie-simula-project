@@ -9,6 +9,7 @@ import com.mx.popcorn.service.UserService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
@@ -115,9 +116,12 @@ public class Test {
     }
 
     @org.junit.Test
-    public void test7(){
-        SimpleDateFormat format = new SimpleDateFormat("EEEE");
-        System.out.println(format.format(new Date()));
+    public void test7() throws ParseException {
+        /*SimpleDateFormat format = new SimpleDateFormat("EEEE");
+        System.out.println(format.format(new Date()));*/
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = format.parse(format.format(new Date()));
+        System.out.println(date);
     }
 
 }

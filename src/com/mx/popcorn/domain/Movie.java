@@ -1,9 +1,14 @@
 package com.mx.popcorn.domain;
 
 import org.apache.struts2.json.annotations.JSON;
+import org.hibernate.annotations.*;
 
 import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.OrderBy;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -55,8 +60,9 @@ public class Movie {
     @Column(length = 100)
     private String region;
 
+    @OrderBy("time ASC")
     @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.LAZY, mappedBy = "movie")
-    private Set<Schedule> schedules;
+    private List<Schedule> schedules;
 
     @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.LAZY)
     @JoinTable(name = "Attention", joinColumns = {@JoinColumn(name = "movieId")}, inverseJoinColumns = {@JoinColumn(name = "userId")})
@@ -123,11 +129,11 @@ public class Movie {
     }
 
     @JSON(serialize = false)
-    public Set<Schedule> getSchedules() {
+    public List<Schedule> getSchedules() {
         return schedules;
     }
 
-    public void setSchedules(Set<Schedule> schedules) {
+    public void setSchedules(List<Schedule> schedules) {
         this.schedules = schedules;
     }
 

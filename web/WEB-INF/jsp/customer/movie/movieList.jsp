@@ -20,71 +20,22 @@
     <div class="details content">
         <div class="movieBox fl">
             <div class="movieTab">
-                <a href="javascript:" class="currentTab" id="hotTab">正在热映</a>
-                <a href="javascript:" id="soonTab">即将上映</a>
+                <a href="?" class="<s:property value="viewType==0?'currentTab':''"/>" id="hotTab">正在热映</a>
+                <a href="?viewType=1" class="<s:property value="viewType==1?'currentTab':''"/>" id="soonTab">即将上映</a>
             </div>
             <div class="movieContent fl">
                 <ul class="movieList fl">
-                    <li>
-                        <a href="../../../jsp/movieInformation.jsp" title="超体">
-                            <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" alt="超体">
-                            <span class="buyTicket">立即购票</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../../../jsp/movieInformation.jsp">
-                            <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg">
-                            <span class="buyTicket">立即购票</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../../../jsp/movieInformation.jsp">
-                            <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg">
-                            <span class="buyTicket">立即购票</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../../../jsp/movieInformation.jsp">
-                            <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg">
-                            <span class="buyTicket">立即购票</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../../../jsp/movieInformation.jsp">
-                            <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg">
-                            <span class="buyTicket">立即购票</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../../../jsp/movieInformation.jsp">
-                            <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg">
-                            <span class="buyTicket">立即购票</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../../../jsp/movieInformation.jsp">
-                            <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg">
-                            <span class="buyTicket">立即购票</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../../../jsp/movieInformation.jsp">
-                            <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg">
-                            <span class="buyTicket">立即购票</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../../../jsp/movieInformation.jsp">
-                            <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg">
-                            <span class="buyTicket">立即购票</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../../../jsp/movieInformation.jsp">
-                            <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg">
-                            <span class="buyTicket">立即购票</span>
-                        </a>
-                    </li>
+                    <s:iterator value="#movies">
+                        <li>
+                            <s:url action="showMovieInfo" namespace="/movie" var="showMovieURL">
+                                <s:param value="id" name="movieId"/>
+                            </s:url>
+                            <a href="<s:property value="#showMovieURL"/> " title="<s:property value="name"/>">
+                                <img src="${pageContext.request.contextPath}<s:property value="poster"/> " alt="<s:property value="name"/>">
+                                <span class="buyTicket">立即购票</span>
+                            </a>
+                        </li>
+                    </s:iterator>
                 </ul>
             </div>
         </div>

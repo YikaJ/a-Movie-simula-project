@@ -81,9 +81,10 @@
                                         <input type="hidden" name="showTime" value="<s:property value="#baseDate"/>">
                                         <input type="hidden" name="dayType" value="<s:property value="dayType"/>">
                                         <select name="movieId" class="selectize-select" style="width: 100px">
-                                            <s:iterator value="movies">
-                                                <option value="<s:property value="id"/>"><s:property value="name"/></option>
-                                            </s:iterator>
+
+                                            <s:iterator value="#movies">
+                                            <option value="<s:property value="id"/>"><s:property value="name"/></option>
+                                        </s:iterator>
                                         </select>
                                         <button class="btn btn-default pull-right  btn-group removeMovieTimeBtn"  type="button">撤销放映时间</button>
                                         <button class="btn btn-default pull-right  btn-group addMovieTimeBtn"  type="button">添加放映时间</button>
@@ -132,9 +133,10 @@
                     <%--已经发布的排期--%>
                         <div class="container-fluid">
                             <%--这里是一个电影的排期--%>
+                            <s:iterator value="#schedulesOfMovie">
                                 <div class="row-fluid list-group-item div-margin pushWebsite">
                                     <div class="span12 clearfix">
-                                        <h3 class="h3"><strong>超体</strong></h3>
+                                        <h3 class="h3"><strong><s:property value="name"/></strong></h3>
                                         <table class="table">
                                             <thead class="row">
                                             <tr>
@@ -150,32 +152,26 @@
                                             </tr>
                                             </thead>
                                             <tbody class="row">
-                                            <tr>
-                                                <td class="col-lg-4">
-                                                    20:40
-                                                </td>
-                                                <td class="col-lg-4">
-                                                    6号厅
-                                                </td>
-                                                <td class="col-lg-4">
-                                                    27.00
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="col-lg-4">
-                                                    20:40
-                                                </td>
-                                                <td class="col-lg-4">
-                                                    6号厅
-                                                </td>
-                                                <td class="col-lg-4">
-                                                    27.00
-                                                </td>
-                                            </tr>
+                                            <s:iterator value="schedules">
+                                                <tr>
+                                                    <td class="col-lg-4">
+                                                        <s:property value="time"/>
+                                                    </td>
+                                                    <td class="col-lg-4">
+                                                        <s:property value="hall.number"/> 号厅
+                                                    </td>
+                                                    <td class="col-lg-4">
+                                                        <s:property value="price"/>
+                                                    </td>
+                                                </tr>
+                                            </s:iterator>
+
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
+                            </s:iterator>
+
 
                         </div>
                 </div>

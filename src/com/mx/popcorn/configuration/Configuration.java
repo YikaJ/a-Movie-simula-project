@@ -15,6 +15,7 @@ public class Configuration {
     private static int newMovieNumOnCinema;
     private static int isScheduleableNum;
     private static int scheduleNum;
+    private static int movieNumOfIndex;
 
     /*=============================类型参数定义=============================*/
 
@@ -33,6 +34,7 @@ public class Configuration {
             newMovieNumOnCinema = Integer.parseInt(prop.getProperty("newMovieNumOnCinema"));
             isScheduleableNum = Integer.parseInt(prop.getProperty("isScheduleableNum"));
             scheduleNum = Integer.parseInt(prop.getProperty("scheduleNum"));
+            movieNumOfIndex = Integer.parseInt(prop.getProperty("movieNumOfIndex"));
 
         }catch (Exception e){
             throw new RuntimeException(e);
@@ -46,6 +48,10 @@ public class Configuration {
             }
         }
 
+    }
+
+    public static int getMovieNumOfIndex() {
+        return movieNumOfIndex;
     }
 
     public static int getIsScheduleableNum() {

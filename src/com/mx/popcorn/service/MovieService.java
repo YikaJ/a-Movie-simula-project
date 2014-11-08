@@ -1,5 +1,6 @@
 package com.mx.popcorn.service;
 
+import com.mx.popcorn.domain.Cinema;
 import com.mx.popcorn.domain.Movie;
 import com.mx.popcorn.domain.Page;
 
@@ -19,4 +20,10 @@ public interface MovieService  extends BaseService{
     Page getNewMovieOnCinemaMovieStorage(int pageNum);
 
     List getMoviesForSchedule(Date date);
+
+    List getMoviesForCinemaSchedule(Cinema cinema, Date date);
+
+    Page getPreviewMovieFormIndex(int pageNum);
+
+    Page getHotMovieFormIndex(int pageNum);
 }

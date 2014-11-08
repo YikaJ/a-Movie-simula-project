@@ -28,6 +28,10 @@ public class Schedule {
     private Hall hall;
 
     @ManyToOne
+    @JoinColumn(name = "cinemaId")
+    private Cinema cinema;
+
+    @ManyToOne
     @JoinColumn(name = "movieId")
     private Movie movie;
 
@@ -53,6 +57,14 @@ public class Schedule {
                 ", showTime=" + showTime.toString() +
                 ", time='" + time + '\'' +
                 '}';
+    }
+
+    public Cinema getCinema() {
+        return cinema;
+    }
+
+    public void setCinema(Cinema cinema) {
+        this.cinema = cinema;
     }
 
     public String getTime() {

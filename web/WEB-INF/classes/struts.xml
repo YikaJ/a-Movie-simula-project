@@ -45,28 +45,13 @@
 
         <global-results>
              <result name="error" type="redirect">/jsp/error.jsp</result>
-
              <result name="find_failure" type="redirect">/jsp/findFailure.jsp</result>
-
              <result name="cinema_login" type="redirectAction">
                  <param name="actionName">loginUI</param>
                  <param name="namespace">/cinema/manage</param>
              </result>
-
             <result name="home" type="redirect">/</result>
         </global-results>
-
-        <action name="appSupport" class="com.mx.popcorn.controller.android.ApplicationSupportAction" method="appLogin">
-            <result type="json" name="success">
-                <param name="root">true</param>
-            </result>
-            <result type="json" name="error">
-                <param name="root">'error'</param>
-            </result>
-            <result type="json" name="login_error">
-                <param name="root">false</param>
-            </result>
-        </action>
 
         <action name="index" class="com.mx.popcorn.controller.web.HomeAction" method="index">
             <result name="success">/WEB-INF/jsp/customer/home/index.jsp</result>

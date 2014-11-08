@@ -132,17 +132,18 @@ public class CinemaAction extends ModelDrivenBaseAction<Cinema>{
                 switch (dayType){
                     case TOMORROW:
                         getActionContext().put("baseDate", WebUtils.getSpecialDate(tom, "yyyy-MM-dd"));
+                        getActionContext().put("schedulesOfMovie", movieService.getMoviesForCinemaSchedule(cinema, tom));
 //                        getActionContext().put("schedules", scheduleService.getSchedulesForSpecialDate(pageNum, cinema, tom));
                         getActionContext().put("movies", movieService.getMoviesForSchedule(tom));
                         break;
                     case AFTER_TOMORROW:
                         getActionContext().put("baseDate", WebUtils.getSpecialDate(after_tom, "yyyy-MM-dd"));
-//                        getActionContext().put("schedules", scheduleService.getSchedulesForSpecialDate(pageNum, cinema, after_tom));
+                        getActionContext().put("schedulesOfMovie", movieService.getMoviesForCinemaSchedule(cinema, after_tom));
                         getActionContext().put("movies", movieService.getMoviesForSchedule(after_tom));
                         break;
                     default:
                         getActionContext().put("baseDate", WebUtils.getSpecialDate(date, "yyyy-MM-dd"));
-//                        getActionContext().put("schedules", scheduleService.getSchedulesForSpecialDate(pageNum, cinema, date));
+                        getActionContext().put("schedulesOfMovie", movieService.getMoviesForCinemaSchedule(cinema, date));
                         getActionContext().put("movies", movieService.getMoviesForSchedule(date));
                 }
             return SUCCESS;

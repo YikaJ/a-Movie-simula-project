@@ -22,9 +22,13 @@ import java.util.Set;
 public class MovieAction  extends ModelDrivenBaseAction<Movie> {
 
     private static final String ACTION_NAME_SPACE = "MovieIndex";
+    private static final int HOT = 0;
+    private static final int PREVIEW = 1;
     private String[] type;
     private String[] version;
     private Long movieId;
+    private int viewType = HOT;
+
 
 
     /**
@@ -34,6 +38,13 @@ public class MovieAction  extends ModelDrivenBaseAction<Movie> {
     @Action(value = "index", results = @Result(location = "/WEB-INF/jsp/customer/movie/movieList.jsp"))
     public String index(){
         try {
+            switch (viewType){
+                case PREVIEW:
+                    getActionContext().put("movies", movieService.getPreviewMovieFormIndex(pageNum));
+                    break;
+                default:
+                    getActionContext().put("movies", movieService.getHotMovieFormIndex(pageNum));
+            }
             return SUCCESS;
         }catch (Exception e){
             e.printStackTrace();
@@ -118,6 +129,13 @@ public class MovieAction  extends ModelDrivenBaseAction<Movie> {
             addFieldError("movieVersion", "至少一个有一个选择");
     }
 
+    public int getViewType() {
+        return viewType;
+    }
+
+    public void setViewType(int viewType) {
+        this.viewType = viewType;
+    }
 
     public void setMovieId(Long movieId) {
         this.movieId = movieId;
