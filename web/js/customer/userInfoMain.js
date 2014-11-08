@@ -7,8 +7,8 @@ require.config({
 });
 
 require(["jquery",  "common", "userInfo", "jquery.Jcrop", "ajaxfileupload"], function ($) {
-    $("#imgFile").change(function(){
-        var img_top_margin,img_left_margin,img_width,img_height;//最后使用的2个变量
+    $(document).on("change", "#imgFile", function () {
+        var img_top_margin, img_left_margin, img_width, img_height;//最后使用的2个变量
         var jcrop_api,
             boundx,
             boundy,
@@ -22,49 +22,41 @@ require(["jquery",  "common", "userInfo", "jquery.Jcrop", "ajaxfileupload"], fun
             ysize = $pcnt.height();
 
         /*
-        *
-        * 此处ajax上传图片
-        *
-        * */
+         *
+         * 此处ajax上传图片
+         *
+         * */
 
         $.ajaxFileUpload({
-            url: "",
+            url: "/support/uploadImage.do",
             secureuri: false,
             fileElementId: "imgFile",
             dataType: "json",
-            success: function(data){
-                if(data.response){
-                    $target.attr("src", data.msg);
+            success: function (data) {
+                if (data.response) {
+                    $target.attr("src", data.msg).Jcrop({
+                        onChange: updatePreview,
+                        onSelect: updatePreview,
+                        aspectRatio: xsize / ysize,
+                        setSelect: [0,0,150,150]
+                    },function(){
+                        var bounds = this.getBounds();
+                        boundx = bounds[0];
+                        jcrop_api = this;
+                        $preview.appendTo(jcrop_api.ui.holder);
+                        $preview.css({
+                            top: 0,
+                            right: -220
+                        });
+                        $target.css("height", "auto");
+                    });
                     $pimg.attr("src", data.msg);
-                }else{
+
+                } else {
                     alert(data.msg);
                 }
             }
         });
-
-        /*
-        *
-        * 此处剪裁图片
-        *
-        * */
-        $target.Jcrop({
-            onChange: updatePreview,
-            onSelect: updatePreview,
-            aspectRatio: xsize / ysize,
-            setSelect: [0,0,150,150]
-        },function(){
-
-            var bounds = this.getBounds();
-            boundx = bounds[0];
-            jcrop_api = this;
-            $preview.appendTo(jcrop_api.ui.holder);
-            $preview.css({
-                top: 0,
-                right: -220
-            });
-            $target.css("height", "auto");
-        });
-
         function updatePreview(c){
             if (parseInt(c.w) > 0){
                 var rx = xsize / c.w;
@@ -89,7 +81,8 @@ require(["jquery",  "common", "userInfo", "jquery.Jcrop", "ajaxfileupload"], fun
             $("#picWidth").val(c.w);
             $("#picHeight").val(c.h);
         }
-    })
+
+    });
 });
 
 

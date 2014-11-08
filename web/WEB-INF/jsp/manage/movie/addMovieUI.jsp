@@ -140,7 +140,6 @@
                                             <input class="form-control uniform_on" id="posterInput" type="file" name="_img"/>
                                             <input type="hidden" id="posterURL" name="poster"/>
                                             <p class="help-block text-danger">图片大小为：215px330px</p>
-                                            <button type="button" class="btn btn-success" id="posterSubmit" >提交</button>
                                         </div>
 
                                     </div>
@@ -257,8 +256,7 @@
         $('.datepicker').datepicker();
         $('.uniform_on').uniform();
         $('.chzn-select').chosen();
-        $('.selectize-select').selectize();
-        $("#posterSubmit").click(function(){
+        $(document).on("change", "#posterInput", function(){
                 $.ajaxFileUpload ( {
                     url: '/support/uploadImage.do', //用于文件上传的服务器端请求地址
                     secureuri : false, //是否需要安全协议，一般设置为false
