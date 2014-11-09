@@ -36,7 +36,7 @@ require(["jquery",  "common", "userInfo", "jquery.Jcrop", "ajaxfileupload"], fun
                         onChange: updatePreview,
                         onSelect: updatePreview,
                         aspectRatio: xsize / ysize,
-                        setSelect: [0, 0, 150, 150]
+                        setSelect: [0, 0, 64, 64]
                     }, function () {
                         $pimg.attr("src", data.msg);//预览图地址一致
                         $("#imgPath").val(data.msg);
@@ -109,7 +109,7 @@ require(["jquery",  "common", "userInfo", "jquery.Jcrop", "ajaxfileupload"], fun
             data : form,
             dataType : "json",
             success : function(response){
-                alert(response.msg);
+                window.location.href = ""
             }
         });
     })
