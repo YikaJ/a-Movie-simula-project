@@ -168,6 +168,7 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
             interceptorRefs = {@InterceptorRef("userPrivilegeInterceptorStack")})
     public String userSimpleInfo(){
         try{
+            getActionContext().put("user", userService.getUserById(getCurrentUser().getId()));
             return SUCCESS;
         }catch (Exception e){
             e.printStackTrace();
