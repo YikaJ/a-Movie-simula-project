@@ -89,4 +89,14 @@ public class MovieServiceImp extends BaseServiceImp implements MovieService {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public Page getHotMovieFormCinemaIndex(int pageNum) {
+        try {
+            return movieDao.findLowerSpecialDateAndHot(pageNum, Configuration.getMovieNumOfCinemaIndex(),
+                    WebUtils.getSpecialTime(WebUtils.getSpecialFormToDate(new Date()), 1));
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

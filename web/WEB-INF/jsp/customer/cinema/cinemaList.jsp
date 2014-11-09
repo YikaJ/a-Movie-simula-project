@@ -33,60 +33,20 @@
                 </ul>
                 <%--列表--%>
                 <ul class="cinemaList">
-                    <li>
-                        <a href="../../../../jsp/cinemaInformation.jsp"><img class="cinemaImg" src="../../../../image/cinemaSmallImg.jpg"></a>
-                        <div class="cinemaInformation">
-                            <h4><a href="../../../../jsp/cinemaInformation.jsp">金逸湛江赤坎店</a></h4>
-                            <p><span>地址：</span>湛江市赤坎区跃进路36号爱华广场五楼</p>
-                            <p><span>更多：</span><a href="#">影院简介</a></p>
-                        </div>
-                        <a class="goCinema" href="../../../../jsp/cinemaInformation.jsp">影院购票</a>
-                    </li>
-                    <li>
-                        <a href="../../../../jsp/cinemaInformation.jsp"><img class="cinemaImg" src="../../../../image/cinemaSmallImg.jpg"></a>
-                        <div class="cinemaInformation">
-                            <h4><a href="../../../../jsp/cinemaInformation.jsp">金逸湛江赤坎店</a></h4>
-                            <p><span>地址：</span>湛江市赤坎区跃进路36号爱华广场五楼</p>
-                            <p><span>更多：</span><a href="#">影院简介</a></p>
-                        </div>
-                        <a class="goCinema" href="../../../../jsp/cinemaInformation.jsp">影院购票</a>
-                    </li>
-                    <li>
-                        <a href="../../../../jsp/cinemaInformation.jsp"><img class="cinemaImg" src="../../../../image/cinemaSmallImg.jpg"></a>
-                        <div class="cinemaInformation">
-                            <h4><a href="../../../../jsp/cinemaInformation.jsp">金逸湛江赤坎店</a></h4>
-                            <p><span>地址：</span>湛江市赤坎区跃进路36号爱华广场五楼</p>
-                            <p><span>更多：</span><a href="#">影院简介</a></p>
-                        </div>
-                        <a class="goCinema" href="../../../../jsp/cinemaInformation.jsp">影院购票</a>
-                    </li>
-                    <li>
-                        <a href="../../../../jsp/cinemaInformation.jsp"><img class="cinemaImg" src="../../../../image/cinemaSmallImg.jpg"></a>
-                        <div class="cinemaInformation">
-                            <h4><a href="../../../../jsp/cinemaInformation.jsp">金逸湛江赤坎店</a></h4>
-                            <p><span>地址：</span>湛江市赤坎区跃进路36号爱华广场五楼</p>
-                            <p><span>更多：</span><a href="#">影院简介</a></p>
-                        </div>
-                        <a class="goCinema" href="../../../../jsp/cinemaInformation.jsp">影院购票</a>
-                    </li>
-                    <li>
-                        <a href="../../../../jsp/cinemaInformation.jsp"><img class="cinemaImg" src="../../../../image/cinemaSmallImg.jpg"></a>
-                        <div class="cinemaInformation">
-                            <h4><a href="../../../../jsp/cinemaInformation.jsp">金逸湛江赤坎店</a></h4>
-                            <p><span>地址：</span>湛江市赤坎区跃进路36号爱华广场五楼</p>
-                            <p><span>更多：</span><a href="#">影院简介</a></p>
-                        </div>
-                        <a class="goCinema" href="../../../../jsp/cinemaInformation.jsp">影院购票</a>
-                    </li>
-                    <li>
-                        <a href="../../../../jsp/cinemaInformation.jsp"><img class="cinemaImg" src="../../../../image/cinemaSmallImg.jpg"></a>
-                        <div class="cinemaInformation">
-                            <h4><a href="../../../../jsp/cinemaInformation.jsp">金逸湛江赤坎店</a></h4>
-                            <p><span>地址：</span>湛江市赤坎区跃进路36号爱华广场五楼</p>
-                            <p><span>更多：</span><a href="#">影院简介</a></p>
-                        </div>
-                        <a class="goCinema" href="../../../../jsp/cinemaInformation.jsp">影院购票</a>
-                    </li>
+                    <s:iterator value="#cinemas.recordList">
+                        <li>
+                            <a href="../../../../jsp/cinemaInformation.jsp"><img class="cinemaImg" src="../../../../image/cinemaSmallImg.jpg"></a>
+                            <div class="cinemaInformation">
+                                <s:a action="cinemaInfo" namespace="/cinema" var="cinemaInfoURL">
+                                    <s:param name="cinemaId" value="id"/>
+                                </s:a>
+                                <h4><a href="<s:property value="#cinemaInfoURL"/>"><s:property value="name"/></a></h4>
+                                <p><span>地址：</span><s:property value="address"/> </p>
+                                <p><span>更多：</span><a href="#">影院简介</a></p>
+                            </div>
+                            <a class="goCinema" href="<s:property value="#cinemaInfoURL"/>">影院购票</a>
+                        </li>
+                    </s:iterator>
                 </ul>
             </div>
     </div>
@@ -96,67 +56,22 @@
             <a href="javascript:">即将上映</a>
         </div>
         <ul class="rightBarMovieList">
-            <li class="clearfix">
-                <a href="../movie/movieInformation.jsp">
-                    <img src="${pageContext.request.contextPath}/image/hotOn%20(2).jpg" class="fl" alt="movie">
-                    <div class="rightBarInformation fl">
-                        <h3>超体</h3>
-                        <p><span>2014-10-24</span>首映</p>
-                        <p>导演：卢克•贝松</p>
-                    </div>
-                </a>
-            </li>
-            <li class="clearfix">
-                <a href="../movie/movieInformation.jsp">
-                    <img src="${pageContext.request.contextPath}/image/hotOn%20(3).jpg" class="fl" alt="movie">
-                    <div class="rightBarInformation fl">
-                        <h3>超体</h3>
-                        <p><span>2014-10-24</span>首映</p>
-                        <p>导演：卢克•贝松</p>
-                    </div>
-                </a>
-            </li>
-            <li class="clearfix">
-                <a href="../movie/movieInformation.jsp">
-                    <img src="${pageContext.request.contextPath}/image/hotOn%20(4).jpg" class="fl" alt="movie">
-                    <div class="rightBarInformation fl">
-                        <h3>超体</h3>
-                        <p><span>2014-10-24</span>首映</p>
-                        <p>导演：卢克•贝松</p>
-                    </div>
-                </a>
-            </li>
-
-            <li class="clearfix">
-                <a href="../movie/movieInformation.jsp">
-                    <img src="${pageContext.request.contextPath}/image/hotOn%20(2).jpg" class="fl" alt="movie">
-                    <div class="rightBarInformation fl">
-                        <h3>超体</h3>
-                        <p><span>2014-10-24</span>首映</p>
-                        <p>导演：卢克•贝松</p>
-                    </div>
-                </a>
-            </li>
-            <li class="clearfix">
-                <a href="../movie/movieInformation.jsp">
-                    <img src="${pageContext.request.contextPath}/image/hotOn%20(1).jpg" class="fl" alt="movie">
-                    <div class="rightBarInformation fl">
-                        <h3>超体</h3>
-                        <p><span>2014-10-24</span>首映</p>
-                        <p>导演：卢克•贝松</p>
-                    </div>
-                </a>
-            </li>
-            <li class="clearfix">
-                <a href="../movie/movieInformation.jsp">
-                    <img src="${pageContext.request.contextPath}/image/hotOn%20(4).jpg" class="fl" alt="movie">
-                    <div class="rightBarInformation fl">
-                        <h3>超体</h3>
-                        <p><span>2014-10-24</span>首映</p>
-                        <p>导演：卢克•贝松</p>
-                    </div>
-                </a>
-            </li>
+            <s:iterator value="#movies.recordList">
+                <li class="clearfix">
+                    <s:url action="showMovieInfo" namespace="/movie" var="showMovieURL">
+                        <s:param value="id" name="movieId"/>
+                    </s:url>
+                    <a href="<s:property value="#showMovieURL"/>">
+                        <img src="${pageContext.request.contextPath}<s:property value="poster"/>" class="fl" alt="movie">
+                        <div class="rightBarInformation fl">
+                            <h3><s:property value="name"/> </h3>
+                            <p><span><s:date name="showTime" format="yyyy-MM-dd"/></span>  首映</p>
+                            <p>导演：<s:property value="director"/></p>
+                        </div>
+                    </a>
+                </li>
+            </s:iterator>
+            
         </ul>
     </div>
 </div>

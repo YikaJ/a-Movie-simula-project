@@ -25,6 +25,7 @@ public class CinemaAction extends ModelDrivenBaseAction<Cinema>{
     private static final int TOMORROW = 1;
     private static final int AFTER_TOMORROW = 2;
     private int dayType = TODAY;
+    private Long cinemaId;
 
     /**
      * 影院主页，影院列表
@@ -34,6 +35,8 @@ public class CinemaAction extends ModelDrivenBaseAction<Cinema>{
             results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/customer/cinema/cinemaList.jsp")})
     public String index(){
         try {
+            getActionContext().put("movies", movieService.getHotMovieFormCinemaIndex(pageNum));
+            getActionContext().put("cinemas", cinemaService.getAllCinema(pageNum));
             return SUCCESS;
         }catch (Exception e){
             e.printStackTrace();
@@ -151,6 +154,29 @@ public class CinemaAction extends ModelDrivenBaseAction<Cinema>{
             e.printStackTrace();
             return ERROR;
         }
+    }
+
+    @Action(value = "cinemaInfo",
+            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/customer/cinema/cinemaInfo.jsp")})
+    public String cinemaInfo(){
+        try {
+            if (cinemaId == null)
+                return FIND_FAILURE;
+            Cinema cinema = cinemaService.getCinemaById(cinemaId);
+            if (cinema == null)
+                return FIND_FAILURE;
+            getActionContext().put("cinema", cinema);
+            return SUCCESS;
+        }catch (Exception e){
+            e.printStackTrace();
+            return ERROR;
+        }
+    }
+
+
+
+    public void setCinemaId(Long cinemaId) {
+        this.cinemaId = cinemaId;
     }
 
     public int getDayType() {

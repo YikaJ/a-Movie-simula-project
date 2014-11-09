@@ -110,9 +110,7 @@ public class SupportAction extends BaseAction {
                 jsonMap.put(JSON_STATUS_HEADER, false);
                 return FAILURE;
             }
-            System.out.println(imgPath);
             String imagePath = ServletActionContext.getServletContext().getRealPath(imgPath);
-            System.out.println(imagePath);
             File imageFile = new File(imagePath);
             if (x==-1 || y==-1 || width==-1 || height==-1 ||!imageFile.exists()){
                 jsonMap.put("msg", "上传数据失误");
@@ -123,11 +121,19 @@ public class SupportAction extends BaseAction {
             imageInput = ImageIO.createImageInputStream(imageFile);
             reader.setInput(imageInput, true);
             ImageReadParam param = reader.getDefaultReadParam();
+            Dimension dimension = param.getSourceRenderSize();
+            double sWidth = dimension.getWidth();
+            double sHeight = dimension.getHeight();
             Rectangle rect = new Rectangle(x, y, width, height);
             param.setSourceRegion(rect);
             BufferedImage buffer = reader.read(0, param);
             String path = getImagePath(imgPath);
             ImageIO.write(buffer, imageForm, new File(path));
+            jsonMap.put("url", imgPath);
+            jsonMap.put("width", sWidth);
+            jsonMap.put("height", sHeight);
+            jsonMap.put(JSON_STATUS_HEADER, true);
+            return SUCCESS;
         } catch (IOException e) {
             e.printStackTrace();
             jsonMap.put(JSON_STATUS_HEADER, ERROR);
@@ -142,9 +148,6 @@ public class SupportAction extends BaseAction {
                     return ERROR;
                 }
         }
-        jsonMap.put("msg", imgPath);
-        jsonMap.put(JSON_STATUS_HEADER, true);
-        return SUCCESS;
     }
 
     /*==============================获取保存图片的路径=====================================*/
