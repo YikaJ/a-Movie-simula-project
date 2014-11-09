@@ -10,7 +10,7 @@
 <head>
     <title>个人设置</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/userInfo.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/userImg.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/jquery.Jcrop.min.css">
 </head>
 <body>
@@ -53,6 +53,6 @@
     <div class="content"></div>
 </div>
 <script  type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=jaDcSl7r2ArKTbGYn4lGZUcQ"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/customer/require.js" data-main="${pageContext.request.contextPath}/js/customer/userInfoMain.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/customer/require.js" data-main="${pageContext.request.contextPath}/js/customer/userImgMain.js"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@ require.config({
     }
 });
 
-require(["jquery",  "common", "userInfo", "jquery.Jcrop", "ajaxfileupload"], function ($) {
+require(["jquery",  "common", "userImgjs", "jquery.Jcrop", "ajaxfileupload"], function ($) {
     var $imgContent = $("#imgContent"),
         $preview = $("#preview"),
         $pimg = $("#preview img");
