@@ -82,14 +82,20 @@ public class SupportAction extends BaseAction {
         if (path==null)
             return null;
             FileUtils.copyFile(_img, new File(path));
+            BufferedImage image = ImageIO.read(_img);
+            int sWidth = image.getWidth();
+            int sHeight = image.getHeight();
+            jsonMap.put("width", sWidth);
+            jsonMap.put("height", sHeight);
+            jsonMap.put("msg", imgPath);
+            jsonMap.put(JSON_STATUS_HEADER, true);
+            return SUCCESS;
+
         } catch (IOException e) {
             e.printStackTrace();
             jsonMap.put(JSON_STATUS_HEADER, ERROR);
             return ERROR;
         }
-        jsonMap.put("msg", imgPath);
-        jsonMap.put(JSON_STATUS_HEADER, true);
-        return SUCCESS;
     }
     /*==============================截图支持=====================================*/
     @Action(value = "imageShot",
@@ -110,9 +116,7 @@ public class SupportAction extends BaseAction {
                 jsonMap.put(JSON_STATUS_HEADER, false);
                 return FAILURE;
             }
-            System.out.println(imgPath);
             String imagePath = ServletActionContext.getServletContext().getRealPath(imgPath);
-            System.out.println(imagePath);
             File imageFile = new File(imagePath);
             if (x==-1 || y==-1 || width==-1 || height==-1 ||!imageFile.exists()){
                 jsonMap.put("msg", "上传数据失误");
@@ -128,6 +132,9 @@ public class SupportAction extends BaseAction {
             BufferedImage buffer = reader.read(0, param);
             String path = getImagePath(imgPath);
             ImageIO.write(buffer, imageForm, new File(path));
+            jsonMap.put("msg", imgPath);
+            jsonMap.put(JSON_STATUS_HEADER, true);
+            return SUCCESS;
         } catch (IOException e) {
             e.printStackTrace();
             jsonMap.put(JSON_STATUS_HEADER, ERROR);
@@ -142,9 +149,6 @@ public class SupportAction extends BaseAction {
                     return ERROR;
                 }
         }
-        jsonMap.put("msg", imgPath);
-        jsonMap.put(JSON_STATUS_HEADER, true);
-        return SUCCESS;
     }
 
     /*==============================获取保存图片的路径=====================================*/

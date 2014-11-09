@@ -2,6 +2,7 @@ package com.mx.popcorn.service;
 
 import com.mx.popcorn.domain.Cinema;
 import com.mx.popcorn.domain.Hall;
+import com.mx.popcorn.domain.Page;
 
 import java.util.Set;
 
@@ -16,4 +17,6 @@ public interface CinemaService extends BaseService{
     boolean isEmailExist(String email);
 
     Cinema getCinemaById(Long cinemaId);
+
+    Page getAllCinema(int pageNum);
 }

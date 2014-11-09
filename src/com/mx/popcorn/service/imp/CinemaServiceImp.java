@@ -1,7 +1,9 @@
 package com.mx.popcorn.service.imp;
 
+import com.mx.popcorn.configuration.Configuration;
 import com.mx.popcorn.domain.Cinema;
 import com.mx.popcorn.domain.Hall;
+import com.mx.popcorn.domain.Page;
 import com.mx.popcorn.service.CinemaService;
 import com.mx.popcorn.utils.QueryHelper;
 import org.springframework.stereotype.Service;
@@ -41,6 +43,12 @@ public class CinemaServiceImp extends BaseServiceImp implements CinemaService{
     @Override
     public Cinema getCinemaById(Long cinemaId) throws RuntimeException {
         return cinemaDao.getById(cinemaId);
+    }
+
+    @Override
+    public Page getAllCinema(int pageNum) {
+        QueryHelper helper = new QueryHelper(Cinema.class, "c");
+        return cinemaDao.getPage(pageNum, helper, Configuration.getCinemaNum());
     }
 
 }

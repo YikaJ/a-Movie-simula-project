@@ -25,13 +25,13 @@
             </div>
             <div class="movieContent fl">
                 <ul class="movieList fl">
-                    <s:iterator value="#movies">
+                    <s:iterator value="#movies.recordList">
                         <li>
                             <s:url action="showMovieInfo" namespace="/movie" var="showMovieURL">
                                 <s:param value="id" name="movieId"/>
                             </s:url>
-                            <a href="<s:property value="#showMovieURL"/> " title="<s:property value="name"/>">
-                                <img src="${pageContext.request.contextPath}<s:property value="poster"/> " alt="<s:property value="name"/>">
+                            <a href="<s:property value="#showMovieURL"/>" title="<s:property value="name"/>">
+                                <img src="${pageContext.request.contextPath}<s:property value="poster"/>" alt="<s:property value="name"/>">
                                 <span class="buyTicket">立即购票</span>
                             </a>
                         </li>
