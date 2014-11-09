@@ -8,8 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <ul class="leftContent fl">
-    <li><a href="javascript:"  class="<s:property value="actionName=='userInfo'?'activeLi':''"/> ">个人资料</a></li>
-    <li><a href="javascript:"  class="<s:property value="actionName=='userImg'?'activeLi':''"/> ">头像设置</a></li>
+    <li><a href="${pageContext.request.contextPath}/user/userInfo.do"  class="<s:property value="actionName=='userInfo'?'activeLi':''"/> ">个人资料</a></li>
+    <li><a href="${pageContext.request.contextPath}/user/userImg.do"  class="<s:property value="actionName=='userImg'?'activeLi':''"/> ">头像设置</a></li>
     <li><a href="javascript:"  class="<s:property value="actionName=='userImg'?'activeLi':''"/> ">修改密码</a></li>
     <li><a href="javascript:"  class="<s:property value="actionName=='userImg'?'activeLi':''"/> ">我的订单</a></li>
 </ul>
