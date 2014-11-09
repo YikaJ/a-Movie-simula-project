@@ -44,8 +44,7 @@ public class SpaceAction  extends ModelDrivenBaseAction<Space> {
     }
 
 
-    @Action(value = "catchProvince",
-            results = {@Result(name = SUCCESS, type = JSON, params = {"includeProperties", "jsonMap.response"})})
+
     public String catchProvince(){
         try {
             jsonMap.put("data", provinceId == null

@@ -15,12 +15,7 @@
 <body>
 <%@include file="/WEB-INF/jsp/customer/public/head.jsp"%>
 <div class="content  clearfix infoContent">
-    <ul class="leftContent fl">
-        <li><a href="javascript:">个人资料</a></li>
-        <li><a href="javascript:"  class="activeLi">头像设置</a></li>
-        <li><a href="javascript:">修改密码</a></li>
-        <li><a href="javascript:">我的订单</a></li>
-    </ul>
+    <%@include file="/WEB-INF/jsp/customer/user/public/menu.jsp"%>
     <div class="rightContent fr clearfix">
 
 

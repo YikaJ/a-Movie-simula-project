@@ -132,10 +132,10 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
         return SUCCESS;
     }
 
-    @Action(value = "userInfo",
+    @Action(value = "userImg",
             results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/customer/user/info/userImg.jsp")},
             interceptorRefs = {@InterceptorRef("userPrivilegeInterceptorStack")})
-    public String userInfo(){
+    public String userImg(){
         try{
             /*
             *
@@ -163,10 +163,10 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
         }
     }
 
-    @Action(value = "userSimpleInfo",
+    @Action(value = "userInfo",
             results = {@Result(name = SUCCESS, type = JSON, location = "/WEB-INF/jsp/customer/user/info/userInfo.jsp")},
             interceptorRefs = {@InterceptorRef("userPrivilegeInterceptorStack")})
-    public String userSimpleInfo(){
+    public String userInfo(){
         try{
             getActionContext().put("user", userService.getUserById(getCurrentUser().getId()));
             return SUCCESS;
