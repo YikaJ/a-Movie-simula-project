@@ -31,7 +31,8 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <s:form method="post" action="register" namespace="/cinema/manage" cssClass="bootstrap-admin-login-form">
+            <s:form method="post" action="register" namespace="/cinema/manage" cssClass="bootstrap-admin-login-form clearfix">
+                <a href="login.jsp" class="btn btn-default btn-sm pull-right" style="margin-top: -10px">回到登录</a>
                 <h3>商家后台注册<small class="text-danger"> (下列都为必填)</small></h3>
                 <s:fielderror cssClass="list-unstyled text-danger"/>
                 <div class="form-group">
@@ -44,6 +45,21 @@
                     <input class="form-control" type="email" name="email" placeholder="电子邮箱" required>
                 </div>
                 <div class="form-group">
+                    影院所在省市:
+                    <select style="width: 50px">
+
+                    </select>
+                    省
+                    <select style="width: 50px">
+
+                    </select>
+                    市
+                    <select style="width: 50px">
+
+                    </select>
+                    县/区
+                </div>
+                <div class="form-group">
                     <input class="form-control" type="text" name="address"  placeholder="影院地址" required>
                 </div>
                 <div class="form-group">
@@ -52,7 +68,8 @@
                 <div class="form-group">
                 <input class="form-control" type="text" name="workTime" placeholder="营业时间" required>
             </div>
-                <button class="btn btn-xs btn-primary" type="submit">注册</button>
+                <button class="btn  btn-primary form-control " type="submit" style="line-height: 0px;">注册</button>
+
             </s:form>
         </div>
     </div>
