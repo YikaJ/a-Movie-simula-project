@@ -28,7 +28,7 @@ public class User {
     private boolean gender;
 
     @Column(length = 200)
-    private String picture;
+    private String picture = "/image/default_user_picture.jpg";
 
     private Date birthday;
 

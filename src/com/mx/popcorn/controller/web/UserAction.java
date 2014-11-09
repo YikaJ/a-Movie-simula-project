@@ -137,6 +137,10 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
             interceptorRefs = {@InterceptorRef("userPrivilegeInterceptorStack")})
     public String userInfo(){
         try{
+            /*
+            *
+            * */
+            getActionContext().put("user", userService.getUserById(getCurrentUser().getId()));
             return SUCCESS;
         }catch (Exception e){
             e.printStackTrace();
@@ -144,6 +148,32 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
         }
     }
 
+    @Action(value = "updatePicture",
+            results = {@Result(name = SUCCESS, type = JSON, params = {"root", "jsonMap"})},
+            interceptorRefs = {@InterceptorRef("userPrivilegeInterceptorStack")})
+    public String updatePicture(){
+        try{
+            userService.updatePicture(model.getPicture(), getCurrentUser());
+            jsonMap.put("msg", model.getPicture());
+            jsonMap.put(JSON_STATUS_HEADER, true);
+            return SUCCESS;
+        }catch (Exception e){
+            e.printStackTrace();
+            return ERROR;
+        }
+    }
+
+    @Action(value = "userSimpleInfo",
+            results = {@Result(name = SUCCESS, type = JSON, location = "/WEB-INF/jsp/customer/user/info/userSimpleInfo.jsp")},
+            interceptorRefs = {@InterceptorRef("userPrivilegeInterceptorStack")})
+    public String userSimpleInfo(){
+        try{
+            return SUCCESS;
+        }catch (Exception e){
+            e.printStackTrace();
+            return ERROR;
+        }
+    }
 
     public boolean isAutoLoginTo() {
         return autoLoginTo;

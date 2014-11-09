@@ -18,4 +18,8 @@ public interface UserService extends BaseService {
     User login(String email, String password);
 
     User findByEmail(String email);
+
+    void updatePicture(String picture, User user);
+
+    User getUserById(Long id);
 }

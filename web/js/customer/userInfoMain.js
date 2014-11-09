@@ -109,7 +109,7 @@ require(["jquery",  "common", "userInfo", "jquery.Jcrop", "ajaxfileupload"], fun
             data : form,
             dataType : "json",
             success : function(response){
-                window.location.href = ""
+                window.location.reload();
             }
         });
     })

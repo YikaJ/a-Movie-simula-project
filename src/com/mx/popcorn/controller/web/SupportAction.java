@@ -99,7 +99,7 @@ public class SupportAction extends BaseAction {
     }
     /*==============================截图支持=====================================*/
     @Action(value = "imageShot",
-            results = {@Result(name = SUCCESS, type = JSON, params = {"contentType", "text/html", "root", "jsonMap"}),
+            results = {@Result(name = SUCCESS, type = REDIRECT_ACTION, params = {"actionName", "updatePicture", "namespace", "/user", "picture", "${imgPath}"}),
                     @Result(name = FAILURE, type = JSON, params = {"contentType", "text/html", "root", "jsonMap"}),
                     @Result(name = ERROR, type = JSON, params = {"contentType", "text/html", "root", "jsonMap"})})
     public String imageShot(){
@@ -132,8 +132,6 @@ public class SupportAction extends BaseAction {
             BufferedImage buffer = reader.read(0, param);
             String path = getImagePath(imgPath);
             ImageIO.write(buffer, imageForm, new File(path));
-            jsonMap.put("msg", imgPath);
-            jsonMap.put(JSON_STATUS_HEADER, true);
             return SUCCESS;
         } catch (IOException e) {
             e.printStackTrace();

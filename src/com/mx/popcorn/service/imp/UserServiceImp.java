@@ -58,4 +58,17 @@ public class UserServiceImp extends BaseServiceImp implements UserService {
                 .addWhereClause("email", email);
         return (User) userDao.findUnique(helper, true);
     }
+
+    @Override
+    public void updatePicture(String picture, User user) {
+        QueryHelper helper = new QueryHelper(User.class,QueryHelper.UPDATE, "u")
+                .addSetClause("picture", picture)
+                .addWhereClause("id", user.getId());
+        userDao.update(helper);
+    }
+
+    @Override
+    public User getUserById(Long id) {
+        return userDao.getById(id);
+    }
 }
