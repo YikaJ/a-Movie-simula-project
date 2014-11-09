@@ -73,10 +73,10 @@ require(["jquery",  "common", "userInfo", "jquery.Jcrop", "ajaxfileupload"], fun
                 var ry = ysize / c.h;
 
                 //计算还原大小后的xy坐标
-                x = c.x * scale;
-                y = c.y * scale;
-                shotWidth = c.w * scale;
-                shotHeight = c.h * scale;
+                x = Math.round(c.x * scale);
+                y = Math.round(c.y * scale);
+                shotWidth = Math.round(c.w * scale);
+                shotHeight = Math.round(c.h * scale);
 
                 img_top_margin = c.y;
                 img_left_margin = c.x;
