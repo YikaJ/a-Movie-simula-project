@@ -17,9 +17,56 @@
 <div class="content  clearfix infoContent">
     <%@include file="/WEB-INF/jsp/customer/user/public/menu.jsp"%>
     <div class="rightContent fr clearfix">
-
-
-
+        <form>
+        <div class="formGroup">
+            <label for="nick">昵称</label>
+            <input id="nick" name="nick" type="text" disabled="disabled" class="textInput"/>
+            <span class="inputError"></span>
+        </div>
+        <div class="formGroup">
+            <label for="nick">生日</label>
+            <div class="selectInput">
+                <select name="provice">
+                    <option value="none">出生年份</option>
+                </select>
+                <select name="city">
+                    <option value="none">出生月份</option>
+                </select>
+                <select name="provice">
+                    <option value="none">出生日期</option>
+                </select>
+            </div>
+            <span class="inputError"></span>
+        </div>
+        <div class="formGroup">
+            <label for="nick">性别</label>
+            <lable class="radioInput">男<input  name="sex" type="radio" value="male"/></lable>
+            <lable class="radioInput">女<input  name="sex" type="radio" value="female" /></lable>
+            <lable class="radioInput">保密<input  name="sex" type="radio" value="none"/></lable>
+            <span class="inputError"></span>
+        </div>
+        <div class="formGroup">
+            <label for="nick">所在城市</label>
+            <div class="selectInput">
+                <select name="provice">
+                    <option value="none">请选择省份</option>
+                </select>
+                <select name="city">
+                    <option value="none">请选择城市</option>
+                </select>
+                <select name="provice">
+                    <option value="none">请选择县区</option>
+                </select>
+            </div>
+            <span class="inputError"></span>
+        </div>
+        <div class="formGroup">
+            <label for="nick">个性签名</label>
+            <textarea  name="aboutMe"  class="textareaInput" rows="5" cols="43" />这位童鞋很懒，什么也没有留下～～！
+            </textarea>
+        </div>
+            <a class="submitBtn" href="#"/>保存</a>
+        </form>
     </div>
 </div>
 

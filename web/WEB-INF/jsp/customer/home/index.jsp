@@ -33,7 +33,7 @@
                 </s:url>
                 <li>
                     <a href="<s:property value="#showMovieURL"/> ">
-                        <img src="${pageContext.request.contextPath}<s:property value="poster"/> ">
+                        <img src="${pageContext.request.contextPath}<s:property value="poster"/>">
                         <span class="buyTicket">立即购票</span>
                     </a>
                 </li>

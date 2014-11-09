@@ -18,7 +18,6 @@
 <div class="content  clearfix infoContent">
     <%@include file="/WEB-INF/jsp/customer/user/public/menu.jsp"%>
     <div class="rightContent fr clearfix">
-        <h2>请选择头像并上传</h2>
         <div id="imgContent">
             <img src="" alt="上传你的头像"/>
         </div>

@@ -36,18 +36,13 @@ body,html{
 /*右部内容框*/
 .rightContent{
     width: 645px;
-    padding: 20px 30px 30px;
+    padding:40px 30px 30px;
     background: #FFF;
     box-shadow: 0 3px 3px -1px #AAA;
     position: relative;
 }
 
-.rightContent h2{
-    text-align: center;
-   padding-bottom: 20px;
-    border-bottom: 1px solid #999;
-    margin-bottom: 50px;
-}
+
 
 #imgContent{
     width: 420px;
