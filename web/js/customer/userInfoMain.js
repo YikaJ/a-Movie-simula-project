@@ -7,29 +7,24 @@ require.config({
 });
 
 require(["jquery",  "common", "userInfo", "jquery.Jcrop", "ajaxfileupload"], function ($) {
+    var $imgContent = $("#imgContent"),
+        $preview = $("#preview"),
+        $pimg = $("#preview img");
+    var $img, img_top_margin, img_left_margin, img_width, img_height, x, y, shotWidth, shotHeight, scale;//最后使用的2个变量
+    var boundx,
+        boundy;
+    var xsize = $preview.width(),   //预览框的宽高
+        ysize = $preview.height();
+    var reload;
     $(document).on("change", "#imgFile", function () {
-        var img_top_margin, img_left_margin, img_width, img_height;//最后使用的2个变量
-        var originImg = "";
-        var jcrop_api,
-            boundx,
-            boundy,
-
-            $target = $("#target"),
-            $preview = $('#preview-pane'),
-            $pcnt = $('#preview-pane .preview-container'),
-            $pimg = $('#preview-pane .preview-container img'),
-
-            xsize = $pcnt.width(),
-            ysize = $pcnt.height();
-
-        /*初始化*/
-
-        /*
-         *
-         * 此处ajax上传图片
-         *
-         * */
-
+        if ($(".jcrop-holder").length > 0) {
+            $img.remove();
+            $img = $("<img alt='上传你的头像'>");
+            $img.appendTo($imgContent);
+            reload();
+        }else{
+            $img = $("#imgContent img");
+        }
         $.ajaxFileUpload({
             url: "/support/uploadImage.do",
             secureuri: false,
@@ -37,37 +32,56 @@ require(["jquery",  "common", "userInfo", "jquery.Jcrop", "ajaxfileupload"], fun
             dataType: "json",
             success: function (data) {
                 if (data.response) {
-                    $target.attr("src", data.msg).Jcrop({
+                    $img.attr("src", data.msg).Jcrop({
                         onChange: updatePreview,
                         onSelect: updatePreview,
                         aspectRatio: xsize / ysize,
-                        setSelect: [0,0,150,150]
-                    },function(){
+                        setSelect: [0, 0, 150, 150]
+                    }, function () {
+                        $pimg.attr("src", data.msg);//预览图地址一致
+                        //获取图片的实际尺寸，数组，width,height
                         var bounds = this.getBounds();
                         boundx = bounds[0];
-                        jcrop_api = this;
-                        $preview.appendTo(jcrop_api.ui.holder).css({
-                            top: 0,
-                            right: -220
+                        boundy = bounds[1];
+                        var marginLeft = ($imgContent.width() - boundx) / 2,
+                            marginTop = ($imgContent.height() - boundy) / 2;
+
+                        $(".jcrop-holder").css({
+                            marginLeft: marginLeft + "px",
+                            marginTop: marginTop + "px"
                         });
-                    });
-                    $pimg.attr("src", data.msg);
-                    $("#imgPath").val(data.msg);
-                    $target.css("height", "auto");
+                        //图片未被压缩的尺寸
+                        var width = $pimg[0].naturalWidth;
+
+                        scale = width / boundx;    ///原图片与压缩后的图片的比例
+
+                        var that = this;
+                        //闭包返回清除Jcrop方法
+                        reload = function () {
+                            that.destroy();
+                        }
+                    })
                 } else {
                     alert(data.msg);
                 }
             }
         });
-        function updatePreview(c){
-            if (parseInt(c.w) > 0){
+
+        function updatePreview(c) {
+            if (parseInt(c.w) > 0) {
                 var rx = xsize / c.w;
                 var ry = ysize / c.h;
 
-                img_top_margin=c.y;
-                img_left_margin=c.x;
-                img_width=c.w;
-                img_height=c.h;
+                //计算还原大小后的xy坐标
+                x = c.x * scale;
+                y = c.y * scale;
+                shotWidth = c.w * scale;
+                shotHeight = c.h * scale;
+                img_top_margin = c.y;
+                img_left_margin = c.x;
+
+                img_width = c.w;
+                img_height = c.h;
 
                 $pimg.css({
                     width: Math.round(rx * boundx) + 'px',
@@ -76,14 +90,22 @@ require(["jquery",  "common", "userInfo", "jquery.Jcrop", "ajaxfileupload"], fun
                     marginTop: '-' + Math.round(ry * c.y) + 'px'
                 });
             }
-            $("#x").val(c.x);
-            $("#y").val(c.y);
-            $("#picWidth").val(c.w);
-            $("#picHeight").val(c.h);
-
         }
-
     });
+    //保存图片
+    $("#uploadImg").click(function(){
+
+        var form = $("#imageShot").serialize();
+        $.post("/support/imageShot.do", form, function(data){
+            if(data.response){
+                alert(data.msg);
+
+            }else{
+                alert(data.msg);
+
+            }
+        });
+    })
 });
 
 

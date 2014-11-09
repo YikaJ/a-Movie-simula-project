@@ -16,7 +16,7 @@
 		background: #000;
 		opacity: 0.9;
 		z-index: 9998;
-		filter:alpha(opacity=90);
+		filter: alpha(opacity=90);
 	}
 /*弹出框头部*/
 	.window_header{

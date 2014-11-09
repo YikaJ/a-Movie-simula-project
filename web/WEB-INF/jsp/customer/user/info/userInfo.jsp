@@ -24,15 +24,20 @@
     </ul>
     <div class="rightContent fr clearfix">
         <h2>请选择头像并上传</h2>
-        <img  id="target" alt="请选择你的头像！" />
-        <div id="preview-pane">
-            <div class="preview-container">
-                <img  class="jcrop-preview" alt="预览头像" />
-            </div>
+        <div id="imgContent">
+            <img src="" alt="上传你的头像"/>
         </div>
-    </div>
-            <a href="javascript:0" class="selectImg">选择图片</a>
+        <div class="previewContent">
+            <div id="preview">
+                <img src="" alt="预览"/>
+            </div>
+            <span class="tips"> 150*150头像 </span>
+            <a href="javascript:" class="selectImg">选择图片</a>
             <input id="imgFile" class="selectInput" type="file" name="_img" title="请选择图片">
+            <a href="javascript:" class="uploadImg" id="uploadImg">保存头像</a>
+         </div>
+
+    </div>
         <form id="imageShot" method="post" action="/support/imageShot.do">
             <input type="hidden" name="imgPath" id="imgPath">
             <input type="hidden" name="x" id="x">
@@ -40,7 +45,7 @@
             <input type="hidden" name="width" id="picWidth">
             <input type="hidden" name="height" id="picHeight">
         </form>
-            <a href="javascript:" class="uploadImg" id="uploadImg">保存头像</a>
+
 
 </div>
 
