@@ -10,7 +10,7 @@ require(["jquery",  "common", "userInfo", "jquery.Jcrop", "ajaxfileupload"], fun
     var $imgContent = $("#imgContent"),
         $preview = $("#preview"),
         $pimg = $("#preview img");
-    var $img, img_top_margin, img_left_margin, img_width, img_height, x, y, shotWidth, shotHeight, scale;//最后使用的2个变量
+    var $img, img_top_margin, img_left_margin, img_width, img_height, x, y, shotWidth, shotHeight, scale, imgWidth;//最后使用的2个变量
     var boundx,
         boundy;
     var xsize = $preview.width(),   //预览框的宽高
@@ -39,6 +39,7 @@ require(["jquery",  "common", "userInfo", "jquery.Jcrop", "ajaxfileupload"], fun
                         setSelect: [0, 0, 150, 150]
                     }, function () {
                         $pimg.attr("src", data.msg);//预览图地址一致
+                        $("#imgPath").val(data.msg);
                         //获取图片的实际尺寸，数组，width,height
                         var bounds = this.getBounds();
                         boundx = bounds[0];
@@ -51,9 +52,8 @@ require(["jquery",  "common", "userInfo", "jquery.Jcrop", "ajaxfileupload"], fun
                             marginTop: marginTop + "px"
                         });
                         //图片未被压缩的尺寸
-                        var width = $pimg[0].naturalWidth;
-
-                        scale = width / boundx;    ///原图片与压缩后的图片的比例
+                        imgWidth = data.width;
+                        scale = imgWidth / boundx;    ///原图片与压缩后的图片的比例
 
                         var that = this;
                         //闭包返回清除Jcrop方法
@@ -77,8 +77,11 @@ require(["jquery",  "common", "userInfo", "jquery.Jcrop", "ajaxfileupload"], fun
                 y = c.y * scale;
                 shotWidth = c.w * scale;
                 shotHeight = c.h * scale;
+
                 img_top_margin = c.y;
                 img_left_margin = c.x;
+
+
 
                 img_width = c.w;
                 img_height = c.h;
@@ -94,6 +97,10 @@ require(["jquery",  "common", "userInfo", "jquery.Jcrop", "ajaxfileupload"], fun
     });
     //保存图片
     $("#uploadImg").click(function(){
+        $("#x").val(x);
+        $("#y").val(y);
+        $("#picWidth").val(shotWidth);
+        $("#picHeight").val(shotHeight);
 
         var form = $("#imageShot").serialize();
         $.post("/support/imageShot.do", form, function(data){

@@ -27,7 +27,7 @@
             <a href="${pageContext.request.contextPath}/">想映电影院</a>
         </div>
         <div id="mapLocation">
-            <span>北京</span>
+            <span></span>
             <i class="icon"></i>
         </div>
         <ul class="nav">
