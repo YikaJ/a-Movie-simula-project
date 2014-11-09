@@ -44,7 +44,7 @@
                 <div class="form-group">
                     <input class="form-control" type="email" name="email" placeholder="电子邮箱" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="color: #666">
                     影院所在省市:
                     <select style="width: 50px">
 
