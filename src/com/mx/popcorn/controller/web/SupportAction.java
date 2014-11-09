@@ -82,14 +82,20 @@ public class SupportAction extends BaseAction {
         if (path==null)
             return null;
             FileUtils.copyFile(_img, new File(path));
+            BufferedImage image = ImageIO.read(_img);
+            int sWidth = image.getWidth();
+            int sHeight = image.getHeight();
+            jsonMap.put("width", sWidth);
+            jsonMap.put("height", sHeight);
+            jsonMap.put("msg", imgPath);
+            jsonMap.put(JSON_STATUS_HEADER, true);
+            return SUCCESS;
+
         } catch (IOException e) {
             e.printStackTrace();
             jsonMap.put(JSON_STATUS_HEADER, ERROR);
             return ERROR;
         }
-        jsonMap.put("msg", imgPath);
-        jsonMap.put(JSON_STATUS_HEADER, true);
-        return SUCCESS;
     }
     /*==============================截图支持=====================================*/
     @Action(value = "imageShot",
@@ -121,17 +127,12 @@ public class SupportAction extends BaseAction {
             imageInput = ImageIO.createImageInputStream(imageFile);
             reader.setInput(imageInput, true);
             ImageReadParam param = reader.getDefaultReadParam();
-            Dimension dimension = param.getSourceRenderSize();
-            double sWidth = dimension.getWidth();
-            double sHeight = dimension.getHeight();
             Rectangle rect = new Rectangle(x, y, width, height);
             param.setSourceRegion(rect);
             BufferedImage buffer = reader.read(0, param);
             String path = getImagePath(imgPath);
             ImageIO.write(buffer, imageForm, new File(path));
-            jsonMap.put("url", imgPath);
-            jsonMap.put("width", sWidth);
-            jsonMap.put("height", sHeight);
+            jsonMap.put("msg", imgPath);
             jsonMap.put(JSON_STATUS_HEADER, true);
             return SUCCESS;
         } catch (IOException e) {
