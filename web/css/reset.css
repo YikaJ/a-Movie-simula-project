@@ -137,11 +137,31 @@ a.activeLeftBar{
     background: url(../image/logo.png) no-repeat left center;
     display: inline;
 }
+/*定位*/
+#mapLocation{
+    width: 90px;
+    height: 20px;
+    margin: 50px 30px 0;
+    float: left;
+    font-size: 20px;
+    cursor: pointer;
+}
+#mapLocation .icon{
+    width: 0;
+    height: 0;
+    border-width: 8px;
+    border-style: solid;
+    border-color: #000 transparent transparent ;
+    margin-top: 10px;
+    margin-left: -5px;
+    line-height: 0;
+    font-size: 0;
+}
+
 /*导航栏*/
 .nav {
     float: left;
     display: inline;
-    margin-left: 120px;
     padding-top: 40px;
 }
 

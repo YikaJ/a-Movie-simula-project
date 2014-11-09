@@ -23,9 +23,13 @@
         </s:else>
     </div>
     <div class="content">
-        <h1 class="logo">
+        <div class="logo">
             <a href="${pageContext.request.contextPath}/">想映电影院</a>
-        </h1>
+        </div>
+        <div id="mapLocation">
+            <span>北京</span>
+            <i class="icon"></i>
+        </div>
         <ul class="nav">
             <li class="<s:property value="actionNameSpace=='HomeIndex'?'currentPage':''"/>">
                 <a href="${pageContext.request.contextPath}/">首页</a>

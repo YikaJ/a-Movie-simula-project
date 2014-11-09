@@ -41,5 +41,13 @@ define(["jquery"], function($){
      scrollUp.click(function(){
             $(document.documentElement).animate({scrollTop: 0}, "normal");
             $(document.body).animate({scrollTop: 0}, "normal");
-      })
+      });
+
+    // 百度地图API功能
+    function myFun(result){
+        var cityName = result.name;
+        $("#mapLocation span").text(cityName);
+    }
+    var myCity = new BMap.LocalCity();
+    myCity.get(myFun);
 });

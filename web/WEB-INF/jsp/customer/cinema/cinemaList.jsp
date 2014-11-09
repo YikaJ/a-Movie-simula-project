@@ -167,6 +167,7 @@
 <div class="footer">
     <div class="content"></div>
 </div>
+<script  type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=jaDcSl7r2ArKTbGYn4lGZUcQ"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/customer/require.js" data-main="${pageContext.request.contextPath}/js/customer/cinemaListMain.js"></script>
 </body>
 </html>

@@ -12,4 +12,5 @@ define(["jquery"], function(){
         aLi2.mouseover(function(){
             $(this).addClass("activeList").siblings().removeClass();
         });
+
 })
