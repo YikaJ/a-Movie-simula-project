@@ -1,0 +1,44 @@
+body,html{
+    background: #EDEFF0;
+}
+
+
+.infoContent{
+    margin: 20px auto;
+}
+
+/*左侧导航栏*/
+
+.leftContent{
+    background: #FFF;
+    width: 270px;
+    box-shadow: 0 3px 3px -1px #AAA;
+}
+
+.leftContent a{
+    display: block;
+    font-size: 14px;
+    border-left: 2px solid #FFF;
+    color: #000;
+    text-indent: 50px;
+    padding: 20px 0;
+    border-bottom: 1px solid #CCC;
+}
+
+.leftContent a:hover{
+    color: #EB002A;
+}
+
+.leftContent .activeLi{
+    border-left: 2px solid #C9394A ;
+}
+
+/*右部内容框*/
+.rightContent{
+    width: 645px;
+    padding: 20px 30px 30px;
+    background: #FFF;
+    box-shadow: 0 3px 3px -1px #AAA;
+    position: relative;
+}
+
