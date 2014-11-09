@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="s" uri="/struts-tags" %>
+<%@taglib prefix="s" uri="/struts-tags"%>
 <ul class="leftContent fl">
     <li><a href="javascript:"  class="<s:property value="actionName=='userInfo'?'activeLi':''"/> ">个人资料</a></li>
     <li><a href="javascript:"  class="<s:property value="actionName=='userImg'?'activeLi':''"/> ">头像设置</a></li>

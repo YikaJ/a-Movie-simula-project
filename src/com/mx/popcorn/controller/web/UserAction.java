@@ -164,7 +164,7 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
     }
 
     @Action(value = "userInfo",
-            results = {@Result(name = SUCCESS, type = JSON, location = "/WEB-INF/jsp/customer/user/info/userInfo.jsp")},
+            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/customer/user/info/userInfo.jsp")},
             interceptorRefs = {@InterceptorRef("userPrivilegeInterceptorStack")})
     public String userInfo(){
         try{
