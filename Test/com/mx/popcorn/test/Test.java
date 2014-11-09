@@ -2,10 +2,7 @@ package com.mx.popcorn.test;
 
 import com.mx.popcorn.domain.*;
 import com.mx.popcorn.exception.UserExitException;
-import com.mx.popcorn.service.CinemaService;
-import com.mx.popcorn.service.HallService;
-import com.mx.popcorn.service.TypeService;
-import com.mx.popcorn.service.UserService;
+import com.mx.popcorn.service.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -122,6 +119,17 @@ public class Test {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         Date date = format.parse(format.format(new Date()));
         System.out.println(date);
+    }
+
+    @org.junit.Test
+    public void test8(){
+        SpaceService spaceService = (SpaceService) context.getBean("spaceServiceImp");
+        /*City city = new City();
+        city.setName("韶关");
+        spaceService.addCity(city);*/
+        Province province = new Province();
+        province.setName("河北省");
+        spaceService.addProvince(province);
     }
 
 }

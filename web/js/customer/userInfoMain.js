@@ -103,13 +103,13 @@ require(["jquery",  "common", "userInfo", "jquery.Jcrop", "ajaxfileupload"], fun
         $("#picHeight").val(shotHeight);
 
         var form = $("#imageShot").serialize();
-        $.post("/support/imageShot.do", form, function(data){
-            if(data.response){
-                alert(data.msg);
-
-            }else{
-                alert(data.msg);
-
+        $.ajax({
+            url : "/support/imageShot.do",
+            type : "POST",
+            data : form,
+            dataType : "json",
+            success : function(response){
+                alert(response.msg);
             }
         });
     })
