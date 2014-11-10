@@ -205,9 +205,27 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
             interceptorRefs = {@InterceptorRef("userPrivilegeInterceptorStack")})
     public String changePassword(){
         try{
+            if (!model.getPassword().trim().equals(getCurrentUser().getPassword())){
+                addFieldError("password", "密码不正确");
+                return INPUT;
+            }
+            userService.updatePassword(model);
+            return SUCCESS;
+        }catch (Exception e){
+            e.printStackTrace();
+            return ERROR;
+        }
+    }
+
+    @Action(value = "updateUserInfo",
+            results = {@Result(name = SUCCESS, type = REDIRECT_ACTION, params = {"actionName", "userInfo"})},
+            interceptorRefs = {@InterceptorRef("userPrivilegeInterceptorStack")})
+    public String updateUserInfo(){
+        try{
             if (provinceId != null || cityId != null || districtId != null){
                 model.setDistrict(spaceService.getDistrictById(districtId));
             }
+            userService.updateUserInfo(model);
             return SUCCESS;
         }catch (Exception e){
             e.printStackTrace();

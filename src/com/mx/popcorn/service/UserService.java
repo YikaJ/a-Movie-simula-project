@@ -22,4 +22,8 @@ public interface UserService extends BaseService {
     void updatePicture(String picture, User user);
 
     User getUserById(Long id);
+
+    void updateUserInfo(User model);
+
+    void updatePassword(User model);
 }

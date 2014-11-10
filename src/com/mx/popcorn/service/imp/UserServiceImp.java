@@ -71,4 +71,23 @@ public class UserServiceImp extends BaseServiceImp implements UserService {
     public User getUserById(Long id) {
         return userDao.getById(id);
     }
+
+    @Override
+    public void updateUserInfo(User model) {
+        QueryHelper helper = new QueryHelper(User.class, QueryHelper.UPDATE, "u")
+                .addSetClause("birthday", model.getBirthday())
+                .addSetClause("gender", model.getGender())
+                .addSetClause("districtId", model.getDistrict().getId())
+                .addSetClause("signature", model.getSignature())
+                .addWhereClause("id", model.getId());
+        userDao.update(helper);
+    }
+
+    @Override
+    public void updatePassword(User model) {
+        QueryHelper helper = new QueryHelper(User.class, QueryHelper.UPDATE, "u")
+                .addSetClause("password", model.getPassword())
+                .addWhereClause("id", model.getId());
+        userDao.update(helper);
+    }
 }

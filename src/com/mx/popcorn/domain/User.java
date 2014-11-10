@@ -95,7 +95,7 @@ public class User {
         this.nick = nick;
     }
 
-    public boolean isGender() {
+    public boolean getGender() {
         return gender;
     }
 
