@@ -54,9 +54,8 @@
         </div>
         <div class="formGroup">
             <label for="nick">性别</label>
-            <span class="radioInput">男<input  name="sex" type="radio" value="male"/></span>
-            <span class="radioInput">女<input  name="sex" type="radio" value="female" /></span>
-            <span class="radioInput">保密<input  name="sex" type="radio" value="none" checked="checked"/></span>
+            <span class="radioInput">男<input  name="sex" type="radio" value="true"/></span>
+            <span class="radioInput">女<input  name="sex" type="radio" value="false" checked /></span>
             <span class="inputError"></span>
         </div>
         <div class="formGroup">
