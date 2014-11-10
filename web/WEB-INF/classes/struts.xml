@@ -61,7 +61,7 @@
     <package name="space" namespace="/space" extends="default">
         <action name="catchProvince" class="com.mx.popcorn.controller.web.SpaceAction" method="catchProvince">
             <result name="success" type="json">
-                <param name="root"></param>
+                <param name="includeProperties">jsonMap\[response\]\.*</param>
             </result>
         </action>
     </package>

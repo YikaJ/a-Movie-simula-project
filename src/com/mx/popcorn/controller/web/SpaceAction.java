@@ -25,7 +25,7 @@ public class SpaceAction  extends ModelDrivenBaseAction<Space> {
     private Long cityId;
 
     @Action(value = "catchCity",
-            results = {@Result(name = SUCCESS, type = JSON, params = {"includeProperties", "jsonMap."+JSON_STATUS_HEADER+", jsonMap.data.id, jsonMap.data.name"})})
+            results = {@Result(name = SUCCESS, type = JSON, params = {"root", "jsonMap"})})
     public String catchCity(){
         try {
             if (provinceId == null)
@@ -43,8 +43,8 @@ public class SpaceAction  extends ModelDrivenBaseAction<Space> {
         }
     }
 
-
-
+    @Action(value = "catchProvince",
+            results = {@Result(name = SUCCESS, type = JSON, params = {"root", "jsonMap"})})
     public String catchProvince(){
         try {
             jsonMap.put("data", provinceId == null
@@ -59,6 +59,8 @@ public class SpaceAction  extends ModelDrivenBaseAction<Space> {
         }
     }
 
+    @Action(value = "catchDistrict",
+            results = {@Result(name = SUCCESS, type = JSON, params = {"root", "jsonMap"})})
     public String catchDistrict(){
         try {
             if (cityId == null)
