@@ -44,10 +44,16 @@ define(["jquery"], function($){
       });
 
     // 百度地图API功能
+    var myCity = new BMap.LocalCity();
+    myCity.get(myFun);
     function myFun(result){
         var cityName = result.name;
         $("#mapLocation span").text(cityName);
+        $.post(".do", {city: cityName}, function(data){
+            if(data.response){
+
+            }
+        })
     }
-    var myCity = new BMap.LocalCity();
-    myCity.get(myFun);
+
 });
