@@ -86,4 +86,11 @@ public class SpaceServiceImp extends BaseServiceImp implements SpaceService {
         district.setCreateDate(new Date());
         districtDao.save(district);
     }
+
+    @Override
+    public City getCityByName(String spaceName) {
+        QueryHelper helper = new QueryHelper(District.class, "c")
+                .addWhereClause("name", spaceName);
+        return (City) cityDao.findUnique(helper, false);
+    }
 }

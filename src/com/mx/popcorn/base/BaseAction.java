@@ -50,6 +50,7 @@ public class BaseAction extends ActionSupport {
     public static final String USER_SESSION = "user";
     public static final String CINEMA_SESSION = "cinema";
     public static final String REFERER_SESSION = "referer";
+    public static final String SPACE_SESSION = "currentSpace";
     public static final String JSON_STATUS_HEADER = "response";
 
     /*=============================返回值=================================*/

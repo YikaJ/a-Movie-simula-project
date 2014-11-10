@@ -1,6 +1,7 @@
 package com.mx.popcorn.controller.web;
 
 import com.mx.popcorn.base.ModelDrivenBaseAction;
+import com.mx.popcorn.domain.City;
 import com.mx.popcorn.domain.User;
 import com.mx.popcorn.utils.TextTools;
 import org.apache.struts2.ServletActionContext;
@@ -27,6 +28,7 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
     private Long provinceId;
     private Long cityId;
     private Long districtId;
+
 
 
     /**

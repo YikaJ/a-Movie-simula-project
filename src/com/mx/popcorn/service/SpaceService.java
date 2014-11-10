@@ -33,4 +33,6 @@ public interface SpaceService extends BaseService {
     void addProvince(Province province);
 
     void addDistrict(District district);
+
+    City getCityByName(String spaceName);
 }

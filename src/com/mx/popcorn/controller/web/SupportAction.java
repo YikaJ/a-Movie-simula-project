@@ -2,6 +2,7 @@ package com.mx.popcorn.controller.web;
 
 import com.mx.popcorn.base.BaseAction;
 import com.mx.popcorn.configuration.Configuration;
+import com.mx.popcorn.domain.City;
 import com.mx.popcorn.utils.Security;
 import com.opensymphony.xwork2.ActionSupport;
 import net.sf.json.JSON;
@@ -19,6 +20,7 @@ import javax.imageio.ImageIO;
 import javax.imageio.ImageReadParam;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
+import javax.servlet.http.Cookie;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
@@ -48,6 +50,7 @@ public class SupportAction extends BaseAction {
     private int y = -1;
     private int width = -1;
     private int height = -1;
+    private String currentSpace;
 
     /*==========================验证码支持=============================*/
 
@@ -149,6 +152,32 @@ public class SupportAction extends BaseAction {
         }
     }
 
+    @Action(value = "updateSpace",
+            results = {@Result(name = SUCCESS, type = JSON, params = {"root", "jsonMap"})})
+    public String updateSpace(){
+        try{
+            City city = null;
+            if (currentSpace != null){
+                city = spaceService.getCityByName(currentSpace);
+                city = city == null ? spaceService.getCityById(1L) : city;
+            }else {
+                city = spaceService.getCityById(1L);
+            }
+            getSession().setAttribute(SPACE_SESSION, city);
+            Cookie cookie = new Cookie("space", String.valueOf(city.getId()));
+            cookie.setMaxAge(7*24*60*60);
+            cookie.setPath("/");
+            getResponse().addCookie(cookie);
+            jsonMap.put(JSON_STATUS_HEADER, true);
+            return SUCCESS;
+        }catch (Exception e){
+            e.printStackTrace();
+            return ERROR;
+        }
+    }
+
+
+
     /*==============================获取保存图片的路径=====================================*/
     public String getImagePath(String imageFileName){
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM");
@@ -164,6 +193,10 @@ public class SupportAction extends BaseAction {
     }
 
     /*==============================get/set=====================================*/
+
+    public void setCurrentSpace(String currentSpace) {
+        this.currentSpace = currentSpace;
+    }
 
     public File get_img() {
         return _img;
