@@ -22,6 +22,7 @@ public class MovieAppAction extends ModelDrivenBaseAction<Movie> {
             results = {@Result(name = SUCCESS, type = JSON, params ={"root", "jsonMap"})})
     public String index(){
         try{
+            System.out.println("-------------------------movie app index------------------------------");
             jsonMap.put("movies", movieService.getAppIndexMovie(pageNum));
             return SUCCESS;
         }catch (Exception e){

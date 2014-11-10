@@ -54,27 +54,7 @@
         </global-results>
 
         <action name="index" class="com.mx.popcorn.controller.web.HomeAction" method="index">
-            <result name="success">/WEB-INF/jsp/customer/home
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                /index.jsp</result>
+            <result name="success">/WEB-INF/jsp/customer/home/index.jsp</result>
         </action>
     </package>
 
