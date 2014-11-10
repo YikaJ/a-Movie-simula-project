@@ -6,11 +6,11 @@ require.config({
     }
 });
 
-require(["jquery",  "common", "userImgjs", "jquery.Jcrop", "ajaxfileupload"], function ($) {
+require(["jquery",  "common",  "jquery.Jcrop", "ajaxfileupload"], function ($) {
     var $imgContent = $("#imgContent"),
         $preview = $("#preview"),
         $pimg = $("#preview img");
-    var $img, img_top_margin, img_left_margin, img_width, img_height, x, y, shotWidth, shotHeight, scale, imgWidth;//最后使用的2个变量
+    var $img, img_top_margin, img_left_margin, img_width, img_height, x, y, shotWidth, shotHeight, scale, imgWidth, selectSize;//最后使用的2个变量
     var boundx,
         boundy;
     var xsize = $preview.width(),   //预览框的宽高
@@ -36,8 +36,9 @@ require(["jquery",  "common", "userImgjs", "jquery.Jcrop", "ajaxfileupload"], fu
                         onChange: updatePreview,
                         onSelect: updatePreview,
                         aspectRatio: xsize / ysize,
-                        setSelect: [0, 0, 64, 64]
+                        setSelect: [0, 0, 150, 150]
                     }, function () {
+
                         $pimg.attr("src", data.msg);//预览图地址一致
                         $("#imgPath").val(data.msg);
                         //获取图片的实际尺寸，数组，width,height
@@ -54,6 +55,10 @@ require(["jquery",  "common", "userImgjs", "jquery.Jcrop", "ajaxfileupload"], fu
                         //图片未被压缩的尺寸
                         imgWidth = data.width;
                         scale = imgWidth / boundx;    ///原图片与压缩后的图片的比例
+                        
+
+                        //选取框的原始大小
+                        selectSize = this.tellSelect();
 
                         var that = this;
                         //闭包返回清除Jcrop方法
@@ -97,6 +102,12 @@ require(["jquery",  "common", "userImgjs", "jquery.Jcrop", "ajaxfileupload"], fu
     });
     //保存图片
     $("#uploadImg").click(function(){
+        if(!x){
+            x = selectSize.x;
+            y = selectSize.y;
+            shotWidth = selectSize.w;
+            shotHeight = selectSize.h;
+        }
         $("#x").val(x);
         $("#y").val(y);
         $("#picWidth").val(shotWidth);
@@ -108,8 +119,14 @@ require(["jquery",  "common", "userImgjs", "jquery.Jcrop", "ajaxfileupload"], fu
             type : "POST",
             data : form,
             dataType : "json",
-            success : function(response){
-                window.location.reload();
+            success : function(data){
+                if(data.response){
+                    alert(data.msg);
+                    window.location.reload();
+                }else{
+                    alert(data.msg);
+                }
+
             }
         });
     })

@@ -2,16 +2,15 @@
 
 /*内容区域*/
 .movieInformation{
-    background: url(../image/backgroundImg.jpg) no-repeat;
+    background: url(../image/backgroundImg.jpg) no-repeat center;
     background-size: 1000%;
-    padding: 20px 0px;
-    transition:width 2s;
+    padding: 20px 0;
 }
 
 .movieTitle{
     color: #FFF;
     font-size: 20px;
-    padding: 0px 0px 10px;
+    padding: 0 0 10px;
     border-bottom: 1px solid #DFDFDF;
 }
 

@@ -13,7 +13,7 @@
                 <a href="javascript:" id="login" class="topBarLeft">登录</a><span class="little">|</span><a href="javascript:" id="register" class="topBarRight">注册</a>
         </s:if>
         <s:else>
-            <a href="#" class="loginLeft"><s:property value="#session.user.nick"/><i class="icon"></i></a>
+            <a href="#" class="loginLeft clearfix"><i class="icon"></i><span><s:property value="#session.user.nick"/></span></a>
             <ul class="userList" id="myList">
                 <li><a href="${pageContext.request.contextPath}/user/userInfo.do">个人资料</a></li>
                 <li><a href="#">我的订单</a></li>

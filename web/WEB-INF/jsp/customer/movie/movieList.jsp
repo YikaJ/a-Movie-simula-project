@@ -39,7 +39,7 @@
                 </ul>
             </div>
         </div>
-        <div class="rightFixedBar fr"  id="rightFixedBar">
+        <div class="rightBarContent"><div class="rightFixedBar fl"  id="rightFixedBar">
             <h4>
                 <a class="more fr" href="javascript:">更多新闻 ></a>
                 热门新闻
@@ -62,6 +62,8 @@
                 </li>
             </ul>
         </div>
+    </div>
+
     </div>
     <div class="footer" id="footer">
         <div class="content"></div>

@@ -18,6 +18,7 @@
 <div class="content  clearfix infoContent">
     <%@include file="/WEB-INF/jsp/customer/user/public/menu.jsp"%>
     <div class="rightContent fr clearfix">
+        <h2>头像设置</h2>
         <div id="imgContent">
             <img src="" alt="上传你的头像"/>
         </div>

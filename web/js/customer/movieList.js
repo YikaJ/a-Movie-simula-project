@@ -5,20 +5,34 @@ define(["jquery"], function($){
     var rightBar = $("#rightFixedBar"),
         fixedTop = rightBar.offset().top,
         fixedLeft = rightBar.offset().left,
-        limitedHeight = $("#footer").offset().height + rightBar.height();
+        $footer  = $("#footer"),
+        footerHeight = $footer.height(),
+        height = $(".movieBox").height(),
+        limitedHeight = $footer.offset().top - rightBar.height();
+        $(".rightBarContent").height(height);
 
 
     $(window).scroll(function(){
         var scrollTop = $(document.documentElement).scrollTop() + $(document.body).scrollTop();
-        console.log(rightBar.offset().left);
-        if(scrollTop > fixedTop /*&& scrollTop < limitedHeight*/) {
-            rightBar.css({
-                "position": "fixed",
-                "top": "0px",
-                left: fixedLeft + "px"
-            });
+        if(scrollTop < fixedTop) {
+            console.log("reset");
+            rightBar[0].style.cssText = "";
         }else{
-           rightBar[0].style.cssText = "";
+            if(scrollTop < limitedHeight){
+                console.log("center");
+                rightBar.css({
+                    "position": "fixed",
+                    "top": "0px",
+                    left: fixedLeft + "px"
+                });
+            }else{
+                console.log("stop")
+                rightBar[0].style.cssText = "";
+                rightBar.css({
+                    "position": "absolute",
+                    "bottom": "0px"
+                });
+            }
         }
     });
     $(window).resize(function(){

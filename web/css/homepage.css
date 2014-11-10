@@ -18,6 +18,9 @@
     left: 0;
 }
 
+#banner ul li{
+    display: inline;
+}
 
 #banner ul a{
     float: left;

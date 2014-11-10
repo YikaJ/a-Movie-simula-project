@@ -17,10 +17,11 @@
 <div class="content  clearfix infoContent">
     <%@include file="/WEB-INF/jsp/customer/user/public/menu.jsp"%>
     <div class="rightContent fr clearfix">
+        <h2>个人资料</h2>
         <form>
         <div class="formGroup">
             <label for="nick">昵称</label>
-            <input id="nick" name="nick" type="text" disabled="disabled" class="textInput"/>
+            <input id="nick" name="nick" type="text" disabled="disabled" class="textInput" value="handoop-Sb-teamLeader"/>
             <span class="inputError"></span>
         </div>
         <div class="formGroup">
@@ -28,21 +29,34 @@
             <div class="selectInput">
                 <select name="provice">
                     <option value="none">出生年份</option>
+                    <option value="none">1</option>
+                    <option value="none">2</option>
+                    <option value="none">3</option>
+                    <option value="none">4</option>
+                    <option value="none">5</option>
                 </select>
                 <select name="city">
                     <option value="none">出生月份</option>
+                    <option value="none">1</option>
+                    <option value="none">2</option>
+                    <option value="none">3</option>
+                    <option value="none">4</option>
+                    <option value="none">5</option>
                 </select>
                 <select name="provice">
                     <option value="none">出生日期</option>
+                    <option value="none">1</option>
+                    <option value="none">2</option>
+                    <option value="none">3</option>
                 </select>
             </div>
             <span class="inputError"></span>
         </div>
         <div class="formGroup">
             <label for="nick">性别</label>
-            <lable class="radioInput">男<input  name="sex" type="radio" value="male"/></lable>
-            <lable class="radioInput">女<input  name="sex" type="radio" value="female" /></lable>
-            <lable class="radioInput">保密<input  name="sex" type="radio" value="none"/></lable>
+            <span class="radioInput">男<input  name="sex" type="radio" value="male"/></span>
+            <span class="radioInput">女<input  name="sex" type="radio" value="female" /></span>
+            <span class="radioInput">保密<input  name="sex" type="radio" value="none" checked="checked"/></span>
             <span class="inputError"></span>
         </div>
         <div class="formGroup">

@@ -73,20 +73,23 @@ a.currentTab{
 
 
 /*新闻栏目*/
-
+.rightBarContent{
+    float: left;
+    width: 309px;
+    position: relative;
+}
 .rightFixedBar{
-    width: 277px;
+    width: 270px;
+    padding: 0 20px;
     border-top: 1px solid #DFDFDF;
     border-right: 1px solid #DFDFDF;
     border-bottom: 1px solid #DFDFDF;
     overflow: hidden;
-    padding: 0px 20px;
 }
-
 .rightFixedBar h4{
     color: #333;
     margin: 16px auto;
-    padding: 10px 0px 8px;
+    padding: 10px 0 8px;
     border-bottom: 1px solid #DFDFDF;
 }
 

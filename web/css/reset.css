@@ -43,7 +43,7 @@ a:link,a:hover,a:active,a:visited{
     font-size: 14px;
     position: absolute;
     right: 8%;
-    z-index: 9000;
+    z-index: 8000;
     height: 30px;
     line-height: 30px;
 }
@@ -74,6 +74,7 @@ a.topBarRight{
 /*登陆后*/
 a.loginLeft{
     display: block;
+    *width: 75px;
     border: 1px solid #FF6666;
     padding: 0 15px;
     border-bottom-right-radius: 10px;
@@ -83,16 +84,29 @@ a.loginLeft{
     color: #FFF;
 }
 
+.loginLeft span{
+    float: left;
+    width: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .userList{
     background: #F8F8F8;
     position: absolute;
-    right: 0;
     top: 30px;
     border: 1px solid #CCC;
     border-top: 0;
     border-radius: 0 0 10px 10px;
     text-align: center;
     display: none;
+    z-index: 9999;
+}
+.userList li{
+    position: relative;
+    height: auto;
+    display: inline;
 }
 .userList a{
     font-size: 12px;
@@ -100,6 +114,7 @@ a.loginLeft{
     display: block;
     padding: 3px 0;
     border-bottom: 1px solid #CCC;
+
 }
 a.activeLeftBar{
     border-bottom-right-radius: 0;
@@ -109,8 +124,8 @@ a.activeLeftBar{
     background: url("../image/icon_sprite.png") no-repeat top left;
     height: 15px;
     width: 15px;
-    float: right;
     margin: 12px 0 0 8px;
+    float: right;
 }
 .iconActive{
     background-position: top right;
@@ -124,6 +139,7 @@ a.activeLeftBar{
     border-bottom: 3px solid #999;
     position: relative;
     background: #FFF;
+    z-index: 5000;
 }
 
 .logo{
@@ -197,7 +213,7 @@ a.activeLeftBar{
 */
 /*过渡*/
 .hr{
-    padding: 20px 0px;
+    padding: 20px 0;
     overflow: hidden;
 }
 
@@ -226,6 +242,58 @@ a.activeLeftBar{
     text-indent: -9999px;
     background: url("../image/top.png") no-repeat 0 0;
     display: none;
+}
+
+
+/*个人设置页*/
+
+.infoContent{
+    margin: 20px auto;
+}
+
+/*左侧导航栏*/
+
+.leftContent{
+    background: #FFF;
+    width: 270px;
+    box-shadow: 0 3px 3px -1px #AAA;
+}
+
+.leftContent a{
+    display: block;
+    font-size: 14px;
+    border-left: 2px solid #FFF;
+    color: #000;
+    text-indent: 50px;
+    padding: 20px 0;
+    border-bottom: 1px solid #CCC;
+}
+
+.leftContent a:hover{
+    color: #EB002A;
+}
+
+.leftContent .activeLi{
+    border-left: 2px solid #C9394A ;
+}
+
+/*右部内容框*/
+.rightContent{
+    width: 645px;
+    padding: 20px 30px 50px;
+    background: #FFF;
+    box-shadow: 0 3px 3px -1px #AAA;
+    position: relative;
+}
+
+.rightContent h2{
+    color: #999;
+    font-weight: normal;
+    font-size: 24px;
+    padding-bottom: 11px;
+    border-bottom: 2px solid #f2f2f2;
+    text-indent: 10px;
+    margin-bottom: 30px;
 }
 
 
