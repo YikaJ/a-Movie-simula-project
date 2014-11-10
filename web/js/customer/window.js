@@ -235,9 +235,9 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
                         /*修改错误出现的地方*/
                         errorPlacement: function (error, element) {
                             if (element.attr("name") == "registerService") {
-                                element.parent().append(error);
+                                element.parent().append(error); //显示在后面
                             } else {
-                                element.next().html(error);
+                                element.next().html(error); //显示在下面
                             }
                         },
                         /*表单提交前的操作，MD5加密，ajax验证*/

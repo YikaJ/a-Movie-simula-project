@@ -62,13 +62,13 @@
         <div class="formGroup">
             <label for="nick">所在城市</label>
             <div class="selectInput">
-                <select name="provice">
+                <select name="provice" id="provice">
                     <option value="none">请选择省份</option>
                 </select>
-                <select name="city">
+                <select name="city" id="city">
                     <option value="none">请选择城市</option>
                 </select>
-                <select name="provice">
+                <select name="district" id="district">
                     <option value="none">请选择县区</option>
                 </select>
             </div>
