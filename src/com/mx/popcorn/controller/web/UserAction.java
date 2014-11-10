@@ -163,6 +163,10 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
         }
     }
 
+    /**
+     * 用户资料
+     * @return
+     */
     @Action(value = "userInfo",
             results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/customer/user/info/userInfo.jsp")},
             interceptorRefs = {@InterceptorRef("userPrivilegeInterceptorStack")})
@@ -175,6 +179,20 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
             return ERROR;
         }
     }
+
+    @Action(value = "changePasswordUI",
+            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/customer/user/info/changePassword.jsp")},
+            interceptorRefs = {@InterceptorRef("userPrivilegeInterceptorStack")})
+    public String changePasswordUI(){
+        try{
+            return SUCCESS;
+        }catch (Exception e){
+            e.printStackTrace();
+            return ERROR;
+        }
+    }
+
+
 
     public boolean isAutoLoginTo() {
         return autoLoginTo;

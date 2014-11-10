@@ -29,4 +29,5 @@ public interface MovieService  extends BaseService{
 
     Page getHotMovieFormCinemaIndex(int pageNum);
 
+    Page getAppIndexMovie(int pageNum);
 }

@@ -18,6 +18,7 @@ public class Configuration {
     private static int movieNumOfIndex;
     private static int movieNumOfCinemaIndex;
     private static int cinemaNum;
+    private static int appMovieNum;
 
     /*=============================类型参数定义=============================*/
 
@@ -39,6 +40,7 @@ public class Configuration {
             movieNumOfIndex = Integer.parseInt(prop.getProperty("movieNumOfIndex"));
             movieNumOfCinemaIndex = Integer.parseInt(prop.getProperty("movieNumOfCinemaIndex"));
             cinemaNum = Integer.parseInt(prop.getProperty("cinemaNum"));
+            appMovieNum = Integer.parseInt(prop.getProperty("appMovieNum"));
 
         }catch (Exception e){
             throw new RuntimeException(e);
@@ -52,6 +54,10 @@ public class Configuration {
             }
         }
 
+    }
+
+    public static int getAppMovieNum() {
+        return appMovieNum;
     }
 
     public static int getMovieNumOfCinemaIndex() {

@@ -99,4 +99,10 @@ public class MovieServiceImp extends BaseServiceImp implements MovieService {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public Page getAppIndexMovie(int pageNum) {
+        QueryHelper helper = new QueryHelper(Movie.class, "m");
+        return movieDao.getPage(pageNum, helper, Configuration.getAppMovieNum());
+    }
 }

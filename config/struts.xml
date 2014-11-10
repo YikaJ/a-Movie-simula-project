@@ -54,18 +54,34 @@
         </global-results>
 
         <action name="index" class="com.mx.popcorn.controller.web.HomeAction" method="index">
-            <result name="success">/WEB-INF/jsp/customer/home/index.jsp</result>
+            <result name="success">/WEB-INF/jsp/customer/home
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                /index.jsp</result>
         </action>
     </package>
 
     <package name="space" namespace="/space" extends="default">
         <action name="catchProvince" class="com.mx.popcorn.controller.web.SpaceAction" method="catchProvince">
             <result name="success" type="json">
-                <param name="includeProperties">
-                    jsonMap\.response,
-                    jsonMap\.data\[\d+\]\.id,
-                    jsonMap\.data\[\d+\]\.name
-                </param>
+                <param name="root"></param>
             </result>
         </action>
     </package>
