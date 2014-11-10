@@ -127,9 +127,15 @@ public class Test {
         /*City city = new City();
         city.setName("韶关");
         spaceService.addCity(city);*/
-        Province province = new Province();
+        /*Province province = new Province();
         province.setName("河北省");
-        spaceService.addProvince(province);
+        spaceService.addProvince(province);*/
+        District district2 = new District();
+        district2.setName("赤坎区");
+        spaceService.addDistrict(district2);
+        District district3 = new District();
+        district3.setName("麻章区");
+        spaceService.addDistrict(district3);
     }
 
 }

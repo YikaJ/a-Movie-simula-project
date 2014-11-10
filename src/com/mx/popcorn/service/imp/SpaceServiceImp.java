@@ -80,4 +80,10 @@ public class SpaceServiceImp extends BaseServiceImp implements SpaceService {
         province.setCreateDate(new Date());
         provinceDao.save(province);
     }
+
+    @Override
+    public void addDistrict(District district) {
+        district.setCreateDate(new Date());
+        districtDao.save(district);
+    }
 }

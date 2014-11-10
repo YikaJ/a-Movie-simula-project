@@ -31,4 +31,6 @@ public interface SpaceService extends BaseService {
     List getAllDistrictByCity(City city);
 
     void addProvince(Province province);
+
+    void addDistrict(District district);
 }

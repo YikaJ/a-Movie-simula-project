@@ -2,6 +2,9 @@ package com.mx.popcorn.controller.web;
 
 import com.mx.popcorn.base.ModelDrivenBaseAction;
 import com.mx.popcorn.domain.Cinema;
+import com.mx.popcorn.domain.City;
+import com.mx.popcorn.domain.District;
+import com.mx.popcorn.domain.Province;
 import com.mx.popcorn.utils.TextTools;
 import com.mx.popcorn.utils.WebUtils;
 import org.apache.struts2.convention.annotation.*;
@@ -26,6 +29,9 @@ public class CinemaAction extends ModelDrivenBaseAction<Cinema>{
     private static final int AFTER_TOMORROW = 2;
     private int dayType = TODAY;
     private Long cinemaId;
+    private Long provinceId;
+    private Long cityId;
+    private Long districtId;
 
     /**
      * 影院主页，影院列表
@@ -81,6 +87,9 @@ public class CinemaAction extends ModelDrivenBaseAction<Cinema>{
             if (cinemaService.isEmailExist(model.getEmail())){
                 addFieldError("account", "该邮箱已经注册过了");
                 return INPUT;
+            }
+            if (provinceId != null || cityId != null || districtId != null){
+                model.setDistrict(spaceService.getDistrictById(districtId));
             }
             cinemaService.register(model);
             return SUCCESS;
@@ -174,6 +183,17 @@ public class CinemaAction extends ModelDrivenBaseAction<Cinema>{
     }
 
 
+    public void setProvinceId(Long provinceId) {
+        this.provinceId = provinceId;
+    }
+
+    public void setCityId(Long cityId) {
+        this.cityId = cityId;
+    }
+
+    public void setDistrictId(Long districtId) {
+        this.districtId = districtId;
+    }
 
     public void setCinemaId(Long cinemaId) {
         this.cinemaId = cinemaId;

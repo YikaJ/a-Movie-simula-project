@@ -24,6 +24,10 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
 
     private boolean autoLoginTo = false;
     private String window_registerPwdAgain;
+    private Long provinceId;
+    private Long cityId;
+    private Long districtId;
+
 
     /**
      * 注册
@@ -180,8 +184,12 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
         }
     }
 
+    /**
+     * 更改密码的页面
+     * @return
+     */
     @Action(value = "changePasswordUI",
-            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/customer/user/info/changePassword.jsp")},
+            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/customer/user/info/changePasswordUI.jsp")},
             interceptorRefs = {@InterceptorRef("userPrivilegeInterceptorStack")})
     public String changePasswordUI(){
         try{
@@ -192,7 +200,34 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
         }
     }
 
+    @Action(value = "changePassword",
+            results = {@Result(name = SUCCESS, type = REDIRECT_ACTION, params = {"actionName", "changePasswordUI"})},
+            interceptorRefs = {@InterceptorRef("userPrivilegeInterceptorStack")})
+    public String changePassword(){
+        try{
+            if (provinceId != null || cityId != null || districtId != null){
+                model.setDistrict(spaceService.getDistrictById(districtId));
+            }
+            return SUCCESS;
+        }catch (Exception e){
+            e.printStackTrace();
+            return ERROR;
+        }
+    }
 
+
+
+    public void setProvinceId(Long provinceId) {
+        this.provinceId = provinceId;
+    }
+
+    public void setCityId(Long cityId) {
+        this.cityId = cityId;
+    }
+
+    public void setDistrictId(Long districtId) {
+        this.districtId = districtId;
+    }
 
     public boolean isAutoLoginTo() {
         return autoLoginTo;
