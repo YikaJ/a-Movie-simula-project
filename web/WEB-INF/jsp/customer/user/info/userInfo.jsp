@@ -27,27 +27,17 @@
         <div class="formGroup">
             <label for="nick">生日</label>
             <div class="selectInput">
-                <select name="provice">
+                <select name="year" id="year">
                     <option value="none">出生年份</option>
-                    <option value="none">1</option>
-                    <option value="none">2</option>
-                    <option value="none">3</option>
-                    <option value="none">4</option>
-                    <option value="none">5</option>
+
                 </select>
-                <select name="city">
+                <select name="month" id="month">
                     <option value="none">出生月份</option>
-                    <option value="none">1</option>
-                    <option value="none">2</option>
-                    <option value="none">3</option>
-                    <option value="none">4</option>
-                    <option value="none">5</option>
+
                 </select>
-                <select name="provice">
+                <select name="date" id="date">
                     <option value="none">出生日期</option>
-                    <option value="none">1</option>
-                    <option value="none">2</option>
-                    <option value="none">3</option>
+
                 </select>
             </div>
             <span class="inputError"></span>
@@ -61,7 +51,7 @@
         <div class="formGroup">
             <label for="nick">所在城市</label>
             <div class="selectInput">
-                <select name="provice" id="provice">
+                <select name="province" id="province">
                     <option value="none">请选择省份</option>
                 </select>
                 <select name="city" id="city">

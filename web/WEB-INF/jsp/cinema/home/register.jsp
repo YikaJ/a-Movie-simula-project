@@ -19,6 +19,9 @@
         .alert{
             margin: 0 auto 20px;
         }
+        .selectInput{
+            width: 110px;
+        }
     </style>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -44,21 +47,6 @@
                 <div class="form-group">
                     <input class="form-control" type="email" name="email" placeholder="电子邮箱" required>
                 </div>
-                <div class="form-group" style="color: #666">
-                    影院所在省市:
-                    <select style="width: 50px">
-
-                    </select>
-                    省
-                    <select style="width: 50px">
-
-                    </select>
-                    市
-                    <select style="width: 50px">
-
-                    </select>
-                    县/区
-                </div>
                 <div class="form-group">
                     <input class="form-control" type="text" name="address"  placeholder="影院地址" required>
                 </div>
@@ -66,8 +54,20 @@
                     <input class="form-control" type="tel" name="telephone"  placeholder="联系方式" required>
                 </div>
                 <div class="form-group">
-                <input class="form-control" type="text" name="workTime" placeholder="营业时间" required>
-            </div>
+                    <input class="form-control" type="text" name="workTime" placeholder="营业时间" required>
+                </div>
+                <div class="form-group" style="color: #666">
+                    <p>影院所在城市</p>
+                    <select name="province" id="province" class="selectInput">
+                        <option value="none">请选择省份</option>
+                    </select>
+                    <select name="city" id="city" class="selectInput">
+                        <option value="none">请选择城市</option>
+                    </select>
+                    <select name="district" id="district" class="selectInput">
+                        <option value="none">请选择县区</option>
+                    </select>
+                </div>
                 <button class="btn  btn-primary form-control " type="submit" style="line-height: 0px;">注册</button>
 
             </s:form>
@@ -92,6 +92,45 @@
         }
 
         $('.alert').width(formWidth - 2 * alertPadding);
+
+        //影院所在地址三级联动
+        var $province = $("#province"),
+                $city = $("#city"),
+                $district = $("#district");
+        //载入时获取省份
+        $.post("/space/catchProvince.do?time=" + new Date().getTime(), null, function(data){
+            if(data.response){
+                for(var i = 0, len = data.data.length; i < len; i++){
+                    $("<option value=" + data.data[i].id + " name=" + data.data[i].name + " >" + data.data[i].name + "</option>").appendTo($province);
+                }
+            }
+        });
+        //获取值改变城市
+        $province.change(function(){
+            var provinceId = $(this).val();
+            $.post("/space/catchCity.do?time=" + new Date().getTime(), {provinceId: provinceId}, function(data){
+                if(data.response){
+                    for(var i = 0, len = data.data.length; i < len; i++){
+                        $("<option value=" + data.data[i].id + " name=" + data.data[i].name + " >" + data.data[i].name + "</option>").appendTo($city);
+                    }
+                }else{
+                    alert(data.msg);
+                }
+            });
+        });
+
+        $city.change(function(){
+            var cityId = $(this).val();
+            $.post("/space/catchDistrict.do?time=" + new Date().getTime(), {cityId: cityId}, function(data){
+                if(data.response){
+                    for(var i = 0, len = data.data.length; i < len; i++){
+                        $("<option value=" + data.data[i].id + " name=" + data.data[i].name + " >" + data.data[i].name + "</option>").appendTo($district);
+                    }
+                }else{
+                    alert(data.msg);
+                }
+            });
+        });
     });
 </script>
 </body>

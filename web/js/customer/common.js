@@ -49,7 +49,7 @@ define(["jquery"], function($){
     function myFun(result){
         var cityName = result.name;
         $("#mapLocation span").text(cityName);
-        $.post(".do", {city: cityName}, function(data){
+        $.post("/support/updateSpace.do", {city: cityName}, function(data){
             if(data.response){
 
             }
