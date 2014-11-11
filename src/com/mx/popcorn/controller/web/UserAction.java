@@ -205,7 +205,7 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
     }
 
     @Action(value = "changePassword",
-            results = {@Result(name = SUCCESS, type = REDIRECT_ACTION, params = {"actionName", "changePasswordUI"})},
+            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/customer/user/info/success.jsp")},
             interceptorRefs = {@InterceptorRef("userPrivilegeInterceptorStack")})
     public String changePassword(){
         try{
