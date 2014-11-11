@@ -93,7 +93,7 @@
                         </thead>
                         <tbody>
                         <s:iterator value="#movie.schedules" status="var">
-                            <tr class="<s:property value="#var.index/2==0?'tdBgColor':''"/>">
+                            <tr class="<s:property value="#var.index%2!=0?'tdBgColor':''"/>">
                                 <td class="thead-time">
                                     <em><s:property value="time"/> </em>
                                 </td>

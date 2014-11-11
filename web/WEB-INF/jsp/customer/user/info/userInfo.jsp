@@ -30,13 +30,13 @@
             <div class="selectInput">
                 <s:if test="#user.birthday != null">
                     <select name="year" id="year">
-                            <option value="<s:date name="#user.birthday" format="yyyy"/>"><s:date name="#user.birthday" format="yyyy"/></option>
+                            <option name="year" value="<s:date name="#user.birthday" format="yyyy"/>"><s:date name="#user.birthday" format="yyyy"/></option>
                     </select>
                     <select name="month" id="month">
-                            <option value="<s:date name="#user.birthday" format="MM"/>"><s:date name="#user.birthday" format="MM"/></option>
+                            <option name="month"  value="<s:date name="#user.birthday" format="MM"/>"><s:date name="#user.birthday" format="MM"/></option>
                     </select>
                     <select name="date" id="date">
-                            <option value="<s:date name="#user.birthday" format="dd"/>"><s:date name="#user.birthday" format="dd"/></option>
+                            <option name="date"  value="<s:date name="#user.birthday" format="dd"/>"><s:date name="#user.birthday" format="dd"/></option>
                     </select>
                 </s:if>
                 <s:else>
@@ -51,36 +51,36 @@
                     </select>
                 </s:else>
             </div>
-            <input type="hidden" name="birth" id="birth">
+            <input type="hidden" name="birthday" id="birth">
         </div>
         <div class="formGroup">
             <label for="nick">性别</label>
-            <span class="radioInput">男<input  name="sex" type="radio" value="true" <s:property value="#user.gender==true?'checked':''"/>/></span>
-            <span class="radioInput">女<input  name="sex" type="radio" value="false" <s:property value="#user.gender==false?'checked':''"/>/></span>
+            <span class="radioInput">男<input  name="gender" type="radio" value="true" <s:property value="#user.gender==true?'checked':''"/>/></span>
+            <span class="radioInput">女<input  name="gender" type="radio" value="false" <s:property value="#user.gender==false?'checked':''"/>/></span>
         </div>
         <div class="formGroup">
             <label for="nick">所在城市</label>
             <div class="selectInput">
                 <s:if test="#user.district==null">
-                    <select name="province" id="province">
+                    <select name="provinceId" id="province">
                         <option value="none">请选择省份</option>
                     </select>
-                    <select name="city" id="city">
+                    <select name="cityId" id="city">
                         <option value="none">请选择城市</option>
                     </select>
-                    <select name="district" id="district">
+                    <select name="districtId" id="district">
                         <option value="none">请选择县区</option>
                     </select>
                 </s:if>
                 <s:else>
-                    <select name="province" id="province">
-                        <option value="<s:property value="#user.district.city.province.name"/>"><s:property value="#user.district.city.province.name"/></option>
+                    <select name="provinceId" id="province">
+                        <option value="<s:property value="#user.district.city.province.id"/>"><s:property value="#user.district.city.province.name"/></option>
                     </select>
-                    <select name="city" id="city">
-                        <option value="<s:property value="#user.district.city.name"/>"><s:property value="#user.district.city.name"/></option>
+                    <select name="cityId" id="city">
+                        <option value="<s:property value="#user.district.city.id"/>"><s:property value="#user.district.city.name"/></option>
                     </select>
-                    <select name="district" id="district">
-                        <option value="<s:property value="#user.district.name"/>"><s:property value="#user.district.name"/></option>
+                    <select name="districtId" id="district">
+                        <option value="<s:property value="#user.district.id"/>"><s:property value="#user.district.name"/></option>
                     </select>
                 </s:else>
 
@@ -89,7 +89,7 @@
         </div>
         <div class="formGroup">
             <label for="nick">个性签名</label>
-            <textarea  name="aboutMe"  class="textareaInput" rows="5" cols="43"><s:property value="signature==null?'这位童鞋很懒，什么也没有留下～～！':signature"/></textarea>
+            <textarea  name="signature"  class="textareaInput" rows="5" cols="43"><s:property value="signature==null?'这位童鞋很懒，什么也没有留下～～！':signature"/></textarea>
         </div>
             <a id="submitBtn" href="javascript:">保存</a>
         </form>

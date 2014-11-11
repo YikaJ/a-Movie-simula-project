@@ -112,7 +112,7 @@ define(["jquery", "window", "common"], function($,w){
     $("#submitBtn").click(function(){
         var birth = $year.val() + "-" + $month.val() + "-" + $date.val();
         $("#birth").val(birth);
-        $.post("use/info.do", $("#updateInfo").serialize(), function(data){
+        $.post("/user/updateUserInfo.do", $("#updateInfo").serialize(), function(data){
             if(data.response){
                 new w.Window().alert({
                     box: $(window),

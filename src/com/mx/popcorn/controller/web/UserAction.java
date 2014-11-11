@@ -227,8 +227,8 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
     }
 
     @Action(value = "updateUserInfo",
-            results = {@Result(name = SUCCESS, type = JSON, params = {"root", "json"}),
-                                @Result(name = ERROR, type = JSON, params =  {"root", "json"})},
+            results = {@Result(name = SUCCESS, type = JSON, params = {"root", "jsonMap"}),
+                                @Result(name = ERROR, type = JSON, params =  {"root", "jsonMap"})},
             interceptorRefs = {@InterceptorRef("userPrivilegeInterceptorStack")})
     public String updateUserInfo(){
         try{
