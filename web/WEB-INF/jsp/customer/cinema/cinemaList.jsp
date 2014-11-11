@@ -24,9 +24,9 @@
                 <ul class="cinemaTab clearfix">
                     <li class="clearfix">
                         <div class="chooseTitle">选择区域</div>
-                        <a href="?" class="activeChoose">全部</a>
+                        <a href="?" class="<s:property value="#districtId==null?'activeChoose':''"/>">全部</a>
                         <s:iterator value="#districts">
-                            <a href="?districtId=<s:property value="id"/>"><s:property value="name"/>(<s:property value="cinemas.size"/>)</a>
+                            <a href="?districtId=<s:property value="id"/>"  class="<s:property value="#districtId==id?'activeChoose':''"/>"><s:property value="name"/>(<s:property value="cinemas.size"/>)</a>
                         </s:iterator>
                     </li>
                 </ul>
@@ -34,11 +34,11 @@
                 <ul class="cinemaList">
                     <s:iterator value="#cinemas.recordList">
                         <li>
-                            <a href="../../../../jsp/cinemaInformation.jsp"><img class="cinemaImg" src="../../../../image/cinemaSmallImg.jpg"></a>
+                            <s:url action="cinemaInfo" namespace="/cinema" var="cinemaInfoURL">
+                                <s:param name="cinemaId" value="id"/>
+                            </s:url>
+                            <a href="<s:property value="#cinemaInfoURL"/>"><img class="cinemaImg" src="../../../../image/cinemaSmallImg.jpg"></a>
                             <div class="cinemaInformation">
-                                <s:a action="cinemaInfo" namespace="/cinema" var="cinemaInfoURL">
-                                    <s:param name="cinemaId" value="id"/>
-                                </s:a>
                                 <h4><a href="<s:property value="#cinemaInfoURL"/>"><s:property value="name"/></a></h4>
                                 <p><span>地址：</span><s:property value="address"/> </p>
                                 <p><span>更多：</span><a href="#">影院简介</a></p>

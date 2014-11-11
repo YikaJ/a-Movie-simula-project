@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -17,20 +18,21 @@
 <div class="cinemaInformation clearfix">
     <div class="content">
         <h3 class="cinemaTitle">
-            湛江金影电影城
+            <s:property value="#cinema.name"/>
             <span class="rating">8.0</span>
         </h3>
         <img src="${pageContext.request.contextPath}/image/cinema.jpg" class="poster">
         <ul class="cinemaDetail">
-            <li>详细地址：湛江市赤坎区跃进路36号爱华广场五楼</li>
-            <li>联系电话：0759-3618688 </li>
+            <li>详细地址：<s:property value="#cinema.address"/></li>
+            <li>联系电话：<s:property value="#cinema.telephone"/></li>
             <li>更多信息： <a href="#"> 交通信息</a></li>
         </ul>
     </div>
 </div>
 <%--过渡--%>
 <div class="content hr">
-    <span class="directory"><a href="../home/index.jsp">首页</a> > <a href="movieInformation.jsp">影院</a> > <a>湛江金影电影城</a> </span>
+    <span class="directory"><a href="${pageContext.request.contextPath}">首页</a> >
+        <a href="${pageContext.request.contextPath}/cinema/cinemaInfo.do?cinemaId=<s:property value="#cinema.id"/> ">影院</a> > <a><s:property value="#cinema.name"/> </a> </span>
     <span class="smallTips">3步轻松购票: 1.购票/买券 -> 2.收电子码 -> 3.影院取票</span>
 </div>
 <%--买票框--%>
@@ -47,36 +49,34 @@
                 <ul class="chooseMovieTab">
                     <li class="clearfix">
                         <div class="chooseTitle">选择影片</div>
-                        <a href="javascript:" class="activeChoose">超体</a>
-                        <a href="javascript:">银河护卫队</a>
-                        <a href="javascript:">宙斯之子：赫拉克勒斯</a>
-                        <a href="javascript:">不能说的夏天</a>
-                        <a href="javascript:">移动迷宫</a>
-                        <a href="javascript:">忍者神龟：变种时代</a>
-                        <a href="javascript:">一个人的武林</a>
+                        <s:iterator value="#movies">
+                            <a href="?movieId=<s:property value="id"/>&dayType=<s:property value="dayType"/>&cinemaId=<s:property value="#cinema.id"/>" class="<s:property value="id==#movie.id?'activeChoose':''"/>"><s:property value="name"/></a>
+                        </s:iterator>
                     <li class="clearfix">
                         <div class="chooseTitle">选择时间</div>
-                        <a href="javascript:" class="activeChoose"> 10月30日（今天）</a>
-                        <a href="javascript:">10月31日</a>
+                        <a href="?movieId=<s:property value="#movie.id"/>&dayType=0&cinemaId=<s:property value="#cinema.id"/>" class="<s:property value="#dayType==0?'activeChoose':''"/>">
+                            <s:date name="today" format="MM"/>月<s:date name="today" format="dd"/>日（今天）</a>
+                        <a href="?movieId=<s:property value="#movie.id"/>&dayType=1&cinemaId=<s:property value="#cinema.id"/>" class="<s:property value="#dayType==1?'activeChoose':''"/>">
+                            <s:date name="tom" format="MM"/>月<s:date name="tom" format="dd"/>日</a>
                     </li>
                 </ul>
                 <div class="ajax-buyTicket">
                     <div class="movieContent clearfix">
-                        <img src="../image/movieInformation1.jpg">
+                        <img src="<s:property value="#movie.poster"/>">
                         <div class="movieInformation">
                             <h3 class="movieTitle">
-                                <a class="moreDetail fr" href="../WEB-INF/jsp/customer/movie/movieInformation.jsp">查看影片详情 ></a>
-                                <a href="../WEB-INF/jsp/customer/movie/movieInformation.jsp" class="movieName">超体</a>
+                                <a class="moreDetail fr" href="${pageContext.request.contextPath}/movie/showMovieInfo.do?movieId=<s:property value="#movie.id"/>">查看影片详情 ></a>
+                                <a href="${pageContext.request.contextPath}/movie/showMovieInfo.do?movieId=<s:property value="#movie.id"/>" class="movieName"><s:property value="#movie.name"/> </a>
                                 <span class="rating">7.8</span>
 
                             </h3>
                             <ul>
-                                <li>看点：失忆男孩揭开真相破解迷宫密码</li>
-                                <li>导演：吕克·贝松</li>
-                                <li>主演：斯嘉丽·约翰逊,摩根·弗里曼,安娜丽·提普顿,阿马尔·维克德,崔岷植 ,乔汗·菲利普·阿斯巴克,李淳</li>
-                                <li>类型：3D,IMAX,普通</li>
-                                <li>语言：英语|法语</li>
-                                <li>片长：90分钟</li>
+                                <li>导演：<s:property value="#movie.director"/> </li>
+                                <li>主演：<s:property value="#movie.mainRole"/></li>
+                                <li>版本：<s:iterator value="#movie.movieVersions"><s:property value="name"/>&nbsp;</s:iterator> </li>
+                                <li>类型：<s:iterator value="#movie.movieTypes"><s:property value="name"/>&nbsp;</s:iterator> </li>
+                                <li>语言：<s:property value="#movie.language"/></li>
+                                <li>片长：<s:property value="#movie.filmTime"/>分钟</li>
                             </ul>
                         </div>
                     </div>
@@ -92,86 +92,23 @@
                             </tr>
                         </thead>
                         <tbody>
-                                <tr>
-                                    <td class="thead-time">
-                                        <em>20:40</em>
-                                        <p>预计22：33离场</p>
-                                    </td>
-                                    <td class="thead-language">英语</td>
-                                    <td class="thead-type">2D</td>
-                                    <td class="thead-hall">6号厅</td>
-                                    <td class="thead-price">
-                                        ￥27.00
-                                        <span class="originPrice">￥35.00</span>
-                                    </td>
-                                    <td class="thead-buy">
-                                        <a href="#" class="buyTicketBtn">立即购票</a>
-                                    </td>
-                                </tr>
-                                <tr class="tdBgColor">
-                                    <td class="thead-time">
-                                        <em>20:40</em>
-                                        <p>预计22：33离场</p>
-                                    </td>
-                                    <td class="thead-language">英语</td>
-                                    <td class="thead-type">2D</td>
-                                    <td class="thead-hall">6号厅</td>
-                                    <td class="thead-price">
-                                        ￥27.00
-                                        <span class="originPrice">￥35.00</span>
-                                    </td>
-                                    <td class="thead-buy">
-                                        <a href="#" class="buyTicketBtn">立即购票</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="thead-time">
-                                        <em>20:40</em>
-                                        <p>预计22：33离场</p>
-                                    </td>
-                                    <td class="thead-language">英语</td>
-                                    <td class="thead-type">2D</td>
-                                    <td class="thead-hall">6号厅</td>
-                                    <td class="thead-price">
-                                        ￥27.00
-                                        <span class="originPrice">￥35.00</span>
-                                    </td>
-                                    <td class="thead-buy">
-                                        <a href="#" class="buyTicketBtn">立即购票</a>
-                                    </td>
-                                </tr>
-                                <tr class="tdBgColor">
-                                    <td class="thead-time">
-                                        <em>20:40</em>
-                                        <p>预计22：33离场</p>
-                                    </td>
-                                    <td class="thead-language">英语</td>
-                                    <td class="thead-type">2D</td>
-                                    <td class="thead-hall">6号厅</td>
-                                    <td class="thead-price">
-                                        ￥27.00
-                                        <span class="originPrice">￥35.00</span>
-                                    </td>
-                                    <td class="thead-buy">
-                                        <a href="#" class="buyTicketBtn">立即购票</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="thead-time">
-                                        <em>20:40</em>
-                                        <p>预计22：33离场</p>
-                                    </td>
-                                    <td class="thead-language">英语</td>
-                                    <td class="thead-type">2D</td>
-                                    <td class="thead-hall">6号厅</td>
-                                    <td class="thead-price">
-                                        ￥27.00
-                                        <span class="originPrice">￥35.00</span>
-                                    </td>
-                                    <td class="thead-buy">
-                                        <a href="#" class="buyTicketBtn">立即购票</a>
-                                    </td>
-                                </tr>
+                        <s:iterator value="#movie.schedules" status="var">
+                            <tr class="<s:property value="#var.index/2==0?'tdBgColor':''"/>">
+                                <td class="thead-time">
+                                    <em><s:property value="time"/> </em>
+                                </td>
+                                <td class="thead-language"><s:property value="#movie.language"/></td>
+                                <td class="thead-type"><s:iterator value="#movie.movieVersions"><s:property value="name"/>&nbsp;</s:iterator></td>
+                                <td class="thead-hall"><s:property value="hall.number"/>号厅</td>
+                                <td class="thead-price">
+                                    ￥<s:property value="price"/>
+                                </td>
+                                <td class="thead-buy">
+                                    <a href="#" class="buyTicketBtn">立即购票</a>
+                                </td>
+                            </tr>
+                        </s:iterator>
+
                         </tbody>
                     </table>
                 </div>

@@ -29,4 +29,11 @@ public class CinemaDaoImp extends DaoSupportImp<Cinema>  implements CinemaDao {
                 .uniqueResult();
         return new Page(pageNum, pageSize, count.intValue(), list);
     }
+
+    @Override
+    public List findInCitySimple(int pageNum, City city) {
+        return getSession().createQuery("from Cinema where districtId in (select id from District  where cityId = ?)")
+                .setLong(0, city.getId())
+                .list();
+    }
 }

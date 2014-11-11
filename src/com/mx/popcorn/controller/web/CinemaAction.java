@@ -1,10 +1,7 @@
 package com.mx.popcorn.controller.web;
 
 import com.mx.popcorn.base.ModelDrivenBaseAction;
-import com.mx.popcorn.domain.Cinema;
-import com.mx.popcorn.domain.City;
-import com.mx.popcorn.domain.District;
-import com.mx.popcorn.domain.Province;
+import com.mx.popcorn.domain.*;
 import com.mx.popcorn.utils.TextTools;
 import com.mx.popcorn.utils.WebUtils;
 import org.apache.struts2.convention.annotation.*;
@@ -13,6 +10,7 @@ import org.springframework.stereotype.Controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Administrator on 2014-10-28.
@@ -32,6 +30,7 @@ public class CinemaAction extends ModelDrivenBaseAction<Cinema>{
     private Long provinceId;
     private Long cityId;
     private Long districtId;
+    private Long movieId;
 
     /**
      * 影院主页，影院列表
@@ -47,6 +46,7 @@ public class CinemaAction extends ModelDrivenBaseAction<Cinema>{
                     ? cinemaService.getAllCinemaOfCity(pageNum, city)
                     : cinemaService.getAllCinemaOfDistrict(pageNum,spaceService.getDistrictById(districtId)));
             getActionContext().put("districts", spaceService.getAllDistrictByCity(city));
+            getActionContext().put("districtId", districtId);
             return SUCCESS;
         }catch (Exception e){
             e.printStackTrace();
@@ -178,7 +178,26 @@ public class CinemaAction extends ModelDrivenBaseAction<Cinema>{
             Cinema cinema = cinemaService.getCinemaById(cinemaId);
             if (cinema == null)
                 return FIND_FAILURE;
+            Date today = WebUtils.getSpecialFormToDate(new Date());
             getActionContext().put("cinema", cinema);
+            getActionContext().put("today", today);
+            getActionContext().put("dayType", dayType);
+            getActionContext().put("tom", WebUtils.getSpecialTime(today, 1));
+            List<Movie> movies = movieService.getMoviesForCinemaSchedule(cinema, dayType == TOMORROW ? WebUtils.getSpecialTime(today, 1) : today);
+            if (movies != null && movies.size()>0){
+                if (movieId == null){
+                    getActionContext().put("movie",  movies.get(0));
+                }else {
+                    int count = 0;
+                    for (Movie movie : movies){
+                        if (movie.getId().intValue()==movieId.intValue())
+                            break;
+                        count++;
+                    }
+                    getActionContext().put("movie", count<movies.size() ? movies.get(count) : movies.get(0));
+                }
+                getActionContext().put("movies", movies);
+            }
             return SUCCESS;
         }catch (Exception e){
             e.printStackTrace();
@@ -186,6 +205,10 @@ public class CinemaAction extends ModelDrivenBaseAction<Cinema>{
         }
     }
 
+
+    public void setMovieId(Long movieId) {
+        this.movieId = movieId;
+    }
 
     public void setProvinceId(Long provinceId) {
         this.provinceId = provinceId;

@@ -2,6 +2,7 @@ package com.mx.popcorn.service;
 
 import com.mx.popcorn.domain.*;
 
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -22,4 +23,6 @@ public interface CinemaService extends BaseService{
     Page getAllCinemaOfDistrict(int pageNum, District district);
 
     Page getAllCinemaOfCity(int pageNum, City city);
+
+    List getAllCinemaOfCityNotPage(int pageNum, City city);
 }

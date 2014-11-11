@@ -1,7 +1,9 @@
 package com.mx.popcorn.controller.android;
 
 import com.mx.popcorn.base.ModelDrivenBaseAction;
+import com.mx.popcorn.domain.City;
 import com.mx.popcorn.domain.Movie;
+import com.mx.popcorn.utils.TextTools;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
@@ -18,6 +20,9 @@ import org.springframework.stereotype.Controller;
 @Namespace("/app/movie")
 public class MovieAppAction extends ModelDrivenBaseAction<Movie> {
 
+
+    private String space;
+
     @Action(value = "index",
             results = {@Result(name = SUCCESS, type = JSON, params ={"root", "jsonMap"})})
     public String index(){
@@ -33,4 +38,33 @@ public class MovieAppAction extends ModelDrivenBaseAction<Movie> {
         }
     }
 
+    @Action(value = "showCinemaList",
+            results = {@Result(name = SUCCESS, type = JSON, params ={"root", "jsonMap"}),
+                                @Result(name = FAILURE, type = JSON, params ={"root", "jsonMap"})})
+    public String showCinemaList(){
+        try{
+            if (TextTools.isEmpty(space)){
+                jsonMap.put(JSON_STATUS_HEADER, false);
+                return FIND_FAILURE;
+            }
+            System.out.println(space);
+            City city = spaceService.getCityByName(space);
+            if (city==null){
+                jsonMap.put(JSON_STATUS_HEADER, false);
+                return FAILURE;
+            }
+            jsonMap.put("cinemas", cinemaService.getAllCinemaOfCityNotPage(pageNum, city));
+            jsonMap.put(JSON_STATUS_HEADER, true);
+            return SUCCESS;
+        }catch (Exception e){
+            e.printStackTrace();
+            jsonMap.put(JSON_STATUS_HEADER, ERROR);
+            return ERROR;
+        }
+    }
+
+
+    public void setSpace(String space) {
+        this.space = space;
+    }
 }
