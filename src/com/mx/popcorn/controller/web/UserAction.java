@@ -6,6 +6,7 @@ import com.mx.popcorn.domain.User;
 import com.mx.popcorn.utils.TextTools;
 import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.convention.annotation.*;
+import org.omg.PortableServer.REQUEST_PROCESSING_POLICY_ID;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import sun.misc.BASE64Encoder;
@@ -205,17 +206,19 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
     }
 
     @Action(value = "changePassword",
-            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/customer/user/info/success.jsp")},
+            results = {@Result(name = SUCCESS, type = JSON, params = {"root", "jsonMap"}),
+            @Result(name = INPUT,  type = JSON, params = {"root", "jsonMap"})},
             interceptorRefs = {@InterceptorRef("userPrivilegeInterceptorStack")})
     public String changePassword(){
         try{
             if (!model.getPassword().trim().equals(getCurrentUser().getPassword())){
-                addFieldError("password", "密码不正确");
+                jsonMap.put("msg", "密码不正确");
+                jsonMap.put(JSON_STATUS_HEADER, false);
                 return INPUT;
             }
-            model.setPassword(newPassword);
-            User user = userService.updatePassword(model);
+            User user = userService.updatePassword(getCurrentUser(), newPassword);
             getSession().setAttribute(USER_SESSION, user);
+            jsonMap.put(JSON_STATUS_HEADER, true);
             return SUCCESS;
         }catch (Exception e){
             e.printStackTrace();
@@ -238,6 +241,12 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
             e.printStackTrace();
             return ERROR;
         }
+    }
+
+    @Action(value = "updatePwSuccess",
+            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/customer/user/info/success.jsp")})
+    public String updatePwSuccess(){
+        return SUCCESS;
     }
 
 

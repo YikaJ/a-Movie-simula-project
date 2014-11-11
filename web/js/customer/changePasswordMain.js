@@ -13,7 +13,7 @@ define(["jquery", "common", "validate", "jquery.md5"], function($){
     //修改密码验证
     $("#changePassword").validate({
         rules: {
-            password: {
+            originPasswordInput: {
                 required: true,
                 minlength: 6
             },
@@ -28,7 +28,7 @@ define(["jquery", "common", "validate", "jquery.md5"], function($){
             }
         },
         messages: {
-            password: {
+            originPasswordInput: {
                 required: "密码不能为空",
                 minlength: "密码不得小于6位"
             },
@@ -65,14 +65,14 @@ define(["jquery", "common", "validate", "jquery.md5"], function($){
             $newPassword.val($.md5($newPasswordInput.val()));
             //Ajax上传
             console.log("done");
-            $.post( "/use/changePassword.do", $(form).serialize(), function(data){
+            $.post( "/user/changePassword.do?time="+new Date().getTime(), $(form).serialize(), function(data){
                 if(data.response){
-                    alert(data.msg);
+                    window.location.href = "/user/updatePwSuccess.do";
                 }else{
                     alert("done");
-                    $("$originPasswordInput").val("").removeAttr("disabled");
-                    $("$newPasswordInput").val("").removeAttr("disabled");
-                    $("$newPasswordInput2").val("").removeAttr("disabled");
+                    $originPasswordInput.val("").removeAttr("disabled");
+                    $newPasswordInput.val("").removeAttr("disabled");
+                    $newPasswordInput2.val("").removeAttr("disabled");
                     $("#dataResponse").text(data.msg.text).css("color", "red");
                     $("submitBtn").val("保存");
                 }

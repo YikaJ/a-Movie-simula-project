@@ -22,9 +22,10 @@
         <div class="changePasswordForm">
             <p  id="dataResponse"></p>
             <form action="#" method="post" id="changePassword">
+                <s:fielderror/>
                 <div class="formGroup">
                     <label for="originPasswordInput">当前密码</label>
-                    <input id="originPasswordInput" name="password" type="password" placeholder="请输入当前密码" class="passwordInput"/>
+                    <input id="originPasswordInput"  name="originPasswordInput" type="password" placeholder="请输入当前密码" class="passwordInput"/>
                     <span class="errorInput"></span>
                 </div>
                 <div class="formGroup">
@@ -38,7 +39,7 @@
                     <span class="errorInput"></span>
                 </div>
                 <input id="submitBtn" class="submitBtn" href="javascript:" value="保存" type="submit">
-                <input id="originPassword" name="originPassword" type="hidden"/>
+                <input id="originPassword" name="password" type="hidden"/>
                 <input id="newPassword" name="newPassword" type="hidden"/>
             </form>
         </div>

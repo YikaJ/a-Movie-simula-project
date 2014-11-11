@@ -25,5 +25,5 @@ public interface UserService extends BaseService {
 
     User updateUserInfo(User model);
 
-    User updatePassword(User model);
+    User updatePassword(User user, String password);
 }
