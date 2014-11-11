@@ -234,6 +234,7 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
             if (provinceId != null || cityId != null || districtId != null){
                 model.setDistrict(spaceService.getDistrictById(districtId));
             }
+            model.setId(getCurrentUser().getId());
             User user = userService.updateUserInfo(model);
             getSession().setAttribute(USER_SESSION, user);
             return SUCCESS;
