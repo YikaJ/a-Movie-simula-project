@@ -227,7 +227,8 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
     }
 
     @Action(value = "updateUserInfo",
-            results = {@Result(name = SUCCESS, type = REDIRECT_ACTION, params = {"actionName", "userInfo"})},
+            results = {@Result(name = SUCCESS, type = JSON, params = {"root", "json"}),
+                                @Result(name = ERROR, type = JSON, params =  {"root", "json"})},
             interceptorRefs = {@InterceptorRef("userPrivilegeInterceptorStack")})
     public String updateUserInfo(){
         try{
@@ -237,9 +238,11 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
             model.setId(getCurrentUser().getId());
             User user = userService.updateUserInfo(model);
             getSession().setAttribute(USER_SESSION, user);
+            jsonMap.put(JSON_STATUS_HEADER, true);
             return SUCCESS;
         }catch (Exception e){
             e.printStackTrace();
+            jsonMap.put(JSON_STATUS_HEADER, ERROR);
             return ERROR;
         }
     }

@@ -128,6 +128,26 @@ public class QueryHelper {
     }
 
     /**
+     * 条件拼接set子句
+     * @param condition
+     * @param propertyName
+     * @param param
+     * @return
+     */
+    public QueryHelper addSetClause(boolean condition, String propertyName, Object param){
+        if (!condition)
+            return this;
+        else if (setClause.equals("")){
+            setClause = " SET " + propertyName + " =? ";
+        }else{
+            setClause += ", " + propertyName + " =? ";
+        }
+        if (param!=null)
+            params.add(param);
+        return this;
+    }
+
+    /**
      * 获得查询总记录的HQL语句（没有order by）
      * @return
      */

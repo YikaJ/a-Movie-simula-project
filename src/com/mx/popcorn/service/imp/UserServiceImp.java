@@ -3,6 +3,7 @@ package com.mx.popcorn.service.imp;
 import com.mx.popcorn.domain.User;
 import com.mx.popcorn.service.UserService;
 import com.mx.popcorn.utils.QueryHelper;
+import com.mx.popcorn.utils.TextTools;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -78,10 +79,10 @@ public class UserServiceImp extends BaseServiceImp implements UserService {
     @Override
     public User updateUserInfo(User model) {
         QueryHelper helper = new QueryHelper(User.class, QueryHelper.UPDATE, "u")
-                .addSetClause("birthday", model.getBirthday())
+                .addSetClause(model.getBirthday()!=null ,"birthday", model.getBirthday())
                 .addSetClause("gender", model.getGender())
-                .addSetClause("districtId", model.getDistrict().getId())
-                .addSetClause("signature", model.getSignature())
+                .addSetClause(model.getDistrict() != null, "districtId", model.getDistrict().getId())
+                .addSetClause(!TextTools.isEmpty(model.getSignature()), "signature", model.getSignature())
                 .addWhereClause("id", model.getId());
         userDao.update(helper);
         QueryHelper helper2 = new QueryHelper(User.class, "u")
