@@ -1,9 +1,7 @@
 package com.mx.popcorn.service.imp;
 
 import com.mx.popcorn.configuration.Configuration;
-import com.mx.popcorn.domain.Cinema;
-import com.mx.popcorn.domain.Hall;
-import com.mx.popcorn.domain.Page;
+import com.mx.popcorn.domain.*;
 import com.mx.popcorn.service.CinemaService;
 import com.mx.popcorn.utils.QueryHelper;
 import org.springframework.stereotype.Service;
@@ -45,10 +43,27 @@ public class CinemaServiceImp extends BaseServiceImp implements CinemaService{
         return cinemaDao.getById(cinemaId);
     }
 
+    @Deprecated
     @Override
     public Page getAllCinema(int pageNum) {
         QueryHelper helper = new QueryHelper(Cinema.class, "c");
         return cinemaDao.getPage(pageNum, helper, Configuration.getCinemaNum());
+    }
+
+    @Override
+    public Page getAllCinemaOfDistrict(int pageNum, District district) {
+        if (district == null)
+            return null;
+        QueryHelper helper = new QueryHelper(Cinema.class, "c")
+                .addWhereClause("districtId", district.getId());
+        return cinemaDao.getPage(pageNum, helper, Configuration.getCinemaNum());
+    }
+
+    @Override
+    public Page getAllCinemaOfCity(int pageNum, City city) {
+        if (city == null)
+        return null;
+        return cinemaDao.findInCity(pageNum, city, Configuration.getCinemaNum());
     }
 
 }

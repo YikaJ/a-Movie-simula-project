@@ -24,6 +24,7 @@ public class MovieAppAction extends ModelDrivenBaseAction<Movie> {
         try{
             System.out.println("-------------------------movie app index------------------------------");
             jsonMap.put("movies", movieService.getAppIndexMovie(pageNum));
+            jsonMap.put(JSON_STATUS_HEADER, true);
             return SUCCESS;
         }catch (Exception e){
             e.printStackTrace();

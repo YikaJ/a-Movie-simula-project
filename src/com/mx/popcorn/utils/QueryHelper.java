@@ -60,6 +60,27 @@ public class QueryHelper {
     }
 
     /**
+     * 条件拼接where子句
+     * @param condition
+     * @param propertyName
+     * @param param
+     * @return
+     */
+    public QueryHelper addWhereClause(boolean condition, String propertyName, Object param){
+        if (!condition)
+            return this;
+        else if (whereClause.equals("")){
+            whereClause = " WHERE " + propertyName + " =? ";
+        }else {
+            whereClause += " AND " + propertyName + " =? ";
+        }
+        if (param != null){
+            params.add(param);
+        }
+        return this;
+    }
+
+    /**
      * 拼接between子句
      * @param propertyName
      * @param param1

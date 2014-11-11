@@ -58,13 +58,13 @@
                 </div>
                 <div class="form-group" style="color: #666">
                     <p>影院所在城市</p>
-                    <select name="province" id="province" class="selectInput">
+                    <select name="provinceId" id="province" class="selectInput">
                         <option value="none">请选择省份</option>
                     </select>
-                    <select name="city" id="city" class="selectInput">
+                    <select name="cityId" id="city" class="selectInput">
                         <option value="none">请选择城市</option>
                     </select>
-                    <select name="district" id="district" class="selectInput">
+                    <select name="districtId" id="district" class="selectInput">
                         <option value="none">请选择县区</option>
                     </select>
                 </div>

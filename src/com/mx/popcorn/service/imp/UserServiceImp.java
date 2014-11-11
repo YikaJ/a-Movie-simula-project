@@ -68,7 +68,7 @@ public class UserServiceImp extends BaseServiceImp implements UserService {
         userDao.update(helper);
         QueryHelper helper2 = new QueryHelper(User.class, "u")
                 .addWhereClause("id", user.getId());
-        return (User) userDao.find(helper2, false);
+        return (User) userDao.findUnique(helper2, false);
     }
 
     @Override
@@ -87,7 +87,7 @@ public class UserServiceImp extends BaseServiceImp implements UserService {
         userDao.update(helper);
         QueryHelper helper2 = new QueryHelper(User.class, "u")
                 .addWhereClause("id", model.getId());
-        return (User) userDao.find(helper2, false);
+        return (User) userDao.findUnique(helper2, false);
     }
 
     @Override
@@ -98,6 +98,6 @@ public class UserServiceImp extends BaseServiceImp implements UserService {
         userDao.update(helper);
         QueryHelper helper2 = new QueryHelper(User.class, "u")
                 .addWhereClause("id", user.getId());
-        return (User) userDao.find(helper2, false);
+        return (User) userDao.findUnique(helper2, false);
     }
 }

@@ -41,8 +41,12 @@ public class CinemaAction extends ModelDrivenBaseAction<Cinema>{
             results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/customer/cinema/cinemaList.jsp")})
     public String index(){
         try {
+            City city = (City) getSession().getAttribute(SPACE_SESSION);
             getActionContext().put("movies", movieService.getHotMovieFormCinemaIndex(pageNum));
-            getActionContext().put("cinemas", cinemaService.getAllCinema(pageNum));
+            getActionContext().put("cinemas", districtId==null
+                    ? cinemaService.getAllCinemaOfCity(pageNum, city)
+                    : cinemaService.getAllCinemaOfDistrict(pageNum,spaceService.getDistrictById(districtId)));
+            getActionContext().put("districts", spaceService.getAllDistrictByCity(city));
             return SUCCESS;
         }catch (Exception e){
             e.printStackTrace();
@@ -81,7 +85,7 @@ public class CinemaAction extends ModelDrivenBaseAction<Cinema>{
 
     @Action(value = "/cinema/manage/register",
             results = {@Result(name = SUCCESS, type = "redirectAction", params={"actionName", "loginUI"}),
-                                @Result(name = INPUT, location = "/WEB-INF/jsp/cinema/home/register.jsp")})
+                                @Result(name = INPUT, type = REDIRECT_ACTION, params = {"actionName", "registerUI", "namespace", "/cinema/manage"})})
     public String register(){
         try {
             if (cinemaService.isEmailExist(model.getEmail())){

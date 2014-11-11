@@ -70,6 +70,8 @@ public class SpaceServiceImp extends BaseServiceImp implements SpaceService {
 
     @Override
     public List getAllDistrictByCity(City city) {
+        if (city==null)
+            return null;
         QueryHelper helper = new QueryHelper(District.class, "c")
                 .addWhereClause("cityId", city.getId());
         return districtDao.find(helper, true);

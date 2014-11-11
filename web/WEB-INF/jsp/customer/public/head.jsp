@@ -24,7 +24,7 @@
     </div>
     <div class="content">
         <div class="logo">
-            <a href="${pageContext.request.contextPath}/">想映电影院 <s:property value="#session.currentSpace.name"/></a>
+            <a href="${pageContext.request.contextPath}/">想映电影院</a>
         </div>
         <div id="mapLocation">
             <span></span>

@@ -1,8 +1,6 @@
 package com.mx.popcorn.service;
 
-import com.mx.popcorn.domain.Cinema;
-import com.mx.popcorn.domain.Hall;
-import com.mx.popcorn.domain.Page;
+import com.mx.popcorn.domain.*;
 
 import java.util.Set;
 
@@ -18,5 +16,10 @@ public interface CinemaService extends BaseService{
 
     Cinema getCinemaById(Long cinemaId);
 
+    @Deprecated
     Page getAllCinema(int pageNum);
+
+    Page getAllCinemaOfDistrict(int pageNum, District district);
+
+    Page getAllCinemaOfCity(int pageNum, City city);
 }

@@ -24,11 +24,10 @@
                 <ul class="cinemaTab clearfix">
                     <li class="clearfix">
                         <div class="chooseTitle">选择区域</div>
-                        <a href="javascript:" class="activeChoose">全部</a>
-                        <a href="javascript:">霞山区(3)</a>
-                        <a href="javascript:">赤坎区(2)</a>
-                        <a href="javascript:">廉江市(2)</a>
-                        <a href="javascript:">雷州市(2)</a>
+                        <a href="?" class="activeChoose">全部</a>
+                        <s:iterator value="#districts">
+                            <a href="?districtId=<s:property value="id"/>"><s:property value="name"/>(<s:property value="cinemas.size"/>)</a>
+                        </s:iterator>
                     </li>
                 </ul>
                 <%--列表--%>
