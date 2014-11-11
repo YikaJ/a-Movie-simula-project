@@ -7,9 +7,9 @@
     <title>爆米花影院列表</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/cinemaList.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/window.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/customer/public/reset.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/customer/cinema/cinemaList.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/customer/public/window.css">
 </head>
 <body>
 <%@include file="/WEB-INF/jsp/customer/public/head.jsp"%>

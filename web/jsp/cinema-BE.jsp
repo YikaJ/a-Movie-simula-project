@@ -19,18 +19,18 @@
     </style>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" media="screen" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" media="screen" href="../css/bootstrap-theme.min.css">
+    <link rel="stylesheet" media="screen" href="../css/public/bootstrap.min.css">
+    <link rel="stylesheet" media="screen" href="../css/public/bootstrap-theme.min.css">
 
     <!-- Bootstrap Admin Theme -->
-    <link rel="stylesheet" media="screen" href="../css/bootstrap-admin-theme.css">
-    <link rel="stylesheet" media="screen" href="../css/bootstrap-admin-theme-change-size.css">
+    <link rel="stylesheet" media="screen" href="../css/public/bootstrap-admin-theme.css">
+    <link rel="stylesheet" media="screen" href="../css/public/bootstrap-admin-theme-change-size.css">
 
     <!-- Vendors -->
     <link rel="stylesheet" media="screen" href="../vendors/bootstrap-datepicker/css/datepicker.css">
-    <link rel="stylesheet" media="screen" href="../css/datepicker.fixes.css">
+    <link rel="stylesheet" media="screen" href="../css/manage/datepicker.fixes.css">
     <link rel="stylesheet" media="screen" href="../vendors/uniform/themes/default/css/uniform.default.min.css">
-    <link rel="stylesheet" media="screen" href="../css/uniform.default.fixes.css">
+    <link rel="stylesheet" media="screen" href="../css/public/uniform.default.fixes.css">
     <link rel="stylesheet" media="screen" href="../vendors/chosen.min.css">
     <link rel="stylesheet" media="screen" href="../vendors/selectize/dist/css/selectize.bootstrap3.css">
     <link rel="stylesheet" media="screen" href="../vendors/bootstrap-wysihtml5-rails-b3/vendor/assets/stylesheets/bootstrap-wysihtml5/core-b3.css">

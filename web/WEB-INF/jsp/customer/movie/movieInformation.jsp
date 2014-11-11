@@ -8,9 +8,9 @@
 <title><s:property value="#movie.name"/></title>
 <meta name="description" content="">
 <meta name="keywords" content="">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/movieInformation.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/window.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/customer/public/reset.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/customer/movie/movieInformation.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/customer/public/window.css">
 </head>
 <body>
    <%@include file="/WEB-INF/jsp/customer/public/head.jsp"%>

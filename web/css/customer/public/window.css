@@ -58,7 +58,7 @@
 		padding-left: 50px;
 		width: 80%;
         border-radius:  5px;
-        background: url("../image/register-sprite.png") no-repeat;
+        background: url("../../../image/register-sprite.png") no-repeat;
 	}
 
     .window_userInput{

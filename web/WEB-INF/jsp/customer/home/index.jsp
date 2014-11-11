@@ -5,10 +5,10 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>电影院</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/homepage.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/autoplay.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/window.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/customer/public/reset.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/customer/homepage/homepage.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/customer/homepage/autoplay.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/customer/public/window.css">
 </head>
 <body>
    <%@include file="/WEB-INF/jsp/customer/public/head.jsp"%>

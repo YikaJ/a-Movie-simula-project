@@ -9,9 +9,9 @@
 <html>
 <head>
     <title>个人设置</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/window.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/userInfo.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/customer/public/reset.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/customer/public/window.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/customer/user/userInfo.css">
 </head>
 <body>
 <%@include file="/WEB-INF/jsp/customer/public/head.jsp"%>

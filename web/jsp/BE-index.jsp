@@ -7,11 +7,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- Bootstrap -->
-        <link rel="stylesheet" media="screen" href="../css/bootstrap.min.css">
-        <link rel="stylesheet" media="screen" href="../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" media="screen" href="../css/public/bootstrap.min.css">
+        <link rel="stylesheet" media="screen" href="../css/public/bootstrap-theme.min.css">
 
         <!-- Bootstrap Admin Theme -->
-        <link rel="stylesheet" media="screen" href="../css/bootstrap-admin-theme.css">
+        <link rel="stylesheet" media="screen" href="../css/public/bootstrap-admin-theme.css">
 
         <!-- Custom styles -->
         <style type="text/css">

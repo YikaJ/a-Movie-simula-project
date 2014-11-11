@@ -9,8 +9,8 @@
 <html>
 <head>
     <title>个人设置</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/changePasswordSuccess.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/customer/public/reset.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/customer/user/changePasswordSuccess.css">
 </head>
 <body>
 <%@include file="/WEB-INF/jsp/customer/public/head.jsp"%>

@@ -9,9 +9,9 @@
 <html>
 <head>
     <title>用户头像</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/userImg.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/jquery.Jcrop.min.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/customer/public/reset.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/customer/user/userImg.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/customer/user/jquery.Jcrop.min.css">
 </head>
 <body>
 <%@include file="/WEB-INF/jsp/customer/public/head.jsp"%>

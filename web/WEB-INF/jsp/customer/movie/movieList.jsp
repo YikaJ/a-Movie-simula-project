@@ -7,9 +7,9 @@
 <title>电影院</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css">
-<link href="${pageContext.request.contextPath}/css/movieList.css" rel="stylesheet" type="text/css">
-<link href="${pageContext.request.contextPath}/css/window.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/customer/public/reset.css">
+<link href="${pageContext.request.contextPath}/css/customer/movie/movieList.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/css/customer/public/window.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <%@include file="/WEB-INF/jsp/customer/public/head.jsp"%>

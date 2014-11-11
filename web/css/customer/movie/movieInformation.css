@@ -2,7 +2,7 @@
 
 /*内容区域*/
 .movieInformation{
-    background: url(../image/backgroundImg.jpg) no-repeat center;
+    background: url(../../../image/backgroundImg.jpg) no-repeat center;
     background-size: 1000%;
     padding: 20px 0;
 }

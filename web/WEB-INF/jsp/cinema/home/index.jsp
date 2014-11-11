@@ -20,18 +20,18 @@
     </style>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/public/bootstrap.min.css">
+    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/public/bootstrap-theme.min.css">
 
     <!-- Bootstrap Admin Theme -->
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/bootstrap-admin-theme.css">
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/bootstrap-admin-theme-change-size.css">
+    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/public/bootstrap-admin-theme.css">
+    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/public/bootstrap-admin-theme-change-size.css">
 
     <!-- Vendors -->
     <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/vendors/bootstrap-datepicker/css/datepicker.css">
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/datepicker.fixes.css">
+    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/manage/datepicker.fixes.css">
     <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/vendors/uniform/themes/default/css/uniform.default.min.css">
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/uniform.default.fixes.css">
+    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/public/uniform.default.fixes.css">
     <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/vendors/chosen.min.css">
     <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/vendors/selectize/dist/css/selectize.bootstrap3.css">
     <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/vendors/bootstrap-wysihtml5-rails-b3/vendor/assets/stylesheets/bootstrap-wysihtml5/core-b3.css">
