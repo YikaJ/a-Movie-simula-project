@@ -13,11 +13,15 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
 			hasMask: true,
 			fixed: false,
 			fadeIn: false,
-			autoRemoved: false,
+			autoRemoved: 0,
 			time4Removed: 0,
 			content: "",
 			width: 500,
 			height: 300,
+            boxStyle: "",
+            headerStyle: "",
+            footerStyle: "",
+            closeBtn: true,
 			text4AlertBtn: "知道啦！",
 			text4loginUserPlaceholder: "请输入你的账号",
 			text4loginPwdPlaceholder: "请输入你的密码",
@@ -33,11 +37,9 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
 	Window.prototype = $.extend({}, new w.Widget(), {
 
 		renderUI: function(){
-			var footerContent = "";
+			this.footerContent = "";
 			switch(this.cfg.winType){
 				case "alert":
-                    footerContent = "<input type='button' class='window_alertBtn' value='"
-                        + this.cfg.text4AlertBtn + "'>";
 				break;
 
 				case "login":
@@ -74,12 +76,15 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
 					this.cfg.content + "</div></div>"
 			);
 
-			$("<div class='window_header'>" + this.cfg.title + "</div>").prependTo(this.boundingBox);
-			$("<div class='window_footer'>" + footerContent + "</div>").appendTo(this.boundingBox);
+			this.header = $("<div class='window_header'>" + this.cfg.title + "</div>").prependTo(this.boundingBox);
+			this.footer = $("<div class='window_footer'>" + this.footerContent + "</div>").appendTo(this.boundingBox);
 
 			//关闭按钮
-			this.closeBtn = $("<a href='javascript:' class='window_closeBtn'>X</a>")
-			this.closeBtn.appendTo(this.boundingBox);
+            if(this.closeBtn){
+                this.closeBtn = $("<a href='javascript:' class='window_closeBtn'>X</a>")
+                this.closeBtn.appendTo(this.boundingBox);
+            }
+
 
 			//遮罩模态组件生成
 			if(this.cfg.hasMask){
@@ -99,9 +104,12 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
                 $(this).removeClass('window_inputFocus');
             });
             /*点击关闭按钮*/
-			this.closeBtn.click(function(){
-				self.destroy();
-			});
+            if(this.cfg.closeBtn){
+                this.closeBtn.click(function(){
+                    self.destroy();
+                });
+            }
+
             /*窗口改变*/
             $(window).resize(function(){
                 self.boundingBox.css({
@@ -259,6 +267,15 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
                     })
                 break;
             }
+
+            /*定时自动关闭*/
+            if(this.cfg.autoRemoved){
+                setTimeout(function(){
+                    self.boundingBox.fadeOut(function(){
+                        self.destroy();
+                    })
+                }, this.cfg.autoRemoved)
+            }
 		},
 
 		synsUI: function(){
@@ -268,6 +285,11 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
 				left : ( this.cfg.x|| (window.innerWidth - this.cfg.width) / 2 ) + "px", //若未定义x，y坐标
 				top : ( this.cfg.y||(window.innerHeight - this.cfg.height) / 2 ) + "px"//默认居中
 			});
+            if(this.cfg.boxStyle || this.cfg.headerStyle){
+                this.boundingBox.addClass(this.cfg.boxStyle);
+                this.header.addClass(this.cfg.headerStyle);
+                this.footer.addClass(this.cfg.footerStyle)
+            }
 
 		},
 		destructor: function(){

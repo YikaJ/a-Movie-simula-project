@@ -6,6 +6,7 @@
 		left: 35%;
 		box-shadow: 0 0 15px #FFF;
 		z-index: 9999;
+        border: 1px solid #CCC;
 	}
 	.window_mask{
 		width: 100%;
@@ -155,6 +156,18 @@ a.window_toRegister:hover, a.window_forgotPwd:hover{
 }
 .window_registerOthers .window_registerService:hover{
     text-decoration: underline;
+}
+
+
+/*成功界面*/
+.successBox{
+    border: 1px solid #DDD;
+    background: #66CC66;
+}
+.successHeader{
+    color: #FFF;
+    background: #66CC66;
+    border: 1px solid #66CC66;
 }
 
 

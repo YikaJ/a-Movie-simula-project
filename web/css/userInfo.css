@@ -63,7 +63,7 @@ body,html{
     border: 1px solid #D0D6D9;
 }
 
-a.submitBtn{
+#submitBtn{
     width: 396px;
     margin-left: 134px;
     height: 40px;

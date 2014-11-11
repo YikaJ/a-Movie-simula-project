@@ -8,7 +8,7 @@ require.config({
     }
 });
 
-define(["jquery", "common"], function($){
+define(["jquery", "window", "common"], function($,w){
     /*出生年月option*/
     var $year = $("#year"),
         $month = $("#month"),
@@ -101,8 +101,34 @@ define(["jquery", "common"], function($){
                     $("<option value=" + data.data[i].id + " name=" + data.data[i].name + " >" + data.data[i].name + "</option>").appendTo($district);
                 }
             }else{
-
+                alert(data.msg);
             }
         });
     });
+
+
+    /*提交表单！*/
+    //修改生日
+    $("#submitBtn").click(function(){
+        var birth = $year.val() + "-" + $month.val() + "-" + $date.val();
+        $("#birth").val(birth);
+        $.post("use/info.do", $("#updateInfo").serialize(), function(data){
+            if(data.response){
+                new w.Window().alert({
+                    box: $(window),
+                    title: "已成功提交",
+                    hasMask: false,
+                    closeBtn: false,
+                    height: 60,
+                    width: 400,
+                    autoRemoved: 2000,
+                    boxStyle: "successBox",
+                    headerStyle: "successHeader"
+                });
+            }else{
+
+            }
+        }, "json")
+    })
+
 });

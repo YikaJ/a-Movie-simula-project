@@ -10,6 +10,7 @@
 <head>
     <title>个人设置</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/window.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/userInfo.css">
 </head>
 <body>
@@ -18,7 +19,7 @@
     <%@include file="/WEB-INF/jsp/customer/user/public/menu.jsp"%>
     <div class="rightContent fr clearfix">
         <h2>个人资料</h2>
-        <form>
+        <form id="updateInfo">
         <div class="formGroup">
             <label for="nick">昵称</label>
             <input id="nick"  type="text" disabled="disabled" class="textInput" value="<s:property value="#user.nick"/> "/>
@@ -50,13 +51,12 @@
                     </select>
                 </s:else>
             </div>
-            <span class="inputError"></span>
+            <input type="hidden" name="birth" id="birth">
         </div>
         <div class="formGroup">
             <label for="nick">性别</label>
             <span class="radioInput">男<input  name="sex" type="radio" value="true" <s:property value="#user.gender==true?'checked':''"/>/></span>
             <span class="radioInput">女<input  name="sex" type="radio" value="false" <s:property value="#user.gender==false?'checked':''"/>/></span>
-            <span class="inputError"></span>
         </div>
         <div class="formGroup">
             <label for="nick">所在城市</label>
@@ -91,7 +91,7 @@
             <label for="nick">个性签名</label>
             <textarea  name="aboutMe"  class="textareaInput" rows="5" cols="43"><s:property value="signature==null?'这位童鞋很懒，什么也没有留下～～！':signature"/></textarea>
         </div>
-            <a class="submitBtn" href="#"/>保存</a>
+            <a id="submitBtn" href="javascript:">保存</a>
         </form>
     </div>
 </div>

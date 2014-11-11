@@ -20,6 +20,7 @@
         <h2>修改密码</h2>
         <p class="prompt">密码修改<span class="success">成功</span>!</p>
         <p class="tips">请记住你的新密码哦！</p>
+        <p class="info">@爆米花影院</p>
     </div>
 </div>
 
