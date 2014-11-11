@@ -24,7 +24,7 @@
             <form action="#" method="post" id="changePassword">
                 <div class="formGroup">
                     <label for="originPasswordInput">当前密码</label>
-                    <input id="originPasswordInput" name="originPasswordInput" type="password" placeholder="请输入当前密码" class="passwordInput"/>
+                    <input id="originPasswordInput" name="password" type="password" placeholder="请输入当前密码" class="passwordInput"/>
                     <span class="errorInput"></span>
                 </div>
                 <div class="formGroup">

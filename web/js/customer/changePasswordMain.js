@@ -13,7 +13,7 @@ define(["jquery", "common", "validate", "jquery.md5"], function($){
     //修改密码验证
     $("#changePassword").validate({
         rules: {
-            originPasswordInput: {
+            password: {
                 required: true,
                 minlength: 6
             },
@@ -28,7 +28,7 @@ define(["jquery", "common", "validate", "jquery.md5"], function($){
             }
         },
         messages: {
-            originPasswordInput: {
+            password: {
                 required: "密码不能为空",
                 minlength: "密码不得小于6位"
             },
@@ -65,7 +65,7 @@ define(["jquery", "common", "validate", "jquery.md5"], function($){
             $newPassword.val($.md5($newPasswordInput.val()));
             //Ajax上传
             console.log("done");
-            $.post( "changePassword.do", $(form).serialize(), function(data){
+            $.post( "/use/changePassword.do", $(form).serialize(), function(data){
                 if(data.response){
                     alert(data.msg);
                 }else{
