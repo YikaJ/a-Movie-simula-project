@@ -166,9 +166,7 @@
             </div>
         </div>
     </div>
-    <div class="footer">
-        <div class="content"></div>
-    </div>
+    <%@include file="/WEB-INF/jsp/customer/public/footer.jsp"%>
 <script  type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=jaDcSl7r2ArKTbGYn4lGZUcQ"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/customer/require.js" data-main="${pageContext.request.contextPath}/js/customer/homepageMain.js"></script>
 
