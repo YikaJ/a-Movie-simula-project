@@ -23,12 +23,12 @@
     </style>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/public/bootstrap.min.css">
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/public/bootstrap-theme.min.css">
+    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/manage/bootstrap.min.css">
+    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/manage/bootstrap-theme.min.css">
 
     <!-- Bootstrap Admin Theme -->
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/public/bootstrap-admin-theme.css">
-    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/public/bootstrap-admin-theme-change-size.css">
+    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/manage/bootstrap-admin-theme.css">
+    <link rel="stylesheet" media="screen" href="${pageContext.request.contextPath}/css/manage/bootstrap-admin-theme-change-size.css">
 </head>
 <body class="bootstrap-admin-with-small-navbar">
 <!-- small navbar -->

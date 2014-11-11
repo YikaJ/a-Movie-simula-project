@@ -23,7 +23,7 @@
             </dl>
             <dl>
                 <dt>合作招商</dt>
-                <dd>● 影院合作</dd>
+                <dd><a href="${pageContext.request.contextPath}/cinema/manage/registerUI.do">● 影院合作</a> </dd>
                 <dd>● 关于我们</dd>
             </dl>
         </div>

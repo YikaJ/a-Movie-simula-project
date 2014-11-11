@@ -24,7 +24,7 @@
         </div>
         <div class="previewContent">
             <div id="preview">
-                <img src="<s:property value="#user.picture"/>" alt="预览"/>
+                <img src="<s:property value="#user.picture"/>" style="max-width: 150px" alt="预览"/>
             </div>
             <span class="tips"> 150*150头像 </span>
             <a href="javascript:" class="selectImg">选择图片</a>

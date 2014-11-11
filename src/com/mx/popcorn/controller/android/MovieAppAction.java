@@ -43,6 +43,7 @@ public class MovieAppAction extends ModelDrivenBaseAction<Movie> {
                                 @Result(name = FAILURE, type = JSON, params ={"root", "jsonMap"})})
     public String showCinemaList(){
         try{
+            System.out.println("-----------------show CinemaList---------------------------");
             if (TextTools.isEmpty(space)){
                 jsonMap.put(JSON_STATUS_HEADER, false);
                 return FIND_FAILURE;
