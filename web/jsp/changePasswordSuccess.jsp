@@ -13,9 +13,9 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/changePasswordSuccess.css">
 </head>
 <body>
-<%--<%@include file="/WEB-INF/jsp/customer/public/head.jsp"%>--%>
+<%@include file="/WEB-INF/jsp/customer/public/head.jsp"%>
 <div class="content  clearfix infoContent">
-<%--    <%@include file="/WEB-INF/jsp/customer/user/public/menu.jsp"%>--%>
+<%@include file="/WEB-INF/jsp/customer/user/public/menu.jsp"%>
     <div class="rightContent fr clearfix">
         <h2>修改密码</h2>
         <p class="prompt">密码修改<span class="success">成功</span>!</p>
