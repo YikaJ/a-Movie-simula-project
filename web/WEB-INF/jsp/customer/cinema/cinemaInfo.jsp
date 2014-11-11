@@ -13,8 +13,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/customer/public/window.css">
 </head>
 <body>
-<%--<%@include file="/WEB-INF/jsp/public/head.jsp"%>--%>
-<%--banner--%>
+<%@include file="/WEB-INF/jsp/customer/public/head.jsp"%>
 <div class="cinemaInformation clearfix">
     <div class="content">
         <h3 class="cinemaTitle">
@@ -120,6 +119,7 @@
 
 
 <%@include file="/WEB-INF/jsp/customer/public/footer.jsp"%>
+<script  type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=jaDcSl7r2ArKTbGYn4lGZUcQ"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/customer/require.js" data-main="${pageContext.request.contextPath}/js/customer/cinemaInformationMain.js"></script>
 </body>
 </html>

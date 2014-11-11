@@ -11,20 +11,20 @@
         <div class="footerNav clearfix">
             <dl>
                 <dt>选座购票流程</dt>
-                <dd>● 选择影片</dd>
-                <dd>● 选择影院和场次</dd>
-                <dd>● 支付并获取影票验证码</dd>
+                <dd>● <a href="javascript:">选择影片</a></dd>
+                <dd>● <a href="javascript:">选择影院和场次</a></dd>
+                <dd>● <a href="javascript:">支付并获取影票验证码</a></dd>
             </dl>
             <dl>
                 <dt>取票流程</dt>
-                <dd>● 验证码取票</dd>
-                <dd>● 自助取票</dd>
-                <dd>● 短信重发</dd>
+                <dd>● <a href="javascript:">验证码取票</a></dd>
+                <dd>● <a href="javascript:">自助取票</a></dd>
+                <dd>● <a href="javascript:">短信重发</a></dd>
             </dl>
             <dl>
                 <dt>合作招商</dt>
-                <dd><a href="${pageContext.request.contextPath}/cinema/manage/registerUI.do">● 影院合作</a> </dd>
-                <dd>● 关于我们</dd>
+                <dd>● <a href="${pageContext.request.contextPath}/cinema/manage/registerUI.do">影院合作</a></dd>
+                <dd>● <a href="javascript:">关于我们</a></dd>
             </dl>
         </div>
         <ul class="footerInfo clearfix">

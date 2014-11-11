@@ -305,7 +305,7 @@ a.activeLeftBar{
     color: #9A9A9A;
     padding: 10px 0;
 }
-.footerInfo a,span{
+.footerInfo a,.footerInfo span{
     color: #9A9A9A;
     font-size: 14px;
 }
@@ -320,6 +320,12 @@ a.activeLeftBar{
 }
 .footer dt{
     color: #f5f5f5;
+}
+.footerNav a{
+    color: #9A9A9A;
+}
+.footer a:hover{
+    color: #ea4843;
 }
 .footerNav dd{
     text-indent: 5px;
