@@ -80,7 +80,7 @@ define(["jquery", "widget", "validate", "jquery.md5"], function ($, w){
 			this.footer = $("<div class='window_footer'>" + this.footerContent + "</div>").appendTo(this.boundingBox);
 
 			//关闭按钮
-            if(this.closeBtn){
+            if(this.cfg.closeBtn){
                 this.closeBtn = $("<a href='javascript:' class='window_closeBtn'>X</a>")
                 this.closeBtn.appendTo(this.boundingBox);
             }
