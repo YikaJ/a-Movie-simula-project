@@ -150,6 +150,7 @@ a.moreDetail:hover{
 /*购票头部*/
 .ticketTable{
     width: 100%;
+    margin-bottom: 20px;
 }
 .ticketTable thead td{
     background: #EAEAEA;

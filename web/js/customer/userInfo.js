@@ -105,30 +105,32 @@ define(["jquery", "window", "common"], function($,w){
             }
         });
     });
-
-
-    /*提交表单！*/
-    //修改生日
-    $("#submitBtn").click(function(){
-        var birth = $year.val() + "-" + $month.val() + "-" + $date.val();
-        $("#birth").val(birth);
-        $.post("/user/updateUserInfo.do", $("#updateInfo").serialize(), function(data){
-            if(data.response){
-                new w.Window().alert({
-                    box: $(window),
-                    title: "已成功提交",
-                    hasMask: false,
-                    closeBtn: false,
-                    height: 60,
-                    width: 400,
-                    autoRemoved: 2000,
-                    boxStyle: "successBox",
-                    headerStyle: "successHeader"
-                });
-            }else{
-
-            }
-        }, "json")
-    })
+    var $form = $("#updateInfo");
+    /*判断是否可以提交表单*/
+    $form.change(function(){
+        $("#submitBtn").addClass("canSubmit").click(function(){
+            /*提交表单！*/
+            //修改生日
+            var birth = $year.val() + "-" + $month.val() + "-" + $date.val();
+            $("#birth").val(birth);
+            $.post("/user/updateUserInfo.do", $form.serialize(), function(data){
+                if(data.response){
+                    new w.Window().alert({
+                        box: $(window),
+                        title: "已成功提交",
+                        hasMask: false,
+                        closeBtn: false,
+                        height: 60,
+                        width: 400,
+                        autoRemoved: 2000,
+                        boxStyle: "successBox",
+                        headerStyle: "successHeader"
+                    });
+                }else{
+                    alert(data.msg);
+                }
+            }, "json");
+        });
+    });
 
 });

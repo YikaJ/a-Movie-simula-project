@@ -62,14 +62,16 @@ body,html{
     resize: none;
     border: 1px solid #D0D6D9;
 }
-
 #submitBtn{
     width: 396px;
     margin-left: 134px;
     height: 40px;
     line-height: 40px;
     display: block;
+    text-align: center;
+    background: #CCC;
+}
+#submitBtn.canSubmit{
     background: #39B94E;
     color: #FFF;
-    text-align: center;
 }

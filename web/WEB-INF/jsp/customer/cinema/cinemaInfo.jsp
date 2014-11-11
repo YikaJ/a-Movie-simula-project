@@ -119,9 +119,7 @@
 
 
 
-<div class="footer">
-    <div class="content"></div>
-</div>
+<%@include file="/WEB-INF/jsp/customer/public/footer.jsp"%>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/customer/require.js" data-main="${pageContext.request.contextPath}/js/customer/cinemaInformationMain.js"></script>
 </body>
 </html>
