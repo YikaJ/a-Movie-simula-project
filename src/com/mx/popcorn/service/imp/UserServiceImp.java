@@ -60,11 +60,12 @@ public class UserServiceImp extends BaseServiceImp implements UserService {
     }
 
     @Override
-    public void updatePicture(String picture, User user) {
+    public User updatePicture(String picture, User user) {
         QueryHelper helper = new QueryHelper(User.class,QueryHelper.UPDATE, "u")
                 .addSetClause("picture", picture)
                 .addWhereClause("id", user.getId());
         userDao.update(helper);
+        return userDao.getById(user.getId());
     }
 
     @Override
@@ -73,7 +74,7 @@ public class UserServiceImp extends BaseServiceImp implements UserService {
     }
 
     @Override
-    public void updateUserInfo(User model) {
+    public User updateUserInfo(User model) {
         QueryHelper helper = new QueryHelper(User.class, QueryHelper.UPDATE, "u")
                 .addSetClause("birthday", model.getBirthday())
                 .addSetClause("gender", model.getGender())
@@ -81,13 +82,15 @@ public class UserServiceImp extends BaseServiceImp implements UserService {
                 .addSetClause("signature", model.getSignature())
                 .addWhereClause("id", model.getId());
         userDao.update(helper);
+        return userDao.getById(model.getId());
     }
 
     @Override
-    public void updatePassword(User model) {
+    public User updatePassword(User model) {
         QueryHelper helper = new QueryHelper(User.class, QueryHelper.UPDATE, "u")
                 .addSetClause("password", model.getPassword())
                 .addWhereClause("id", model.getId());
         userDao.update(helper);
+        return userDao.getById(model.getId());
     }
 }

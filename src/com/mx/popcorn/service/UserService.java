@@ -19,11 +19,11 @@ public interface UserService extends BaseService {
 
     User findByEmail(String email);
 
-    void updatePicture(String picture, User user);
+    User updatePicture(String picture, User user);
 
     User getUserById(Long id);
 
-    void updateUserInfo(User model);
+    User updateUserInfo(User model);
 
-    void updatePassword(User model);
+    User updatePassword(User model);
 }

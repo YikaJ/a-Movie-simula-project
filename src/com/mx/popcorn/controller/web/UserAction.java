@@ -28,6 +28,7 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
     private Long provinceId;
     private Long cityId;
     private Long districtId;
+    private String newPassword;
 
 
 
@@ -159,7 +160,8 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
             interceptorRefs = {@InterceptorRef("userPrivilegeInterceptorStack")})
     public String updatePicture(){
         try{
-            userService.updatePicture(model.getPicture(), getCurrentUser());
+            User user = userService.updatePicture(model.getPicture(), getCurrentUser());
+            getSession().setAttribute(USER_SESSION, user);
             jsonMap.put("msg", model.getPicture());
             jsonMap.put(JSON_STATUS_HEADER, true);
             return SUCCESS;
@@ -203,7 +205,7 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
     }
 
     @Action(value = "changePassword",
-            results = {@Result(name = SUCCESS, type = REDIRECT_ACTION, params = {"actionName", "changePasswordUI"})},
+            results = {@Result(name = SUCCESS, location = "/WEB-INF/jsp/customer/user/info/success.jsp")},
             interceptorRefs = {@InterceptorRef("userPrivilegeInterceptorStack")})
     public String changePassword(){
         try{
@@ -211,7 +213,9 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
                 addFieldError("password", "密码不正确");
                 return INPUT;
             }
-            userService.updatePassword(model);
+            model.setPassword(newPassword);
+            User user = userService.updatePassword(model);
+            getSession().setAttribute(USER_SESSION, user);
             return SUCCESS;
         }catch (Exception e){
             e.printStackTrace();
@@ -227,7 +231,8 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
             if (provinceId != null || cityId != null || districtId != null){
                 model.setDistrict(spaceService.getDistrictById(districtId));
             }
-            userService.updateUserInfo(model);
+            User user = userService.updateUserInfo(model);
+            getSession().setAttribute(USER_SESSION, user);
             return SUCCESS;
         }catch (Exception e){
             e.printStackTrace();
@@ -236,6 +241,9 @@ public class UserAction  extends ModelDrivenBaseAction<User> {
     }
 
 
+    public void setNewPassword(String newPassword) {
+        this.newPassword = newPassword;
+    }
 
     public void setProvinceId(Long provinceId) {
         this.provinceId = provinceId;
