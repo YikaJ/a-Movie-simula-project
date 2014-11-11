@@ -20,7 +20,8 @@ require(["jquery", "window", "common", "movieInformation"], function ($, w) {
             text4loginUserPlaceholder: "请输入您的注册邮箱",
             text4loginPwdPlaceholder: "请输入您的密码",
             text4autoLogin: "七天内自动登陆"
-        })
+        });
+        $("#L_email").focus();
     });
 
     $("#register").click(function () {

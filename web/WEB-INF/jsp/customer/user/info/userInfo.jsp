@@ -21,7 +21,7 @@
         <form>
         <div class="formGroup">
             <label for="nick">昵称</label>
-            <input id="nick" name="nick" type="text" disabled="disabled" class="textInput" value="handoop-Sb-teamLeader"/>
+            <input id="nick" name="nick" type="text" disabled="disabled" class="textInput" value="#!"/>
             <span class="inputError"></span>
         </div>
         <div class="formGroup">

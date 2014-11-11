@@ -55,6 +55,7 @@
             <a href="javascript:" class="activeRightBarTab">正在热映</a>
             <a href="javascript:">即将上映</a>
         </div>
+        <%--正在热映--%>
         <ul class="rightBarMovieList">
             <s:iterator value="#movies.recordList">
                 <li class="clearfix">
@@ -72,6 +73,70 @@
                 </li>
             </s:iterator>
             
+        </ul>
+        <%--即将上映--%>
+        <ul  class="rightBarMovieList" style="display: none">
+            <li class="clearfix">
+                <a href="movieInformation.jsp">
+                    <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" class="fl" alt="movie">
+                    <div class="rightBarInformation fl">
+                        <h3>超体</h3>
+                        <p><span>2014-10-24</span>首映</p>
+                        <p>导演：卢克•贝松</p>
+                    </div>
+                </a>
+            </li>
+            <li class="clearfix">
+                <a href="movieInformation.jsp">
+                    <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" class="fl" alt="movie">
+                    <div class="rightBarInformation fl">
+                        <h3>超体</h3>
+                        <p><span>2014-10-24</span>首映</p>
+                        <p>导演：卢克•贝松</p>
+                    </div>
+                </a>
+            </li>
+            <li class="clearfix">
+                <a href="movieInformation.jsp">
+                    <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" class="fl" alt="movie">
+                    <div class="rightBarInformation fl">
+                        <h3>超体</h3>
+                        <p><span>2014-10-24</span>首映</p>
+                        <p>导演：卢克•贝松</p>
+                    </div>
+                </a>
+            </li>
+
+            <li class="clearfix">
+                <a href="movieInformation.jsp">
+                    <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" class="fl" alt="movie">
+                    <div class="rightBarInformation fl">
+                        <h3>超体</h3>
+                        <p><span>2014-10-24</span>首映</p>
+                        <p>导演：卢克•贝松</p>
+                    </div>
+                </a>
+            </li>
+            <li class="clearfix">
+                <a href="movieInformation.jsp">
+                    <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" class="fl" alt="movie">
+                    <div class="rightBarInformation fl">
+                        <h3>超体</h3>
+                        <p><span>2014-10-24</span>首映</p>
+                        <p>导演：卢克•贝松</p>
+                    </div>
+                </a>
+            </li>
+            <li class="clearfix">
+                <a href="movieInformation.jsp">
+                    <img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" class="fl" alt="movie">
+                    <div class="rightBarInformation fl">
+                        <h3>超体</h3>
+                        <p><span>2014-10-24</span>首映</p>
+                        <p>导演：卢克•贝松</p>
+                    </div>
+                </a>
+            </li>
         </ul>
     </div>
 </div>

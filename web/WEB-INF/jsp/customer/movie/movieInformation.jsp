@@ -146,6 +146,7 @@
 				<a href="javascript:" class="activeRightBarTab">正在热映</a>
 				<a href="javascript:">即将上映</a>
 			</div>
+            <%--正在热映--%>
 			<ul  class="rightBarMovieList">
 				<li class="clearfix">
                     <a href="movieInformation.jsp">
@@ -177,7 +178,6 @@
 					</div>
                     </a>
 				</li>
-
 				<li class="clearfix">
                     <a href="movieInformation.jsp">
 					<img src="${pageContext.request.contextPath}/image/movieInformation1.jpg" class="fl" alt="movie">
@@ -209,6 +209,7 @@
                     </a>
 				</li>
 			</ul>
+            <%--即将上映--%>
             <ul  class="rightBarMovieList" style="display: none">
                 <li class="clearfix">
                     <a href="movieInformation.jsp">

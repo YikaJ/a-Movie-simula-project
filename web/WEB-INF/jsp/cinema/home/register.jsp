@@ -107,6 +107,8 @@
         });
         //获取值改变城市
         $province.change(function(){
+            $city.find("option:gt(0)").remove();
+            $district.find("option:gt(0)").remove();
             var provinceId = $(this).val();
             $.post("/space/catchCity.do?time=" + new Date().getTime(), {provinceId: provinceId}, function(data){
                 if(data.response){
@@ -120,6 +122,7 @@
         });
 
         $city.change(function(){
+            $district.find("option:gt(0)").remove();
             var cityId = $(this).val();
             $.post("/space/catchDistrict.do?time=" + new Date().getTime(), {cityId: cityId}, function(data){
                 if(data.response){

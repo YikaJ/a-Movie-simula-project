@@ -15,30 +15,30 @@ define(["jquery", "common", "validate", "jquery.md5"], function($){
         rules: {
             originPasswordInput: {
                 required: true,
-                minLength: 6
+                minlength: 6
             },
             newPasswordInput: {
                 required: true,
-                minLength: 6
+                minlength: 6
             },
             newPasswordInput2: {
                 required: true,
-                minLength: 6,
+                minlength: 6,
                 equalTo: "#newPasswordInput"
             }
         },
         messages: {
             originPasswordInput: {
                 required: "密码不能为空",
-                minLength: "密码不得小于6位"
+                minlength: "密码不得小于6位"
             },
             newPasswordInput: {
                 required: "密码不能为空",
-                minLength: "密码不得小于6位"
+                minlength: "密码不得小于6位"
             },
             newPasswordInput2: {
                 required: "密码不能为空",
-                minLength: "密码不得小于6位",
+                minlength: "密码不得小于6位",
                 equalTo: "两次输入的密码不一致"
             }
         },
@@ -56,6 +56,7 @@ define(["jquery", "common", "validate", "jquery.md5"], function($){
             var $originPassword = $("#originPassword");
             var $newPassword = $("#newPassword");
             //禁止上传
+            $("submitBtn").val("正在上传...");
             $originPasswordInput.attr("disabled", "disabled");
             $newPasswordInput.attr("disabled", "disabled");
             $newPasswordInput2.attr("disabled", "disabled");
@@ -63,19 +64,19 @@ define(["jquery", "common", "validate", "jquery.md5"], function($){
             $originPassword.val($.md5($originPasswordInput.val()));
             $newPassword.val($.md5($newPasswordInput.val()));
             //Ajax上传
-            $("#submitBtn").click(function(){
-                $.post( URL, $(form).serialize(), function(data){
-                    if(data.response){
-                        alert(data.msg);
-                    }else{
-                        $("$originPasswordInput").val("").removeAttr("disabled");
-                        $("$newPasswordInput").val("").removeAttr("disabled");
-                        $("$newPasswordInput2").val("").removeAttr("disabled");
-                        $("#dataResponse").text(data.msg.text).css("color", "red");
-                        $(this).val("保存");
-                    }
-                }, "json");
-            }).val("正在上交...");
+            console.log("done");
+            $.post( "changePassword.do", $(form).serialize(), function(data){
+                if(data.response){
+                    alert(data.msg);
+                }else{
+                    alert("done");
+                    $("$originPasswordInput").val("").removeAttr("disabled");
+                    $("$newPasswordInput").val("").removeAttr("disabled");
+                    $("$newPasswordInput2").val("").removeAttr("disabled");
+                    $("#dataResponse").text(data.msg.text).css("color", "red");
+                    $("submitBtn").val("保存");
+                }
+            }, "json");
         }
     })
 })

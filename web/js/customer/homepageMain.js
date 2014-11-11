@@ -30,7 +30,7 @@ require(["jquery", "autoplay","window", "common", "homepage"], function ($, a, w
     });
 
     $("#login").click(function () {
-        new w.Window().login({
+            new w.Window().login({
             box: $(window),
             title: "立即登录",
             hasMask: true,
@@ -41,7 +41,9 @@ require(["jquery", "autoplay","window", "common", "homepage"], function ($, a, w
             text4loginUserPlaceholder: "请输入您的注册邮箱",
             text4loginPwdPlaceholder: "请输入您的密码",
             text4autoLogin: "七天内自动登陆"
-        })
+        });
+
+        $("#L_email").focus();
     });
 
     $("#register").click(function () {

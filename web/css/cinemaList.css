@@ -1,7 +1,7 @@
 
 /*TAB标签栏*/
 .tabWrap{
-    width: 715px;
+    width: 700px;
     float: left;
 }
 
@@ -134,7 +134,7 @@ a.goCinema:hover{
 .rightBarTab a{
     float: left;
     text-align: center;
-    padding:10px 30px;;
+    padding:10px 35px;
     background: #F9F9F9;
     border: 1px solid #FFF;
     border-bottom: 1px solid #CCC;
@@ -160,6 +160,7 @@ a.goCinema:hover{
 
 .rightBarMovieList img{
     width: 80px;
+    height: 112px;
     margin-right: 15px;
 }
 
@@ -176,7 +177,7 @@ a.goCinema:hover{
     display: block;
 }
 .rightBarMovieList a:hover{
-    background: #DFDFDF;
+    background: #F3F3F3
 }
 
 

@@ -10,6 +10,7 @@
 <head>
     <title>个人设置</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/changPassword.css">
 </head>
 <body>
@@ -36,7 +37,7 @@
                     <input id="newPasswordInput2" name="newPasswordInput2" type="password" placeholder="请输入新密码" class="passwordInput"/>
                     <span class="errorInput"></span>
                 </div>
-                <a id="submitBtn" class="submitBtn" href="#"/>保存</a>
+                <input id="submitBtn" class="submitBtn" href="javascript:" value="保存" type="submit">
                 <input id="originPassword" name="originPassword" type="hidden"/>
                 <input id="newPassword" name="newPassword" type="hidden"/>
             </form>
